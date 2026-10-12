@@ -164,7 +164,7 @@
    }
   ],
   "products": {
-   "rankNote": "I cannot rank formulations by efficacy. None of the products below discloses its MVL percentage, and the only trial used 0.1%.",
+   "rankNote": "I cannot rank formulations by efficacy. No product discloses its MVL percentage, and the only trial used 0.1%. The first version of this list came from page one of an aggregator's MVL list; Anua (three products) was added in a second pass, so the list is probably still incomplete.",
    "items": [
     {
      "name": "ADEKA Luminacare Mevalonolactone (raw material)",
@@ -173,7 +173,8 @@
      "price": "B2B only",
      "note": "The grade used in the 2022 trial. Reference point for what was actually tested.",
      "link": "https://knowde.com/stores/adeka-corporation/products/adeka-luminacare-mva-moisturizer-anti-aging-agent",
-     "verified": "Supplier listing seen in search"
+     "verified": "Supplier listing seen in search",
+     "tier": "card"
     },
     {
      "name": "Personal Day Dive Deep Mevalonic Moisturizer",
@@ -182,7 +183,8 @@
      "price": "US$38, 1.8 oz",
      "note": "Lists MVL late in the ingredient list, after citric acid and before sodium hyaluronate and phenoxyethanol, which suggests a low level (my inference; ordering below about 1% is not reliable). Also contains squalane, jojoba oil, caprylic/capric triglyceride and an azelaic acid derivative. Rich emollient base: if you are congestion-prone, patch it on a small zone first, because the vehicle may matter more than the MVL.",
      "link": "https://www.ulta.com/p/dive-deep-mevalonic-moisturizer-pimprod2053659",
-     "verified": "Ingredient list from the retailer page via search; not opened live"
+     "verified": "Ingredient list from the retailer page via search; not opened live",
+     "tier": "card"
     },
     {
      "name": "Personal Day Everybody Stay Calm Recovery Mask",
@@ -191,7 +193,8 @@
      "price": "not found",
      "note": "Contains MVL and azelaic acid per a third-party aggregator. Wash-off contact time makes it a weaker test of the ingredient.",
      "link": "https://skinsort.com/products/products-with-mevalonolactone",
-     "verified": "Secondhand"
+     "verified": "Secondhand",
+     "tier": "list"
     },
     {
      "name": "Dr. Different 131 Moisturizer",
@@ -200,7 +203,8 @@
      "price": "from about US$21",
      "note": "Lowest-priced MVL product the aggregator lists. I did not check the label.",
      "link": "https://skinsort.com/products/products-with-mevalonolactone",
-     "verified": "Secondhand"
+     "verified": "Secondhand",
+     "tier": "list"
     },
     {
      "name": "Proya Ruby Series 2.0 Deep Ocean Energy essence",
@@ -209,7 +213,8 @@
      "price": "not found",
      "note": "Listed by the aggregator with MVL and a retinoid. Not label-checked. Retail path into Canada unknown.",
      "link": "https://skinsort.com/products/products-with-mevalonolactone",
-     "verified": "Secondhand"
+     "verified": "Secondhand",
+     "tier": "list"
     },
     {
      "name": "Yuni Beauty Balancing Act Pore Refining Face Cream",
@@ -218,7 +223,38 @@
      "price": "not found",
      "note": "Listed by the aggregator. Not label-checked.",
      "link": "https://skinsort.com/products/products-with-mevalonolactone",
-     "verified": "Secondhand"
+     "verified": "Secondhand",
+     "tier": "list"
+    },
+    {
+     "name": "Anua Barrier Reboot Intensive Cream",
+     "maker": "Anua (Korea)",
+     "kind": "Moisturizer",
+     "price": "not found",
+     "tier": "list",
+     "note": "Mevalonolactone is 34th of 35 on the ingredient list, per an ingredient-decoder site. Near the end of a list usually means a small amount, but the percentage is not disclosed.",
+     "link": "https://skinsort.com/products/anua/barrier-reboot-intensive-cream",
+     "verified": "Ingredient list per decoder site; label not checked"
+    },
+    {
+     "name": "Anua Barrier Reboot Water Gel Cream",
+     "maker": "Anua (Korea)",
+     "kind": "Moisturizer (gel)",
+     "price": "not found",
+     "tier": "list",
+     "note": "Mevalonolactone is 29th of 31 on the list, per a decoder site. A gel texture is a lighter vehicle than the rich Personal Day cream.",
+     "link": "https://skinsort.com/products/anua/barrier-reboot-water-gel-cream",
+     "verified": "Ingredient list per decoder site; label not checked"
+    },
+    {
+     "name": "Anua Barrier Reboot Daily Moisturizer",
+     "maker": "Anua (Korea)",
+     "kind": "Moisturizer",
+     "price": "not found",
+     "tier": "list",
+     "note": "Mevalonolactone is 47th of 47, the last ingredient, per a decoder site. Likely a trace amount.",
+     "link": "https://inkeedecoder.com/products/anua-barrier-reboot-daily-moisturizer",
+     "verified": "Ingredient list per decoder site; label not checked"
     }
    ]
   },
@@ -257,7 +293,14 @@
    "Not opened live: retailer ingredient list, aggregator pages and the patent text (read through search snippets).",
    "Not verified: author affiliations, the study site, numeric effect sizes, the mouse study cited in the press."
   ],
-  "searchedOn": "2026-10-12"
+  "searchedOn": "2026-10-12",
+  "structure": {
+   "svg": "<svg class=\"w-full h-auto max-w-[360px]\" role=\"img\" aria-label=\"Mevalonolactone structure: six-membered lactone ring with a hydroxyl and a methyl on one carbon\" version='1.1' baseProfile='full'\n              xmlns='http://www.w3.org/2000/svg'\n                      xmlns:rdkit='http://www.rdkit.org/xml'\n                      xmlns:xlink='http://www.w3.org/1999/xlink'\n                  xml:space='preserve'\n viewBox='0 0 360 240'>\n<!-- END OF HEADER -->\n<path class='bond-0 atom-0 atom-1' d='M 311.7,118.8 L 241.7,133.9' style='fill:none;fill-rule:evenodd;stroke:currentColor;stroke-width:2.2px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />\n<path class='bond-1 atom-1 atom-2' d='M 241.7,133.9 L 263.6,187.6' style='fill:none;fill-rule:evenodd;stroke:currentColor;stroke-width:2.2px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />\n<path class='bond-2 atom-1 atom-3' d='M 241.7,133.9 L 239.0,62.3' style='fill:none;fill-rule:evenodd;stroke:currentColor;stroke-width:2.2px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />\n<path class='bond-3 atom-3 atom-4' d='M 239.0,62.3 L 175.6,28.8' style='fill:none;fill-rule:evenodd;stroke:currentColor;stroke-width:2.2px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />\n<path class='bond-4 atom-4 atom-5' d='M 175.6,28.8 L 126.6,59.6' style='fill:none;fill-rule:evenodd;stroke:currentColor;stroke-width:2.2px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />\n<path class='bond-5 atom-5 atom-6' d='M 115.4,79.9 L 117.6,138.6' style='fill:none;fill-rule:evenodd;stroke:currentColor;stroke-width:2.2px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />\n<path class='bond-6 atom-6 atom-7' d='M 117.4,132.4 L 65.8,164.8' style='fill:none;fill-rule:evenodd;stroke:currentColor;stroke-width:2.2px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />\n<path class='bond-6 atom-6 atom-7' d='M 123.1,141.5 L 71.5,173.9' style='fill:none;fill-rule:evenodd;stroke:currentColor;stroke-width:2.2px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />\n<path class='bond-7 atom-6 atom-8' d='M 117.6,138.6 L 181.0,172.0' style='fill:none;fill-rule:evenodd;stroke:currentColor;stroke-width:2.2px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />\n<path class='bond-8 atom-8 atom-1' d='M 181.0,172.0 L 241.7,133.9' style='fill:none;fill-rule:evenodd;stroke:currentColor;stroke-width:2.2px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />\n<path d='M 239.1,65.8 L 239.0,62.3 L 235.8,60.6' style='fill:none;stroke:currentColor;stroke-width:2.2px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;' />\n<path d='M 178.8,30.5 L 175.6,28.8 L 173.1,30.3' style='fill:none;stroke:currentColor;stroke-width:2.2px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;' />\n<path d='M 117.5,135.6 L 117.6,138.6 L 120.8,140.2' style='fill:none;stroke:currentColor;stroke-width:2.2px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;' />\n<path d='M 177.9,170.3 L 181.0,172.0 L 184.1,170.1' style='fill:none;stroke:currentColor;stroke-width:2.2px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;' />\n<path class='atom-2' d='M 259.4 200.3\nQ 259.4 195.4, 261.8 192.7\nQ 264.2 190.0, 268.7 190.0\nQ 273.2 190.0, 275.6 192.7\nQ 278.0 195.4, 278.0 200.3\nQ 278.0 205.2, 275.6 208.0\nQ 273.2 210.8, 268.7 210.8\nQ 264.2 210.8, 261.8 208.0\nQ 259.4 205.2, 259.4 200.3\nM 268.7 208.5\nQ 271.8 208.5, 273.5 206.4\nQ 275.2 204.4, 275.2 200.3\nQ 275.2 196.3, 273.5 194.3\nQ 271.8 192.3, 268.7 192.3\nQ 265.6 192.3, 263.9 194.3\nQ 262.3 196.3, 262.3 200.3\nQ 262.3 204.4, 263.9 206.4\nQ 265.6 208.5, 268.7 208.5\n' fill='currentColor'/>\n<path class='atom-2' d='M 281.2 190.2\nL 283.9 190.2\nL 283.9 198.8\nL 294.3 198.8\nL 294.3 190.2\nL 297.1 190.2\nL 297.1 210.5\nL 294.3 210.5\nL 294.3 201.1\nL 283.9 201.1\nL 283.9 210.5\nL 281.2 210.5\nL 281.2 190.2\n' fill='currentColor'/>\n<path class='atom-5' d='M 105.6 67.0\nQ 105.6 62.1, 108.0 59.4\nQ 110.4 56.7, 114.9 56.7\nQ 119.4 56.7, 121.8 59.4\nQ 124.3 62.1, 124.3 67.0\nQ 124.3 71.9, 121.8 74.8\nQ 119.4 77.5, 114.9 77.5\nQ 110.5 77.5, 108.0 74.8\nQ 105.6 72.0, 105.6 67.0\nM 114.9 75.2\nQ 118.0 75.2, 119.7 73.2\nQ 121.4 71.1, 121.4 67.0\nQ 121.4 63.0, 119.7 61.0\nQ 118.0 59.0, 114.9 59.0\nQ 111.8 59.0, 110.1 61.0\nQ 108.5 63.0, 108.5 67.0\nQ 108.5 71.1, 110.1 73.2\nQ 111.8 75.2, 114.9 75.2\n' fill='currentColor'/>\n<path class='atom-7' d='M 47.7 176.8\nQ 47.7 171.9, 50.1 169.2\nQ 52.5 166.5, 57.0 166.5\nQ 61.5 166.5, 63.9 169.2\nQ 66.3 171.9, 66.3 176.8\nQ 66.3 181.7, 63.9 184.5\nQ 61.4 187.3, 57.0 187.3\nQ 52.5 187.3, 50.1 184.5\nQ 47.7 181.7, 47.7 176.8\nM 57.0 185.0\nQ 60.1 185.0, 61.7 182.9\nQ 63.4 180.8, 63.4 176.8\nQ 63.4 172.8, 61.7 170.8\nQ 60.1 168.7, 57.0 168.7\nQ 53.9 168.7, 52.2 170.8\nQ 50.5 172.8, 50.5 176.8\nQ 50.5 180.9, 52.2 182.9\nQ 53.9 185.0, 57.0 185.0\n' fill='currentColor'/>\n</svg>\n",
+   "smiles": "CC1(O)CCOC(=O)C1",
+   "formula": "C6H10O3",
+   "note": "Flat 2D drawing generated from the structure string with RDKit. Stereochemistry is left out. The structure string, formula and IUPAC name (4-hydroxy-4-methyloxan-2-one) match the FooDB record; I could not open PubChem.",
+   "link": "https://foodb.ca/compounds/FDB023804"
+  }
  },
  "humanTrial": true,
  "toneData": "not reported",

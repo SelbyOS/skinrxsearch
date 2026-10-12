@@ -66,6 +66,7 @@ def entry_md(e):
     if e.get("displaces"): w("- **What it displaces:** " + e["displaces"])
     if d:
         if d.get("whatItIs"): w("\n## WHAT IT IS\n" + d["whatItIs"])
+        if d.get("structure"): w("- **Structure:** %s, SMILES %s (flat 2D, stereochemistry omitted). Record: %s" % (d["structure"].get("formula"), d["structure"].get("smiles"), d["structure"].get("link")))
         m = d.get("mechanism") or {}
         if m:
             w("\n## MECHANISM")
@@ -87,7 +88,7 @@ def entry_md(e):
         if pr:
             w("\n## PRODUCTS AND FORMULATIONS")
             if pr.get("rankNote"): w(pr["rankNote"])
-            for p in pr.get("items", []): w("- **%s** (%s): %s. %s" % (p.get("name"), p.get("maker", ""), p.get("price", ""), p.get("note", "")))
+            for p in pr.get("items", []): w("- **%s** (%s): %s. %s [%s]" % (p.get("name"), p.get("maker", ""), p.get("price", ""), p.get("note", ""), p.get("verified", "")))
         if d.get("howToUse"):
             w("\n## HOW TO ADAPT IT")
             for x in d["howToUse"]: w("- " + x)

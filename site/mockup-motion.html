@@ -1,148 +1,90 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="robots" content="noindex"><title>SkinRxsearch motion mockup</title>
+<meta name="robots" content="noindex"><title>SkinRxsearch motion mockup v3</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap">
 <style>
-:root{--bg:#efe8de;--ink:#241b1e;--mute:#675a5d;--line:rgba(60,40,45,.15);--glass:rgba(255,251,246,.72);--solid:#fbf6ef;--accent:#5a2447;--on:#fff8f3;--chip:rgba(90,36,71,.08);--watch:#8a5200;--try:#1f6b45;--novel:#4b4690;--b1:#e6b3a5;--b2:#cfdac6;--b3:#f1dca9}
-@media (prefers-color-scheme:dark){:root{--bg:#1b1517;--ink:#f3eae6;--mute:#bbaaac;--line:rgba(255,235,230,.15);--glass:rgba(44,33,37,.7);--solid:#2a2125;--accent:#e7a8cf;--on:#2a0f20;--chip:rgba(231,168,207,.13);--watch:#e8b45a;--try:#7fcf9f;--novel:#b7b1f2;--b1:#4a2a3a;--b2:#2b3a31;--b3:#4a3f22}}
-*{box-sizing:border-box}html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Figtree,system-ui,sans-serif;padding-bottom:80px}
+:root{--bg:#efe8de;--ink:#241b1e;--mute:#675a5d;--line:rgba(60,40,45,.15);--glass:rgba(255,251,246,.72);--solid:#fbf6ef;--accent:#5a2447;--on:#fff8f3;--chip:rgba(90,36,71,.08);--watch:#8a5200;--b1:#e6b3a5;--b2:#cfdac6;--b3:#f1dca9}
+@media (prefers-color-scheme:dark){:root{--bg:#1b1517;--ink:#f3eae6;--mute:#bbaaac;--line:rgba(255,235,230,.15);--glass:rgba(44,33,37,.7);--solid:#2a2125;--accent:#e7a8cf;--on:#2a0f20;--chip:rgba(231,168,207,.13);--watch:#e8b45a;--b1:#4a2a3a;--b2:#2b3a31;--b3:#4a3f22}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Figtree,system-ui,sans-serif;padding:0 max(16px,env(safe-area-inset-left)) 60px}
 .wash{position:fixed;inset:0;z-index:-1;background:radial-gradient(60% 50% at 8% 6%,var(--b1),transparent 70%),radial-gradient(55% 45% at 94% 10%,var(--b2),transparent 70%),radial-gradient(60% 50% at 70% 100%,var(--b3),transparent 70%),var(--bg)}
-.wrap{max-width:1120px;margin:0 auto;padding:0 max(16px,env(safe-area-inset-left))}
+.wrap{max-width:1000px;margin:0 auto}
 .eyebrow{font:500 11px "JetBrains Mono",monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--mute)}
-.serif{font-family:"Instrument Serif",Georgia,serif;font-weight:400}
-.glass{background:var(--glass);-webkit-backdrop-filter:blur(18px) saturate(1.2);backdrop-filter:blur(18px) saturate(1.2);border:1px solid var(--line);box-shadow:0 10px 30px -14px rgba(70,40,50,.3)}
-/* hero */
-.hero{position:relative;height:min(52vh,460px);min-height:340px;overflow:hidden;border-radius:0 0 36px 36px;background:linear-gradient(135deg,var(--b1),var(--b3))}
-.hero img{position:absolute;left:0;top:-8%;width:100%;height:116%;object-fit:cover;will-change:transform;filter:saturate(.9) brightness(1.05)}
-.hero:before{content:"";position:absolute;inset:0;z-index:1;background:rgba(255,250,244,.32);pointer-events:none}
-.hero:after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(239,232,222,0) 55%,var(--bg) 100%);pointer-events:none}
-.hero .in{position:absolute;left:0;right:0;bottom:20px;z-index:2}
-.titlebox{display:inline-block;max-width:100%;border-radius:28px;padding:16px 22px 18px}
-.hero h1{font:400 clamp(44px,8vw,84px)/.95 "Instrument Serif",Georgia,serif;margin:4px 0 0}
-.hero .tag{font:italic clamp(22px,3vw,30px) "Instrument Serif",Georgia,serif;color:var(--mute)}
-.credit{position:absolute;right:16px;top:12px;z-index:3;font-size:11px;background:var(--glass);border-radius:99px;padding:4px 10px;color:var(--mute)}
-.credit a{color:inherit}
-.pick{position:sticky;top:8px;z-index:20;display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:14px 0;border-radius:20px;padding:8px 10px}
-.pick button{font:600 13px Figtree,sans-serif;border:0;border-radius:99px;padding:0 14px;min-height:44px;background:var(--chip);color:var(--ink);cursor:pointer}
-.pick button[aria-pressed=true]{background:var(--accent);color:var(--on)}
-.how{display:grid;gap:10px;margin-top:20px}@media(min-width:760px){.how{grid-template-columns:1fr 1fr 1fr}}
-.how .b{border-radius:22px;padding:16px}.how h3{font:400 26px/1.1 "Instrument Serif",Georgia,serif;margin:4px 0 6px}.how p{margin:0;font-size:14px;color:var(--mute)}
-.btnrow{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
-.btn{display:inline-flex;align-items:center;min-height:44px;padding:0 14px;border-radius:99px;background:var(--chip);font:600 14px Figtree,sans-serif}
-.btn.pri{background:var(--accent);color:var(--on)}
-/* reveal */
-.rv{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s cubic-bezier(.2,.8,.2,1);transition-delay:calc(var(--i,0)*70ms)}
-.rv.on{opacity:1;transform:none}
-/* metrics */
-.metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:20px}
-.m{border-radius:24px;padding:16px}.m b{display:block;font:400 52px/1 "Instrument Serif",Georgia,serif;margin-top:6px}
-/* scrollytelling */
-.story{display:grid;grid-template-columns:1fr;gap:24px;margin-top:64px}
-@media(min-width:860px){.story{grid-template-columns:minmax(300px,420px) 1fr;gap:48px}}
-.stick{position:sticky;top:64px;z-index:6;align-self:start;border-radius:28px;padding:14px 16px}
-.mini{display:block}.full{display:none}
-.mini .lab{font-weight:700;font-size:16px;margin:2px 0 8px}
-.segs{display:flex;gap:4px}.segs i{flex:1;height:6px;border-radius:9px;background:var(--line);transition:background .3s}.segs i.d{background:var(--accent)}
-@media(min-width:860px){.stick{top:64px;padding:20px}.mini{display:none}.full{display:block}}
-.node{display:flex;align-items:center;gap:10px;border-radius:16px;padding:10px 12px;border:1.5px solid var(--line);background:var(--solid);opacity:.45;transform:scale(.98);transition:all .35s ease;font-weight:600;font-size:15px}
-.node small{margin-left:auto;font:500 10px "JetBrains Mono",monospace;color:var(--mute);text-align:right}
-.node.done{opacity:.85;border-color:var(--accent)}
-.node.now{opacity:1;transform:scale(1.02);border-color:var(--accent);box-shadow:0 8px 24px -12px var(--accent)}
-.node.inf{border-style:dashed;border-color:var(--watch)}
-.link{height:14px;margin:0 auto;width:2px;background:var(--line);position:relative}
-.link i{position:absolute;inset:0;background:var(--accent);transform-origin:top;transform:scaleY(0);transition:transform .35s ease}
-.link.on i{transform:scaleY(1)}
-.step{min-height:62vh;display:flex;flex-direction:column;justify-content:center;border-left:2px solid var(--line);padding-left:24px;opacity:.4;transition:opacity .35s}
-.step.now{opacity:1;border-color:var(--accent)}
-.step h3{font:400 34px/1.1 "Instrument Serif",Georgia,serif;margin:0 0 8px}
-.step p{margin:0;max-width:46ch}
-/* cards */
-.grid{display:grid;gap:16px;margin-top:20px}@media(min-width:760px){.grid{grid-template-columns:1fr 1fr}}
-.card{border-radius:28px;padding:20px;transition:transform .2s ease}
-@media(hover:hover){.card:hover{transform:translateY(-3px)}}
-.pill{display:inline-flex;gap:6px;align-items:center;padding:4px 12px;border-radius:99px;color:#fff;font-size:12px;font-weight:700;letter-spacing:.08em}
-.meter{display:flex;gap:4px}.meter i{width:18px;height:8px;border-radius:9px;background:var(--line);overflow:hidden;position:relative}
-.meter i:after{content:"";position:absolute;inset:0;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .5s ease;transition-delay:calc(var(--k)*120ms)}
-.on .meter i.f:after{transform:scaleX(1)}
-h2.sec{font:400 clamp(32px,5vw,48px)/1.05 "Instrument Serif",Georgia,serif;margin:64px 0 4px}
-.foot{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);font-weight:600;font-size:14px}
-@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.node,.link i,.meter i:after,.step{transition:none}.hero img{transform:none!important}html{scroll-behavior:auto}}
+h1{font:400 clamp(48px,8vw,72px)/1 "Instrument Serif",Georgia,serif;margin:24px 0 0}.tag{font:italic 28px "Instrument Serif",Georgia,serif;color:var(--mute)}
+.glass{background:var(--glass);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);border:1px solid var(--line);box-shadow:0 10px 30px -14px rgba(70,40,50,.3)}
+.btn{display:inline-flex;align-items:center;min-height:44px;padding:0 14px;border-radius:99px;background:var(--chip);color:var(--ink);font:600 14px Figtree,sans-serif;border:0;cursor:pointer}.btn[aria-pressed=true]{background:var(--accent);color:var(--on)}
+.opts{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:16px 0 10px}
+.band{position:relative;height:clamp(90px,16vw,150px);border-radius:28px;overflow:hidden;background:linear-gradient(120deg,var(--b1),var(--b3));margin-bottom:14px}
+.band img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(.85) brightness(1.08)}.band:after{content:"";position:absolute;inset:0;background:rgba(255,250,244,.3)}
+.band small{position:absolute;right:10px;bottom:6px;z-index:2;font-size:11px;background:var(--glass);border-radius:99px;padding:2px 8px;color:var(--mute)}.band small a{color:inherit}
+.note{border-radius:22px;padding:14px 16px;margin:12px 0;font-size:14px;color:var(--mute)}.note b{color:var(--ink)}
+/* mock drawer */
+.drawer{position:relative;display:flex;flex-direction:column;height:min(78vh,760px);border-radius:28px;overflow:hidden;background:var(--solid);border:1px solid var(--line);margin:14px 0}
+.dh{padding:14px 18px 10px;border-bottom:1px solid var(--line);background:var(--solid);z-index:3}
+.dh h2{font:400 28px/1.1 "Instrument Serif",Georgia,serif;margin:4px 0 8px}
+.where{display:flex;align-items:baseline;gap:10px;margin-bottom:8px}.where b{font-size:15px}
+.prog{height:6px;border-radius:9px;background:var(--line);overflow:hidden}.prog i{display:block;height:100%;width:0;background:var(--accent);transition:width .15s linear}
+.chips{display:flex;gap:6px;overflow-x:auto;margin-top:10px;padding-bottom:2px}.chips button{flex:none}
+.scroll{flex:1;overflow-y:auto;padding:18px 18px 120px;scroll-behavior:smooth}
+section.s{margin-bottom:34px;scroll-margin-top:8px}
+.nd{border-radius:16px;padding:10px 14px;border:1.5px solid var(--line);background:var(--solid);opacity:.5;transition:all .3s}
+.nd .t{display:flex;gap:10px;align-items:center;font-weight:600}.nd small{margin-left:auto;font:500 10px "JetBrains Mono",monospace;color:var(--mute)}
+.nd .more{max-height:0;overflow:hidden;transition:max-height .35s ease;font-size:14.5px;color:var(--mute)}
+.nd.now{opacity:1;border-color:var(--accent);box-shadow:0 8px 22px -14px var(--accent)}.nd.now .more{max-height:90px;padding-top:6px}.nd.done{opacity:.9;border-color:var(--accent)}.nd.inf{border-style:dashed;border-color:var(--watch)}
+.lk{width:2px;height:16px;margin:0 auto;background:var(--line);position:relative}.lk i{position:absolute;inset:0;background:var(--accent);transform:scaleY(0);transform-origin:top;transition:transform .3s}.lk.on i{transform:scaleY(1)}
+.dock{position:absolute;left:0;right:0;bottom:0;z-index:4;background:var(--solid);border-top:1px solid var(--line);padding:10px 16px calc(10px + env(safe-area-inset-bottom));box-shadow:0 -10px 24px -16px rgba(0,0,0,.35)}
+.dock textarea{display:none;width:100%;margin-top:8px;min-height:90px;border-radius:14px;border:1px solid var(--line);background:var(--glass);color:var(--ink);padding:10px;font:15px Figtree,sans-serif}.dock.open textarea{display:block}
+.dock .row{display:flex;gap:8px;align-items:center}
+.ph{height:150px;border-radius:16px;background:repeating-linear-gradient(45deg,var(--line),var(--line) 8px,transparent 8px,transparent 16px);display:flex;align-items:center;justify-content:center;color:var(--mute);font-size:13px}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style></head><body><div class="wash"></div>
-<header class="hero">
-  <img id="heroimg" alt="" src="" onerror="this.style.display='none'">
-  <div class="credit" id="credit"></div>
-  <div class="in wrap"><div class="titlebox glass"><div class="eyebrow">Mockup · last run Oct 12, 2026</div><h1>SkinRxsearch</h1><div class="tag">A living look</div></div></div>
-</header>
-<main class="wrap">
-  <div class="pick glass" role="group" aria-label="Header image options"><span class="eyebrow" style="margin-right:4px">Header image</span><button data-h="0" aria-pressed="true">A Peach gradient</button><button data-h="1" aria-pressed="false">B Sand dunes</button><button data-h="2" aria-pressed="false">C Water ripples</button><button data-h="3" aria-pressed="false">D Gradient only</button><button data-h="4" aria-pressed="false">Earlier dark one</button></div>
+<div class="wrap">
+<div class="eyebrow" style="margin-top:28px">LAST RUN OCT 12, 2026 · EVERY OTHER SUNDAY · MOCKUP V3</div>
+<h1>SkinRxsearch</h1><div class="tag">A living look</div>
+<div class="opts" role="group" aria-label="Image band options"><span class="eyebrow">Photo band</span>
+<button class="btn" data-i="0" aria-pressed="true">None</button><button class="btn" data-i="1" aria-pressed="false">Sand dunes</button><button class="btn" data-i="2" aria-pressed="false">Water ripples</button><button class="btn" data-i="3" aria-pressed="false">Peach soft focus</button></div>
+<div class="band" id="band" style="display:none"><img id="bimg" alt="" onerror="this.style.display='none'"><small id="bcr"></small></div>
+<div class="note glass"><b>What you are looking at.</b> The header above is the current site's header, unchanged. The panel below stands in for the dossier drawer that slides over the feed. It scrolls on its own, as the real one does. Three things are new: the top strip tells you which section you are in and fills as you read; in Mechanism, each step lights up and opens a one-line note as you pass it; and the notes bar at the bottom stays put, so you can read and write together. Tap the notes bar to open it. The placeholder boxes stand in for sections not drawn here.</div>
 
-  <section class="how" aria-label="How to read this page">
-    <div class="b glass"><div class="eyebrow">1 · The feed</div><h3>Cards, as now</h3><p>Ten triage cards per run with verdict, evidence, fit and cost. This part of the site does not change.</p></div>
-    <div class="b glass"><div class="eyebrow">2 · The dossier</div><h3>Still the full record</h3><p>Click a card and the dossier slides in, with every section: studies, claims check, products, dosing, safety, sources. Nothing is removed. It is not drawn in this mockup.</p></div>
-    <div class="b glass"><div class="eyebrow">3 · The walkthrough</div><h3>New, one entry at a time</h3><p>A scroll view of a single entry's mechanism, built from that entry's own data. Open entry B and you get B's chain, not this one.</p></div>
-  </section>
-  <section class="metrics" aria-label="At a glance">
-    <div class="m glass rv" style="--i:0"><span class="eyebrow">Entries</span><b data-n="1">0</b></div>
-    <div class="m glass rv" style="--i:1"><span class="eyebrow">New this run</span><b data-n="1">0</b></div>
-    <div class="m glass rv" style="--i:2"><span class="eyebrow">Human trial</span><b data-n="1">0</b></div>
-    <div class="m glass rv" style="--i:3"><span class="eyebrow">Skin-tone data</span><b data-n="0">0</b></div>
-    <div class="m glass rv" style="--i:4"><span class="eyebrow">Saved</span><b data-n="0">0</b></div>
-  </section>
-
-  <h2 class="sec rv">Follow the mechanism</h2>
-  <p class="rv" style="color:var(--mute);max-width:60ch;margin:0">You are reading the mevalonolactone entry, its Mechanism section. Scroll: the diagram tracks the step you are on, and the dashed box marks where evidence turns into inference. Each step carries a label for what supports it.</p>
-  <div class="btnrow"><span class="btn pri">Open full dossier (not mocked)</span><span class="btn">Compare (not mocked)</span></div>
-  <section class="story" id="story">
-    <div class="stick glass" aria-label="Mechanism diagram"><div class="mini" id="mini"></div><div class="full" id="nodes"></div></div>
-    <div id="steps"></div>
-  </section>
-
-  <section class="how" style="margin-top:28px"><div class="b glass" style="grid-column:1/-1"><div class="eyebrow">Where this comes from</div><p style="color:var(--ink);font-size:15px;margin-top:6px">The seven steps are the <b>mechanism chain</b> in the mevalonolactone dossier. The one-line notes beside each step are condensed from the dossier's step-by-step text (I wrote the short versions for this mockup). The human-trial step rests on Chen 2022, a two-week, double-blind trial; the cell steps rest on that paper's lab work. In the real build each step's short note would be stored in the entry's data so every entry gets its own walkthrough automatically. Compare would stay a side-by-side table, since a scroll story cannot sit next to another scroll story.</p></div></section>
-  <h2 class="sec rv">Entries arrive like this</h2>
-  <div class="grid">
-    <article class="card glass rv" style="--i:0"><span class="pill" style="background:var(--watch)">WATCH</span>
-      <div class="eyebrow" style="margin-top:12px">Ingredient · full dossier</div><h3 class="serif" style="font-size:32px;margin:4px 0">Mevalonolactone</h3>
-      <p style="margin:0 0 12px">A barrier-lipid signal backed by one small, short, double-blind human trial.</p>
-      <div class="meter" aria-label="Evidence 2 of 5"><i class="f" style="--k:0"></i><i class="f" style="--k:1"></i><i style="--k:2"></i><i style="--k:3"></i><i style="--k:4"></i></div></article>
-    <article class="card glass rv" style="--i:1"><span class="pill" style="background:var(--novel)">NOVEL</span>
-      <div class="eyebrow" style="margin-top:12px">Device · triage</div><h3 class="serif" style="font-size:32px;margin:4px 0">Placeholder entry</h3>
-      <p style="margin:0 0 12px">Shown only to preview how a second card staggers in beside the first.</p>
-      <div class="meter" aria-label="Evidence 3 of 5"><i class="f" style="--k:0"></i><i class="f" style="--k:1"></i><i class="f" style="--k:2"></i><i style="--k:3"></i><i style="--k:4"></i></div></article>
-  </div>
-  <div class="foot">Created and powered by Alysse</div>
-</main>
+<div class="drawer glass" id="drawer" style="background:var(--solid)">
+ <div class="dh"><span class="eyebrow">Ingredient · Watch</span><h2>Mevalonolactone (MVL / mevalonic acid)</h2>
+  <div class="where"><span class="eyebrow" id="wn"></span><b id="wl"></b></div><div class="prog"><i id="pb"></i></div>
+  <div class="chips" id="chips"></div></div>
+ <div class="scroll" id="sc">
+  <section class="s" id="s-bottom"><div class="eyebrow">Bottom line</div><p style="font:400 25px/1.25 'Instrument Serif',Georgia,serif;margin:6px 0">A barrier-lipid signal backed by one small, short, double-blind human trial. The louder collagen and hyaluronic-acid claims trace to brand statements, not papers I could find.</p><div class="ph">Fit strip and summary points (as built)</div></section>
+  <section class="s" id="s-what"><div class="eyebrow">What it is</div><div class="ph" style="margin-top:8px">Description and structure drawing (as built)</div></section>
+  <section class="s" id="s-mech"><div class="eyebrow">Mechanism</div><div style="margin-top:8px" id="mech"></div></section>
+  <section class="s" id="s-studies"><div class="eyebrow">Studies</div><div class="ph" style="margin-top:8px;height:260px">Chen 2022 study block (as built)</div></section>
+  <section class="s" id="s-products"><div class="eyebrow">Products</div><div class="ph" style="margin-top:8px;height:220px">Verified cards plus unverified list (as built)</div></section>
+  <section class="s" id="s-sources"><div class="eyebrow">All sources</div><div class="ph" style="margin-top:8px">Source links (as built)</div></section>
+ </div>
+ <div class="dock" id="dock"><div class="row"><span class="eyebrow">My research notes</span><span style="font-size:14px;color:var(--mute)" id="dpv">Tap to write while you read</span><button class="btn" id="dtog" style="margin-left:auto" aria-expanded="false">Write</button></div><textarea id="dta" aria-label="My research notes" placeholder="What interests you, what to look into, dosing ideas"></textarea></div>
+</div>
+<div style="margin-top:20px;font-weight:600;font-size:14px;border-top:1px solid var(--line);padding-top:14px">Created and powered by Alysse</div>
+</div>
 <script>
 (function(){
-var flow=[["Applied at 0.1% in a lotion","Applied",0],["Reverts to mevalonic acid in water","Stated in paper",0],["PPAR beta/delta signal up 1.7 times","Cell or lab data",0],["ABCA12 lipid transporter up","Cell or lab data",0],["More lamellar granules and free fatty acids","Cell or lab data",0],["Stronger barrier lipid layer","Authors' inference",1],["Less water loss over 2 winter weeks","Human trial",0]];
-var copy=["What goes on the skin.","In water the lactone opens into mevalonic acid, per the paper.","In cultured skin cells, a nuclear signal rises.","That signal raises the transporter that loads lipids into packets.","Cells made more and larger lipid packets and more free fatty acids.","The authors infer these packets become stronger barrier lipids. Not shown directly in human skin.","In 66 women over two winter weeks, placebo skin lost more water; treated skin did not."];
-var nodes=document.getElementById("nodes"),steps=document.getElementById("steps"),mini=document.getElementById("mini");
-mini.innerHTML='<div class="eyebrow" id="mstep"></div><div class="lab" id="mlab"></div><div class="segs">'+flow.map(function(){return "<i></i>"}).join("")+'</div>';
-flow.forEach(function(f,i){
- nodes.insertAdjacentHTML("beforeend",'<div class="node'+(f[2]?" inf":"")+'" data-i="'+i+'"><span>'+f[0]+'</span><small>'+f[1]+'</small></div>'+(i<flow.length-1?'<div class="link" data-l="'+i+'"><i></i></div>':""));
- steps.insertAdjacentHTML("beforeend",'<div class="step" data-i="'+i+'"><div class="eyebrow">Step '+(i+1)+' of '+flow.length+' · '+f[1]+'</div><h3>'+f[0]+'</h3><p>'+copy[i]+'</p></div>');
-});
-function setNow(n){document.querySelectorAll(".node").forEach(function(e){var i=+e.dataset.i;e.classList.toggle("now",i===n);e.classList.toggle("done",i<n)});document.querySelectorAll(".link").forEach(function(e){e.classList.toggle("on",+e.dataset.l<n)});document.querySelectorAll(".step").forEach(function(e){e.classList.toggle("now",+e.dataset.i===n)});
- document.getElementById("mstep").textContent="Step "+(n+1)+" of "+flow.length+" · "+flow[n][1];document.getElementById("mlab").textContent=flow[n][0];document.querySelectorAll(".segs i").forEach(function(e,i){e.classList.toggle("d",i<=n)})}
-setNow(0);
-var so=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)setNow(+e.target.dataset.i)})},{rootMargin:"-40% 0px -50% 0px"});
-document.querySelectorAll(".step").forEach(function(e){so.observe(e)});
-var ro=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("on");var b=e.target.querySelector("b[data-n]");if(b&&!b.dataset.d){b.dataset.d=1;var t=+b.dataset.n,k=0;if(!t){b.textContent=0;return}var iv=setInterval(function(){k++;b.textContent=k;if(k>=t)clearInterval(iv)},180)}ro.unobserve(e.target)}})},{threshold:.2});
-document.querySelectorAll(".rv").forEach(function(e){ro.observe(e)});
-var HERO=[
- {u:"https://images.unsplash.com/photo-1771814536036-e1a244a6c92b?fm=jpg&q=75&w=2000&auto=format&fit=crop",n:"Antonius Harel",p:"https://unsplash.com/@antoniushareel",pg:"https://unsplash.com/photos/soft-peach-and-cream-gradient-background-mCs677j7rio"},
- {u:"https://images.unsplash.com/photo-1776695971751-b497da17ca1c?fm=jpg&q=75&w=2000&auto=format&fit=crop",n:"ruedi h\u00e4berli",p:"https://unsplash.com/@ruehab",pg:"https://unsplash.com/photos/rippled-sand-dunes-in-soft-warm-light-ZcVd6rcHSbg"},
- {u:"https://images.unsplash.com/photo-1783273234702-aeae299eded8?fm=jpg&q=75&w=2000&auto=format&fit=crop",n:"Emanuel Haas",p:"https://unsplash.com/@dermanuskript",pg:"https://unsplash.com/photos/water-surface-with-small-ripples-reflecting-warm-light-_ox31j2Q4_U"},
- null,
- {u:"https://images.unsplash.com/photo-1761623135394-ce45aaad36ca?fm=jpg&q=75&w=2000&auto=format&fit=crop",n:"Eve",p:"https://unsplash.com/@velros",pg:"https://unsplash.com/photos/abstract-warm-colors-with-soft-focus-VsLXpMWAOUI"}];
-var img=document.getElementById("heroimg"),cr=document.getElementById("credit");
-function setHero(i){var h=HERO[i];document.querySelectorAll(".pick button").forEach(function(b){b.setAttribute("aria-pressed",+b.dataset.h===i)});
- if(!h){img.style.display="none";cr.style.display="none";return}
- img.style.display="";cr.style.display="";img.src=h.u;
- cr.innerHTML='Photo by <a href="'+h.p+'" target="_blank" rel="noopener noreferrer">'+h.n+'</a> on <a href="'+h.pg+'" target="_blank" rel="noopener noreferrer">Unsplash</a>'}
-document.querySelectorAll(".pick button").forEach(function(b){b.addEventListener("click",function(){setHero(+b.dataset.h)})});
-setHero(0);
-var rm=matchMedia("(prefers-reduced-motion:reduce)").matches,tick=false;
-if(!rm)addEventListener("scroll",function(){if(tick)return;tick=true;requestAnimationFrame(function(){img.style.transform="translateY("+Math.min(scrollY,600)*0.18+"px)";tick=false})},{passive:true});
+var secs=[["s-bottom","Bottom line"],["s-what","What it is"],["s-mech","Mechanism"],["s-studies","Studies"],["s-products","Products"],["s-sources","All sources"]];
+var flow=[["Applied at 0.1% in a lotion","Applied","What goes on the skin. The trial used 0.1% twice daily."],["Reverts to mevalonic acid in water","Stated in paper","In water the lactone opens into mevalonic acid, per the paper."],["PPAR beta/delta signal up 1.7 times","Cell or lab data","In cultured skin cells a nuclear signal rises."],["ABCA12 lipid transporter up","Cell or lab data","That signal raises the transporter that loads lipids into packets."],["More lamellar granules and free fatty acids","Cell or lab data","Cells made more and larger lipid packets."],["Stronger barrier lipid layer","Authors' inference","Inferred by the authors. Not shown directly in human skin.",1],["Less water loss over 2 winter weeks","Human trial","In 66 women, placebo skin lost more water; treated skin did not."]];
+var sc=document.getElementById("sc"),chips=document.getElementById("chips");
+chips.innerHTML=secs.map(function(s){return '<button class="btn" data-t="'+s[0]+'" aria-pressed="false">'+s[1]+'</button>'}).join("");
+chips.addEventListener("click",function(e){var b=e.target.closest("button");if(!b)return;var t=document.getElementById(b.dataset.t);sc.scrollTo({top:t.offsetTop-8})});
+var m=document.getElementById("mech");
+m.innerHTML=flow.map(function(f,i){return '<div class="nd'+(f[3]?" inf":"")+'" data-i="'+i+'"><div class="t"><span>'+f[0]+'</span><small>'+f[1]+'</small></div><div class="more">'+f[2]+'</div></div>'+(i<flow.length-1?'<div class="lk" data-l="'+i+'"><i></i></div>':"")}).join("");
+function upd(){
+ var max=sc.scrollHeight-sc.clientHeight,pct=max>0?sc.scrollTop/max:0;document.getElementById("pb").style.width=(pct*100)+"%";
+ var y=sc.scrollTop+sc.clientHeight*0.35,cur=0;secs.forEach(function(s,i){if(document.getElementById(s[0]).offsetTop<=y)cur=i});
+ document.getElementById("wn").textContent="Section "+(cur+1)+" of "+secs.length;document.getElementById("wl").textContent=secs[cur][1];
+ chips.querySelectorAll("button").forEach(function(b,i){b.setAttribute("aria-pressed",i===cur)});
+ var mid=sc.getBoundingClientRect().top+sc.clientHeight*0.45,n=-1;
+ m.querySelectorAll(".nd").forEach(function(el,i){if(el.getBoundingClientRect().top<=mid)n=i});
+ m.querySelectorAll(".nd").forEach(function(el,i){el.classList.toggle("now",i===n);el.classList.toggle("done",i<n)});
+ m.querySelectorAll(".lk").forEach(function(el,i){el.classList.toggle("on",i<n)});
+}
+sc.addEventListener("scroll",upd,{passive:true});addEventListener("resize",upd);upd();
+var dock=document.getElementById("dock"),ta=document.getElementById("dta"),tg=document.getElementById("dtog");
+tg.addEventListener("click",function(){var o=dock.classList.toggle("open");tg.textContent=o?"Done":"Write";tg.setAttribute("aria-expanded",o);if(o)ta.focus()});
+ta.addEventListener("input",function(){document.getElementById("dpv").textContent=ta.value.trim()?ta.value.trim().slice(0,60):"Tap to write while you read"});
+var IM=[null,{u:"https://images.unsplash.com/photo-1776695971751-b497da17ca1c?fm=jpg&q=75&w=1800&auto=format&fit=crop",n:"ruedi häberli",p:"https://unsplash.com/@ruehab"},{u:"https://images.unsplash.com/photo-1783273234702-aeae299eded8?fm=jpg&q=75&w=1800&auto=format&fit=crop",n:"Emanuel Haas",p:"https://unsplash.com/@dermanuskript"},{u:"https://images.unsplash.com/photo-1771814536036-e1a244a6c92b?fm=jpg&q=75&w=1800&auto=format&fit=crop",n:"Antonius Harel",p:"https://unsplash.com/@antoniushareel"}];
+document.querySelectorAll(".opts .btn").forEach(function(b){b.addEventListener("click",function(){var i=+b.dataset.i;document.querySelectorAll(".opts .btn").forEach(function(x){x.setAttribute("aria-pressed",x===b)});var band=document.getElementById("band");if(!IM[i]){band.style.display="none";return}band.style.display="";var im=document.getElementById("bimg");im.style.display="";im.src=IM[i].u;document.getElementById("bcr").innerHTML='Photo by <a href="'+IM[i].p+'" target="_blank" rel="noopener noreferrer">'+IM[i].n+'</a> on Unsplash'})});
 })();
 </script></body></html>

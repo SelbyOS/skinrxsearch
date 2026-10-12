@@ -83,6 +83,7 @@ select{background-color:var(--glass-solid);color:var(--ink)}
   <nav class="mt-6 flex items-center gap-2" aria-label="Views">
     <button data-act="tab" data-tab="feed" class="chipbtn rounded-full px-4 min-h-[44px] text-sm font-semibold inline-flex items-center gap-2" aria-pressed="true"></button>
     <button data-act="tab" data-tab="compare" class="chipbtn rounded-full px-4 min-h-[44px] text-sm font-semibold inline-flex items-center gap-2" aria-pressed="false"></button>
+    <button data-act="tab" data-tab="notes" class="chipbtn rounded-full px-4 min-h-[44px] text-sm font-semibold inline-flex items-center gap-2" aria-pressed="false"></button>
     <button data-act="tab" data-tab="runs" class="chipbtn rounded-full px-4 min-h-[44px] text-sm font-semibold inline-flex items-center gap-2" aria-pressed="false"></button>
   </nav>
 
@@ -103,6 +104,7 @@ select{background-color:var(--glass-solid);color:var(--ink)}
             <option value="new">Newest</option><option value="ev">Evidence, strongest first</option>
             <option value="verdict">Verdict</option><option value="read">Shortest read</option></select></label>
         <button id="savedBtn" data-act="saved" class="chipbtn rounded-full px-4 min-h-[44px] text-sm font-semibold inline-flex items-center gap-2" aria-pressed="false"></button>
+        <button id="notesBtn" data-act="notesOnly" class="chipbtn rounded-full px-4 min-h-[44px] text-sm font-semibold inline-flex items-center gap-2" aria-pressed="false"></button>
         <button id="clearBtn" data-act="clear" class="rounded-full px-3 min-h-[44px] text-sm font-semibold text-accent underline underline-offset-4 hidden"></button>
         <span id="count" class="ml-auto text-sm text-mute" aria-live="polite"></span>
       </div>
@@ -153,7 +155,7 @@ function sset(k, v){ mem[k] = v; try{ localStorage.setItem(k, JSON.stringify(v))
 var saved = sget("srs.saved", []), statuses = sget("srs.status", {}), notes = sget("srs.notes", {});
 var LANE_ICON = {Ingredient:"flask-conical",Product:"package",Device:"zap",Hair:"sprout","Hair and scalp":"sprout",Clinical:"stethoscope",Rx:"stethoscope",Study:"file-text"};
 
-var state = { q:"", verdicts:[], lanes:[], tag:"", sort:"new", savedOnly:false, tab:"feed", compare:sget("srs.cmp", []), open:null };
+var state = { notesOnly:false, nq:"", q:"", verdicts:[], lanes:[], tag:"", sort:"new", savedOnly:false, tab:"feed", compare:sget("srs.cmp", []), open:null };
 var lastTrigger = null;
 
 function esc(s){ return String(s == null ? "" : s).replace(/[&<>"']/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]; }); }
@@ -232,11 +234,12 @@ function safety(){
 /* ---------- filtering ---------- */
 function matches(e){
   if (state.savedOnly && !isSaved(e.id)) return false;
+  if (state.notesOnly && !hasNote(e.id)) return false;
   if (state.verdicts.length && state.verdicts.indexOf(e.verdict) < 0) return false;
   if (state.lanes.length && state.lanes.indexOf(e.lane) < 0) return false;
   if (state.tag && (e.tags||[]).indexOf(state.tag) < 0) return false;
   if (state.q){
-    var hay = [e.title,e.headline,e.lane,e.verdict,(e.tags||[]).join(" "),e.dossier&&e.dossier.whatItIs,e.fit].join(" ").toLowerCase();
+    var hay = [(notes[e.id]||{}).t,e.title,e.headline,e.lane,e.verdict,(e.tags||[]).join(" "),e.dossier&&e.dossier.whatItIs,e.fit].join(" ").toLowerCase();
     var parts = state.q.toLowerCase().split(/\s+/).filter(Boolean);
     for (var i=0;i<parts.length;i++) if (hay.indexOf(parts[i]) < 0) return false;
   }
@@ -266,7 +269,8 @@ function chipRow(){
   $("#tagSel").innerHTML = '<option value="">All</option>' + names.map(function(t){ return '<option value="'+esc(t)+'"'+(state.tag===t?" selected":"")+'>'+esc(t)+' ('+tags[t]+')</option>'; }).join("");
   $("#savedBtn").setAttribute("aria-pressed", state.savedOnly);
   $("#savedBtn").innerHTML = ic("bookmark","h-4 w-4")+" Saved only";
-  var active = state.verdicts.length + state.lanes.length + (state.tag?1:0) + (state.q?1:0) + (state.savedOnly?1:0);
+  $("#notesBtn").setAttribute("aria-pressed", state.notesOnly); $("#notesBtn").innerHTML = ic("pencil","h-4 w-4")+" Has notes";
+  var active = state.verdicts.length + state.lanes.length + (state.tag?1:0) + (state.q?1:0) + (state.savedOnly?1:0) + (state.notesOnly?1:0);
   var cb = $("#clearBtn"); cb.classList.toggle("hidden", !active); cb.textContent = "Clear "+active+" filter"+(active>1?"s":"");
 }
 
@@ -336,6 +340,27 @@ function compareView(){
   $("#view").innerHTML = picker + '<div class="overflow-x-auto pb-2 -mx-1 px-1">'+head+body+'</div>';
 }
 
+/* ---------- notes ---------- */
+function notesList(){
+  var q = state.nq.toLowerCase().split(/\s+/).filter(Boolean);
+  var rows = ALL.filter(function(e){ return hasNote(e.id); }).filter(function(e){
+    var hay = (notes[e.id].t+" "+e.title+" "+(e.tags||[]).join(" ")).toLowerCase();
+    return q.every(function(w){ return hay.indexOf(w) > -1; });
+  }).sort(function(a,b){ return (notes[b.id].u||"").localeCompare(notes[a.id].u||""); });
+  $("#count").textContent = rows.length + " note" + (rows.length===1?"":"s");
+  if (!rows.length) return '<div class="glass rounded-3xl p-8 text-center"><div class="font-display text-3xl">'+(Object.keys(notes).filter(hasNote).length ? "No notes match" : "No notes yet")+'</div><p class="text-mute mt-2 max-w-md mx-auto">Open any entry and use My research notes. They collect here, searchable, on this device.</p></div>';
+  return '<div class="grid gap-3 md:grid-cols-2">'+rows.map(function(e){
+    var n = notes[e.id];
+    return '<article class="glass card relative rounded-3xl p-5"><div class="flex items-center gap-2">'+pill(e.verdict)+'<span class="eyebrow ml-auto">'+esc(n.u ? fmtDate(n.u.slice(0,10)) : "")+'</span></div>'
+      + '<h2 class="font-display text-2xl leading-tight mt-2"><button data-act="open" data-id="'+esc(e.id)+'" class="text-left after:absolute after:inset-0 after:rounded-3xl">'+esc(e.title)+'</button></h2>'
+      + '<p class="text-[15px] mt-2 whitespace-pre-wrap clamp3">'+esc(n.t)+'</p></article>';
+  }).join("")+'</div>';
+}
+function notesView(){
+  $("#view").innerHTML = '<label class="relative block mb-4"><span class="sr-only">Search my notes</span><span class="absolute left-4 top-1/2 -translate-y-1/2 text-mute">'+ic("search","h-5 w-5")+'</span><input id="noteQ" type="search" value="'+esc(state.nq)+'" placeholder="Search your notes" autocomplete="off" class="w-full rounded-2xl glass-solid pl-11 pr-4 min-h-[48px] text-base placeholder:text-mute"></label><div id="noteList">'+notesList()+'</div>';
+  $("#noteQ").addEventListener("input", function(ev){ state.nq = ev.target.value.trim(); $("#noteList").innerHTML = notesList(); });
+}
+
 /* ---------- runs ---------- */
 function runsView(){
   $("#count").textContent = "";
@@ -377,7 +402,7 @@ function dossierHTML(e){
     add("links","Sources", '<p class="text-mute mb-3">Triage only. Ask me to deepen this one and it gets a full dossier next run.</p><div class="flex flex-wrap gap-2">'+lk+'</div>');
     return {html:h, nav:nav};
   }
-  add("what","What it is", d.whatItIs ? '<p>'+esc(d.whatItIs)+'</p>' : "");
+  add("what","What it is", (d.whatItIs ? '<p>'+esc(d.whatItIs)+'</p>' : "") + (d.structure ? '<figure class="glass rounded-2xl p-4 mt-4 m-0 flex flex-col sm:flex-row items-center gap-4"><div class="text-ink w-full max-w-[300px]">'+d.structure.svg+'</div><figcaption class="text-sm text-mute"><div class="font-mono text-xs">'+esc(d.structure.formula||"")+' · '+esc(d.structure.smiles||"")+'</div><p class="mt-2">'+esc(d.structure.note||"")+'</p>'+(d.structure.link?'<div class="mt-2">'+linkBtn(d.structure.link,"Structure record")+'</div>':"")+'</figcaption></figure>' : ""));
   if (d.mechanism){
     var steps = d.mechanism.steps || [];
     var st = steps.map(function(s,i){
@@ -390,13 +415,18 @@ function dossierHTML(e){
   add("evidence","Studies", (d.studies||[]).map(studyBlock).join(""));
   add("claims","Claims check", (d.claimsCheck||[]).length ? '<div class="space-y-2">'+d.claimsCheck.map(function(c){ return '<div class="glass rounded-2xl p-3 text-sm"><div class="font-semibold">'+esc(c.claim)+'</div><div class="text-mute mt-1">Source: '+esc(c.source)+'</div><div class="mt-1">'+esc(c.status)+'</div></div>'; }).join("")+'</div>' : "");
   if (d.products){
+    var pi = d.products.items || [], pc = pi.filter(function(x){ return x.tier !== "list"; }), pl = pi.filter(function(x){ return x.tier === "list"; });
     add("products","Products and formulations", (d.products.rankNote ? '<div class="est rounded-2xl p-3 text-sm mb-3">'+esc(d.products.rankNote)+'</div>' : "")
-      + (d.products.items||[]).map(function(p){
+      + pc.map(function(p){
           return '<div class="glass rounded-2xl p-4 mb-3"><div class="flex items-baseline gap-2 flex-wrap"><span class="font-semibold">'+esc(p.name)+'</span><span class="text-mute text-sm">'+esc(p.maker||"")+'</span><span class="ml-auto font-mono text-sm">'+esc(p.price||"")+'</span></div>'
           + '<div class="eyebrow mt-1">'+esc(p.kind||"")+'</div><p class="text-[15px] mt-2">'+esc(p.note||"")+'</p>'
           + (p.verified ? '<p class="text-xs text-mute mt-1">'+esc(p.verified)+'</p>' : "")
           + (p.link ? '<div class="mt-2">'+linkBtn(p.link,"View listing")+'</div>' : "") + '</div>';
-        }).join(""));
+        }).join("")
+      + (pl.length ? '<div class="eyebrow mt-4 mb-1">Also listed, not verified</div><ul class="divide-y divide-line text-[15px]">'+pl.map(function(p){
+          var u = safeUrl(p.link);
+          return '<li class="py-2.5"><div class="flex items-baseline gap-2 flex-wrap"><span class="font-semibold">'+esc(p.name)+'</span><span class="text-mute text-sm">'+esc(p.maker||"")+'</span>'+(p.price && p.price!=="not found" ? '<span class="ml-auto font-mono text-xs">'+esc(p.price)+'</span>' : "")+(u?'<a href="'+esc(u)+'" target="_blank" rel="noopener noreferrer" class="ml-auto inline-flex items-center gap-1 text-sm font-semibold text-accent underline underline-offset-4 min-h-[32px]">Source'+ic("external-link","h-3.5 w-3.5")+'</a>':"")+'</div><p class="text-sm text-mute mt-0.5">'+esc(p.note||"")+' <span class="est rounded px-1.5 text-xs">'+esc(p.verified||"unverified")+'</span></p></li>';
+        }).join("")+'</ul>' : ""));
   }
   add("use","How to adapt it", d.howToUse ? ul(d.howToUse) : "");
   add("expect","What to expect, and when", (d.expect||[]).length ? '<div class="space-y-2">'+d.expect.map(function(x){ return '<div class="glass rounded-2xl p-3 flex gap-3"><div class="shrink-0 w-28 font-mono text-xs text-accent pt-0.5">'+esc(x.when)+'</div><div class="text-[15px]">'+esc(x.what)+'</div></div>'; }).join("")+'</div>' : "");
@@ -505,14 +535,14 @@ function importState(text){
 
 /* ---------- view orchestration ---------- */
 function setTabs(){
-  var labels = {feed:["layers","Feed"],compare:["scale","Compare"],runs:["book-open","Runs"]};
+  var labels = {feed:["layers","Feed"],compare:["scale","Compare"],notes:["pencil","Notes"],runs:["book-open","Runs"]};
   document.querySelectorAll('[data-act="tab"]').forEach(function(b){
     var t = b.getAttribute("data-tab"); b.setAttribute("aria-pressed", state.tab === t);
-    b.innerHTML = ic(labels[t][0],"h-4 w-4")+labels[t][1]+(t==="compare"&&state.compare.length?' <span class="font-mono text-xs">'+state.compare.length+'</span>':"");
+    b.innerHTML = ic(labels[t][0],"h-4 w-4")+labels[t][1]+(t==="notes"&&Object.keys(notes).filter(hasNote).length?' <span class="font-mono text-xs">'+Object.keys(notes).filter(hasNote).length+'</span>':"")+(t==="compare"&&state.compare.length?' <span class="font-mono text-xs">'+state.compare.length+'</span>':"");
   });
   $("#filters").style.display = state.tab === "feed" ? "" : "none";
 }
-function renderView(){ setTabs(); if (state.tab==="feed") feed(); else if (state.tab==="compare") compareView(); else runsView(); }
+function renderView(){ setTabs(); if (state.tab==="feed") feed(); else if (state.tab==="compare") compareView(); else if (state.tab==="notes") notesView(); else runsView(); }
 function refreshAll(){ metrics(); chipRow(); renderView(); }
 
 /* ---------- events ---------- */
@@ -528,8 +558,9 @@ document.addEventListener("click", function(ev){
   else if (a === "verdict"){ var v = t.getAttribute("data-v"), k = state.verdicts.indexOf(v); if (k>-1) state.verdicts.splice(k,1); else state.verdicts.push(v); chipRow(); feed(); }
   else if (a === "lane"){ var l = t.getAttribute("data-l"), m = state.lanes.indexOf(l); if (m>-1) state.lanes.splice(m,1); else state.lanes.push(l); chipRow(); feed(); }
   else if (a === "tag"){ state.tag = t.getAttribute("data-t"); chipRow(); feed(); }
+  else if (a === "notesOnly"){ state.notesOnly = !state.notesOnly; chipRow(); feed(); }
   else if (a === "saved"){ state.savedOnly = !state.savedOnly; chipRow(); feed(); }
-  else if (a === "clear"){ state.q=""; state.verdicts=[]; state.lanes=[]; state.tag=""; state.savedOnly=false; $("#q").value=""; chipRow(); feed(); }
+  else if (a === "clear"){ state.q=""; state.verdicts=[]; state.lanes=[]; state.tag=""; state.savedOnly=false; state.notesOnly=false; $("#q").value=""; chipRow(); feed(); }
   else if (a === "export") openModal(t);
   else if (a === "closeModal") closeModal();
   else if (a === "copyClaude") copyText(stateMd(), "Copied. Paste it into a Claude chat.");
