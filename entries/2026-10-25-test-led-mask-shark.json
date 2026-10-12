@@ -1,0 +1,82 @@
+{
+ "id": "2026-10-25-test-led-mask-shark",
+ "run": "2026-10-25-test",
+ "title": "Home LED face mask: Shark CryoGlow (UK retail waiting list)",
+ "lane": "Device",
+ "verdict": "NOVEL",
+ "depth": "triage",
+ "headline": "A new home LED mask is on a UK retailer's waiting list; I found no independent evidence for this device, so this is a market signal, not a finding.",
+ "evidenceTier": "Retail page text only (brand/retail marketing); no trial or device study found for this model",
+ "evidenceScore": 1,
+ "evidenceScale": 5,
+ "fit": "Unknown. Red-light LED as a category has human data, but I did not search it for this device, and none that I read covered deep skin tones.",
+ "displaces": "Fits nowhere if a home LED mask is already in use. Replacing one only makes sense with device-specific evidence.",
+ "readMinutes": 2,
+ "regions": [
+  "UK (Boots listing)"
+ ],
+ "tags": [
+  "LED",
+  "device",
+  "home device",
+  "NOVEL",
+  "retail waiting list",
+  "brand marketing",
+  "UK"
+ ],
+ "status": "Watch",
+ "estimateNote": "Prices marked EST are my guesses, not looked up.",
+ "cost": [
+  {
+   "label": "UK",
+   "value": "not found",
+   "kind": "unknown"
+  }
+ ],
+ "buzzCheck": "Cannot assess; no price found.",
+ "summaryPoints": [
+  "Source: a summary of Boots' page text that mentioned a waiting list for a Shark CryoGlow LED mask. I did not open a product page, so name, price and specifications are unverified.",
+  "I did not find device-specific clinical data. Home LED masks vary widely in irradiance and wavelength, so category-level studies do not transfer to a specific model.",
+  "What would change the verdict: an independent device test with stated irradiance and dose, including deeper skin tones."
+ ],
+ "humanTrial": false,
+ "toneData": "not reported",
+ "fitRating": "Unknown",
+ "fitLine": "Cannot rate without device-specific data.",
+ "priceStrip": [
+  {
+   "m": "UK",
+   "v": "not found",
+   "k": "unknown"
+  }
+ ],
+ "timeline": "unknown",
+ "fitAxes": [
+  {
+   "axis": "Barrier",
+   "rating": "Unknown",
+   "why": "No device-specific data."
+  },
+  {
+   "axis": "Retinoid",
+   "rating": "Unknown",
+   "why": "Light devices can interact with photosensitising actives; no device-specific guidance found."
+  },
+  {
+   "axis": "Breakout risk",
+   "rating": "Unknown",
+   "why": "Depends on mode (red or blue); not researched."
+  },
+  {
+   "axis": "Season",
+   "rating": "Unknown",
+   "why": "Not applicable or unknown."
+  }
+ ],
+ "links": [
+  {
+   "label": "Boots (UK) homepage showing the waiting-list promotion",
+   "url": "https://www.boots.com/"
+  }
+ ]
+}

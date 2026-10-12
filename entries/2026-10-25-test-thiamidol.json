@@ -1,0 +1,297 @@
+{
+ "id": "2026-10-25-test-thiamidol",
+ "run": "2026-10-25-test",
+ "title": "Thiamidol (isobutylamido thiazolyl resorcinol)",
+ "lane": "Ingredient",
+ "verdict": "WATCH",
+ "depth": "dossier",
+ "headline": "A human-tyrosinase inhibitor with one sizable vehicle-controlled trial (about 36% vs 16% mMASI drop at 12 weeks), but the evidence is brand-linked and the trials I could read did not report deep skin tones.",
+ "evidenceTier": "Randomized vehicle-controlled trial (200 people, 12 weeks) + uncontrolled real-world study + small pilots; brand-affiliated authors on most",
+ "evidenceScore": 3,
+ "evidenceScale": 5,
+ "fit": "Mechanistically plausible for pigment-prone deep skin because it targets the enzyme directly rather than irritating the skin. Untested head to head against hydroquinone, azelaic acid or tranexamic acid, and untested in phototype VI.",
+ "displaces": "Only an existing non-hydroquinone brightening serum used in the off-cycle slot. If that slot is already filled, it fits nowhere: adding it as a further pigment step is the usual failure.",
+ "readMinutes": 7,
+ "regions": [
+  "EU (Eucerin Anti-Pigment range)",
+  "Thailand (trial site)",
+  "Canada (retailer listings seen)"
+ ],
+ "tags": [
+  "pigment",
+  "tyrosinase inhibitor",
+  "melasma",
+  "PIH",
+  "non-hydroquinone",
+  "cosmetic/OTC",
+  "brand-affiliated evidence",
+  "needs head-to-head",
+  "ship from EU"
+ ],
+ "status": "Watch",
+ "estimateNote": "Prices marked EST are my guesses, not looked up.",
+ "cost": [
+  {
+   "label": "EU",
+   "value": "sold as Eucerin Anti-Pigment serums; price not found in the snippets I saw",
+   "kind": "unknown"
+  },
+  {
+   "label": "Canada",
+   "value": "Canada-facing retailer listings exist for Eucerin Anti-Pigment serums (search results only, pages not opened); price not found",
+   "kind": "unknown"
+  },
+  {
+   "label": "Korea / Japan",
+   "value": "not found",
+   "kind": "unknown"
+  }
+ ],
+ "buzzCheck": "I could not check prices, so I cannot say whether price tracks evidence. The evidence is real but mostly produced by the brand owner, which is a different issue from buzz.",
+ "summaryPoints": [
+  "Mechanism: Thiamidol inhibits human tyrosinase, the rate-limiting enzyme of melanin synthesis. It is not an exfoliant or irritant class, which matters for pigment-prone skin (my inference).",
+  "Best trial: 200 people with facial hyperpigmentation, 12 weeks, 0.2% cream vs vehicle. mMASI fell 36.1% vs 16.1%. Patient global assessment and digital colour analysis did not differ between groups, so the visible benefit is less certain than the physician score.",
+  "Skin tone: the real-world study covered phototypes I-V only. The randomized trial's abstract does not report phototype."
+ ],
+ "humanTrial": true,
+ "toneData": "partial (phototypes I-V in one study; none reported in the RCT abstract)",
+ "fitRating": "Partial",
+ "fitLine": "Plausible and low-irritation by mechanism; unproven versus what a pigment routine already uses.",
+ "priceStrip": [
+  {
+   "m": "EU",
+   "v": "not found",
+   "k": "unknown"
+  },
+  {
+   "m": "CA",
+   "v": "not found",
+   "k": "unknown"
+  },
+  {
+   "m": "KR/JP",
+   "v": "not found",
+   "k": "unknown"
+  }
+ ],
+ "timeline": "Physician-scored change by weeks 8-12 in the RCT",
+ "fitAxes": [
+  {
+   "axis": "Barrier",
+   "rating": "Partial",
+   "why": "Not an exfoliant or acid class, so barrier burden should be low (my inference). Tolerability was reported as good in the trials, but tolerance in deep skin was not separately reported."
+  },
+  {
+   "axis": "Retinoid",
+   "rating": "Unknown",
+   "why": "No data on use alongside retinoids. Introduce alone first."
+  },
+  {
+   "axis": "Breakout risk",
+   "rating": "Unknown",
+   "why": "Vehicle-dependent. The products are cosmetic creams and serums; I did not read an ingredient list."
+  },
+  {
+   "axis": "Season",
+   "rating": "Partial",
+   "why": "UV and visible-light exposure drive pigment. One lab study suggests Thiamidol blunts visible-light darkening, but it was in healthy skin and brand-run."
+  }
+ ],
+ "dossier": {
+  "whatItIs": "Thiamidol (INCI: Isobutylamido Thiazolyl Resorcinol) is a synthetic resorcinol derivative developed by Beiersdorf and identified through screening against human tyrosinase rather than the mushroom enzyme older actives were tested on. It is the featured active in Eucerin's Anti-Pigment range. It is a cosmetic ingredient in the markets I looked at; I did not verify its regulatory status in every country.",
+  "structure": {
+   "svg": "<svg class=\"w-full h-auto max-w-[360px]\" role=\"img\" aria-label=\"Thiamidol structure: a thiazole ring carrying an isobutyramide group and a 2,4-dihydroxyphenyl ring\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 360 240\">\n\n<path class='bond-0 atom-0 atom-1' d='M 342.0,119.3 L 313.6,99.8' style='fill:none;fill-rule:evenodd;stroke:currentColor;stroke-width:2.2px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />\n<path class='bond-1 atom-1 atom-2' d='M 313.6,99.8 L 316.3,65.4' style='fill:none;fill-rule:evenodd;stroke:currentColor;stroke-width:2.2px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />\n<path class='bond-2 atom-1 atom-3' d='M 313.6,99.8 L 282.5,114.6' style='fill:none;fill-rule:evenodd;stroke:currentColor;stroke-width:2.2px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />\n<path class='bond-3 atom-3 atom-4' d='M 280.0,112.9 L 277.7,142.7' style='fill:none;fill-rule:evenodd;stroke:currentColor;stroke-width:2.2px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />\n<path class='bond-3 atom-3 atom-4' d='M 285.2,113.3 L 282.8,143.1' style='fill:none;fill-rule:evenodd;stroke:currentColor;stroke-width:2.2px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />\n<path class='bond-4 atom-3 atom-5' d='M 282.5,114.6 L 258.9,98.4' style='fill:none;fill-rule:evenodd;stroke:currentColor;stroke-width:2.2px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />\n<path class='bond-5 atom-5 atom-6' d='M 249.3,97.4 L 223.0,109.9' style='fill:none;fill-rule:evenodd;stroke:currentColor;stroke-width:2.2px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />\n<path class='bond-6 atom-6 atom-7' d='M 223.0,109.9 L 197.5,96.0' style='fill:none;fill-rule:evenodd;stroke:currentColor;stroke-width:2.2px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />\n<path class='bond-6 atom-6 atom-7' d='M 217.2,112.6 L 195.1,100.6' style='fill:none;fill-rule:evenodd;stroke:currentColor;stroke-width:2.2px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />\n<path class='bond-7 atom-7 atom-8' d='M 187.9,98.0 L 167.7,117.1' style='fill:none;fill-rule:evenodd;stroke:currentColor;stroke-width:2.2px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />\n<path class='bond-8 atom-8 atom-9' d='M 167.7,117.1 L 182.5,148.2' style='fill:none;fill-rule:evenodd;stroke:currentColor;stroke-width:2.2px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />\n<path class='bond-8 atom-8 atom-9' d='M 174.0,118.3 L 185.5,142.6' style='fill:none;fill-rule:evenodd;stroke:currentColor;stroke-width:2.2px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />\n<path class='bond-9 atom-9 atom-10' d='M 182.5,148.2 L 212.4,144.3' style='fill:none;fill-rule:evenodd;stroke:currentColor;stroke-width:2.2px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />\n<path class='bond-10 atom-8 atom-11' d='M 167.7,117.1 L 133.8,110.8' style='fill:none;fill-rule:evenodd;stroke:currentColor;stroke-width:2.2px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />\n<path class='bond-11 atom-11 atom-12' d='M 133.8,110.8 L 122.3,78.3' style='fill:none;fill-rule:evenodd;stroke:currentColor;stroke-width:2.2px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />\n<path class='bond-12 atom-12 atom-13' d='M 122.3,78.3 L 88.4,72.0' style='fill:none;fill-rule:evenodd;stroke:currentColor;stroke-width:2.2px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />\n<path class='bond-12 atom-12 atom-13' d='M 118.4,82.8 L 90.4,77.6' style='fill:none;fill-rule:evenodd;stroke:currentColor;stroke-width:2.2px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />\n<path class='bond-13 atom-13 atom-14' d='M 88.4,72.0 L 66.0,98.2' style='fill:none;fill-rule:evenodd;stroke:currentColor;stroke-width:2.2px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />\n<path class='bond-14 atom-14 atom-15' d='M 66.0,98.2 L 37.7,92.9' style='fill:none;fill-rule:evenodd;stroke:currentColor;stroke-width:2.2px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />\n<path class='bond-15 atom-14 atom-16' d='M 66.0,98.2 L 77.5,130.7' style='fill:none;fill-rule:evenodd;stroke:currentColor;stroke-width:2.2px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />\n<path class='bond-15 atom-14 atom-16' d='M 71.9,99.3 L 81.4,126.1' style='fill:none;fill-rule:evenodd;stroke:currentColor;stroke-width:2.2px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />\n<path class='bond-16 atom-16 atom-17' d='M 77.5,130.7 L 111.4,137.0' style='fill:none;fill-rule:evenodd;stroke:currentColor;stroke-width:2.2px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />\n<path class='bond-17 atom-17 atom-18' d='M 111.4,137.0 L 120.7,163.4' style='fill:none;fill-rule:evenodd;stroke:currentColor;stroke-width:2.2px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />\n<path class='bond-18 atom-10 atom-6' d='M 217.8,137.7 L 223.0,109.9' style='fill:none;fill-rule:evenodd;stroke:currentColor;stroke-width:2.2px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />\n<path class='bond-19 atom-17 atom-11' d='M 111.4,137.0 L 133.8,110.8' style='fill:none;fill-rule:evenodd;stroke:currentColor;stroke-width:2.2px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />\n<path class='bond-19 atom-17 atom-11' d='M 109.4,131.3 L 127.9,109.7' style='fill:none;fill-rule:evenodd;stroke:currentColor;stroke-width:2.2px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />\n<path d='M 284.0,113.9 L 282.5,114.6 L 281.3,113.8' style='fill:none;stroke:currentColor;stroke-width:2.2px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;' />\n<path d='M 181.7,146.7 L 182.5,148.2 L 184.0,148.0' style='fill:none;stroke:currentColor;stroke-width:2.2px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;' />\n<path d='M 122.9,79.9 L 122.3,78.3 L 120.6,78.0' style='fill:none;stroke:currentColor;stroke-width:2.2px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;' />\n<path d='M 90.1,72.3 L 88.4,72.0 L 87.3,73.3' style='fill:none;stroke:currentColor;stroke-width:2.2px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;' />\n<path d='M 76.9,129.0 L 77.5,130.7 L 79.2,131.0' style='fill:none;stroke:currentColor;stroke-width:2.2px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;' />\n<path class='atom-4' d='M 275.3 149.0\nQ 275.3 146.7, 276.4 145.3\nQ 277.6 144.0, 279.7 144.0\nQ 281.9 144.0, 283.1 145.3\nQ 284.2 146.7, 284.2 149.0\nQ 284.2 151.4, 283.1 152.7\nQ 281.9 154.1, 279.7 154.1\nQ 277.6 154.1, 276.4 152.7\nQ 275.3 151.4, 275.3 149.0\nM 279.7 153.0\nQ 281.2 153.0, 282.0 152.0\nQ 282.9 151.0, 282.9 149.0\nQ 282.9 147.1, 282.0 146.1\nQ 281.2 145.1, 279.7 145.1\nQ 278.3 145.1, 277.4 146.1\nQ 276.6 147.1, 276.6 149.0\nQ 276.6 151.0, 277.4 152.0\nQ 278.3 153.0, 279.7 153.0\n' fill='currentColor'/>\n<path class='atom-5' d='M 251.9 90.2\nL 255.1 95.3\nQ 255.5 95.9, 256.0 96.8\nQ 256.5 97.7, 256.5 97.8\nL 256.5 90.2\nL 257.8 90.2\nL 257.8 99.9\nL 256.5 99.9\nL 253.0 94.3\nQ 252.6 93.6, 252.2 92.9\nQ 251.8 92.1, 251.7 91.9\nL 251.7 99.9\nL 250.4 99.9\nL 250.4 90.2\nL 251.9 90.2\n' fill='currentColor'/>\n<path class='atom-5' d='M 250.3 79.4\nL 251.6 79.4\nL 251.6 83.6\nL 256.6 83.6\nL 256.6 79.4\nL 257.9 79.4\nL 257.9 89.2\nL 256.6 89.2\nL 256.6 84.7\nL 251.6 84.7\nL 251.6 89.2\nL 250.3 89.2\nL 250.3 79.4\n' fill='currentColor'/>\n<path class='atom-7' d='M 190.5 88.5\nL 193.7 93.7\nQ 194.1 94.2, 194.6 95.1\nQ 195.1 96.0, 195.1 96.1\nL 195.1 88.5\nL 196.4 88.5\nL 196.4 98.3\nL 195.1 98.3\nL 191.6 92.6\nQ 191.2 92.0, 190.8 91.2\nQ 190.4 90.4, 190.3 90.2\nL 190.3 98.3\nL 189.0 98.3\nL 189.0 88.5\nL 190.5 88.5\n' fill='currentColor'/>\n<path class='atom-10' d='M 213.9 147.1\nQ 214.0 147.1, 214.5 147.3\nQ 214.9 147.5, 215.4 147.7\nQ 215.9 147.8, 216.4 147.8\nQ 217.3 147.8, 217.9 147.3\nQ 218.4 146.9, 218.4 146.1\nQ 218.4 145.5, 218.1 145.2\nQ 217.9 144.9, 217.5 144.7\nQ 217.1 144.5, 216.4 144.3\nQ 215.5 144.1, 215.0 143.8\nQ 214.5 143.6, 214.1 143.0\nQ 213.7 142.5, 213.7 141.6\nQ 213.7 140.4, 214.6 139.6\nQ 215.4 138.9, 217.1 138.9\nQ 218.2 138.9, 219.5 139.4\nL 219.2 140.5\nQ 218.0 140.0, 217.1 140.0\nQ 216.1 140.0, 215.6 140.4\nQ 215.1 140.8, 215.1 141.5\nQ 215.1 142.0, 215.4 142.3\nQ 215.7 142.6, 216.0 142.8\nQ 216.4 143.0, 217.1 143.2\nQ 218.0 143.5, 218.5 143.7\nQ 219.0 144.0, 219.4 144.6\nQ 219.8 145.1, 219.8 146.1\nQ 219.8 147.4, 218.9 148.2\nQ 218.0 148.9, 216.5 148.9\nQ 215.6 148.9, 214.9 148.7\nQ 214.3 148.5, 213.5 148.2\nL 213.9 147.1\n' fill='currentColor'/>\n<path class='atom-15' d='M 18.0 87.0\nL 19.3 87.0\nL 19.3 91.2\nL 24.3 91.2\nL 24.3 87.0\nL 25.6 87.0\nL 25.6 96.8\nL 24.3 96.8\nL 24.3 92.3\nL 19.3 92.3\nL 19.3 96.8\nL 18.0 96.8\nL 18.0 87.0\n' fill='currentColor'/>\n<path class='atom-15' d='M 27.6 91.9\nQ 27.6 89.5, 28.8 88.2\nQ 30.0 86.9, 32.1 86.9\nQ 34.3 86.9, 35.4 88.2\nQ 36.6 89.5, 36.6 91.9\nQ 36.6 94.2, 35.4 95.6\nQ 34.3 96.9, 32.1 96.9\nQ 30.0 96.9, 28.8 95.6\nQ 27.6 94.3, 27.6 91.9\nM 32.1 95.8\nQ 33.6 95.8, 34.4 94.8\nQ 35.2 93.8, 35.2 91.9\nQ 35.2 90.0, 34.4 89.0\nQ 33.6 88.0, 32.1 88.0\nQ 30.6 88.0, 29.8 89.0\nQ 29.0 89.9, 29.0 91.9\nQ 29.0 93.8, 29.8 94.8\nQ 30.6 95.8, 32.1 95.8\n' fill='currentColor'/>\n<path class='atom-18' d='M 118.4 169.5\nQ 118.4 167.2, 119.5 165.9\nQ 120.7 164.5, 122.8 164.5\nQ 125.0 164.5, 126.2 165.9\nQ 127.3 167.2, 127.3 169.5\nQ 127.3 171.9, 126.2 173.2\nQ 125.0 174.6, 122.8 174.6\nQ 120.7 174.6, 119.5 173.2\nQ 118.4 171.9, 118.4 169.5\nM 122.8 173.5\nQ 124.3 173.5, 125.1 172.5\nQ 125.9 171.5, 125.9 169.5\nQ 125.9 167.6, 125.1 166.6\nQ 124.3 165.6, 122.8 165.6\nQ 121.4 165.6, 120.5 166.6\nQ 119.7 167.6, 119.7 169.5\nQ 119.7 171.5, 120.5 172.5\nQ 121.4 173.5, 122.8 173.5\n' fill='currentColor'/>\n<path class='atom-18' d='M 128.8 164.7\nL 130.2 164.7\nL 130.2 168.8\nL 135.2 168.8\nL 135.2 164.7\nL 136.5 164.7\nL 136.5 174.4\nL 135.2 174.4\nL 135.2 169.9\nL 130.2 169.9\nL 130.2 174.4\nL 128.8 174.4\nL 128.8 164.7\n' fill='currentColor'/>\n</svg>\n",
+   "smiles": "CC(C)C(=O)Nc1nc(cs1)-c1ccc(O)cc1O",
+   "formula": "C13H14N2O3S",
+   "note": "Flat 2D drawing generated from the structure string with RDKit. The formula (C13H14N2O3S), molecular weight (278.33) and chemical name N-[4-(2,4-dihydroxyphenyl)thiazol-2-yl]isobutyramide match supplier listings for CAS 1428450-95-6 seen in search results; I could not open PubChem. Stereochemistry is not relevant (no stereocentres).",
+   "link": "https://cymitquimica.com/cas/1428450-95-6/"
+  },
+  "mechanism": {
+   "steps": [
+    "Thiamidol binds human tyrosinase and inhibits it (stated in the papers I read; the binding data are not in the abstracts I read).",
+    "Less tyrosinase activity means less conversion of tyrosine to melanin precursors.",
+    "Less melanin synthesis means less new pigment in spots or after UV or visible-light exposure."
+   ],
+   "inferenceFlag": "The abstracts I read report outcomes (colour, mMASI), not the enzyme chemistry. Mechanism statements come from the authors' framing and a review abstract. Whether the effect holds in epidermis with high melanocyte activity is inference.",
+   "diagramCaption": "Thiamidol -> human tyrosinase inhibited -> less melanin made -> less pigment (authors' model)",
+   "flow": [
+    {
+     "label": "Applied as 0.2% cream (RCT)",
+     "basis": "applied",
+     "note": "The randomized trial used a 0.2% cream for 12 weeks versus vehicle."
+    },
+    {
+     "label": "Inhibits human tyrosinase",
+     "basis": "stated",
+     "note": "Stated in all four abstracts as the defining property of the molecule. Not independently verified here."
+    },
+    {
+     "label": "Less melanin synthesis",
+     "basis": "inferred",
+     "note": "Follows from the enzyme's role. Not directly measured in the abstracts I read."
+    },
+    {
+     "label": "Blunts UVB- and visible-light-induced darkening",
+     "basis": "human",
+     "note": "Two small studies in healthy volunteers (a UVB pilot and a visible-light study); the second is by the brand owner."
+    },
+    {
+     "label": "mMASI fell 36% vs 16% on vehicle",
+     "basis": "human",
+     "note": "Physician-scored from standardized photographs in 196 completers. Patient-rated and digital-colour differences were not significant."
+    }
+   ]
+  },
+  "studies": [
+   {
+    "cite": "Lekhavat C, Rojanamatin J, Suphannaphong M, Kolbe L. Efficacy and Tolerability of 0.2% Thiamidol Cream for Facial Hyperpigmentation: A Randomized, Double-Blind, and Vehicle-Controlled Study. Dermatol Ther (Heidelb). 2026;16(3):1551-1565.",
+    "doi": "https://doi.org/10.1007/s13555-025-01649-y",
+    "pubmed": "https://pubmed.ncbi.nlm.nih.gov/41566113/",
+    "pmc": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13013891",
+    "readDepth": "Abstract only (a full-text link exists; not opened)",
+    "design": "Randomized, double-blind, vehicle-controlled, 12 weeks. 200 randomized, 196 completed. Registered NCT03926845.",
+    "who": "People of both sexes with facial hyperpigmentation. The abstract does not state phototype or ethnicity; study centre is in Thailand.",
+    "results": [
+     "mMASI reduction from baseline, Thiamidol vs vehicle: 11.8% vs 5.4% (week 4), 27.9% vs 13.6% (week 8), 36.1% vs 16.1% (week 12), all P<0.001.",
+     "Physician global assessment: slight to moderate improvement at weeks 8 and 12.",
+     "Patient global assessment and digital colour analysis: no significant difference between groups.",
+     "Freckles and solar lentigines: no significant difference."
+    ],
+    "effectSize": "Roughly 20 percentage points more mMASI reduction than vehicle at 12 weeks (arithmetic from the reported percentages).",
+    "placebo": "The vehicle group improved by 16% on mMASI, so a large share of the Thiamidol arm's change is not specific to the active.",
+    "material": "Not established. The physician score moved but the patient-rated and instrument measures did not separate the groups.",
+    "adverse": "No significant adverse events reported in either group (abstract).",
+    "conflict": "A Beiersdorf author is on the paper; a Thai government pharmaceutical organization is also an affiliation. Funding statement not read.",
+    "limits": "Abstract read only. Mixed hyperpigmentation types; the abstract gives no breakdown by melasma. No phototype data in the abstract; no post-treatment follow-up reported."
+   },
+   {
+    "cite": "Schuster B, Rogers T, Vendruscolo C, et al. Real-world evidence for the efficacy and tolerability of an isobutylamido-thiazolyl-resorcinol (Thiamidol)-containing skincare regimen on facial hyperpigmentation and overall skin appearance: A multi-centre study in 11 European countries. Int J Cosmet Sci. 2026.",
+    "doi": "https://doi.org/10.1111/ics.70127",
+    "pubmed": "https://pubmed.ncbi.nlm.nih.gov/42426967/",
+    "readDepth": "Abstract only",
+    "design": "Multi-centre, uncontrolled, open-label, 12 weeks, 11 European countries; regimen containing Thiamidol (not Thiamidol alone).",
+    "who": "629 completers, 97.8% women, mean age 47, phototypes I-V. Phototype VI not included.",
+    "results": [
+     "Reported relative improvements at 12 weeks: skin evenness 91%, radiance 82%, smoothness 73%; mMASI -76%.",
+     "Dermatologists rated tolerability very good in 81.1% of participants."
+    ],
+    "effectSize": "Large percentages from an uncontrolled study with a multi-product regimen. They cannot be attributed to Thiamidol alone.",
+    "placebo": "None. Uncontrolled.",
+    "material": "Not established; the percentages are relative and uncontrolled.",
+    "adverse": "Not detailed in the abstract beyond the tolerability ratings.",
+    "conflict": "Most authors are Beiersdorf employees.",
+    "limits": "No control arm, regimen rather than single ingredient, brand-run, no phototype VI. Treat as a safety and tolerability signal, not an efficacy estimate."
+   },
+   {
+    "cite": "Mann T, Eggers K, Rogers T, et al. Visible light induces skin darkening in vivo: comparative pilot studies reveal enhanced susceptibility in melasma and its mitigation by a human tyrosinase inhibitor. Photochem Photobiol Sci. 2026;25(2):299-306.",
+    "doi": "https://doi.org/10.1007/s43630-025-00844-2",
+    "pubmed": "https://pubmed.ncbi.nlm.nih.gov/41553692/",
+    "readDepth": "Abstract only",
+    "design": "Pilot in vivo studies: visible light and UV exposure on melasma and perilesional skin; Thiamidol versus vehicle on repeated visible-light irradiation in healthy skin.",
+    "who": "Melasma patients and healthy volunteers; sample sizes and phototypes are not in the abstract.",
+    "results": [
+     "Melasma lesions darkened more than surrounding skin after visible light.",
+     "In healthy skin, Thiamidol significantly reduced visible-light-induced darkening compared with vehicle."
+    ],
+    "effectSize": "Not in the abstract.",
+    "placebo": "Vehicle control in the healthy-skin part.",
+    "material": "Not established; an induced-darkening model, not treatment of existing spots.",
+    "adverse": "Not reported in the abstract.",
+    "conflict": "All authors are from Beiersdorf R&D.",
+    "limits": "Pilot, brand-run, abstract only. Visible light matters for deep skin tones, but this does not show the product replaces tinted, iron-oxide sun protection."
+   },
+   {
+    "cite": "Vachiramon V, Kositkuljorn C, Leerunyakul K, Chanprapaph K. Isobutylamido thiazolyl resorcinol for prevention of UVB-induced hyperpigmentation. J Cosmet Dermatol. 2020;20(3):987-992.",
+    "doi": "https://doi.org/10.1111/jocd.13615",
+    "pubmed": "https://pubmed.ncbi.nlm.nih.gov/32757247/",
+    "readDepth": "Abstract only",
+    "design": "Randomized, single-blinded, split-arm pilot; 3 weeks of application then UVB-induced spots.",
+    "who": "30 healthy participants, Bangkok, Thailand. Phototype not stated in the abstract.",
+    "results": [
+     "After UVB induction, the Thiamidol-treated arm had a significantly lower lightness index than control and returned to normal colour earlier.",
+     "No significant side effects."
+    ],
+    "effectSize": "Not extracted from the abstract.",
+    "placebo": "Control arm without the product (split-arm).",
+    "material": "Not established.",
+    "adverse": "No significant side effects (abstract).",
+    "conflict": "Not checked.",
+    "limits": "30 healthy people, UVB-induced spots only, abstract only. Single-blinded."
+   }
+  ],
+  "claimsCheck": [
+   {
+    "claim": "Clinically proven to reduce dark spots (brand-style claim)",
+    "source": "Brand marketing, not opened",
+    "status": "Partly supported: one vehicle-controlled RCT shows an mMASI difference; patient-rated and instrument measures were not significant in that trial"
+   },
+   {
+    "claim": "Works on all skin tones",
+    "source": "Not a claim I found sourced",
+    "status": "Not supported by what I read: the real-world study covers phototypes I-V; the RCT abstract gives no phototype"
+   }
+  ],
+  "products": {
+   "rankNote": "I did not open any product page or ingredient list, so I cannot rank formulations or state the Thiamidol percentage in any retail product. The only tested concentration I saw is 0.2% (RCT).",
+   "items": [
+    {
+     "name": "Eucerin Anti-Pigment Skin Perfecting Serum 30 ml",
+     "maker": "Eucerin (Beiersdorf)",
+     "kind": "Serum",
+     "price": "not found",
+     "note": "Listed by a Canada-facing retailer in search results. Concentration not confirmed.",
+     "link": "https://www.skinlovers.com/en-ca/products/eucerin-anti-pigment-skin-perfecting-serum-30ml",
+     "verified": "unverified: search-result listing only, page not opened",
+     "tier": "list"
+    },
+    {
+     "name": "Eucerin Anti-Pigment Dual Serum 30 ml",
+     "maker": "Eucerin (Beiersdorf)",
+     "kind": "Serum",
+     "price": "not found",
+     "note": "Listed by a Canada-facing retailer in search results. Ingredient list not read.",
+     "link": "https://www.beautytheshop.com/ca/parapharmacy/dermocosmetics/treatments/dark-spot-treatment/eucerin-anti-pigment-dual-serum-30ml-4",
+     "verified": "unverified: search-result listing only, page not opened",
+     "tier": "list"
+    }
+   ]
+  },
+  "howToUse": [
+   "Treat it as a swap into the brightening-serum slot, not an addition. If a non-hydroquinone brightener is already in use, trial this in its place for the full 12 weeks the trial used.",
+   "Use as directed on the product; the only studied strength I saw is 0.2%.",
+   "Sun protection is part of any pigment routine: visible light is implicated (see the Mann abstract), so tinted, iron-oxide protection is the larger lever.",
+   "Introduce it alone for one to two weeks before pairing it with an acid or retinoid, because combination data are absent."
+  ],
+  "expect": [
+   {
+    "when": "Weeks 1-4",
+    "what": "Little visible change. In the RCT the mMASI difference was modest at week 4."
+   },
+   {
+    "when": "Weeks 8-12",
+    "what": "The range in which the trial separated from vehicle. Expect gradual change, and note the vehicle group also improved."
+   },
+   {
+    "when": "After stopping",
+    "what": "No follow-up data in the abstracts I read."
+   }
+  ],
+  "contraindications": "No adverse events reported in the abstracts. Not tested in pregnancy or in combination with prescription depigmenting agents. Treat the absence of reports as unknown.",
+  "sideBenefits": "None shown. The visible-light result is a protective effect on induced darkening in healthy skin, not a treatment effect.",
+  "wouldChangeVerdict": [
+   "Full-text review of the RCT showing phototype and efficacy by pigment type (melasma versus other)",
+   "A head-to-head or add-on trial against hydroquinone, tranexamic acid or azelaic acid",
+   "Independent (non-brand) replication",
+   "Data in phototype V-VI",
+   "A confirmed percentage in a product that is easy to buy"
+  ],
+  "transfer": "Does it transfer to deeper skin? The mechanism (inhibiting the enzyme that makes melanin) is not tone-specific, so I would expect some effect. But the real-world study stops at phototype V, the RCT abstract reports no phototype, and the responses of high-melanin skin to a tyrosinase inhibitor alone are not shown here. That is inference, not evidence.",
+  "confidence": [
+   "Abstract only: all four studies. Full texts were not opened this run.",
+   "Not opened live: all retail listings; they appear only as search results.",
+   "Not verified: product concentrations, prices, ingredient lists, and the RCT's phototype and funding.",
+   "Source types: one RCT, one uncontrolled real-world study, two small pilots; all with brand-linked authors except possibly the 2020 pilot (not checked)."
+  ],
+  "searchedOn": "2026-10-12"
+ }
+}
