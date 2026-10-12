@@ -4,295 +4,463 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex">
+<meta name="color-scheme" content="light dark">
 </head>
 <body>
 <title>SkinRxsearch</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Sans+3:wght@400;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap">
 <style>
-/* Layout: one column of evidence cards on a cool paper ground. A sticky search/filter bar on top, a lab-notebook feel: mono labels for data, grotesque display for names. */
 :root{
-  --bg:#eef1ee; --surface:#f9fbf9; --ink:#13201d; --mute:#58655f; --line:#d3dbd5;
-  --accent:#0f5c58; --on-accent:#f4faf8; --chip:#e2e9e4; --warn:#a3271f;
-  --c-watch:#a15c00; --c-try:#1f7a4c; --c-skip:#5b6670; --c-novel:#5b3fb5; --on-badge:#ffffff;
-  --est:#fbe7b5; --est-ink:#5a3a00;
-  --f-display:"Bricolage Grotesque","Avenir Next","Segoe UI",system-ui,sans-serif;
-  --f-body:"Source Sans 3","Segoe UI",system-ui,-apple-system,sans-serif;
-  --f-mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --bg:#efe8de; --ink:#241b1e; --mute:#675a5d; --line:rgba(60,40,45,.15);
+  --glass:rgba(255,251,246,.70); --glass-solid:#fbf6ef; --accent:#5a2447; --on-accent:#fff8f3;
+  --chip:rgba(90,36,71,.08); --warn:#9a2f20;
+  --c-watch:#86550f; --c-try:#2c6b48; --c-skip:#8a4a3a; --c-novel:#4b4690; --on-badge:#ffffff;
+  --est-bg:#f6e2b0; --est-ink:#5a3a00;
+  --blob1:#ecc9bf; --blob2:#cfdac6; --blob3:#f1dca9;
+  --shadow:0 1px 0 rgba(255,255,255,.6) inset, 0 10px 30px -12px rgba(70,40,50,.25);
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
-    --bg:#0c1311; --surface:#131c19; --ink:#e6efea; --mute:#94a39b; --line:#25322d;
-    --accent:#62c4bb; --on-accent:#08201d; --chip:#1b2622; --warn:#ff9b92;
-    --c-watch:#e8a23a; --c-try:#5cc995; --c-skip:#98a3ad; --c-novel:#b8a2f5; --on-badge:#0c1311;
-    --est:#4a3810; --est-ink:#f6d98f; color-scheme:dark;
+    --bg:#1b1517; --ink:#f3eae6; --mute:#bbaaac; --line:rgba(255,235,230,.15);
+    --glass:rgba(44,33,37,.66); --glass-solid:#2a2125; --accent:#e7a8cf; --on-accent:#2a0f20;
+    --chip:rgba(231,168,207,.13); --warn:#ff9d8c;
+    --c-watch:#e8b45a; --c-try:#7fcf9f; --c-skip:#d9a393; --c-novel:#b7b1f2; --on-badge:#1b1517;
+    --est-bg:#4a3810; --est-ink:#f6d98f;
+    --blob1:#4a2a3a; --blob2:#2b3a31; --blob3:#4a3f22;
+    --shadow:0 1px 0 rgba(255,255,255,.06) inset, 0 10px 30px -12px rgba(0,0,0,.6);
+    color-scheme:dark;
   }
 }
 :root[data-theme="dark"]{
-  --bg:#0c1311; --surface:#131c19; --ink:#e6efea; --mute:#94a39b; --line:#25322d;
-  --accent:#62c4bb; --on-accent:#08201d; --chip:#1b2622; --warn:#ff9b92;
-  --c-watch:#e8a23a; --c-try:#5cc995; --c-skip:#98a3ad; --c-novel:#b8a2f5; --on-badge:#0c1311;
-  --est:#4a3810; --est-ink:#f6d98f; color-scheme:dark;
+  --bg:#1b1517; --ink:#f3eae6; --mute:#bbaaac; --line:rgba(255,235,230,.15);
+  --glass:rgba(44,33,37,.66); --glass-solid:#2a2125; --accent:#e7a8cf; --on-accent:#2a0f20;
+  --chip:rgba(231,168,207,.13); --warn:#ff9d8c;
+  --c-watch:#e8b45a; --c-try:#7fcf9f; --c-skip:#d9a393; --c-novel:#b7b1f2; --on-badge:#1b1517;
+  --est-bg:#4a3810; --est-ink:#f6d98f;
+  --blob1:#4a2a3a; --blob2:#2b3a31; --blob3:#4a3f22;
+  --shadow:0 1px 0 rgba(255,255,255,.06) inset, 0 10px 30px -12px rgba(0,0,0,.6);
+  color-scheme:dark;
 }
-*{box-sizing:border-box}
-body{margin:0;padding-inline:16px;padding-block:0 72px;background:var(--bg);color:var(--ink);font:17px/1.55 var(--f-body)}
-.wrap{max-width:960px;margin:0 auto}
-header{padding-block:26px 12px}
-h1{font:700 clamp(30px,6vw,44px)/1.02 var(--f-display);margin:0;letter-spacing:-.02em;text-wrap:balance}
-.tagline{font:500 12px var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin:8px 0 0}
-.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding-block:10px;border-bottom:1px solid var(--line)}
-.bar input{width:100%;padding:11px 14px;border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink);font:16px var(--f-body)}
-.bar input:focus-visible,.chip:focus-visible,.tabs button:focus-visible,summary:focus-visible,.tag:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
-.chip{border:1px solid var(--line);background:var(--chip);color:var(--ink);border-radius:999px;padding:5px 12px;font:500 12px var(--f-mono);cursor:pointer}
-.chip[aria-pressed=true]{background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
-.tabs{display:flex;gap:4px;margin-block:14px 6px;border-bottom:1px solid var(--line)}
-.tabs button{padding:8px 14px;border:0;border-bottom:2px solid transparent;background:transparent;color:var(--mute);font:600 14px var(--f-body);cursor:pointer}
-.tabs button[aria-selected=true]{border-bottom-color:var(--accent);color:var(--ink)}
-.strip{border-block:1px solid var(--line);padding-block:10px;margin-block:12px;font-size:14px;color:var(--mute)}
-.strip b{color:var(--ink);font-family:var(--f-mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase}
-.grid{display:grid;gap:16px;min-width:0}
-.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px 16px 14px;position:relative;min-width:0}
-.card h2{font:700 24px/1.15 var(--f-display);margin:8px 0 6px;letter-spacing:-.01em;text-wrap:balance;padding-right:0}
-.badge{display:inline-block;font:500 11px var(--f-mono);letter-spacing:.1em;padding:3px 9px;border-radius:4px;color:var(--on-badge)}
-.v-WATCH{background:var(--c-watch)} .v-TRY{background:var(--c-try)} .v-SKIP{background:var(--c-skip)} .v-NOVEL{background:var(--c-novel)}
-.lane{font:400 12px var(--f-mono);color:var(--mute);margin-left:8px}
-.cmpbox{display:block;margin-top:8px;font:400 12px var(--f-mono);color:var(--mute)}
-.meter{display:inline-flex;gap:3px;vertical-align:middle;margin-left:6px}
-.meter i{width:16px;height:6px;border-radius:2px;background:var(--line)}
-.meter i.on{background:var(--accent)}
-.meta{font:400 12.5px/1.5 var(--f-mono);color:var(--mute);display:flex;flex-wrap:wrap;gap:4px 16px;margin-top:10px}
-.block{margin-top:12px;border-top:1px solid var(--line);padding-top:8px;font-size:16px}
-.block b{font:500 11px var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--mute);display:block;margin-bottom:2px}
-.points{margin:10px 0 0;padding-left:20px}
-.points li{margin:5px 0}
-.tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:12px}
-.tag{font:400 12px var(--f-mono);border:1px solid var(--line);border-radius:4px;padding:2px 8px;color:var(--mute);cursor:pointer;background:transparent}
-.life{display:flex;flex-wrap:wrap;gap:4px;margin-top:12px;font:400 12px var(--f-mono)}
-.life span{padding:3px 8px;border-radius:4px;border:1px solid var(--line);color:var(--mute)}
-.life span.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
-details{margin-top:14px;border-top:1px solid var(--line);padding-top:6px}
-summary{cursor:pointer;font:600 15px var(--f-body);color:var(--accent);padding-block:8px}
-.sec{margin:22px 0 6px;font:500 11px var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--mute)}
-.flow{margin:6px 0}
-.step{display:flex;gap:12px;align-items:flex-start;padding-block:7px;position:relative;min-width:0}
-.step i{flex:0 0 26px;height:26px;border-radius:50%;background:var(--accent);color:var(--on-accent);font:500 12px/26px var(--f-mono);text-align:center;font-style:normal}
-.step div{min-width:0}
-.step:not(:last-child)::after{content:"";position:absolute;left:12px;top:33px;bottom:-7px;width:2px;background:var(--line)}
-.infer{font-size:15px;border:1px solid var(--warn);border-radius:8px;padding:8px 12px;margin-block:8px}
-.infer b{color:var(--warn);font-weight:600}
-.study{border:1px solid var(--line);border-radius:8px;padding:12px;margin-block:10px;min-width:0}
-.cite{font-size:14.5px;color:var(--mute)}
-.study dl{margin:6px 0 0}
-.study dt{font:500 11px var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--mute);margin-top:12px}
-.study dd{margin:2px 0 0}
-.study ul{margin:2px 0;padding-left:20px}
-a{color:var(--accent)}
-.links{display:flex;gap:14px;flex-wrap:wrap;font:500 13px var(--f-mono);margin-top:8px}
-table{border-collapse:collapse;width:100%;font-size:15px}
-th,td{text-align:left;padding:8px 10px 8px 0;border-bottom:1px solid var(--line);vertical-align:top}
-th{font:500 11px var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--mute)}
-.scroll{overflow-x:auto;max-width:100%}
-.scroll table{min-width:560px}
-.prod{border-top:1px solid var(--line);padding-block:12px}
-.prod .ph{height:56px;border-radius:6px;background:repeating-linear-gradient(135deg,var(--chip),var(--chip) 8px,var(--surface) 8px,var(--surface) 16px);display:flex;align-items:center;justify-content:center;color:var(--mute);font:400 11px var(--f-mono);margin-bottom:8px}
-.est{background:var(--est);color:var(--est-ink);border-radius:3px;padding:0 5px;font:500 11px var(--f-mono)}
-.empty{color:var(--mute);padding-block:36px;text-align:center}
-footer{margin-top:40px;color:var(--mute);font-size:13.5px}
-@media (min-width:820px){.card{padding:22px 24px 16px}}
-@media (prefers-reduced-motion:no-preference){.card{transition:border-color .15s}.card:hover{border-color:var(--accent)}}
+*,:after,:before{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/*! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com*/*,:after,:before{box-sizing:border-box;border:0 solid #e5e7eb}:after,:before{--tw-content:""}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;-o-tab-size:4;tab-size:4;font-family:Figtree,system-ui,sans-serif;font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:JetBrains Mono,ui-monospace,monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0}fieldset,legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::-moz-placeholder,textarea::-moz-placeholder{opacity:1;color:#9ca3af}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border-width:0}.visible{visibility:visible}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.inset-0{inset:0}.inset-x-0{left:0;right:0}.bottom-0{bottom:0}.left-0{left:0}.left-4{left:1rem}.top-0{top:0}.top-1\/2{top:50%}.z-10{z-index:10}.z-30{z-index:30}.z-40{z-index:40}.z-50{z-index:50}.m-0{margin:0}.-mx-1{margin-left:-.25rem;margin-right:-.25rem}.-mx-5{margin-left:-1.25rem;margin-right:-1.25rem}.mx-1{margin-left:.25rem;margin-right:.25rem}.mx-auto{margin-left:auto;margin-right:auto}.mb-1{margin-bottom:.25rem}.mb-2{margin-bottom:.5rem}.mb-3{margin-bottom:.75rem}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.ml-1{margin-left:.25rem}.ml-auto{margin-left:auto}.mr-1{margin-right:.25rem}.mt-0\.5{margin-top:.125rem}.mt-1{margin-top:.25rem}.mt-10{margin-top:2.5rem}.mt-2{margin-top:.5rem}.mt-3{margin-top:.75rem}.mt-4{margin-top:1rem}.mt-5{margin-top:1.25rem}.mt-6{margin-top:1.5rem}.mt-auto{margin-top:auto}.block{display:block}.flex{display:flex}.inline-flex{display:inline-flex}.grid{display:grid}.hidden{display:none}.h-2{height:.5rem}.h-2\.5{height:.625rem}.h-3\.5{height:.875rem}.h-4{height:1rem}.h-5{height:1.25rem}.h-6{height:1.5rem}.h-8{height:2rem}.h-\[92dvh\]{height:92dvh}.min-h-\[44px\]{min-height:44px}.min-h-\[48px\]{min-height:48px}.w-2\.5{width:.625rem}.w-28{width:7rem}.w-3\.5{width:.875rem}.w-4{width:1rem}.w-5{width:1.25rem}.w-8{width:2rem}.w-full{width:100%}.w-px{width:1px}.min-w-0{min-width:0}.min-w-\[44px\]{min-width:44px}.max-w-2xl{max-width:42rem}.max-w-6xl{max-width:72rem}.max-w-xl{max-width:36rem}.flex-1{flex:1 1 0%}.shrink-0{flex-shrink:0}.-translate-y-1\/2{--tw-translate-y:-50%;transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.cursor-pointer{cursor:pointer}.scroll-mt-4{scroll-margin-top:1rem}.list-disc{list-style-type:disc}.list-none{list-style-type:none}.grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-start{align-items:flex-start}.items-center{align-items:center}.items-baseline{align-items:baseline}.justify-center{justify-content:center}.gap-1{gap:.25rem}.gap-1\.5{gap:.375rem}.gap-2{gap:.5rem}.gap-3{gap:.75rem}.gap-4{gap:1rem}.gap-x-4{-moz-column-gap:1rem;column-gap:1rem}.gap-x-6{-moz-column-gap:1.5rem;column-gap:1.5rem}.gap-y-1{row-gap:.25rem}.gap-y-2{row-gap:.5rem}.space-y-1>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-top:calc(.25rem*(1 - var(--tw-space-y-reverse)));margin-bottom:calc(.25rem*var(--tw-space-y-reverse))}.space-y-1\.5>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-top:calc(.375rem*(1 - var(--tw-space-y-reverse)));margin-bottom:calc(.375rem*var(--tw-space-y-reverse))}.space-y-2>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-top:calc(.5rem*(1 - var(--tw-space-y-reverse)));margin-bottom:calc(.5rem*var(--tw-space-y-reverse))}.divide-y>:not([hidden])~:not([hidden]){--tw-divide-y-reverse:0;border-top-width:calc(1px*(1 - var(--tw-divide-y-reverse)));border-bottom-width:calc(1px*var(--tw-divide-y-reverse))}.divide-line>:not([hidden])~:not([hidden]){border-color:var(--line)}.overflow-hidden{overflow:hidden}.overflow-x-auto{overflow-x:auto}.overflow-y-auto{overflow-y:auto}.overscroll-contain{overscroll-behavior:contain}.rounded{border-radius:.25rem}.rounded-2xl{border-radius:1rem}.rounded-3xl{border-radius:1.5rem}.rounded-full{border-radius:9999px}.rounded-md{border-radius:.375rem}.rounded-xl{border-radius:.75rem}.rounded-t-\[28px\]{border-top-left-radius:28px;border-top-right-radius:28px}.border{border-width:1px}.border-b{border-bottom-width:1px}.border-t{border-top-width:1px}.border-line{border-color:var(--line)}.bg-line{background-color:var(--line)}.p-0{padding:0}.p-3{padding:.75rem}.p-4{padding:1rem}.p-5{padding:1.25rem}.p-8{padding:2rem}.px-1{padding-left:.25rem;padding-right:.25rem}.px-1\.5{padding-left:.375rem;padding-right:.375rem}.px-2{padding-left:.5rem;padding-right:.5rem}.px-3{padding-left:.75rem;padding-right:.75rem}.px-4{padding-left:1rem;padding-right:1rem}.px-5{padding-left:1.25rem;padding-right:1.25rem}.py-0\.5{padding-top:.125rem;padding-bottom:.125rem}.py-1{padding-top:.25rem;padding-bottom:.25rem}.py-3{padding-top:.75rem;padding-bottom:.75rem}.pb-1{padding-bottom:.25rem}.pb-2{padding-bottom:.5rem}.pb-3{padding-bottom:.75rem}.pb-4{padding-bottom:1rem}.pb-5{padding-bottom:1.25rem}.pl-11{padding-left:2.75rem}.pl-4{padding-left:1rem}.pl-5{padding-left:1.25rem}.pr-4{padding-right:1rem}.pt-0\.5{padding-top:.125rem}.pt-3{padding-top:.75rem}.pt-4{padding-top:1rem}.pt-8{padding-top:2rem}.text-left{text-align:left}.text-center{text-align:center}.font-display{font-family:Instrument Serif,Georgia,serif}.font-mono{font-family:JetBrains Mono,ui-monospace,monospace}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-5xl{font-size:3rem;line-height:1}.text-\[15px\]{font-size:15px}.text-base{font-size:1rem;line-height:1.5rem}.text-sm{font-size:.875rem;line-height:1.25rem}.text-xs{font-size:.75rem;line-height:1rem}.font-bold{font-weight:700}.font-semibold{font-weight:600}.italic{font-style:italic}.leading-none{line-height:1}.leading-snug{line-height:1.375}.leading-tight{line-height:1.25}.tracking-wider{letter-spacing:.05em}.text-accent{color:var(--accent)}.text-mute{color:var(--mute)}.text-warn{color:var(--warn)}.underline{text-decoration-line:underline}.underline-offset-4{text-underline-offset:4px}.filter{filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.placeholder\:text-mute::-moz-placeholder{color:var(--mute)}.placeholder\:text-mute::placeholder{color:var(--mute)}.after\:absolute:after{content:var(--tw-content);position:absolute}.after\:inset-0:after{content:var(--tw-content);inset:0}.after\:rounded-3xl:after{content:var(--tw-content);border-radius:1.5rem}.last\:col-span-2:last-child{grid-column:span 2/span 2}@media (min-width:640px){.sm\:sticky{position:sticky}.sm\:top-2{top:.5rem}.sm\:grid-cols-5{grid-template-columns:repeat(5,minmax(0,1fr))}.sm\:p-4{padding:1rem}.sm\:text-6xl{font-size:3.75rem;line-height:1}.sm\:last\:col-span-1:last-child{grid-column:span 1/span 1}}@media (min-width:768px){.md\:inset-y-0{top:0;bottom:0}.md\:bottom-auto{bottom:auto}.md\:left-auto{left:auto}.md\:right-0{right:0}.md\:h-full{height:100%}.md\:w-\[min\(720px\2c 100\%\)\]{width:min(720px,100%)}.md\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.md\:rounded-l-\[28px\]{border-top-left-radius:28px;border-bottom-left-radius:28px}.md\:rounded-t-none{border-top-left-radius:0;border-top-right-radius:0}}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Figtree,system-ui,sans-serif;font-size:16px;line-height:1.6;
+  padding-left:max(16px,env(safe-area-inset-left));padding-right:max(16px,env(safe-area-inset-right));padding-bottom:calc(64px + env(safe-area-inset-bottom))}
+.bgfx{position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:
+   radial-gradient(60% 50% at 8% 6%, var(--blob1) 0%, transparent 70%),
+   radial-gradient(55% 45% at 94% 10%, var(--blob2) 0%, transparent 70%),
+   radial-gradient(60% 50% at 70% 100%, var(--blob3) 0%, transparent 70%),
+   var(--bg)}
+.glass{background:var(--glass);-webkit-backdrop-filter:blur(18px) saturate(1.2);backdrop-filter:blur(18px) saturate(1.2);
+  border:1px solid var(--line);box-shadow:var(--shadow)}
+.glass-solid{background:var(--glass-solid);border:1px solid var(--line)}
+.pill{background:var(--pc);color:var(--on-badge)}
+.ring-a:focus-visible,button:focus-visible,a:focus-visible,select:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.card{transition:transform .18s ease, box-shadow .18s ease}
+@media (hover:hover){.card:hover{transform:translateY(-2px)}}
+.chipbtn{background:var(--chip);color:var(--ink);border:1px solid transparent}
+.chipbtn[aria-pressed="true"]{background:var(--accent);color:var(--on-accent)}
+.est{background:var(--est-bg);color:var(--est-ink)}
+.scrim{opacity:0;pointer-events:none;transition:opacity .2s ease;background:rgba(30,15,22,.38)}
+.scrim.open{opacity:1;pointer-events:auto}
+.drawer{transform:translateY(100%);transition:transform .28s cubic-bezier(.2,.8,.2,1);visibility:hidden}
+.drawer.open{transform:none;visibility:visible}
+@media (min-width:768px){.drawer{transform:translateX(100%)}.drawer.open{transform:none}}
+.clamp3{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.eyebrow{font-family:"JetBrains Mono",ui-monospace,monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--mute)}
+.stepline{position:absolute;left:15px;top:30px;bottom:-10px;width:2px;background:var(--line)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+select{background-color:var(--glass-solid);color:var(--ink)}
 </style>
 
-<div class="wrap">
-<header>
-  <h1>SkinRxsearch</h1>
-  <p class="tagline" id="sub">A living look</p>
-</header>
+<div class="bgfx" aria-hidden="true"></div>
+<div id="main" class="mx-auto max-w-6xl">
+  <header class="pt-8 pb-5">
+    <div class="eyebrow" id="kicker"></div>
+    <h1 class="font-display text-5xl sm:text-6xl leading-none mt-1">SkinRxsearch</h1>
+    <p class="font-display italic text-2xl text-mute mt-1" id="tagline"></p>
+    <p class="text-sm text-mute mt-3 max-w-2xl">A research scan on skin, ingredients, products, tools and hair. It reads studies and registries, labels how deeply each source was read, and says where the evidence stops. Not medical advice.</p>
+  </header>
 
-<div class="bar">
-  <input id="q" type="search" placeholder="Search ingredient, mechanism, tag, region" aria-label="Search entries">
-  <div class="chips" id="vchips" role="group" aria-label="Verdict filter"></div>
-  <div class="chips" id="lchips" role="group" aria-label="Lane filter"></div>
+  <section id="metrics" aria-label="At a glance" class="grid grid-cols-2 sm:grid-cols-5 gap-3"></section>
+
+  <section id="safety" class="mt-4"></section>
+
+  <nav class="mt-6 flex items-center gap-2" aria-label="Views">
+    <button data-act="tab" data-tab="feed" class="chipbtn rounded-full px-4 min-h-[44px] text-sm font-semibold inline-flex items-center gap-2" aria-pressed="true"></button>
+    <button data-act="tab" data-tab="compare" class="chipbtn rounded-full px-4 min-h-[44px] text-sm font-semibold inline-flex items-center gap-2" aria-pressed="false"></button>
+    <button data-act="tab" data-tab="runs" class="chipbtn rounded-full px-4 min-h-[44px] text-sm font-semibold inline-flex items-center gap-2" aria-pressed="false"></button>
+  </nav>
+
+  <div id="filters" class="glass rounded-3xl p-3 sm:p-4 mt-3 sm:sticky sm:top-2 z-30">
+    <div class="flex flex-col gap-3">
+      <label class="relative block">
+        <span class="sr-only">Search entries</span>
+        <span class="absolute left-4 top-1/2 -translate-y-1/2 text-mute" id="searchIcon"></span>
+        <input id="q" type="search" placeholder="Search ingredients, mechanisms, tags" autocomplete="off"
+          class="w-full rounded-2xl glass-solid pl-11 pr-4 min-h-[48px] text-base placeholder:text-mute">
+      </label>
+      <div class="flex flex-wrap gap-2 items-center" id="chipRow"></div>
+      <div class="flex flex-wrap gap-2 items-center">
+        <label class="inline-flex items-center gap-2 text-sm text-mute">Tag
+          <select id="tagSel" class="rounded-xl border border-line min-h-[44px] px-3 text-sm"></select></label>
+        <label class="inline-flex items-center gap-2 text-sm text-mute">Sort
+          <select id="sortSel" class="rounded-xl border border-line min-h-[44px] px-3 text-sm">
+            <option value="new">Newest</option><option value="ev">Evidence, strongest first</option>
+            <option value="verdict">Verdict</option><option value="read">Shortest read</option></select></label>
+        <button id="savedBtn" data-act="saved" class="chipbtn rounded-full px-4 min-h-[44px] text-sm font-semibold inline-flex items-center gap-2" aria-pressed="false"></button>
+        <button id="clearBtn" data-act="clear" class="rounded-full px-3 min-h-[44px] text-sm font-semibold text-accent underline underline-offset-4 hidden"></button>
+        <span id="count" class="ml-auto text-sm text-mute" aria-live="polite"></span>
+      </div>
+    </div>
+  </div>
+
+  <main id="view" class="mt-5"></main>
+
+  <footer class="mt-10 text-xs text-mute max-w-2xl">
+    Bookmarks, status and compare picks live in this browser on this device only. Prices marked EST are guesses, not lookups. Sources are linked on every dossier; where I only saw a snippet or abstract, it says so.
+  </footer>
 </div>
 
-<div class="tabs" role="tablist" aria-label="Views">
-  <button role="tab" id="t-feed" aria-selected="true">Feed</button>
-  <button role="tab" id="t-compare" aria-selected="false">Compare</button>
-  <button role="tab" id="t-runs" aria-selected="false">Runs</button>
-</div>
+<div id="scrim" class="scrim fixed inset-0 z-40" data-act="close"></div>
+<aside id="drawer" class="drawer fixed z-50 bottom-0 inset-x-0 h-[92dvh] rounded-t-[28px] md:inset-y-0 md:right-0 md:left-auto md:bottom-auto md:h-full md:w-[min(720px,100%)] md:rounded-t-none md:rounded-l-[28px] glass-solid flex flex-col overflow-hidden"
+  role="dialog" aria-modal="true" aria-labelledby="dTitle" aria-hidden="true" tabindex="-1">
+  <div id="drawerHead" class="px-5 pt-4 pb-3 border-b border-line"></div>
+  <div id="drawerBody" class="flex-1 overflow-y-auto overscroll-contain px-5 pt-4" style="padding-bottom:calc(48px + env(safe-area-inset-bottom))"></div>
+</aside>
 
-<div id="safety" class="strip"></div>
-<main id="main"></main>
-
-<footer>
-  <p>Verdicts rate evidence quality and fit. They are not medical advice. Items marked <span class="est">EST</span> are guesses, not looked-up prices. Where a source was not read in full, the entry says so.</p>
-</footer>
-</div>
-
-<script>window.SRS_META={"siteName": "SkinRxsearch", "tagline": "A living look", "runs": [{"date": "2026-10-12", "note": "Prototype run. One entry, built to test the format.", "entries": 1, "deep": 1}], "safetyWatch": [], "safetyNote": "No safety or regulatory checks have been run yet. This strip fills from the first scheduled run."};window.SRS_ENTRIES=[{"id": "2026-10-12-mevalonolactone", "run": "2026-10-12", "title": "Mevalonolactone (MVL / mevalonic acid)", "lane": "Ingredient", "verdict": "WATCH", "depth": "dossier", "headline": "A barrier-lipid signal backed by one small, short, double-blind human trial. The louder collagen and hyaluronic-acid claims trace to brand statements, not papers I could find.", "evidenceTier": "Small human RCT (2 weeks) + cell and 3D-epidermis work; ingredient is a commercial supplier product", "evidenceScore": 2, "evidenceScale": 5, "fit": "Plausible for dry-season barrier support, including on retinoid-treated skin (my inference). Weak fit as an acne or sebum fix: the trial population had dry skin and measured water loss, not breakouts.", "displaces": "A basic barrier moisturizer. It should replace that step, not add a step.", "readMinutes": 6, "regions": ["Japan (raw ingredient)", "US", "China"], "tags": ["barrier", "TEWL", "ceramide-adjacent lipids", "PPAR", "ABCA12", "fermentation-derived", "OTC/cosmetic", "winter-dry skin", "needs second trial"], "status": "Watch", "estimateNote": "Prices marked EST are my guesses, not looked up.", "cost": [{"label": "US", "value": "US$38 for 1.8 oz (Personal Day Dive Deep Mevalonic Moisturizer, retailer listing)", "kind": "found"}, {"label": "US, budget", "value": "from about US$21 (Dr. Different 131 Moisturizer, per a third-party aggregator; not label-checked)", "kind": "secondhand"}, {"label": "Canada", "value": "about C$50-55 if it ships here at a straight currency conversion", "kind": "EST"}, {"label": "Korea / Japan / EU", "value": "no retail price found", "kind": "unknown"}], "buzzCheck": "Buzz premium looks modest on price. The real question is dose: no product I found discloses the percentage, and the only human trial used 0.1%.", "summaryPoints": ["Mechanism proposed by the authors: MVL becomes mevalonic acid in water, raises PPAR beta/delta, which raises the lipid transporter ABCA12, which moves free fatty acids into lamellar granules that build the skin's barrier lipids.", "In the trial, the placebo group's water loss got worse over 2 winter weeks and the MVL group's did not. The win is protection against deterioration, not improvement from baseline.", "Nothing visible should be expected at 2 weeks. The endpoints were instrument readings."], "dossier": {"whatItIs": "Mevalonolactone (INCI: Mevalonolactone) is the lactone form of mevalonic acid, a molecule early in the body's cholesterol and isoprenoid pathway. The cosmetic raw material in the trial is produced by fermentation with a sake-related yeast (Saccharomycopsis fibuligera) and sold by ADEKA (Japan) under the name Luminacare. Supplier materials position it as a moisturizing and anti-aging agent.", "mechanism": {"steps": ["Applied topically, MVL reverts to mevalonic acid on contact with water (stated in the paper).", "In cultured keratinocytes, PPAR beta/delta mRNA rose 1.7-fold and ABCA12 mRNA and protein rose.", "ABCA12 is the transporter that loads lipids into lamellar granules, the packets that later become the lipid mortar between skin cells.", "Cells showed more and larger lamellar granules, and free fatty acids were higher (myristic acid about 4.6x, palmitic about 3.6x, palmitoleic about 3.3x).", "Result claimed: less water loss through the stratum corneum."], "inferenceFlag": "The chain from PPAR to ABCA12 to granules is the authors' inference from cell data. They also argue the effect is unlikely to run through cholesterol, because fatty-acid synthesis enzymes did not change. None of this was shown directly in human skin.", "diagramCaption": "MVL -> mevalonic acid -> PPAR beta/delta up -> ABCA12 up -> lipid loading into lamellar granules -> barrier lipids -> lower water loss (authors' model)"}, "studies": [{"cite": "Chen B, Lu N, Lee K, Ye L, Hasegawa C, Maeda K, et al. Application of mevalonolactone prevents deterioration of epidermal barrier function by accelerating the lamellar granule lipid transport system. Skin Res Technol. 2022;28(6):804-814.", "doi": "https://doi.org/10.1111/srt.13202", "pubmed": "https://pubmed.ncbi.nlm.nih.gov/36148627/", "pmc": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9907606", "readDepth": "Full text (open access) read", "design": "Randomized, double-blind, placebo-controlled, parallel-group. 66 women aged 30-60 enrolled; 30 active and 29 placebo analyzed. Two weeks, January-February 2020. Lotion with 0.1% MVL versus the same lotion without it, applied to the face twice daily.", "who": "Healthy women with low stratum corneum water, high water loss and low surface lipid. Skin disease (atopic dermatitis, psoriasis, ichthyosis) excluded. Mean age about 45. Skin tone and ethnicity are not reported in the text I read. The study site is not stated in the text either.", "results": ["Water loss (TEWL): the placebo group worsened significantly over the 2 weeks; the MVL group did not change. The between-group difference in change was significant (p<0.05).", "Stratum corneum water content (Corneometer): rose within the MVL group (p<0.01) but the difference between groups was not significant.", "Surface lipid: no change within either group; the between-group change favored MVL (p<0.05). The authors note the reading mixes sebum and skin-barrier lipids, so the source is unclear.", "Lab side: in a 3D epidermis model, TEWL was reported as '27% compared with control' (the wording is ambiguous; check the paper before quoting a number)."], "effectSize": "Numeric means and confidence intervals are in scatter plots (figures 5-6) and not in the text I read. I cannot give a percent improvement.", "placebo": "The placebo lotion contained the base formula, so a plain moisturizer effect is built into the comparison. The placebo group still got worse, which the authors attribute to winter conditions.", "material": "Not established. Subjects completed skin questionnaires, but those results are not reported in the text I read. A TEWL difference at 2 weeks is a measurable change; whether it is something you would feel is unknown.", "adverse": "No adverse events are described in the text I read. Absence of reporting is not evidence of safety.", "conflict": "Authors declare no conflict of interest. The MVL tested was the ADEKA commercial raw material. I could not confirm author affiliations from what I read.", "limits": "One trial, 59 analyzed people, 2 weeks, dry-skin population, no skin-tone data, no follow-up after stopping, one season. The authors also doubled the concentration relative to cell work because the stratum corneum limits permeability (their statement)."}, {"cite": "Scopel M, Abraham WR, Antunes AL, Henriques AT, Macedo AJ. Mevalonolactone: an inhibitor of Staphylococcus epidermidis adherence and biofilm formation. Med Chem. 2014;10(3):246-51.", "doi": "https://doi.org/10.2174/15734064113096660055", "pubmed": "https://pubmed.ncbi.nlm.nih.gov/24111986/", "readDepth": "Abstract only", "design": "Laboratory antibiofilm and antimicrobial assays on S. epidermidis, including 12 clinical isolates.", "who": "Bacterial cultures. No people.", "results": ["MVL reduced biofilm formation of S. epidermidis without antibacterial activity against the reference strain; the clinical isolates showed both biofilm inhibition and antimicrobial activity. No effect on gram-negative bacteria."], "effectSize": "Not extracted from the abstract.", "placebo": "Not applicable.", "material": "Not applicable. S. epidermidis is also a skin commensal, so whether this helps or harms a skin microbiome is unknown.", "adverse": "Not applicable.", "conflict": "Not checked.", "limits": "Laboratory only. Do not read this as an anti-acne finding."}], "claimsCheck": [{"claim": "Boosts hyaluronic acid and collagen production", "source": "Brand marketing and lifestyle press", "status": "No peer-reviewed human data found in my PubMed search"}, {"claim": "80% more cell turnover, 60% hydration, 50% collagen (quoted from a brand in a women's-health article)", "source": "Brand-reported", "status": "Self-described as early; not traceable to a paper I could find"}, {"claim": "Topical mevalonic acid restored cholesterol synthesis in older mice", "source": "Cited secondhand in the same article", "status": "I did not find the paper in my search, so it is unverified"}, {"claim": "Lowers cortisol production in skin cells by at least 10% at 24 hours", "source": "A claim in a US patent (claim 36 of US 12226379)", "status": "A patent claim is not data. Interesting to watch given the local stress-hormone angle, but it is only a lead"}], "products": {"rankNote": "I cannot rank formulations by efficacy. None of the products below discloses its MVL percentage, and the only trial used 0.1%.", "items": [{"name": "ADEKA Luminacare Mevalonolactone (raw material)", "maker": "ADEKA, Japan", "kind": "Ingredient supplier", "price": "B2B only", "note": "The grade used in the 2022 trial. Reference point for what was actually tested.", "link": "https://knowde.com/stores/adeka-corporation/products/adeka-luminacare-mva-moisturizer-anti-aging-agent", "verified": "Supplier listing seen in search"}, {"name": "Personal Day Dive Deep Mevalonic Moisturizer", "maker": "Personal Day (US)", "kind": "Moisturizer", "price": "US$38, 1.8 oz", "note": "Lists MVL late in the ingredient list, after citric acid and before sodium hyaluronate and phenoxyethanol, which suggests a low level (my inference; ordering below about 1% is not reliable). Also contains squalane, jojoba oil, caprylic/capric triglyceride and an azelaic acid derivative. Rich emollient base: if you are congestion-prone, patch it on a small zone first, because the vehicle may matter more than the MVL.", "link": "https://www.ulta.com/p/dive-deep-mevalonic-moisturizer-pimprod2053659", "verified": "Ingredient list from the retailer page via search; not opened live"}, {"name": "Personal Day Everybody Stay Calm Recovery Mask", "maker": "Personal Day (US)", "kind": "Wash-off mask", "price": "not found", "note": "Contains MVL and azelaic acid per a third-party aggregator. Wash-off contact time makes it a weaker test of the ingredient.", "link": "https://skinsort.com/products/products-with-mevalonolactone", "verified": "Secondhand"}, {"name": "Dr. Different 131 Moisturizer", "maker": "Dr. Different", "kind": "Moisturizer", "price": "from about US$21", "note": "Lowest-priced MVL product the aggregator lists. I did not check the label.", "link": "https://skinsort.com/products/products-with-mevalonolactone", "verified": "Secondhand"}, {"name": "Proya Ruby Series 2.0 Deep Ocean Energy essence", "maker": "Proya (China)", "kind": "Essence", "price": "not found", "note": "Listed by the aggregator with MVL and a retinoid. Not label-checked. Retail path into Canada unknown.", "link": "https://skinsort.com/products/products-with-mevalonolactone", "verified": "Secondhand"}, {"name": "Yuni Beauty Balancing Act Pore Refining Face Cream", "maker": "Yuni Beauty", "kind": "Moisturizer", "price": "not found", "note": "Listed by the aggregator. Not label-checked.", "link": "https://skinsort.com/products/products-with-mevalonolactone", "verified": "Secondhand"}]}, "howToUse": ["Treat it as a barrier-layer swap: PM, after water-based serums, in the slot where a basic moisturizer would go, then occlusive if you use one.", "Do not add it on top of a full routine. If it does not replace a step, skip it.", "The trial used a lotion with 0.1% applied twice daily. Use any product as directed; there is no tested dose beyond that.", "Interactions with retinoids, acids and vitamin C are untested. Nothing I found says it conflicts, but that is absence of data. Introduce it alone for the first week."], "expect": [{"when": "Days 1-3", "what": "Probably nothing visible. Check for stinging or new bumps."}, {"when": "Weeks 2-4", "what": "If it works as in the trial, less tightness or flaking during dry weather (my inference; the trial measured instruments, not feelings)."}, {"when": "Beyond 4 weeks", "what": "No data. Collagen or hyaluronic-acid changes have not been shown in people."}], "contraindications": "None reported in the paper's text. Not tested in pregnancy, in people with skin disease, or on retinoid-treated skin. Treat a 'no reports' as unknown.", "sideBenefits": "None shown in people. The biofilm result is laboratory-only.", "wouldChangeVerdict": ["A second independent trial, ideally 4-8 weeks", "Data in Fitzpatrick IV-VI skin", "A product that discloses the percentage", "Results on retinoid-treated or oily, congestion-prone skin"], "transfer": "Does the mechanism apply to deeper skin tones? The pathway (lipid transport into lamellar granules) is not tone-specific, so I would expect it to transfer. The trial gives no tone data, so that is inference. For this ingredient the efficacy question and the risk question separate: it is not an irritant or exfoliant class, so post-inflammatory pigment risk is not the concern; the vehicle's richness is.", "confidence": ["Read in full: Chen 2022 (open-access full text).", "Abstract only: the biofilm paper.", "Not opened live: retailer ingredient list, aggregator pages and the patent text (read through search snippets).", "Not verified: author affiliations, the study site, numeric effect sizes, the mouse study cited in the press."], "searchedOn": "2026-10-12"}}];</script>
 <script>
+window.SRS_META={"siteName": "SkinRxsearch", "tagline": "A living look", "runs": [{"date": "2026-10-12", "note": "Prototype run. One entry, built to test the format.", "entries": 1, "deep": 1}], "safetyWatch": [], "safetyNote": "No safety or regulatory checks have been run yet. This strip fills from the first scheduled run."};window.SRS_ENTRIES=[{"id": "2026-10-12-mevalonolactone", "run": "2026-10-12", "title": "Mevalonolactone (MVL / mevalonic acid)", "lane": "Ingredient", "verdict": "WATCH", "depth": "dossier", "headline": "A barrier-lipid signal backed by one small, short, double-blind human trial. The louder collagen and hyaluronic-acid claims trace to brand statements, not papers I could find.", "evidenceTier": "Small human RCT (2 weeks) + cell and 3D-epidermis work; ingredient is a commercial supplier product", "evidenceScore": 2, "evidenceScale": 5, "fit": "Plausible for dry-season barrier support, including on retinoid-treated skin (my inference). Weak fit as an acne or sebum fix: the trial population had dry skin and measured water loss, not breakouts.", "displaces": "A basic barrier moisturizer. It should replace that step, not add a step.", "readMinutes": 6, "regions": ["Japan (raw ingredient)", "US", "China"], "tags": ["barrier", "TEWL", "ceramide-adjacent lipids", "PPAR", "ABCA12", "fermentation-derived", "OTC/cosmetic", "winter-dry skin", "needs second trial"], "status": "Watch", "estimateNote": "Prices marked EST are my guesses, not looked up.", "cost": [{"label": "US", "value": "US$38 for 1.8 oz (Personal Day Dive Deep Mevalonic Moisturizer, retailer listing)", "kind": "found"}, {"label": "US, budget", "value": "from about US$21 (Dr. Different 131 Moisturizer, per a third-party aggregator; not label-checked)", "kind": "secondhand"}, {"label": "Canada", "value": "about C$50-55 if it ships here at a straight currency conversion", "kind": "EST"}, {"label": "Korea / Japan / EU", "value": "no retail price found", "kind": "unknown"}], "buzzCheck": "Buzz premium looks modest on price. The real question is dose: no product I found discloses the percentage, and the only human trial used 0.1%.", "summaryPoints": ["Mechanism proposed by the authors: MVL becomes mevalonic acid in water, raises PPAR beta/delta, which raises the lipid transporter ABCA12, which moves free fatty acids into lamellar granules that build the skin's barrier lipids.", "In the trial, the placebo group's water loss got worse over 2 winter weeks and the MVL group's did not. The win is protection against deterioration, not improvement from baseline.", "Nothing visible should be expected at 2 weeks. The endpoints were instrument readings."], "dossier": {"whatItIs": "Mevalonolactone (INCI: Mevalonolactone) is the lactone form of mevalonic acid, a molecule early in the body's cholesterol and isoprenoid pathway. The cosmetic raw material in the trial is produced by fermentation with a sake-related yeast (Saccharomycopsis fibuligera) and sold by ADEKA (Japan) under the name Luminacare. Supplier materials position it as a moisturizing and anti-aging agent.", "mechanism": {"steps": ["Applied topically, MVL reverts to mevalonic acid on contact with water (stated in the paper).", "In cultured keratinocytes, PPAR beta/delta mRNA rose 1.7-fold and ABCA12 mRNA and protein rose.", "ABCA12 is the transporter that loads lipids into lamellar granules, the packets that later become the lipid mortar between skin cells.", "Cells showed more and larger lamellar granules, and free fatty acids were higher (myristic acid about 4.6x, palmitic about 3.6x, palmitoleic about 3.3x).", "Result claimed: less water loss through the stratum corneum."], "inferenceFlag": "The chain from PPAR to ABCA12 to granules is the authors' inference from cell data. They also argue the effect is unlikely to run through cholesterol, because fatty-acid synthesis enzymes did not change. None of this was shown directly in human skin.", "diagramCaption": "MVL -> mevalonic acid -> PPAR beta/delta up -> ABCA12 up -> lipid loading into lamellar granules -> barrier lipids -> lower water loss (authors' model)"}, "studies": [{"cite": "Chen B, Lu N, Lee K, Ye L, Hasegawa C, Maeda K, et al. Application of mevalonolactone prevents deterioration of epidermal barrier function by accelerating the lamellar granule lipid transport system. Skin Res Technol. 2022;28(6):804-814.", "doi": "https://doi.org/10.1111/srt.13202", "pubmed": "https://pubmed.ncbi.nlm.nih.gov/36148627/", "pmc": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9907606", "readDepth": "Full text (open access) read", "design": "Randomized, double-blind, placebo-controlled, parallel-group. 66 women aged 30-60 enrolled; 30 active and 29 placebo analyzed. Two weeks, January-February 2020. Lotion with 0.1% MVL versus the same lotion without it, applied to the face twice daily.", "who": "Healthy women with low stratum corneum water, high water loss and low surface lipid. Skin disease (atopic dermatitis, psoriasis, ichthyosis) excluded. Mean age about 45. Skin tone and ethnicity are not reported in the text I read. The study site is not stated in the text either.", "results": ["Water loss (TEWL): the placebo group worsened significantly over the 2 weeks; the MVL group did not change. The between-group difference in change was significant (p<0.05).", "Stratum corneum water content (Corneometer): rose within the MVL group (p<0.01) but the difference between groups was not significant.", "Surface lipid: no change within either group; the between-group change favored MVL (p<0.05). The authors note the reading mixes sebum and skin-barrier lipids, so the source is unclear.", "Lab side: in a 3D epidermis model, TEWL was reported as '27% compared with control' (the wording is ambiguous; check the paper before quoting a number)."], "effectSize": "Numeric means and confidence intervals are in scatter plots (figures 5-6) and not in the text I read. I cannot give a percent improvement.", "placebo": "The placebo lotion contained the base formula, so a plain moisturizer effect is built into the comparison. The placebo group still got worse, which the authors attribute to winter conditions.", "material": "Not established. Subjects completed skin questionnaires, but those results are not reported in the text I read. A TEWL difference at 2 weeks is a measurable change; whether it is something you would feel is unknown.", "adverse": "No adverse events are described in the text I read. Absence of reporting is not evidence of safety.", "conflict": "Authors declare no conflict of interest. The MVL tested was the ADEKA commercial raw material. I could not confirm author affiliations from what I read.", "limits": "One trial, 59 analyzed people, 2 weeks, dry-skin population, no skin-tone data, no follow-up after stopping, one season. The authors also doubled the concentration relative to cell work because the stratum corneum limits permeability (their statement)."}, {"cite": "Scopel M, Abraham WR, Antunes AL, Henriques AT, Macedo AJ. Mevalonolactone: an inhibitor of Staphylococcus epidermidis adherence and biofilm formation. Med Chem. 2014;10(3):246-51.", "doi": "https://doi.org/10.2174/15734064113096660055", "pubmed": "https://pubmed.ncbi.nlm.nih.gov/24111986/", "readDepth": "Abstract only", "design": "Laboratory antibiofilm and antimicrobial assays on S. epidermidis, including 12 clinical isolates.", "who": "Bacterial cultures. No people.", "results": ["MVL reduced biofilm formation of S. epidermidis without antibacterial activity against the reference strain; the clinical isolates showed both biofilm inhibition and antimicrobial activity. No effect on gram-negative bacteria."], "effectSize": "Not extracted from the abstract.", "placebo": "Not applicable.", "material": "Not applicable. S. epidermidis is also a skin commensal, so whether this helps or harms a skin microbiome is unknown.", "adverse": "Not applicable.", "conflict": "Not checked.", "limits": "Laboratory only. Do not read this as an anti-acne finding."}], "claimsCheck": [{"claim": "Boosts hyaluronic acid and collagen production", "source": "Brand marketing and lifestyle press", "status": "No peer-reviewed human data found in my PubMed search"}, {"claim": "80% more cell turnover, 60% hydration, 50% collagen (quoted from a brand in a women's-health article)", "source": "Brand-reported", "status": "Self-described as early; not traceable to a paper I could find"}, {"claim": "Topical mevalonic acid restored cholesterol synthesis in older mice", "source": "Cited secondhand in the same article", "status": "I did not find the paper in my search, so it is unverified"}, {"claim": "Lowers cortisol production in skin cells by at least 10% at 24 hours", "source": "A claim in a US patent (claim 36 of US 12226379)", "status": "A patent claim is not data. Interesting to watch given the local stress-hormone angle, but it is only a lead"}], "products": {"rankNote": "I cannot rank formulations by efficacy. None of the products below discloses its MVL percentage, and the only trial used 0.1%.", "items": [{"name": "ADEKA Luminacare Mevalonolactone (raw material)", "maker": "ADEKA, Japan", "kind": "Ingredient supplier", "price": "B2B only", "note": "The grade used in the 2022 trial. Reference point for what was actually tested.", "link": "https://knowde.com/stores/adeka-corporation/products/adeka-luminacare-mva-moisturizer-anti-aging-agent", "verified": "Supplier listing seen in search"}, {"name": "Personal Day Dive Deep Mevalonic Moisturizer", "maker": "Personal Day (US)", "kind": "Moisturizer", "price": "US$38, 1.8 oz", "note": "Lists MVL late in the ingredient list, after citric acid and before sodium hyaluronate and phenoxyethanol, which suggests a low level (my inference; ordering below about 1% is not reliable). Also contains squalane, jojoba oil, caprylic/capric triglyceride and an azelaic acid derivative. Rich emollient base: if you are congestion-prone, patch it on a small zone first, because the vehicle may matter more than the MVL.", "link": "https://www.ulta.com/p/dive-deep-mevalonic-moisturizer-pimprod2053659", "verified": "Ingredient list from the retailer page via search; not opened live"}, {"name": "Personal Day Everybody Stay Calm Recovery Mask", "maker": "Personal Day (US)", "kind": "Wash-off mask", "price": "not found", "note": "Contains MVL and azelaic acid per a third-party aggregator. Wash-off contact time makes it a weaker test of the ingredient.", "link": "https://skinsort.com/products/products-with-mevalonolactone", "verified": "Secondhand"}, {"name": "Dr. Different 131 Moisturizer", "maker": "Dr. Different", "kind": "Moisturizer", "price": "from about US$21", "note": "Lowest-priced MVL product the aggregator lists. I did not check the label.", "link": "https://skinsort.com/products/products-with-mevalonolactone", "verified": "Secondhand"}, {"name": "Proya Ruby Series 2.0 Deep Ocean Energy essence", "maker": "Proya (China)", "kind": "Essence", "price": "not found", "note": "Listed by the aggregator with MVL and a retinoid. Not label-checked. Retail path into Canada unknown.", "link": "https://skinsort.com/products/products-with-mevalonolactone", "verified": "Secondhand"}, {"name": "Yuni Beauty Balancing Act Pore Refining Face Cream", "maker": "Yuni Beauty", "kind": "Moisturizer", "price": "not found", "note": "Listed by the aggregator. Not label-checked.", "link": "https://skinsort.com/products/products-with-mevalonolactone", "verified": "Secondhand"}]}, "howToUse": ["Treat it as a barrier-layer swap: PM, after water-based serums, in the slot where a basic moisturizer would go, then occlusive if you use one.", "Do not add it on top of a full routine. If it does not replace a step, skip it.", "The trial used a lotion with 0.1% applied twice daily. Use any product as directed; there is no tested dose beyond that.", "Interactions with retinoids, acids and vitamin C are untested. Nothing I found says it conflicts, but that is absence of data. Introduce it alone for the first week."], "expect": [{"when": "Days 1-3", "what": "Probably nothing visible. Check for stinging or new bumps."}, {"when": "Weeks 2-4", "what": "If it works as in the trial, less tightness or flaking during dry weather (my inference; the trial measured instruments, not feelings)."}, {"when": "Beyond 4 weeks", "what": "No data. Collagen or hyaluronic-acid changes have not been shown in people."}], "contraindications": "None reported in the paper's text. Not tested in pregnancy, in people with skin disease, or on retinoid-treated skin. Treat a 'no reports' as unknown.", "sideBenefits": "None shown in people. The biofilm result is laboratory-only.", "wouldChangeVerdict": ["A second independent trial, ideally 4-8 weeks", "Data in Fitzpatrick IV-VI skin", "A product that discloses the percentage", "Results on retinoid-treated or oily, congestion-prone skin"], "transfer": "Does the mechanism apply to deeper skin tones? The pathway (lipid transport into lamellar granules) is not tone-specific, so I would expect it to transfer. The trial gives no tone data, so that is inference. For this ingredient the efficacy question and the risk question separate: it is not an irritant or exfoliant class, so post-inflammatory pigment risk is not the concern; the vehicle's richness is.", "confidence": ["Read in full: Chen 2022 (open-access full text).", "Abstract only: the biofilm paper.", "Not opened live: retailer ingredient list, aggregator pages and the patent text (read through search snippets).", "Not verified: author affiliations, the study site, numeric effect sizes, the mouse study cited in the press."], "searchedOn": "2026-10-12"}, "humanTrial": true, "toneData": "not reported", "fitRating": "Partial", "fitLine": "Plausible for dry-season barrier support; weak for acne or sebum.", "priceStrip": [{"m": "US", "v": "US$38", "k": "found"}, {"m": "CA", "v": "~C$50-55", "k": "EST"}, {"m": "KR/JP/EU", "v": "not found", "k": "unknown"}], "timeline": "Instrument change by 2 weeks; felt change unknown"}];window.SRS_ICONS={"search": "<circle cx=\"11\" cy=\"11\" r=\"8\" /> <path d=\"m21 21-4.3-4.3\" />", "bookmark": "<path d=\"m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z\" />", "bookmark-check": "<path d=\"m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2Z\" /> <path d=\"m9 10 2 2 4-4\" />", "x": "<path d=\"M18 6 6 18\" /> <path d=\"m6 6 12 12\" />", "chevron-right": "<path d=\"m9 18 6-6-6-6\" />", "chevron-down": "<path d=\"m6 9 6 6 6-6\" />", "scale": "<path d=\"m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z\" /> <path d=\"m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z\" /> <path d=\"M7 21h10\" /> <path d=\"M12 3v18\" /> <path d=\"M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2\" />", "flask-conical": "<path d=\"M14 2v6a2 2 0 0 0 .245.96l5.51 10.08A2 2 0 0 1 18 22H6a2 2 0 0 1-1.755-2.96l5.51-10.08A2 2 0 0 0 10 8V2\" /> <path d=\"M6.453 15h11.094\" /> <path d=\"M8.5 2h7\" />", "clock": "<circle cx=\"12\" cy=\"12\" r=\"10\" /> <polyline points=\"12 6 12 12 16 14\" />", "external-link": "<path d=\"M15 3h6v6\" /> <path d=\"M10 14 21 3\" /> <path d=\"M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6\" />", "shield-alert": "<path d=\"M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z\" /> <path d=\"M12 8v4\" /> <path d=\"M12 16h.01\" />", "layers": "<path d=\"M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z\" /> <path d=\"M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12\" /> <path d=\"M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17\" />", "sparkles": "<path d=\"M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z\" /> <path d=\"M20 3v4\" /> <path d=\"M22 5h-4\" /> <path d=\"M4 17v2\" /> <path d=\"M5 18H3\" />", "check": "<path d=\"M20 6 9 17l-5-5\" />", "eye": "<path d=\"M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0\" /> <circle cx=\"12\" cy=\"12\" r=\"3\" />", "leaf": "<path d=\"M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z\" /> <path d=\"M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12\" />", "arrow-right": "<path d=\"M5 12h14\" /> <path d=\"m12 5 7 7-7 7\" />", "circle-help": "<circle cx=\"12\" cy=\"12\" r=\"10\" /> <path d=\"M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3\" /> <path d=\"M12 17h.01\" />", "flag": "<path d=\"M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z\" /> <line x1=\"4\" x2=\"4\" y1=\"22\" y2=\"15\" />", "users": "<path d=\"M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2\" /> <circle cx=\"9\" cy=\"7\" r=\"4\" /> <path d=\"M22 21v-2a4 4 0 0 0-3-3.87\" /> <path d=\"M16 3.13a4 4 0 0 1 0 7.75\" />", "file-text": "<path d=\"M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z\" /> <path d=\"M14 2v4a2 2 0 0 0 2 2h4\" /> <path d=\"M10 9H8\" /> <path d=\"M16 13H8\" /> <path d=\"M16 17H8\" />", "tag": "<path d=\"M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z\" /> <circle cx=\"7.5\" cy=\"7.5\" r=\".5\" fill=\"currentColor\" />", "rotate-ccw": "<path d=\"M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8\" /> <path d=\"M3 3v5h5\" />", "sliders-horizontal": "<line x1=\"21\" x2=\"14\" y1=\"4\" y2=\"4\" /> <line x1=\"10\" x2=\"3\" y1=\"4\" y2=\"4\" /> <line x1=\"21\" x2=\"12\" y1=\"12\" y2=\"12\" /> <line x1=\"8\" x2=\"3\" y1=\"12\" y2=\"12\" /> <line x1=\"21\" x2=\"16\" y1=\"20\" y2=\"20\" /> <line x1=\"12\" x2=\"3\" y1=\"20\" y2=\"20\" /> <line x1=\"14\" x2=\"14\" y1=\"2\" y2=\"6\" /> <line x1=\"8\" x2=\"8\" y1=\"10\" y2=\"14\" /> <line x1=\"16\" x2=\"16\" y1=\"18\" y2=\"22\" />", "book-open": "<path d=\"M12 7v14\" /> <path d=\"M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z\" />"};
 (function(){
-  var E = window.SRS_ENTRIES || [], M = window.SRS_META || {};
-  var state = {q:"", verdict:null, lane:null, tag:null, tab:"feed", cmp:[], open:{}};
-  var main = document.getElementById("main");
+"use strict";
+var META = window.SRS_META || {}, ALL = window.SRS_ENTRIES || [], ICONS = window.SRS_ICONS || {};
+var VERDICTS = ["TRY","WATCH","NOVEL","SKIP"];
+var VERDICT_VAR = {TRY:"--c-try",WATCH:"--c-watch",NOVEL:"--c-novel",SKIP:"--c-skip"};
+var VERDICT_NOTE = {TRY:"Worth testing",WATCH:"Promising, not yet",NOVEL:"New and unproven",SKIP:"Not worth it"};
+var STATUSES = ["Watch","Trialing","Adopted","Dropped"];
 
-  function h(tag, attrs, kids){
-    var el = document.createElement(tag);
-    if (attrs) for (var k in attrs){
-      if (k === "class") el.className = attrs[k];
-      else if (k === "text") el.textContent = attrs[k];
-      else if (k.slice(0,2) === "on") el.addEventListener(k.slice(2), attrs[k]);
-      else el.setAttribute(k, attrs[k]);
-    }
-    (kids || []).forEach(function(c){ if (c == null) return; el.appendChild(typeof c === "string" ? document.createTextNode(c) : c); });
-    return el;
-  }
-  function link(href, text){ return h("a", {href:href, target:"_blank", rel:"noopener noreferrer", text:text}); }
-  function sec(t){ return h("div", {class:"sec", text:t}); }
-  function meter(n, of){ var m = h("span",{class:"meter",role:"img","aria-label":n+" of "+of}); for (var i=0;i<of;i++) m.appendChild(h("i",{class:i<n?"on":""})); return m; }
+/* storage: per device, with in-memory fallback */
+var mem = {};
+function sget(k, d){ try{ var v = localStorage.getItem(k); return v ? JSON.parse(v) : d; }catch(e){ return mem[k] !== undefined ? mem[k] : d; } }
+function sset(k, v){ mem[k] = v; try{ localStorage.setItem(k, JSON.stringify(v)); }catch(e){} }
+var saved = sget("srs.saved", []), statuses = sget("srs.status", {});
 
-  document.getElementById("sub").textContent = "A living look · updated " + ((M.runs && M.runs[0] && M.runs[0].date) || "");
+var state = { q:"", verdicts:[], lanes:[], tag:"", sort:"new", savedOnly:false, tab:"feed", compare:sget("srs.cmp", []), open:null };
+var lastTrigger = null;
 
-  function match(e){
-    if (state.verdict && e.verdict !== state.verdict) return false;
-    if (state.lane && e.lane !== state.lane) return false;
-    if (state.tag && (e.tags||[]).indexOf(state.tag) < 0) return false;
-    if (state.q && JSON.stringify(e).toLowerCase().indexOf(state.q.toLowerCase()) < 0) return false;
-    return true;
-  }
+function esc(s){ return String(s == null ? "" : s).replace(/[&<>"']/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]; }); }
+function ic(n, cls){ return '<svg class="'+(cls||"h-4 w-4")+'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+(ICONS[n]||"")+'</svg>'; }
+function byId(id){ for (var i=0;i<ALL.length;i++) if (ALL[i].id === id) return ALL[i]; return null; }
+function $(s, r){ return (r||document).querySelector(s); }
+function safeUrl(u){ return /^https?:\/\//i.test(u||"") ? u : ""; }
+function isSaved(id){ return saved.indexOf(id) > -1; }
+function statusOf(e){ return statuses[e.id] || e.status || "Watch"; }
+function latestRun(){ var r = ALL.map(function(e){return e.run||"";}).sort(); return r.length ? r[r.length-1] : ""; }
+function fmtDate(d){ try{ return new Date(d+"T12:00:00").toLocaleDateString("en-CA",{year:"numeric",month:"short",day:"numeric"}); }catch(e){ return d; } }
 
-  function chips(){
-    var vs = ["WATCH","TRY","SKIP","NOVEL"], ls = Array.from(new Set(E.map(function(e){return e.lane;})));
-    var vc = document.getElementById("vchips"), lc = document.getElementById("lchips");
-    vc.textContent = ""; lc.textContent = "";
-    vs.forEach(function(v){ vc.appendChild(h("button",{class:"chip","aria-pressed":String(state.verdict===v),text:v,onclick:function(){state.verdict=state.verdict===v?null:v;render();}})); });
-    ls.forEach(function(l){ lc.appendChild(h("button",{class:"chip","aria-pressed":String(state.lane===l),text:l,onclick:function(){state.lane=state.lane===l?null:l;render();}})); });
-    if (state.tag) lc.appendChild(h("button",{class:"chip","aria-pressed":"true",text:"#"+state.tag+" ×",onclick:function(){state.tag=null;render();}}));
-  }
+function pill(v){ return '<span class="pill inline-flex items-center rounded-full px-3 py-1 text-xs font-bold tracking-wider" style="--pc:var('+(VERDICT_VAR[v]||"--c-skip")+')">'+esc(v)+'</span>'; }
+function meter(n, of){ var s = ""; for (var i=0;i<of;i++) s += '<i class="block h-2 w-4 rounded-full" style="background:'+(i<n?"var(--accent)":"var(--line)")+'"></i>'; return '<span class="inline-flex gap-1 items-center" role="img" aria-label="Evidence '+n+' of '+of+'">'+s+'</span>'; }
+function linkBtn(href, label){ var u = safeUrl(href); if (!u) return ""; return '<a href="'+esc(u)+'" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 rounded-full chipbtn px-3 min-h-[44px] text-sm font-semibold">'+esc(label)+ic("external-link","h-3.5 w-3.5")+'</a>'; }
+function fitStyle(r){ return r === "Strong" ? "--c-try" : r === "Weak" ? "--c-skip" : "--c-watch"; }
 
-  function triage(e){
-    var open = !!state.open[e.id];
-    var card = h("article", {class:"card", id:e.id});
-    card.appendChild(h("div",null,[h("span",{class:"badge v-"+e.verdict,text:e.verdict}), h("span",{class:"lane",text:e.lane+" · "+e.run})]));
-    card.appendChild(h("h2",{text:e.title}));
-    card.appendChild(h("div",{text:e.headline}));
-    card.appendChild(h("div",{class:"meta"},[
-      h("span",null,["evidence", meter(e.evidenceScore, e.evidenceScale||5)]),
-      h("span",{text:"~"+e.readMinutes+" min read"})
-    ]));
-    card.appendChild(h("div",{class:"meta",text:e.evidenceTier}));
-    card.appendChild(h("div",{class:"block"},[h("b",{text:"Fit for you"}), e.fit]));
-    if (e.displaces) card.appendChild(h("div",{class:"block"},[h("b",{text:"What it displaces"}), e.displaces]));
-    var pts = h("ul",{class:"points"}); (e.summaryPoints||[]).forEach(function(p){ pts.appendChild(h("li",{text:p})); }); card.appendChild(pts);
-    var costs = h("div",{class:"meta"}); (e.cost||[]).forEach(function(c){
-      costs.appendChild(h("span",null,[c.label+": ", c.kind==="EST"? h("span",{class:"est",text:"EST"}):null, " "+c.value])); });
-    card.appendChild(costs);
-    if (e.buzzCheck) card.appendChild(h("div",{class:"meta",text:"Buzz check: "+e.buzzCheck}));
-    var tg = h("div",{class:"tags"}); (e.tags||[]).forEach(function(t){ tg.appendChild(h("button",{class:"tag",text:"#"+t,onclick:function(){state.tag=t;render();}})); }); card.appendChild(tg);
-    var life = h("div",{class:"life"}); ["Watch","Trialing","Adopted","Dropped"].forEach(function(s){ life.appendChild(h("span",{class:e.status===s?"on":"",text:s})); }); card.appendChild(life);
-    var lab = h("label",{class:"cmpbox"},[h("input",{type:"checkbox",id:"cmp-"+e.id,onchange:function(ev){
-      var i = state.cmp.indexOf(e.id);
-      if (ev.target.checked && i<0) state.cmp.push(e.id);
-      if (!ev.target.checked && i>=0) state.cmp.splice(i,1);
-    }}), " add to compare"]);
-    lab.firstChild.checked = state.cmp.indexOf(e.id) >= 0;
-    card.appendChild(lab);
-    if (e.dossier){
-      var d = h("details"); if (open) d.setAttribute("open","");
-      d.addEventListener("toggle", function(){ state.open[e.id] = d.open; });
-      d.appendChild(h("summary",{text:"Full dossier"}));
-      dossier(d, e);
-      card.appendChild(d);
-    } else if (e.links){
-      var l = h("div",{class:"links"}); e.links.forEach(function(x){ l.appendChild(link(x.url,x.label)); }); card.appendChild(l);
-      card.appendChild(h("div",{class:"meta",text:"Link-only entry. Ask in chat to deepen it."}));
-    }
-    return card;
-  }
+/* ---------- metrics ---------- */
+function metrics(){
+  var n = ALL.length, lr = latestRun();
+  var fresh = ALL.filter(function(e){ return e.run === lr; }).length;
+  var human = ALL.filter(function(e){ return e.humanTrial; }).length;
+  var tone = ALL.filter(function(e){ return e.toneData === "reported" || e.toneData === "partial"; }).length;
+  var cards = [
+    ["layers","Entries", n, "across "+((META.runs||[]).length||1)+" run"+(((META.runs||[]).length||1)>1?"s":"")],
+    ["sparkles","New this run", fresh, lr ? "run of "+fmtDate(lr) : ""],
+    ["flask-conical","Human trial", human, "of "+n+(n===1?" entry":" entries")],
+    ["users","Skin-tone data", tone, "of "+n+" report it"],
+    ["bookmark-check","Saved", saved.filter(function(id){return byId(id);}).length, "on this device"]
+  ];
+  $("#metrics").innerHTML = cards.map(function(c){
+    return '<div class="glass rounded-3xl p-4 last:col-span-2 sm:last:col-span-1"><div class="flex items-center gap-2 text-mute">'+ic(c[0],"h-4 w-4")+'<span class="eyebrow">'+esc(c[1])+'</span></div>'
+      + '<div class="font-display text-5xl leading-none mt-2">'+esc(c[2])+'</div><div class="text-xs text-mute mt-1">'+esc(c[3])+'</div></div>';
+  }).join("");
+}
 
-  function dossier(root, e){
-    var d = e.dossier;
-    root.appendChild(sec("What it is")); root.appendChild(h("p",{text:d.whatItIs}));
-    root.appendChild(sec("How it works"));
-    var flow = h("div",{class:"flow"}); d.mechanism.steps.forEach(function(s,i){ flow.appendChild(h("div",{class:"step"},[h("i",{text:String(i+1)}), h("div",{text:s})])); });
-    root.appendChild(flow);
-    root.appendChild(h("div",{class:"infer"},[h("b",{text:"Inference, not shown directly. "}), d.mechanism.inferenceFlag]));
-    root.appendChild(sec("Studies"));
-    d.studies.forEach(function(s){
-      var box = h("div",{class:"study"});
-      box.appendChild(h("div",{class:"cite",text:s.cite}));
-      var l = h("div",{class:"links"}); if (s.doi) l.appendChild(link(s.doi,"DOI")); if (s.pubmed) l.appendChild(link(s.pubmed,"PubMed")); if (s.pmc) l.appendChild(link(s.pmc,"Full text (PMC)")); box.appendChild(l);
-      var dl = h("dl");
-      function row(k,v){ if (!v) return; dl.appendChild(h("dt",{text:k})); if (Array.isArray(v)){ var ul=h("ul"); v.forEach(function(x){ul.appendChild(h("li",{text:x}));}); dl.appendChild(h("dd",null,[ul])); } else dl.appendChild(h("dd",{text:v})); }
-      row("How much I read", s.readDepth); row("Design", s.design); row("Who was included", s.who); row("Results", s.results);
-      row("Effect size", s.effectSize); row("Placebo arm", s.placebo); row("Material?", s.material); row("Adverse events", s.adverse);
-      row("Conflicts", s.conflict); row("Limits", s.limits);
-      box.appendChild(dl); root.appendChild(box);
-    });
-    root.appendChild(sec("Claims check"));
-    var tbl = h("table"); tbl.appendChild(h("tr",null,[h("th",{text:"Claim"}),h("th",{text:"Where from"}),h("th",{text:"Status"})]));
-    d.claimsCheck.forEach(function(c){ tbl.appendChild(h("tr",null,[h("td",{text:c.claim}),h("td",{text:c.source}),h("td",{text:c.status})])); });
-    root.appendChild(h("div",{class:"scroll"},[tbl]));
-    root.appendChild(sec("Products and sources"));
-    root.appendChild(h("p",{text:d.products.rankNote}));
-    d.products.items.forEach(function(p){
-      var box = h("div",{class:"prod"});
-      box.appendChild(h("div",{class:"ph",text:"image placeholder · see source link"}));
-      box.appendChild(h("div",null,[h("b",{text:p.name}), " · "+p.maker+" · "+p.kind]));
-      box.appendChild(h("div",{class:"meta",text:"Price: "+p.price+" · Check level: "+p.verified}));
-      box.appendChild(h("div",{text:p.note}));
-      box.appendChild(h("div",{class:"links"},[link(p.link,"Source")]));
-      root.appendChild(box);
-    });
-    root.appendChild(sec("How to use it"));
-    var u = h("ul"); d.howToUse.forEach(function(x){u.appendChild(h("li",{text:x}));}); root.appendChild(u);
-    root.appendChild(sec("What to expect, and when"));
-    var t2 = h("table"); d.expect.forEach(function(x){ t2.appendChild(h("tr",null,[h("td",{text:x.when}),h("td",{text:x.what})])); }); root.appendChild(h("div",{class:"scroll"},[t2]));
-    root.appendChild(sec("Safety and side benefits"));
-    root.appendChild(h("p",{text:"Contraindications and side effects: "+d.contraindications}));
-    root.appendChild(h("p",{text:"Side benefits: "+d.sideBenefits}));
-    root.appendChild(sec("Does the mechanism transfer?")); root.appendChild(h("p",{text:d.transfer}));
-    root.appendChild(sec("What would change this verdict"));
-    var w = h("ul"); d.wouldChangeVerdict.forEach(function(x){w.appendChild(h("li",{text:x}));}); root.appendChild(w);
-    root.appendChild(sec("Confidence in this entry"));
-    var c = h("ul"); d.confidence.forEach(function(x){c.appendChild(h("li",{text:x}));}); root.appendChild(c);
-    root.appendChild(h("div",{class:"meta",text:"Searched on "+d.searchedOn}));
-  }
+function safety(){
+  var items = META.safetyWatch || [], el = $("#safety");
+  var body = items.length ? '<ul class="list-disc pl-5 space-y-1">'+items.map(function(s){ return '<li>'+esc(s.text||s)+'</li>'; }).join("")+'</ul>' : esc(META.safetyNote || "");
+  if (!body) { el.innerHTML = ""; return; }
+  el.innerHTML = '<div class="glass rounded-3xl p-4 flex gap-3 items-start text-sm"><span class="mt-0.5 text-warn">'+ic("shield-alert","h-5 w-5")+'</span><div><div class="eyebrow">Safety and regulatory watch</div><div class="mt-1">'+body+'</div></div></div>';
+}
 
-  function feed(){
-    main.textContent = "";
-    var list = E.filter(match);
-    if (!list.length){ main.appendChild(h("div",{class:"empty",text:"Nothing matches. Clear a filter."})); return; }
-    var g = h("div",{class:"grid"}); list.forEach(function(e){ g.appendChild(triage(e)); }); main.appendChild(g);
+/* ---------- filtering ---------- */
+function matches(e){
+  if (state.savedOnly && !isSaved(e.id)) return false;
+  if (state.verdicts.length && state.verdicts.indexOf(e.verdict) < 0) return false;
+  if (state.lanes.length && state.lanes.indexOf(e.lane) < 0) return false;
+  if (state.tag && (e.tags||[]).indexOf(state.tag) < 0) return false;
+  if (state.q){
+    var hay = [e.title,e.headline,e.lane,e.verdict,(e.tags||[]).join(" "),e.dossier&&e.dossier.whatItIs,e.fit].join(" ").toLowerCase();
+    var parts = state.q.toLowerCase().split(/\s+/).filter(Boolean);
+    for (var i=0;i<parts.length;i++) if (hay.indexOf(parts[i]) < 0) return false;
   }
-  function compare(){
-    main.textContent = "";
-    var sel = E.filter(function(e){return state.cmp.indexOf(e.id)>=0;});
-    if (sel.length < 2){ main.appendChild(h("div",{class:"empty",text:"Tick “add to compare” on two or three entries in the feed, then come back here."})); return; }
-    var t = h("table"); var head = h("tr",null,[h("th",{text:""})]); sel.forEach(function(e){head.appendChild(h("th",{text:e.title}));}); t.appendChild(head);
-    [["Verdict",function(e){return e.verdict;}],["Lane",function(e){return e.lane;}],["Evidence",function(e){return e.evidenceTier;}],["Fit",function(e){return e.fit;}],["Displaces",function(e){return e.displaces;}],["Regions",function(e){return (e.regions||[]).join(", ");}],["Cost",function(e){return (e.cost||[]).map(function(c){return c.label+": "+c.value+(c.kind==="EST"?" (EST)":"");}).join("; ");}]].forEach(function(r){
-      var tr = h("tr",null,[h("th",{text:r[0]})]); sel.forEach(function(e){ tr.appendChild(h("td",{text:r[1](e)})); }); t.appendChild(tr);
-    });
-    main.appendChild(h("div",{class:"scroll"},[t]));
+  return true;
+}
+function sorted(list){
+  var o = {TRY:0,NOVEL:1,WATCH:2,SKIP:3};
+  var l = list.slice();
+  l.sort(function(a,b){
+    if (state.sort === "ev") return (b.evidenceScore||0)-(a.evidenceScore||0);
+    if (state.sort === "verdict") return (o[a.verdict]||9)-(o[b.verdict]||9);
+    if (state.sort === "read") return (a.readMinutes||99)-(b.readMinutes||99);
+    return (b.run||"").localeCompare(a.run||"");
+  });
+  return l;
+}
+function chipRow(){
+  var lanes = []; ALL.forEach(function(e){ if (e.lane && lanes.indexOf(e.lane)<0) lanes.push(e.lane); });
+  var h = VERDICTS.map(function(v){
+    return '<button data-act="verdict" data-v="'+v+'" aria-pressed="'+(state.verdicts.indexOf(v)>-1)+'" class="chipbtn rounded-full px-4 min-h-[44px] text-sm font-semibold inline-flex items-center gap-2"><i class="block h-2.5 w-2.5 rounded-full" style="background:var('+VERDICT_VAR[v]+')"></i>'+v+'</button>';
+  }).join("");
+  h += '<span class="mx-1 h-6 w-px bg-line" aria-hidden="true"></span>';
+  h += lanes.map(function(l){ return '<button data-act="lane" data-l="'+esc(l)+'" aria-pressed="'+(state.lanes.indexOf(l)>-1)+'" class="chipbtn rounded-full px-4 min-h-[44px] text-sm font-semibold">'+esc(l)+'</button>'; }).join("");
+  $("#chipRow").innerHTML = h;
+  var tags = {}; ALL.forEach(function(e){ (e.tags||[]).forEach(function(t){ tags[t] = (tags[t]||0)+1; }); });
+  var names = Object.keys(tags).sort();
+  $("#tagSel").innerHTML = '<option value="">All</option>' + names.map(function(t){ return '<option value="'+esc(t)+'"'+(state.tag===t?" selected":"")+'>'+esc(t)+' ('+tags[t]+')</option>'; }).join("");
+  $("#savedBtn").setAttribute("aria-pressed", state.savedOnly);
+  $("#savedBtn").innerHTML = ic("bookmark","h-4 w-4")+" Saved only";
+  var active = state.verdicts.length + state.lanes.length + (state.tag?1:0) + (state.q?1:0) + (state.savedOnly?1:0);
+  var cb = $("#clearBtn"); cb.classList.toggle("hidden", !active); cb.textContent = "Clear "+active+" filter"+(active>1?"s":"");
+}
+
+/* ---------- cards ---------- */
+function priceStrip(e){
+  if (!e.priceStrip || !e.priceStrip.length) return "";
+  return '<div class="flex flex-wrap gap-x-4 gap-y-1 font-mono text-xs">'+e.priceStrip.map(function(p){
+    var tag = p.k === "EST" ? ' <span class="est rounded px-1">EST</span>' : p.k === "unknown" ? ' <span class="text-mute">?</span>' : "";
+    return '<span><span class="text-mute">'+esc(p.m)+'</span> '+esc(p.v)+tag+'</span>';
+  }).join("")+'</div>';
+}
+function card(e){
+  var sv = isSaved(e.id), cm = state.compare.indexOf(e.id) > -1, st = statusOf(e);
+  var fit = e.fitRating ? '<div class="flex gap-2 text-sm"><span class="shrink-0 font-semibold" style="color:var('+fitStyle(e.fitRating)+')">'+esc(e.fitRating)+' fit</span><span class="text-mute">'+esc(e.fitLine||"")+'</span></div>' : "";
+  var dis = e.displaces ? '<div class="text-sm"><span class="eyebrow mr-1">Displaces</span>'+esc(e.displaces)+'</div>' : "";
+  var tags = (e.tags||[]).slice(0,5).map(function(t){ return '<button data-act="tag" data-t="'+esc(t)+'" class="relative z-10 font-mono text-xs rounded-md px-2 py-1 chipbtn">#'+esc(t.replace(/\s+/g,"-"))+'</button>'; }).join(" ");
+  return '<article class="glass card relative rounded-3xl p-5 flex flex-col gap-3">'
+    + '<div class="flex items-center gap-3 flex-wrap">'+pill(e.verdict)+'<span class="text-xs text-mute">'+esc(VERDICT_NOTE[e.verdict]||"")+'</span>'
+    + '<span class="ml-auto inline-flex items-center gap-3 text-xs text-mute">'+meter(e.evidenceScore||0, e.evidenceScale||5)+'<span class="inline-flex items-center gap-1">'+ic("clock","h-3.5 w-3.5")+(e.readMinutes||"?")+' min</span></span></div>'
+    + '<div><div class="eyebrow">'+esc(e.lane||"")+(e.depth==="dossier"?" · full dossier":" · triage")+'</div>'
+    + '<h2 class="font-display text-3xl leading-tight mt-1"><button data-act="open" data-id="'+esc(e.id)+'" class="text-left after:absolute after:inset-0 after:rounded-3xl">'+esc(e.title)+'</button></h2></div>'
+    + '<p class="text-[15px] clamp3">'+esc(e.headline||"")+'</p>'
+    + fit + dis + priceStrip(e)
+    + '<div class="flex flex-wrap gap-1.5">'+tags+'</div>'
+    + '<div class="relative z-10 mt-auto pt-3 border-t border-line flex items-center gap-2 flex-wrap">'
+    + '<label class="inline-flex items-center gap-2 text-xs text-mute"><span class="sr-only">Status for '+esc(e.title)+'</span><select data-status="'+esc(e.id)+'" class="rounded-xl border border-line min-h-[44px] px-2 text-sm">'+STATUSES.map(function(s){ return '<option'+(s===st?" selected":"")+'>'+s+'</option>'; }).join("")+'</select></label>'
+    + '<button data-act="cmp" data-id="'+esc(e.id)+'" aria-pressed="'+cm+'" class="chipbtn rounded-full min-h-[44px] px-3 text-sm font-semibold inline-flex items-center gap-1.5">'+ic("scale","h-4 w-4")+'Compare</button>'
+    + '<button data-act="save" data-id="'+esc(e.id)+'" aria-pressed="'+sv+'" aria-label="'+(sv?"Remove bookmark":"Bookmark")+' '+esc(e.title)+'" class="chipbtn ml-auto rounded-full min-h-[44px] min-w-[44px] inline-flex items-center justify-center">'+ic(sv?"bookmark-check":"bookmark","h-5 w-5")+'</button>'
+    + '</div></article>';
+}
+function feed(){
+  var list = sorted(ALL.filter(matches));
+  $("#count").textContent = list.length + " of " + ALL.length + " shown";
+  if (!list.length){
+    $("#view").innerHTML = '<div class="glass rounded-3xl p-8 text-center"><div class="font-display text-3xl">Nothing matches</div><p class="text-mute mt-2">Loosen a filter or clear them all.</p></div>';
+    return;
   }
-  function runs(){
-    main.textContent = "";
-    (M.runs||[]).forEach(function(r){ main.appendChild(h("div",{class:"card"},[h("b",{text:r.date}), h("div",{text:r.note}), h("div",{class:"meta",text:r.entries+" entries · "+r.deep+" full dossiers"})])); });
+  $("#view").innerHTML = '<div class="grid gap-4 md:grid-cols-2">'+list.map(card).join("")+'</div>';
+}
+
+/* ---------- compare ---------- */
+function compareView(){
+  $("#count").textContent = state.compare.length + " selected, up to 3";
+  var picker = '<div class="flex flex-wrap gap-2 mb-4">'+ALL.map(function(e){ var on = state.compare.indexOf(e.id)>-1; return '<button data-act="cmp" data-id="'+esc(e.id)+'" aria-pressed="'+on+'" class="chipbtn rounded-full px-4 min-h-[44px] text-sm font-semibold">'+esc(e.title)+'</button>'; }).join("")+'</div>';
+  var sel = state.compare.map(byId).filter(Boolean);
+  if (sel.length < 2){
+    $("#view").innerHTML = picker + '<div class="glass rounded-3xl p-8"><div class="font-display text-3xl">Pick two or three to line up</div><p class="text-mute mt-2 max-w-xl">Choose entries above, or use Compare on a card. The matrix lines up verdict, evidence, trial design, fit, what it replaces, cost and safety so trade-offs sit side by side.'+(ALL.length<2?' This site has '+ALL.length+' entr'+(ALL.length===1?'y':'ies')+' so far; the matrix fills as runs add more.':'')+'</p></div>';
+    return;
   }
-  function safety(){
-    var s = document.getElementById("safety"); s.textContent = "";
-    s.appendChild(h("b",{text:"Safety and regulatory watch "}));
-    var items = M.safetyWatch || [];
-    if (items.length) items.forEach(function(x){ s.appendChild(h("div",{text:x})); }); else s.appendChild(document.createTextNode(M.safetyNote || "Nothing flagged."));
+  var rows = [
+    ["Verdict", function(e){ return pill(e.verdict); }],
+    ["Evidence", function(e){ return meter(e.evidenceScore||0,e.evidenceScale||5)+'<div class="text-xs text-mute mt-1">'+esc(e.evidenceTier||"")+'</div>'; }],
+    ["Human trial", function(e){ return e.humanTrial ? "Yes" : "None found"; }],
+    ["Skin-tone data", function(e){ return esc(e.toneData || "unknown"); }],
+    ["Fit for you", function(e){ return esc((e.fitRating||"")+" — "+(e.fitLine||"")); }],
+    ["Displaces", function(e){ return esc(e.displaces||"—"); }],
+    ["Price", function(e){ return priceStrip(e) || "—"; }],
+    ["First visible effect", function(e){ return esc(e.timeline||"—"); }],
+    ["Contraindications", function(e){ return esc(e.dossier&&e.dossier.contraindications||"—"); }],
+    ["Would change the verdict", function(e){ var w = e.dossier&&e.dossier.wouldChangeVerdict; return w ? '<ul class="list-disc pl-4">'+w.map(function(x){return '<li>'+esc(x)+'</li>';}).join("")+'</ul>' : "—"; }]
+  ];
+  var cols = sel.length;
+  var head = '<div class="grid gap-3" style="grid-template-columns:repeat('+cols+',minmax(220px,1fr))">'+sel.map(function(e){ return '<div class="glass-solid rounded-2xl p-4"><div class="font-display text-2xl leading-tight">'+esc(e.title)+'</div><button data-act="open" data-id="'+esc(e.id)+'" class="mt-2 text-sm font-semibold text-accent underline underline-offset-4 min-h-[44px]">Open dossier</button></div>'; }).join("")+'</div>';
+  var body = rows.map(function(r){
+    return '<div class="mt-4"><div class="eyebrow mb-1">'+esc(r[0])+'</div><div class="grid gap-3 text-sm" style="grid-template-columns:repeat('+cols+',minmax(220px,1fr))">'+sel.map(function(e){ return '<div class="glass rounded-2xl p-3">'+r[1](e)+'</div>'; }).join("")+'</div></div>';
+  }).join("");
+  $("#view").innerHTML = picker + '<div class="overflow-x-auto pb-2 -mx-1 px-1">'+head+body+'</div>';
+}
+
+/* ---------- runs ---------- */
+function runsView(){
+  $("#count").textContent = "";
+  var runs = (META.runs||[]).slice().sort(function(a,b){ return b.date.localeCompare(a.date); });
+  $("#view").innerHTML = runs.map(function(r, i){
+    var es = ALL.filter(function(e){ return e.run === r.date; });
+    return '<details class="glass rounded-3xl p-5 mb-3"'+(i===0?" open":"")+'><summary class="cursor-pointer min-h-[44px] flex items-center gap-3 list-none"><span class="font-display text-3xl">'+esc(fmtDate(r.date))+'</span><span class="eyebrow">'+esc(r.entries)+' entries · '+esc(r.deep)+' dossier'+(r.deep===1?"":"s")+'</span></summary>'
+      + '<p class="text-mute mt-2 max-w-2xl">'+esc(r.note||"")+'</p>'
+      + '<ul class="mt-3 divide-y divide-line">'+es.map(function(e){ return '<li><button data-act="open" data-id="'+esc(e.id)+'" class="w-full text-left py-3 min-h-[44px] flex items-center gap-3">'+pill(e.verdict)+'<span class="font-semibold">'+esc(e.title)+'</span><span class="ml-auto text-mute">'+ic("chevron-right","h-4 w-4")+'</span></button></li>'; }).join("")+'</ul></details>';
+  }).join("") || '<div class="glass rounded-3xl p-8">No runs yet.</div>';
+}
+
+/* ---------- drawer / dossier ---------- */
+function section(id, title, inner){ return '<section id="d-'+id+'" class="scroll-mt-4 mb-6"><h3 class="eyebrow mb-2">'+esc(title)+'</h3>'+inner+'</section>'; }
+function ul(a){ return '<ul class="list-disc pl-5 space-y-1.5">'+a.map(function(x){ return '<li>'+esc(x)+'</li>'; }).join("")+'</ul>'; }
+function panel(inner){ return '<div class="glass rounded-2xl p-4">'+inner+'</div>'; }
+function kv(label, v){
+  if (!v || (Array.isArray(v) && !v.length)) return "";
+  return '<div class="mt-3"><div class="text-xs font-semibold text-mute">'+esc(label)+'</div><div class="text-[15px]">'+(Array.isArray(v) ? ul(v) : esc(v))+'</div></div>';
+}
+function studyBlock(s){
+  return '<div class="glass rounded-2xl p-4 mb-3">'
+    + '<div class="text-[15px] font-semibold leading-snug">'+esc(s.cite)+'</div>'
+    + '<div class="mt-2"><span class="est rounded px-2 py-0.5 text-xs font-semibold">'+esc(s.readDepth||"Read depth not stated")+'</span></div>'
+    + kv("Design", s.design) + kv("Who was included", s.who) + kv("Results", s.results) + kv("Effect size", s.effectSize)
+    + kv("Placebo comparison", s.placebo) + kv("Was the outcome material?", s.material) + kv("Adverse events", s.adverse)
+    + kv("Funding and conflicts", s.conflict) + kv("Limits", s.limits)
+    + '<div class="flex flex-wrap gap-2 mt-3">'+linkBtn(s.doi,"DOI")+linkBtn(s.pubmed,"PubMed")+linkBtn(s.pmc,"Full text")+linkBtn(s.url,"Source")+'</div></div>';
+}
+function dossierHTML(e){
+  var d = e.dossier, h = "", nav = [];
+  function add(id, t, inner){ if (!inner) return; nav.push([id,t]); h += section(id, t, inner); }
+  var facts = '<div class="flex flex-wrap gap-x-6 gap-y-2 text-sm mt-3"><span class="inline-flex items-center gap-2">'+meter(e.evidenceScore||0,e.evidenceScale||5)+'<span class="text-mute">'+esc(e.evidenceTier||"")+'</span></span></div>';
+  var fitBlock = e.fit ? '<div class="mt-4"><span class="font-semibold" style="color:var('+fitStyle(e.fitRating)+')">'+esc(e.fitRating||"")+' fit.</span> '+esc(e.fit)+(e.displaces?'<div class="mt-2"><span class="eyebrow mr-1">Displaces</span>'+esc(e.displaces)+'</div>':"")+'</div>' : "";
+  add("summary","Bottom line", '<p class="font-display text-2xl leading-snug">'+esc(e.headline)+'</p>'+facts+(e.summaryPoints?'<div class="mt-3">'+ul(e.summaryPoints)+'</div>':"")+fitBlock);
+  if (!d){
+    var lk = (e.links||[]).map(function(l){ return linkBtn(l.url, l.label); }).join("");
+    add("links","Sources", '<p class="text-mute mb-3">Triage only. Ask me to deepen this one and it gets a full dossier next run.</p><div class="flex flex-wrap gap-2">'+lk+'</div>');
+    return {html:h, nav:nav};
   }
-  function render(){
-    chips(); safety();
-    ["feed","compare","runs"].forEach(function(t){ document.getElementById("t-"+t).setAttribute("aria-selected", String(state.tab===t)); });
-    if (state.tab==="feed") feed(); else if (state.tab==="compare") compare(); else runs();
+  add("what","What it is", d.whatItIs ? '<p>'+esc(d.whatItIs)+'</p>' : "");
+  if (d.mechanism){
+    var steps = d.mechanism.steps || [];
+    var st = steps.map(function(s,i){
+      return '<li class="relative pl-11 pb-4">'+(i<steps.length-1?'<span class="stepline" aria-hidden="true"></span>':"")+'<span class="absolute left-0 top-0 h-8 w-8 rounded-full inline-flex items-center justify-center text-sm font-bold" style="background:var(--accent);color:var(--on-accent)">'+(i+1)+'</span><span class="block pt-0.5">'+esc(s)+'</span></li>';
+    }).join("");
+    add("mech","Mechanism", '<ol class="list-none m-0 p-0">'+st+'</ol>'
+      + (d.mechanism.inferenceFlag ? '<div class="est rounded-2xl p-3 text-sm mt-1"><b>Inference, not observation.</b> '+esc(d.mechanism.inferenceFlag)+'</div>' : "")
+      + (d.mechanism.diagramCaption ? '<p class="font-mono text-xs text-mute mt-3">'+esc(d.mechanism.diagramCaption)+'</p>' : ""));
   }
-  document.getElementById("q").addEventListener("input", function(ev){ state.q = ev.target.value; state.tab="feed"; render(); });
-  ["feed","compare","runs"].forEach(function(t){ document.getElementById("t-"+t).addEventListener("click", function(){ state.tab=t; render(); }); });
-  render();
+  add("evidence","Studies", (d.studies||[]).map(studyBlock).join(""));
+  add("claims","Claims check", (d.claimsCheck||[]).length ? '<div class="space-y-2">'+d.claimsCheck.map(function(c){ return '<div class="glass rounded-2xl p-3 text-sm"><div class="font-semibold">'+esc(c.claim)+'</div><div class="text-mute mt-1">Source: '+esc(c.source)+'</div><div class="mt-1">'+esc(c.status)+'</div></div>'; }).join("")+'</div>' : "");
+  if (d.products){
+    add("products","Products and formulations", (d.products.rankNote ? '<div class="est rounded-2xl p-3 text-sm mb-3">'+esc(d.products.rankNote)+'</div>' : "")
+      + (d.products.items||[]).map(function(p){
+          return '<div class="glass rounded-2xl p-4 mb-3"><div class="flex items-baseline gap-2 flex-wrap"><span class="font-semibold">'+esc(p.name)+'</span><span class="text-mute text-sm">'+esc(p.maker||"")+'</span><span class="ml-auto font-mono text-sm">'+esc(p.price||"")+'</span></div>'
+          + '<div class="eyebrow mt-1">'+esc(p.kind||"")+'</div><p class="text-[15px] mt-2">'+esc(p.note||"")+'</p>'
+          + (p.verified ? '<p class="text-xs text-mute mt-1">'+esc(p.verified)+'</p>' : "")
+          + (p.link ? '<div class="mt-2">'+linkBtn(p.link,"View listing")+'</div>' : "") + '</div>';
+        }).join(""));
+  }
+  add("use","How to adapt it", d.howToUse ? ul(d.howToUse) : "");
+  add("expect","What to expect, and when", (d.expect||[]).length ? '<div class="space-y-2">'+d.expect.map(function(x){ return '<div class="glass rounded-2xl p-3 flex gap-3"><div class="shrink-0 w-28 font-mono text-xs text-accent pt-0.5">'+esc(x.when)+'</div><div class="text-[15px]">'+esc(x.what)+'</div></div>'; }).join("")+'</div>' : "");
+  add("safety","Safety and side benefits", panel('<div class="text-xs font-semibold text-mute">Contraindications and unknowns</div><p>'+esc(d.contraindications||"")+'</p>'+(d.sideBenefits?'<div class="text-xs font-semibold text-mute mt-3">Side benefits</div><p>'+esc(d.sideBenefits)+'</p>':"")));
+  add("transfer","Does it transfer to you?", d.transfer ? '<p>'+esc(d.transfer)+'</p>' : "");
+  var cost = (e.cost||[]).length ? '<div class="space-y-2">'+e.cost.map(function(c){ var k = c.kind==="EST"?'<span class="est rounded px-1.5 text-xs font-semibold ml-1">EST</span>':c.kind==="secondhand"?'<span class="chipbtn rounded px-1.5 text-xs ml-1">secondhand</span>':c.kind==="unknown"?'<span class="chipbtn rounded px-1.5 text-xs ml-1">not found</span>':'<span class="chipbtn rounded px-1.5 text-xs ml-1">found</span>'; return '<div class="glass rounded-2xl p-3 text-sm"><b>'+esc(c.label)+'</b>'+k+'<div>'+esc(c.value)+'</div></div>'; }).join("")+'</div>'+(e.buzzCheck?'<p class="mt-3 text-[15px]"><b>Buzz check.</b> '+esc(e.buzzCheck)+'</p>':"")+(e.estimateNote?'<p class="text-xs text-mute mt-2">'+esc(e.estimateNote)+'</p>':"") : "";
+  add("cost","Cost and markets", cost);
+  add("change","What would change the verdict", d.wouldChangeVerdict ? ul(d.wouldChangeVerdict) : "");
+  add("conf","Confidence and gaps", d.confidence ? ul(d.confidence)+(d.searchedOn?'<p class="text-xs text-mute mt-3">Searched on '+esc(d.searchedOn)+'.</p>':"") : "");
+  return {html:h, nav:nav};
+}
+function renderDrawer(keepScroll){
+  var e = byId(state.open); if (!e) return;
+  var body = $("#drawerBody"), top = keepScroll ? body.scrollTop : 0;
+  var sv = isSaved(e.id), st = statusOf(e), cm = state.compare.indexOf(e.id) > -1, dz = dossierHTML(e);
+  $("#drawerHead").innerHTML =
+    '<div class="flex items-start gap-3"><div class="flex-1 min-w-0"><div class="flex items-center gap-2 flex-wrap">'+pill(e.verdict)+'<span class="eyebrow">'+esc(e.lane||"")+'</span></div>'
+    + '<h2 id="dTitle" class="font-display text-3xl leading-tight mt-1">'+esc(e.title)+'</h2></div>'
+    + '<button data-act="close" id="dClose" class="chipbtn rounded-full min-h-[44px] min-w-[44px] inline-flex items-center justify-center" aria-label="Close dossier">'+ic("x","h-5 w-5")+'</button></div>'
+    + '<div class="flex flex-wrap items-center gap-2 mt-3">'
+    + '<select data-status="'+esc(e.id)+'" aria-label="Status" class="rounded-xl border border-line min-h-[44px] px-2 text-sm">'+STATUSES.map(function(s){ return '<option'+(s===st?" selected":"")+'>'+s+'</option>'; }).join("")+'</select>'
+    + '<button data-act="save" data-id="'+esc(e.id)+'" aria-pressed="'+sv+'" class="chipbtn rounded-full min-h-[44px] px-3 text-sm font-semibold inline-flex items-center gap-1.5">'+ic(sv?"bookmark-check":"bookmark","h-4 w-4")+(sv?"Saved":"Save")+'</button>'
+    + '<button data-act="cmp" data-id="'+esc(e.id)+'" aria-pressed="'+cm+'" class="chipbtn rounded-full min-h-[44px] px-3 text-sm font-semibold inline-flex items-center gap-1.5">'+ic("scale","h-4 w-4")+'Compare</button></div>'
+    + '<nav class="mt-3 -mx-5 px-5 flex gap-2 overflow-x-auto pb-1" aria-label="Sections">'+dz.nav.map(function(n){ return '<button data-act="jump" data-to="d-'+n[0]+'" class="chipbtn shrink-0 rounded-full px-3 min-h-[44px] text-sm font-semibold">'+esc(n[1])+'</button>'; }).join("")+'</nav>';
+  body.innerHTML = dz.html;
+  body.scrollTop = top;
+}
+function openEntry(id, trigger){
+  if (!byId(id)) return;
+  state.open = id; lastTrigger = trigger || document.activeElement;
+  renderDrawer(false);
+  var d = $("#drawer"); d.classList.add("open"); d.setAttribute("aria-hidden","false");
+  $("#scrim").classList.add("open");
+  $("#main").inert = true; document.body.style.overflow = "hidden";
+  try{ history.replaceState(null,"","#e="+encodeURIComponent(id)); }catch(x){}
+  setTimeout(function(){ var c = $("#dClose"); if (c) c.focus(); }, 60);
+}
+function closeDrawer(){
+  if (!state.open) return;
+  state.open = null;
+  var d = $("#drawer"); d.classList.remove("open"); d.setAttribute("aria-hidden","true");
+  $("#scrim").classList.remove("open");
+  $("#main").inert = false; document.body.style.overflow = "";
+  try{ history.replaceState(null,"",location.pathname+location.search); }catch(x){}
+  if (lastTrigger && lastTrigger.focus && document.contains(lastTrigger)) lastTrigger.focus();
+}
+
+/* ---------- view orchestration ---------- */
+function setTabs(){
+  var labels = {feed:["layers","Feed"],compare:["scale","Compare"],runs:["book-open","Runs"]};
+  document.querySelectorAll('[data-act="tab"]').forEach(function(b){
+    var t = b.getAttribute("data-tab"); b.setAttribute("aria-pressed", state.tab === t);
+    b.innerHTML = ic(labels[t][0],"h-4 w-4")+labels[t][1]+(t==="compare"&&state.compare.length?' <span class="font-mono text-xs">'+state.compare.length+'</span>':"");
+  });
+  $("#filters").style.display = state.tab === "feed" ? "" : "none";
+}
+function renderView(){ setTabs(); if (state.tab==="feed") feed(); else if (state.tab==="compare") compareView(); else runsView(); }
+function refreshAll(){ metrics(); chipRow(); renderView(); }
+
+/* ---------- events ---------- */
+document.addEventListener("click", function(ev){
+  var t = ev.target.closest("[data-act]"); if (!t) return;
+  var a = t.getAttribute("data-act"), id = t.getAttribute("data-id");
+  if (a === "open") openEntry(id, t);
+  else if (a === "close") closeDrawer();
+  else if (a === "save"){ var i = saved.indexOf(id); if (i>-1) saved.splice(i,1); else saved.push(id); sset("srs.saved", saved); metrics(); renderView(); if (state.open) renderDrawer(true); }
+  else if (a === "cmp"){ var j = state.compare.indexOf(id); if (j>-1) state.compare.splice(j,1); else { if (state.compare.length>=3) state.compare.shift(); state.compare.push(id); } sset("srs.cmp", state.compare); renderView(); if (state.open) renderDrawer(true); }
+  else if (a === "tab"){ state.tab = t.getAttribute("data-tab"); renderView(); }
+  else if (a === "verdict"){ var v = t.getAttribute("data-v"), k = state.verdicts.indexOf(v); if (k>-1) state.verdicts.splice(k,1); else state.verdicts.push(v); chipRow(); feed(); }
+  else if (a === "lane"){ var l = t.getAttribute("data-l"), m = state.lanes.indexOf(l); if (m>-1) state.lanes.splice(m,1); else state.lanes.push(l); chipRow(); feed(); }
+  else if (a === "tag"){ state.tag = t.getAttribute("data-t"); chipRow(); feed(); }
+  else if (a === "saved"){ state.savedOnly = !state.savedOnly; chipRow(); feed(); }
+  else if (a === "clear"){ state.q=""; state.verdicts=[]; state.lanes=[]; state.tag=""; state.savedOnly=false; $("#q").value=""; chipRow(); feed(); }
+  else if (a === "jump"){ var el = document.getElementById(t.getAttribute("data-to")); if (el) el.scrollIntoView({behavior:"smooth",block:"start"}); }
+});
+document.addEventListener("change", function(ev){
+  var t = ev.target;
+  if (t.hasAttribute && t.hasAttribute("data-status")){ statuses[t.getAttribute("data-status")] = t.value; sset("srs.status", statuses); if (state.open) renderDrawer(true); if (state.tab==="feed") feed(); }
+  else if (t.id === "tagSel"){ state.tag = t.value; chipRow(); feed(); }
+  else if (t.id === "sortSel"){ state.sort = t.value; feed(); }
+});
+$("#q").addEventListener("input", function(ev){ state.q = ev.target.value.trim(); chipRow(); feed(); });
+document.addEventListener("keydown", function(ev){
+  if (!state.open) return;
+  if (ev.key === "Escape"){ closeDrawer(); return; }
+  if (ev.key === "Tab"){
+    var f = Array.prototype.slice.call($("#drawer").querySelectorAll('button,a[href],select,input,[tabindex]:not([tabindex="-1"])')).filter(function(x){ return x.offsetParent !== null; });
+    if (!f.length) return;
+    var first = f[0], last = f[f.length-1];
+    if (ev.shiftKey && document.activeElement === first){ ev.preventDefault(); last.focus(); }
+    else if (!ev.shiftKey && document.activeElement === last){ ev.preventDefault(); first.focus(); }
+  }
+});
+
+/* ---------- init ---------- */
+$("#kicker").textContent = latestRun() ? "Last run " + fmtDate(latestRun()) + " · every other Sunday" : "No runs yet";
+$("#tagline").textContent = META.tagline || "";
+$("#searchIcon").innerHTML = ic("search","h-5 w-5");
+saved = saved.filter(function(id){ return byId(id); });
+state.compare = state.compare.filter(function(id){ return byId(id); });
+safety(); refreshAll();
+var m = /#e=([^&]+)/.exec(location.hash || "");
+if (m) openEntry(decodeURIComponent(m[1]), null);
 })();
 </script>
 
