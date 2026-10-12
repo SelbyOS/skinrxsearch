@@ -72,6 +72,7 @@ select{background-color:var(--glass-solid);color:var(--ink)}
     <div class="eyebrow" id="kicker"></div>
     <h1 class="font-display text-5xl sm:text-6xl leading-none mt-1">SkinRxsearch</h1>
     <p class="font-display italic text-2xl text-mute mt-1" id="tagline"></p>
+    <div class="mt-4"><button data-act="export" id="exportBtn" class="chipbtn rounded-full px-4 min-h-[44px] text-sm font-semibold inline-flex items-center gap-2"></button></div>
     <p class="text-sm text-mute mt-3 max-w-2xl">A research scan on skin, ingredients, products, tools and hair. It reads studies and registries, labels how deeply each source was read, and says where the evidence stops. Not medical advice.</p>
   </header>
 
@@ -113,14 +114,26 @@ select{background-color:var(--glass-solid);color:var(--ink)}
   <footer class="mt-10 text-xs text-mute max-w-2xl">
     Bookmarks, status and compare picks live in this browser on this device only. Prices marked EST are guesses, not lookups. Sources are linked on every dossier; where I only saw a snippet or abstract, it says so.
   </footer>
+  <div class="mt-6 pt-4 border-t border-line text-sm font-semibold">Created and powered by Alysse</div>
 </div>
 
-<div id="scrim" class="scrim fixed inset-0 z-40" data-act="close"></div>
+<div id="scrim" class="scrim fixed inset-0 z-40" data-act="closeAny"></div>
 <aside id="drawer" class="drawer fixed z-50 bottom-0 inset-x-0 h-[92dvh] rounded-t-[28px] md:inset-y-0 md:right-0 md:left-auto md:bottom-auto md:h-full md:w-[min(720px,100%)] md:rounded-t-none md:rounded-l-[28px] glass-solid flex flex-col overflow-hidden"
   role="dialog" aria-modal="true" aria-labelledby="dTitle" aria-hidden="true" tabindex="-1">
   <div id="drawerHead" class="px-5 pt-4 pb-3 border-b border-line"></div>
   <div id="drawerBody" class="flex-1 overflow-y-auto overscroll-contain px-5 pt-4" style="padding-bottom:calc(48px + env(safe-area-inset-bottom))"></div>
 </aside>
+
+<div id="modal" class="fixed z-50 inset-x-3 top-[6dvh] mx-auto max-w-xl max-h-[88dvh] overflow-y-auto rounded-3xl glass-solid p-5 hidden" role="dialog" aria-modal="true" aria-labelledby="mTitle" tabindex="-1">
+  <div class="flex items-start gap-3"><h2 id="mTitle" class="font-display text-3xl leading-tight flex-1">Export and import</h2>
+    <button data-act="closeModal" id="mClose" class="chipbtn rounded-full min-h-[44px] min-w-[44px] inline-flex items-center justify-center" aria-label="Close"></button></div>
+  <p class="text-sm text-mute mt-2">Your bookmarks, statuses and notes live in this browser on this device only. Back them up here, or carry them to another device.</p>
+  <div class="mt-4 grid gap-2" id="mActions"></div>
+  <label class="block mt-4 text-xs font-semibold text-mute" for="outArea">Preview (select and copy from here if the Copy button is blocked)</label>
+  <textarea id="outArea" readonly rows="7" class="mt-1 w-full rounded-2xl border border-line glass-solid p-3 font-mono text-xs"></textarea>
+  <div id="mMsg" class="mt-2 text-sm font-semibold" aria-live="polite"></div>
+  <input type="file" id="impFile" accept=".json,application/json" class="sr-only" tabindex="-1">
+</div>
 
 <script>
 /*__DATA__*/
@@ -137,7 +150,8 @@ var STATUSES = ["Watch","Trialing","Adopted","Dropped"];
 var mem = {};
 function sget(k, d){ try{ var v = localStorage.getItem(k); return v ? JSON.parse(v) : d; }catch(e){ return mem[k] !== undefined ? mem[k] : d; } }
 function sset(k, v){ mem[k] = v; try{ localStorage.setItem(k, JSON.stringify(v)); }catch(e){} }
-var saved = sget("srs.saved", []), statuses = sget("srs.status", {});
+var saved = sget("srs.saved", []), statuses = sget("srs.status", {}), notes = sget("srs.notes", {});
+var LANE_ICON = {Ingredient:"flask-conical",Product:"package",Device:"zap",Hair:"sprout","Hair and scalp":"sprout",Clinical:"stethoscope",Rx:"stethoscope",Study:"file-text"};
 
 var state = { q:"", verdicts:[], lanes:[], tag:"", sort:"new", savedOnly:false, tab:"feed", compare:sget("srs.cmp", []), open:null };
 var lastTrigger = null;
@@ -147,6 +161,7 @@ function ic(n, cls){ return '<svg class="'+(cls||"h-4 w-4")+'" viewBox="0 0 24 2
 function byId(id){ for (var i=0;i<ALL.length;i++) if (ALL[i].id === id) return ALL[i]; return null; }
 function $(s, r){ return (r||document).querySelector(s); }
 function safeUrl(u){ return /^https?:\/\//i.test(u||"") ? u : ""; }
+function hasNote(id){ return !!(notes[id] && notes[id].t && notes[id].t.trim()); }
 function isSaved(id){ return saved.indexOf(id) > -1; }
 function statusOf(e){ return statuses[e.id] || e.status || "Watch"; }
 function latestRun(){ var r = ALL.map(function(e){return e.run||"";}).sort(); return r.length ? r[r.length-1] : ""; }
@@ -156,6 +171,37 @@ function pill(v){ return '<span class="pill inline-flex items-center gap-1.5 rou
 function meter(n, of){ var s = ""; for (var i=0;i<of;i++) s += '<i class="block h-2 w-4 rounded-full" style="background:'+(i<n?"var(--accent)":"var(--line)")+'"></i>'; return '<span class="inline-flex gap-1 items-center" role="img" aria-label="Evidence '+n+' of '+of+'">'+s+'</span>'; }
 function linkBtn(href, label){ var u = safeUrl(href); if (!u) return ""; return '<a href="'+esc(u)+'" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 rounded-full chipbtn px-3 min-h-[44px] text-sm font-semibold">'+esc(label)+ic("external-link","h-3.5 w-3.5")+'</a>'; }
 function fitStyle(r){ return r === "Strong" ? "--c-try" : r === "Weak" ? "--c-skip" : "--c-watch"; }
+
+function fitStrip(e, detail){
+  if (!e.fitAxes || !e.fitAxes.length) return "";
+  var items = e.fitAxes.map(function(a){
+    var r = a.rating, col = r==="Strong" ? "--c-try" : r==="Partial" ? "--c-watch" : r==="Weak" ? "--c-skip" : null;
+    var dot = col ? '<i class="block h-2.5 w-2.5 rounded-full shrink-0" style="background:var('+col+')"></i>' : '<i class="block h-2.5 w-2.5 rounded-full shrink-0 border border-dashed" style="border-color:var(--mute)"></i>';
+    if (detail) return '<div class="glass rounded-2xl p-3"><div class="flex items-center gap-2 text-sm">'+dot+'<span class="font-semibold">'+esc(a.axis)+'</span><span class="ml-auto text-mute">'+esc(r)+'</span></div><p class="text-sm mt-1.5 text-mute">'+esc(a.why||"")+'</p></div>';
+    return '<div role="listitem" class="flex items-center gap-2 rounded-xl chipbtn px-2.5 py-1.5 text-xs">'+dot+'<span class="font-semibold">'+esc(a.axis)+'</span><span class="ml-auto text-mute">'+esc(r)+'</span></div>';
+  }).join("");
+  return detail ? '<div class="grid gap-2 sm:grid-cols-2 mt-3">'+items+'</div><p class="text-xs text-mute mt-2">These ratings are my judgment against your routine, not measurements. Unknown means no evidence either way.</p>'
+                : '<div class="grid grid-cols-2 gap-1.5" role="list" aria-label="Fit by axis, my judgment">'+items+'</div>';
+}
+function shortCite(c){ c = c || ""; var m = /(19|20)\d\d/.exec(c); var first = c.split(",")[0].split(".")[0].trim(); return (first ? first+" et al. " : "")+(m ? m[0] : ""); }
+function sourcesOf(e){
+  var out = [], seen = {};
+  function add(l,u){ u = safeUrl(u); if (u && !seen[u]){ seen[u]=1; out.push([l,u]); } }
+  var d = e.dossier || {};
+  (d.studies||[]).forEach(function(s){ var sc = shortCite(s.cite) || "Study"; add(sc+" (DOI)",s.doi); add(sc+" (PubMed)",s.pubmed); add(sc+" (full text)",s.pmc); add(sc+" (source)",s.url); });
+  ((d.products||{}).items||[]).forEach(function(p){ add((p.name||"Product")+" (listing)", p.link); });
+  (e.links||[]).forEach(function(l){ add(l.label||"Source", l.url); });
+  return out;
+}
+var BASIS = {applied:"Applied",stated:"Stated in paper",cell:"Cell or lab data",inferred:"Authors' inference",human:"Human trial"};
+function flowHTML(flow){
+  return '<ol class="list-none m-0 p-0" aria-label="Mechanism flow">'+flow.map(function(n,i){
+    var inf = n.basis === "inferred", last = i === flow.length-1;
+    var node = '<li><div class="rounded-2xl p-3 flex flex-wrap items-center gap-x-3 gap-y-1" style="background:var(--glass-solid);border:1.5px '+(inf?"dashed var(--c-watch)":"solid var(--accent)")+'"><span class="font-semibold">'+esc(n.label)+'</span><span class="ml-auto font-mono text-xs text-mute">'+esc(BASIS[n.basis]||n.basis||"")+'</span></div>';
+    var link = last ? "" : '<div class="flex justify-center py-1 text-mute" aria-hidden="true">'+ic("chevron-down","h-5 w-5")+'</div>';
+    return node + link + '</li>';
+  }).join("")+'</ol>';
+}
 
 /* ---------- metrics ---------- */
 function metrics(){
@@ -240,10 +286,10 @@ function card(e){
   return '<article class="glass card relative rounded-3xl p-5 flex flex-col gap-3">'
     + '<div class="flex items-center gap-3 flex-wrap">'+pill(e.verdict)+'<span class="text-xs text-mute">'+esc(VERDICT_NOTE[e.verdict]||"")+'</span>'
     + '<span class="ml-auto inline-flex items-center gap-3 text-xs text-mute">'+meter(e.evidenceScore||0, e.evidenceScale||5)+'<span class="inline-flex items-center gap-1">'+ic("clock","h-3.5 w-3.5")+(e.readMinutes||"?")+' min</span></span></div>'
-    + '<div><div class="eyebrow">'+esc(e.lane||"")+(e.depth==="dossier"?" · full dossier":" · triage")+'</div>'
-    + '<h2 class="font-display text-3xl leading-tight mt-1"><button data-act="open" data-id="'+esc(e.id)+'" class="text-left after:absolute after:inset-0 after:rounded-3xl">'+esc(e.title)+'</button></h2></div>'
+    + '<div><div class="eyebrow inline-flex items-center gap-1.5">'+ic(LANE_ICON[e.lane]||"file-text","h-3.5 w-3.5")+esc(e.lane||"")+(e.depth==="dossier"?" · full dossier":" · triage")+'</div>'
+    + '<h2 class="font-display text-3xl leading-tight mt-1"><button data-act="open" data-id="'+esc(e.id)+'" class="text-left after:absolute after:inset-0 after:rounded-3xl">'+esc(e.title)+'</button>'+(hasNote(e.id)?'<span class="ml-2 inline-flex align-middle text-accent" title="You have notes on this">'+ic("pencil","h-4 w-4")+'<span class="sr-only">You have notes on this entry</span></span>':"")+'</h2></div>'
     + '<p class="text-[15px] clamp3">'+esc(e.headline||"")+'</p>'
-    + fit + dis + priceStrip(e)
+    + fit + fitStrip(e,false) + dis + priceStrip(e)
     + '<div class="flex flex-wrap gap-1.5">'+tags+'</div>'
     + '<div class="relative z-10 mt-auto pt-3 border-t border-line flex items-center gap-2 flex-wrap">'
     + '<label class="inline-flex items-center gap-2 text-xs text-mute"><span class="sr-only">Status for '+esc(e.title)+'</span><select data-status="'+esc(e.id)+'" class="rounded-xl border border-line min-h-[44px] px-2 text-sm">'+STATUSES.map(function(s){ return '<option'+(s===st?" selected":"")+'>'+s+'</option>'; }).join("")+'</select></label>'
@@ -296,7 +342,7 @@ function runsView(){
   var runs = (META.runs||[]).slice().sort(function(a,b){ return b.date.localeCompare(a.date); });
   $("#view").innerHTML = runs.map(function(r, i){
     var es = ALL.filter(function(e){ return e.run === r.date; });
-    return '<details class="glass rounded-3xl p-5 mb-3"'+(i===0?" open":"")+'><summary class="cursor-pointer min-h-[44px] flex items-center gap-3 list-none"><span class="font-display text-3xl">'+esc(fmtDate(r.date))+'</span><span class="eyebrow">'+esc(r.entries)+' entries · '+esc(r.deep)+' dossier'+(r.deep===1?"":"s")+'</span></summary>'
+    return '<details class="glass rounded-3xl p-5 mb-3"'+(i===0?" open":"")+'><summary class="cursor-pointer min-h-[44px] flex items-center gap-3 list-none"><span class="font-display text-3xl">'+esc(fmtDate(r.date))+'</span><span class="eyebrow">'+esc(r.entries)+' entries · '+esc(r.deep)+' dossier'+(r.deep===1?"":"s")+'</span></summary><a href="batches/batch-'+esc(r.date)+'.md" download class="inline-flex items-center gap-1.5 rounded-full chipbtn px-3 min-h-[44px] text-sm font-semibold mt-2">'+ic("download","h-3.5 w-3.5")+'Download this run as Markdown</a>'
       + '<p class="text-mute mt-2 max-w-2xl">'+esc(r.note||"")+'</p>'
       + '<ul class="mt-3 divide-y divide-line">'+es.map(function(e){ return '<li><button data-act="open" data-id="'+esc(e.id)+'" class="w-full text-left py-3 min-h-[44px] flex items-center gap-3">'+pill(e.verdict)+'<span class="font-semibold">'+esc(e.title)+'</span><span class="ml-auto text-mute">'+ic("chevron-right","h-4 w-4")+'</span></button></li>'; }).join("")+'</ul></details>';
   }).join("") || '<div class="glass rounded-3xl p-8">No runs yet.</div>';
@@ -324,7 +370,8 @@ function dossierHTML(e){
   function add(id, t, inner){ if (!inner) return; nav.push([id,t]); h += section(id, t, inner); }
   var facts = '<div class="flex flex-wrap gap-x-6 gap-y-2 text-sm mt-3"><span class="inline-flex items-center gap-2">'+meter(e.evidenceScore||0,e.evidenceScale||5)+'<span class="text-mute">'+esc(e.evidenceTier||"")+'</span></span></div>';
   var fitBlock = e.fit ? '<div class="mt-4"><span class="font-semibold" style="color:var('+fitStyle(e.fitRating)+')">'+esc(e.fitRating||"")+' fit.</span> '+esc(e.fit)+(e.displaces?'<div class="mt-2"><span class="eyebrow mr-1">Displaces</span>'+esc(e.displaces)+'</div>':"")+'</div>' : "";
-  add("summary","Bottom line", '<p class="font-display text-2xl leading-snug">'+esc(e.headline)+'</p>'+facts+(e.summaryPoints?'<div class="mt-3">'+ul(e.summaryPoints)+'</div>':"")+fitBlock);
+  add("summary","Bottom line", '<p class="font-display text-2xl leading-snug">'+esc(e.headline)+'</p>'+facts+(e.summaryPoints?'<div class="mt-3">'+ul(e.summaryPoints)+'</div>':"")+fitBlock + fitStrip(e,true));
+  add("notes","My research notes", '<label for="noteArea" class="text-sm text-mute block mb-2">What interests you here, what to look into next, dosing ideas. Saved on this device as you type.</label><textarea id="noteArea" rows="6" class="w-full rounded-2xl border border-line glass-solid p-3 text-[15px]" placeholder="Why this caught your eye, questions, dosing to try, things to check next">'+esc((notes[e.id]||{}).t||"")+'</textarea><div id="noteStatus" class="text-xs text-mute mt-1" aria-live="polite">'+((notes[e.id]||{}).u?"Saved "+esc(fmtDate((notes[e.id].u||"").slice(0,10))):"")+'</div>');
   if (!d){
     var lk = (e.links||[]).map(function(l){ return linkBtn(l.url, l.label); }).join("");
     add("links","Sources", '<p class="text-mute mb-3">Triage only. Ask me to deepen this one and it gets a full dossier next run.</p><div class="flex flex-wrap gap-2">'+lk+'</div>');
@@ -336,7 +383,7 @@ function dossierHTML(e){
     var st = steps.map(function(s,i){
       return '<li class="relative pl-11 pb-4">'+(i<steps.length-1?'<span class="stepline" aria-hidden="true"></span>':"")+'<span class="absolute left-0 top-0 h-8 w-8 rounded-full inline-flex items-center justify-center text-sm font-bold" style="background:var(--accent);color:var(--on-accent)">'+(i+1)+'</span><span class="block pt-0.5">'+esc(s)+'</span></li>';
     }).join("");
-    add("mech","Mechanism", '<ol class="list-none m-0 p-0">'+st+'</ol>'
+    add("mech","Mechanism", (d.mechanism.flow ? flowHTML(d.mechanism.flow)+'<details class="mt-4"><summary class="cursor-pointer min-h-[44px] flex items-center font-semibold text-sm">Step-by-step detail</summary><ol class="list-none m-0 p-0 mt-3">'+st+'</ol></details>' : '<ol class="list-none m-0 p-0">'+st+'</ol>')
       + (d.mechanism.inferenceFlag ? '<div class="est rounded-2xl p-3 text-sm mt-1"><b>Inference, not observation.</b> '+esc(d.mechanism.inferenceFlag)+'</div>' : "")
       + (d.mechanism.diagramCaption ? '<p class="font-mono text-xs text-mute mt-3">'+esc(d.mechanism.diagramCaption)+'</p>' : ""));
   }
@@ -359,6 +406,8 @@ function dossierHTML(e){
   add("cost","Cost and markets", cost);
   add("change","What would change the verdict", d.wouldChangeVerdict ? ul(d.wouldChangeVerdict) : "");
   add("conf","Confidence and gaps", d.confidence ? ul(d.confidence)+(d.searchedOn?'<p class="text-xs text-mute mt-3">Searched on '+esc(d.searchedOn)+'.</p>':"") : "");
+  var srcs = sourcesOf(e);
+  add("sources","All sources", srcs.length ? '<div class="flex flex-wrap gap-2">'+srcs.map(function(x){ return linkBtn(x[1], x[0]); }).join("")+'</div>' : "");
   return {html:h, nav:nav};
 }
 function renderDrawer(keepScroll){
@@ -394,7 +443,64 @@ function closeDrawer(){
   $("#scrim").classList.remove("open");
   $("#main").inert = false; document.body.style.overflow = "";
   try{ history.replaceState(null,"",location.pathname+location.search); }catch(x){}
-  if (lastTrigger && lastTrigger.focus && document.contains(lastTrigger)) lastTrigger.focus();
+  renderView(); if (lastTrigger && lastTrigger.focus && document.contains(lastTrigger)) lastTrigger.focus();
+}
+
+/* ---------- export / import ---------- */
+var modalOpen = false, modalTrigger = null;
+function userState(){ return {app:"skinrxsearch", version:1, exportedAt:new Date().toISOString(), saved:saved, status:statuses, notes:notes, compare:state.compare}; }
+function stateMd(){
+  var L = ["# SkinRxsearch: my state","Exported "+new Date().toISOString().slice(0,10),"","Paste this into Claude and ask it to compare my notes and statuses against the next scan.",""];
+  var n = 0;
+  ALL.forEach(function(e){
+    var st = statusOf(e), sv = isSaved(e.id), nt = hasNote(e.id);
+    if (!sv && !nt && st === (e.status||"Watch")) return;
+    n++; L.push("## "+e.title, "- Verdict: "+e.verdict+" | Status: "+st+" | Bookmarked: "+(sv?"yes":"no")+" | Id: "+e.id);
+    if (nt) L.push("", "My notes:", notes[e.id].t.trim());
+    L.push("");
+  });
+  if (!n) L.push("Nothing bookmarked, no notes and no status changes yet.");
+  return L.join("\n");
+}
+function setOut(text){ $("#outArea").value = text; }
+function copyText(text, okMsg){
+  setOut(text); var m = $("#mMsg");
+  function fallback(){ var a = $("#outArea"); a.focus(); a.select(); m.textContent = "Copy blocked here. The text is selected below; press copy on your keyboard."; }
+  try{ if (navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(text).then(function(){ m.textContent = okMsg; }, fallback); } else fallback(); }catch(x){ fallback(); }
+}
+function modalActions(){
+  function b(act, icon, label){ return '<button data-act="'+act+'" class="chipbtn rounded-2xl min-h-[48px] px-4 text-left text-sm font-semibold inline-flex items-center gap-3">'+ic(icon,"h-5 w-5")+label+'</button>'; }
+  $("#mActions").innerHTML = b("copyClaude","copy","Copy my state for Claude (bookmarks, statuses, notes)")
+    + b("copyRun","file-text","Copy latest run as Markdown (for NotebookLM)")
+    + b("copyAll","layers","Copy every entry as Markdown")
+    + b("dlJson","download","Download backup (JSON)")
+    + '<label for="impFile" class="chipbtn rounded-2xl min-h-[48px] px-4 text-sm font-semibold inline-flex items-center gap-3 cursor-pointer">'+ic("upload","h-5 w-5")+'Import backup (JSON)</label>';
+}
+function openModal(trigger){
+  modalTrigger = trigger || document.activeElement; modalOpen = true; modalActions(); setOut(""); $("#mMsg").textContent = "";
+  $("#modal").classList.remove("hidden"); $("#scrim").classList.add("open"); $("#main").inert = true; document.body.style.overflow = "hidden";
+  setTimeout(function(){ $("#mClose").focus(); }, 30);
+}
+function closeModal(){
+  if (!modalOpen) return; modalOpen = false; $("#modal").classList.add("hidden");
+  if (!state.open){ $("#scrim").classList.remove("open"); $("#main").inert = false; document.body.style.overflow = ""; }
+  if (modalTrigger && modalTrigger.focus) modalTrigger.focus();
+}
+function importState(text){
+  var m = $("#mMsg"), o;
+  try{ o = JSON.parse(text); }catch(x){ m.textContent = "That file is not valid JSON. Nothing was changed."; return; }
+  if (!o || o.app !== "skinrxsearch" || typeof o !== "object"){ m.textContent = "That file is not a SkinRxsearch backup. Nothing was changed."; return; }
+  var cnt = {saved:0, notes:0, status:0};
+  if (Array.isArray(o.saved)) o.saved.slice(0,1000).forEach(function(id){ if (typeof id === "string" && id.length < 200 && saved.indexOf(id) < 0){ saved.push(id); cnt.saved++; } });
+  if (o.status && typeof o.status === "object") Object.keys(o.status).slice(0,1000).forEach(function(id){ if (STATUSES.indexOf(o.status[id]) > -1 && statuses[id] !== o.status[id]){ statuses[id] = o.status[id]; cnt.status++; } });
+  if (o.notes && typeof o.notes === "object") Object.keys(o.notes).slice(0,1000).forEach(function(id){
+    var n = o.notes[id]; if (!n || typeof n.t !== "string" || n.t.length > 20000) return;
+    var u = typeof n.u === "string" ? n.u.slice(0,40) : "";
+    var cur = notes[id]; if (!cur || (cur.u || "") < u){ notes[id] = {t:n.t, u:u}; cnt.notes++; }
+  });
+  sset("srs.saved", saved); sset("srs.status", statuses); sset("srs.notes", notes);
+  metrics(); renderView();
+  m.textContent = "Imported. Added "+cnt.saved+" bookmarks, updated "+cnt.status+" statuses and "+cnt.notes+" notes. Where both had a note, the newer one was kept.";
 }
 
 /* ---------- view orchestration ---------- */
@@ -415,6 +521,7 @@ document.addEventListener("click", function(ev){
   var a = t.getAttribute("data-act"), id = t.getAttribute("data-id");
   if (a === "open") openEntry(id, t);
   else if (a === "close") closeDrawer();
+  else if (a === "closeAny"){ if (modalOpen) closeModal(); else closeDrawer(); }
   else if (a === "save"){ var i = saved.indexOf(id); if (i>-1) saved.splice(i,1); else saved.push(id); sset("srs.saved", saved); metrics(); renderView(); if (state.open) renderDrawer(true); }
   else if (a === "cmp"){ var j = state.compare.indexOf(id); if (j>-1) state.compare.splice(j,1); else { if (state.compare.length>=3) state.compare.shift(); state.compare.push(id); } sset("srs.cmp", state.compare); renderView(); if (state.open) renderDrawer(true); }
   else if (a === "tab"){ state.tab = t.getAttribute("data-tab"); renderView(); }
@@ -423,6 +530,12 @@ document.addEventListener("click", function(ev){
   else if (a === "tag"){ state.tag = t.getAttribute("data-t"); chipRow(); feed(); }
   else if (a === "saved"){ state.savedOnly = !state.savedOnly; chipRow(); feed(); }
   else if (a === "clear"){ state.q=""; state.verdicts=[]; state.lanes=[]; state.tag=""; state.savedOnly=false; $("#q").value=""; chipRow(); feed(); }
+  else if (a === "export") openModal(t);
+  else if (a === "closeModal") closeModal();
+  else if (a === "copyClaude") copyText(stateMd(), "Copied. Paste it into a Claude chat.");
+  else if (a === "copyRun"){ var lr = latestRun(); copyText(ALL.filter(function(e){ return e.run === lr; }).map(function(e){ return e.md; }).join("\n---\n\n"), "Copied the latest run."); }
+  else if (a === "copyAll") copyText(ALL.map(function(e){ return e.md; }).join("\n---\n\n"), "Copied every entry.");
+  else if (a === "dlJson"){ var txt = JSON.stringify(userState(), null, 2); setOut(txt); try{ var bl = new Blob([txt], {type:"application/json"}); var u = URL.createObjectURL(bl); var l = document.createElement("a"); l.href = u; l.download = "skinrxsearch-backup-"+new Date().toISOString().slice(0,10)+".json"; document.body.appendChild(l); l.click(); l.remove(); setTimeout(function(){ URL.revokeObjectURL(u); }, 1000); $("#mMsg").textContent = "Backup downloaded. If nothing downloaded, copy it from the box below."; }catch(x){ $("#mMsg").textContent = "Download blocked here. Copy the backup from the box below and save it as a .json file."; } }
   else if (a === "jump"){ var el = document.getElementById(t.getAttribute("data-to")); if (el) el.scrollIntoView({behavior:"smooth",block:"start"}); }
 });
 document.addEventListener("change", function(ev){
@@ -431,12 +544,15 @@ document.addEventListener("change", function(ev){
   else if (t.id === "tagSel"){ state.tag = t.value; chipRow(); feed(); }
   else if (t.id === "sortSel"){ state.sort = t.value; feed(); }
 });
+$("#impFile").addEventListener("change", function(ev){ var f = ev.target.files && ev.target.files[0]; if (!f) return; if (f.size > 2000000){ $("#mMsg").textContent = "That file is too large to be a backup."; return; } var r = new FileReader(); r.onload = function(){ importState(String(r.result)); }; r.readAsText(f); ev.target.value = ""; });
+document.addEventListener("input", function(ev){ if (ev.target.id === "noteArea" && state.open){ var v = ev.target.value; if (v.trim()) notes[state.open] = {t:v, u:new Date().toISOString()}; else delete notes[state.open]; sset("srs.notes", notes); var st = $("#noteStatus"); if (st) st.textContent = "Saved on this device"; } });
 $("#q").addEventListener("input", function(ev){ state.q = ev.target.value.trim(); chipRow(); feed(); });
 document.addEventListener("keydown", function(ev){
-  if (!state.open) return;
-  if (ev.key === "Escape"){ closeDrawer(); return; }
+  var box = modalOpen ? $("#modal") : (state.open ? $("#drawer") : null);
+  if (!box) return;
+  if (ev.key === "Escape"){ if (modalOpen) closeModal(); else closeDrawer(); return; }
   if (ev.key === "Tab"){
-    var f = Array.prototype.slice.call($("#drawer").querySelectorAll('button,a[href],select,input,[tabindex]:not([tabindex="-1"])')).filter(function(x){ return x.offsetParent !== null; });
+    var f = Array.prototype.slice.call(box.querySelectorAll('button,a[href],select,input:not(.sr-only),textarea,label[for],[tabindex]:not([tabindex="-1"])')).filter(function(x){ return x.offsetParent !== null; });
     if (!f.length) return;
     var first = f[0], last = f[f.length-1];
     if (ev.shiftKey && document.activeElement === first){ ev.preventDefault(); last.focus(); }
@@ -448,6 +564,8 @@ document.addEventListener("keydown", function(ev){
 $("#kicker").textContent = latestRun() ? "Last run " + fmtDate(latestRun()) + " · every other Sunday" : "No runs yet";
 $("#tagline").textContent = META.tagline || "";
 $("#searchIcon").innerHTML = ic("search","h-5 w-5");
+$("#exportBtn").innerHTML = ic("download","h-4 w-4")+" Export / Import";
+$("#mClose").innerHTML = ic("x","h-5 w-5");
 saved = saved.filter(function(id){ return byId(id); });
 state.compare = state.compare.filter(function(id){ return byId(id); });
 safety(); refreshAll();

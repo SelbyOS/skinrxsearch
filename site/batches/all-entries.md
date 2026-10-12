@@ -1,0 +1,125 @@
+# SkinRxsearch: all entries
+
+---
+
+# [ENTRY] Mevalonolactone (MVL / mevalonic acid)
+- **Verdict:** WATCH | **Lane:** Ingredient | **Run:** 2026-10-12
+- **Evidence:** 2 of 5. Small human RCT (2 weeks) + cell and 3D-epidermis work; ingredient is a commercial supplier product
+- **Human trial:** yes | **Skin-tone data:** not reported
+- **Tags:** barrier, TEWL, ceramide-adjacent lipids, PPAR, ABCA12, fermentation-derived, OTC/cosmetic, winter-dry skin, needs second trial
+
+## EXECUTIVE SUMMARY
+A barrier-lipid signal backed by one small, short, double-blind human trial. The louder collagen and hyaluronic-acid claims trace to brand statements, not papers I could find.
+- Mechanism proposed by the authors: MVL becomes mevalonic acid in water, raises PPAR beta/delta, which raises the lipid transporter ABCA12, which moves free fatty acids into lamellar granules that build the skin's barrier lipids.
+- In the trial, the placebo group's water loss got worse over 2 winter weeks and the MVL group's did not. The win is protection against deterioration, not improvement from baseline.
+- Nothing visible should be expected at 2 weeks. The endpoints were instrument readings.
+
+## FIT AND REPLACEMENT LOGIC (my judgment, not a measurement)
+- **Fit for you:** Partial Plausible for dry-season barrier support, including on retinoid-treated skin (my inference). Weak fit as an acne or sebum fix: the trial population had dry skin and measured water loss, not breakouts.
+- **Barrier:** Partial. Two-week, double-blind trial in dry-skinned women showed protection against water-loss worsening. No data in deeper skin tones.
+- **Retinoid:** Unknown. Not tested on retinoid-treated skin. Fit with a retinoid routine is my inference only.
+- **Breakout risk:** Unknown. No comedogenicity or acne data found. Risk depends mostly on the vehicle's richness, which no product discloses.
+- **Season:** Strong. The trial ran January to February, and the benefit was preventing winter worsening. Fits the dry months.
+- **What it displaces:** A basic barrier moisturizer. It should replace that step, not add a step.
+
+## WHAT IT IS
+Mevalonolactone (INCI: Mevalonolactone) is the lactone form of mevalonic acid, a molecule early in the body's cholesterol and isoprenoid pathway. The cosmetic raw material in the trial is produced by fermentation with a sake-related yeast (Saccharomycopsis fibuligera) and sold by ADEKA (Japan) under the name Luminacare. Supplier materials position it as a moisturizing and anti-aging agent.
+
+## MECHANISM
+Applied at 0.1% in a lotion [applied] -> Reverts to mevalonic acid in water [stated] -> PPAR beta/delta signal up 1.7 times [cell] -> ABCA12 lipid transporter up [cell] -> More lamellar granules and free fatty acids [cell] -> Stronger barrier lipid layer [inferred] -> Less water loss over 2 winter weeks [human]
+1. Applied topically, MVL reverts to mevalonic acid on contact with water (stated in the paper).
+2. In cultured keratinocytes, PPAR beta/delta mRNA rose 1.7-fold and ABCA12 mRNA and protein rose.
+3. ABCA12 is the transporter that loads lipids into lamellar granules, the packets that later become the lipid mortar between skin cells.
+4. Cells showed more and larger lamellar granules, and free fatty acids were higher (myristic acid about 4.6x, palmitic about 3.6x, palmitoleic about 3.3x).
+5. Result claimed: less water loss through the stratum corneum.
+- **Inference, not observation:** The chain from PPAR to ABCA12 to granules is the authors' inference from cell data. They also argue the effect is unlikely to run through cholesterol, because fatty-acid synthesis enzymes did not change. None of this was shown directly in human skin.
+
+## STUDIES
+### Chen B, Lu N, Lee K, Ye L, Hasegawa C, Maeda K, et al. Application of mevalonolactone prevents deterioration of epidermal barrier function by accelerating the lamellar granule lipid transport system. Skin Res Technol. 2022;28(6):804-814.
+- **Read depth:** Full text (open access) read
+- **Design:** Randomized, double-blind, placebo-controlled, parallel-group. 66 women aged 30-60 enrolled; 30 active and 29 placebo analyzed. Two weeks, January-February 2020. Lotion with 0.1% MVL versus the same lotion without it, applied to the face twice daily.
+- **Who was included:** Healthy women with low stratum corneum water, high water loss and low surface lipid. Skin disease (atopic dermatitis, psoriasis, ichthyosis) excluded. Mean age about 45. Skin tone and ethnicity are not reported in the text I read. The study site is not stated in the text either.
+- **Effect size:** Numeric means and confidence intervals are in scatter plots (figures 5-6) and not in the text I read. I cannot give a percent improvement.
+- **Placebo comparison:** The placebo lotion contained the base formula, so a plain moisturizer effect is built into the comparison. The placebo group still got worse, which the authors attribute to winter conditions.
+- **Material outcome:** Not established. Subjects completed skin questionnaires, but those results are not reported in the text I read. A TEWL difference at 2 weeks is a measurable change; whether it is something you would feel is unknown.
+- **Adverse events:** No adverse events are described in the text I read. Absence of reporting is not evidence of safety.
+- **Funding and conflicts:** Authors declare no conflict of interest. The MVL tested was the ADEKA commercial raw material. I could not confirm author affiliations from what I read.
+- **Limits:** One trial, 59 analyzed people, 2 weeks, dry-skin population, no skin-tone data, no follow-up after stopping, one season. The authors also doubled the concentration relative to cell work because the stratum corneum limits permeability (their statement).
+  - Water loss (TEWL): the placebo group worsened significantly over the 2 weeks; the MVL group did not change. The between-group difference in change was significant (p<0.05).
+  - Stratum corneum water content (Corneometer): rose within the MVL group (p<0.01) but the difference between groups was not significant.
+  - Surface lipid: no change within either group; the between-group change favored MVL (p<0.05). The authors note the reading mixes sebum and skin-barrier lipids, so the source is unclear.
+  - Lab side: in a 3D epidermis model, TEWL was reported as '27% compared with control' (the wording is ambiguous; check the paper before quoting a number).
+### Scopel M, Abraham WR, Antunes AL, Henriques AT, Macedo AJ. Mevalonolactone: an inhibitor of Staphylococcus epidermidis adherence and biofilm formation. Med Chem. 2014;10(3):246-51.
+- **Read depth:** Abstract only
+- **Design:** Laboratory antibiofilm and antimicrobial assays on S. epidermidis, including 12 clinical isolates.
+- **Who was included:** Bacterial cultures. No people.
+- **Effect size:** Not extracted from the abstract.
+- **Placebo comparison:** Not applicable.
+- **Material outcome:** Not applicable. S. epidermidis is also a skin commensal, so whether this helps or harms a skin microbiome is unknown.
+- **Adverse events:** Not applicable.
+- **Funding and conflicts:** Not checked.
+- **Limits:** Laboratory only. Do not read this as an anti-acne finding.
+  - MVL reduced biofilm formation of S. epidermidis without antibacterial activity against the reference strain; the clinical isolates showed both biofilm inhibition and antimicrobial activity. No effect on gram-negative bacteria.
+
+## CLAIMS CHECK
+- Boosts hyaluronic acid and collagen production | source: Brand marketing and lifestyle press | No peer-reviewed human data found in my PubMed search
+- 80% more cell turnover, 60% hydration, 50% collagen (quoted from a brand in a women's-health article) | source: Brand-reported | Self-described as early; not traceable to a paper I could find
+- Topical mevalonic acid restored cholesterol synthesis in older mice | source: Cited secondhand in the same article | I did not find the paper in my search, so it is unverified
+- Lowers cortisol production in skin cells by at least 10% at 24 hours | source: A claim in a US patent (claim 36 of US 12226379) | A patent claim is not data. Interesting to watch given the local stress-hormone angle, but it is only a lead
+
+## PRODUCTS AND FORMULATIONS
+I cannot rank formulations by efficacy. None of the products below discloses its MVL percentage, and the only trial used 0.1%.
+- **ADEKA Luminacare Mevalonolactone (raw material)** (ADEKA, Japan): B2B only. The grade used in the 2022 trial. Reference point for what was actually tested.
+- **Personal Day Dive Deep Mevalonic Moisturizer** (Personal Day (US)): US$38, 1.8 oz. Lists MVL late in the ingredient list, after citric acid and before sodium hyaluronate and phenoxyethanol, which suggests a low level (my inference; ordering below about 1% is not reliable). Also contains squalane, jojoba oil, caprylic/capric triglyceride and an azelaic acid derivative. Rich emollient base: if you are congestion-prone, patch it on a small zone first, because the vehicle may matter more than the MVL.
+- **Personal Day Everybody Stay Calm Recovery Mask** (Personal Day (US)): not found. Contains MVL and azelaic acid per a third-party aggregator. Wash-off contact time makes it a weaker test of the ingredient.
+- **Dr. Different 131 Moisturizer** (Dr. Different): from about US$21. Lowest-priced MVL product the aggregator lists. I did not check the label.
+- **Proya Ruby Series 2.0 Deep Ocean Energy essence** (Proya (China)): not found. Listed by the aggregator with MVL and a retinoid. Not label-checked. Retail path into Canada unknown.
+- **Yuni Beauty Balancing Act Pore Refining Face Cream** (Yuni Beauty): not found. Listed by the aggregator. Not label-checked.
+
+## HOW TO ADAPT IT
+- Treat it as a barrier-layer swap: PM, after water-based serums, in the slot where a basic moisturizer would go, then occlusive if you use one.
+- Do not add it on top of a full routine. If it does not replace a step, skip it.
+- The trial used a lotion with 0.1% applied twice daily. Use any product as directed; there is no tested dose beyond that.
+- Interactions with retinoids, acids and vitamin C are untested. Nothing I found says it conflicts, but that is absence of data. Introduce it alone for the first week.
+
+## WHAT TO EXPECT, AND WHEN
+- **Days 1-3:** Probably nothing visible. Check for stinging or new bumps.
+- **Weeks 2-4:** If it works as in the trial, less tightness or flaking during dry weather (my inference; the trial measured instruments, not feelings).
+- **Beyond 4 weeks:** No data. Collagen or hyaluronic-acid changes have not been shown in people.
+
+## SAFETY
+- **Contraindications and unknowns:** None reported in the paper's text. Not tested in pregnancy, in people with skin disease, or on retinoid-treated skin. Treat a 'no reports' as unknown.
+- **Side benefits:** None shown in people. The biofilm result is laboratory-only.
+
+## DOES IT TRANSFER?
+Does the mechanism apply to deeper skin tones? The pathway (lipid transport into lamellar granules) is not tone-specific, so I would expect it to transfer. The trial gives no tone data, so that is inference. For this ingredient the efficacy question and the risk question separate: it is not an irritant or exfoliant class, so post-inflammatory pigment risk is not the concern; the vehicle's richness is.
+
+## WHAT WOULD CHANGE THE VERDICT
+- A second independent trial, ideally 4-8 weeks
+- Data in Fitzpatrick IV-VI skin
+- A product that discloses the percentage
+- Results on retinoid-treated or oily, congestion-prone skin
+
+## COST AND MARKETS
+- **US** (found): US$38 for 1.8 oz (Personal Day Dive Deep Mevalonic Moisturizer, retailer listing)
+- **US, budget** (secondhand): from about US$21 (Dr. Different 131 Moisturizer, per a third-party aggregator; not label-checked)
+- **Canada** (EST): about C$50-55 if it ships here at a straight currency conversion
+- **Korea / Japan / EU** (unknown): no retail price found
+- **Buzz check:** Buzz premium looks modest on price. The real question is dose: no product I found discloses the percentage, and the only human trial used 0.1%.
+
+## SOURCES
+- [Chen B et al. 2022 (DOI)](https://doi.org/10.1111/srt.13202)
+- [Chen B et al. 2022 (PubMed)](https://pubmed.ncbi.nlm.nih.gov/36148627/)
+- [Chen B et al. 2022 (full text)](https://pmc.ncbi.nlm.nih.gov/articles/PMC9907606)
+- [Scopel M et al. 2014 (DOI)](https://doi.org/10.2174/15734064113096660055)
+- [Scopel M et al. 2014 (PubMed)](https://pubmed.ncbi.nlm.nih.gov/24111986/)
+- [ADEKA Luminacare Mevalonolactone (raw material) (listing)](https://knowde.com/stores/adeka-corporation/products/adeka-luminacare-mva-moisturizer-anti-aging-agent)
+- [Personal Day Dive Deep Mevalonic Moisturizer (listing)](https://www.ulta.com/p/dive-deep-mevalonic-moisturizer-pimprod2053659)
+- [Personal Day Everybody Stay Calm Recovery Mask (listing)](https://skinsort.com/products/products-with-mevalonolactone)
+
+## CONFIDENCE AND GAPS
+- Read in full: Chen 2022 (open-access full text).
+- Abstract only: the biofilm paper.
+- Not opened live: retailer ingredient list, aggregator pages and the patent text (read through search snippets).
+- Not verified: author affiliations, the study site, numeric effect sizes, the mouse study cited in the press.
+- Searched on 2026-10-12

@@ -69,7 +69,37 @@
     "Result claimed: less water loss through the stratum corneum."
    ],
    "inferenceFlag": "The chain from PPAR to ABCA12 to granules is the authors' inference from cell data. They also argue the effect is unlikely to run through cholesterol, because fatty-acid synthesis enzymes did not change. None of this was shown directly in human skin.",
-   "diagramCaption": "MVL -> mevalonic acid -> PPAR beta/delta up -> ABCA12 up -> lipid loading into lamellar granules -> barrier lipids -> lower water loss (authors' model)"
+   "diagramCaption": "MVL -> mevalonic acid -> PPAR beta/delta up -> ABCA12 up -> lipid loading into lamellar granules -> barrier lipids -> lower water loss (authors' model)",
+   "flow": [
+    {
+     "label": "Applied at 0.1% in a lotion",
+     "basis": "applied"
+    },
+    {
+     "label": "Reverts to mevalonic acid in water",
+     "basis": "stated"
+    },
+    {
+     "label": "PPAR beta/delta signal up 1.7 times",
+     "basis": "cell"
+    },
+    {
+     "label": "ABCA12 lipid transporter up",
+     "basis": "cell"
+    },
+    {
+     "label": "More lamellar granules and free fatty acids",
+     "basis": "cell"
+    },
+    {
+     "label": "Stronger barrier lipid layer",
+     "basis": "inferred"
+    },
+    {
+     "label": "Less water loss over 2 winter weeks",
+     "basis": "human"
+    }
+   ]
   },
   "studies": [
    {
@@ -250,5 +280,27 @@
    "k": "unknown"
   }
  ],
- "timeline": "Instrument change by 2 weeks; felt change unknown"
+ "timeline": "Instrument change by 2 weeks; felt change unknown",
+ "fitAxes": [
+  {
+   "axis": "Barrier",
+   "rating": "Partial",
+   "why": "Two-week, double-blind trial in dry-skinned women showed protection against water-loss worsening. No data in deeper skin tones."
+  },
+  {
+   "axis": "Retinoid",
+   "rating": "Unknown",
+   "why": "Not tested on retinoid-treated skin. Fit with a retinoid routine is my inference only."
+  },
+  {
+   "axis": "Breakout risk",
+   "rating": "Unknown",
+   "why": "No comedogenicity or acne data found. Risk depends mostly on the vehicle's richness, which no product discloses."
+  },
+  {
+   "axis": "Season",
+   "rating": "Strong",
+   "why": "The trial ran January to February, and the benefit was preventing winter worsening. Fits the dry months."
+  }
+ ]
 }
