@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex"><title>SkinRxsearch motion mockup</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+:root{--bg:#efe8de;--ink:#241b1e;--mute:#675a5d;--line:rgba(60,40,45,.15);--glass:rgba(255,251,246,.72);--solid:#fbf6ef;--accent:#5a2447;--on:#fff8f3;--chip:rgba(90,36,71,.08);--watch:#8a5200;--try:#1f6b45;--novel:#4b4690;--b1:#e6b3a5;--b2:#cfdac6;--b3:#f1dca9}
+@media (prefers-color-scheme:dark){:root{--bg:#1b1517;--ink:#f3eae6;--mute:#bbaaac;--line:rgba(255,235,230,.15);--glass:rgba(44,33,37,.7);--solid:#2a2125;--accent:#e7a8cf;--on:#2a0f20;--chip:rgba(231,168,207,.13);--watch:#e8b45a;--try:#7fcf9f;--novel:#b7b1f2;--b1:#4a2a3a;--b2:#2b3a31;--b3:#4a3f22}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Figtree,system-ui,sans-serif;padding-bottom:80px}
+.wash{position:fixed;inset:0;z-index:-1;background:radial-gradient(60% 50% at 8% 6%,var(--b1),transparent 70%),radial-gradient(55% 45% at 94% 10%,var(--b2),transparent 70%),radial-gradient(60% 50% at 70% 100%,var(--b3),transparent 70%),var(--bg)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 max(16px,env(safe-area-inset-left))}
+.eyebrow{font:500 11px "JetBrains Mono",monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--mute)}
+.serif{font-family:"Instrument Serif",Georgia,serif;font-weight:400}
+.glass{background:var(--glass);-webkit-backdrop-filter:blur(18px) saturate(1.2);backdrop-filter:blur(18px) saturate(1.2);border:1px solid var(--line);box-shadow:0 10px 30px -14px rgba(70,40,50,.3)}
+/* hero */
+.hero{position:relative;height:min(64vh,560px);min-height:380px;overflow:hidden;border-radius:0 0 36px 36px;background:linear-gradient(135deg,var(--b1),var(--b3))}
+.hero img{position:absolute;left:0;top:-8%;width:100%;height:116%;object-fit:cover;will-change:transform}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(36,27,30,.05) 0%,rgba(239,232,222,0) 45%,var(--bg) 100%);pointer-events:none}
+.hero .in{position:absolute;left:0;right:0;bottom:28px;z-index:2}
+.hero h1{font:400 clamp(48px,9vw,96px)/.95 "Instrument Serif",Georgia,serif;margin:6px 0 0}
+.hero .tag{font:italic clamp(22px,3.4vw,32px) "Instrument Serif",Georgia,serif;color:var(--mute)}
+.credit{position:absolute;right:16px;top:12px;z-index:3;font-size:11px;background:var(--glass);border-radius:99px;padding:4px 10px;color:var(--mute)}
+.credit a{color:inherit}
+/* reveal */
+.rv{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s cubic-bezier(.2,.8,.2,1);transition-delay:calc(var(--i,0)*70ms)}
+.rv.on{opacity:1;transform:none}
+/* metrics */
+.metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:20px}
+.m{border-radius:24px;padding:16px}.m b{display:block;font:400 52px/1 "Instrument Serif",Georgia,serif;margin-top:6px}
+/* scrollytelling */
+.story{display:grid;grid-template-columns:1fr;gap:24px;margin-top:64px}
+@media(min-width:860px){.story{grid-template-columns:minmax(300px,420px) 1fr;gap:48px}}
+.stick{position:sticky;top:16px;align-self:start;border-radius:28px;padding:20px}
+.node{display:flex;align-items:center;gap:10px;border-radius:16px;padding:10px 12px;border:1.5px solid var(--line);background:var(--solid);opacity:.45;transform:scale(.98);transition:all .35s ease;font-weight:600;font-size:15px}
+.node small{margin-left:auto;font:500 10px "JetBrains Mono",monospace;color:var(--mute);text-align:right}
+.node.done{opacity:.85;border-color:var(--accent)}
+.node.now{opacity:1;transform:scale(1.02);border-color:var(--accent);box-shadow:0 8px 24px -12px var(--accent)}
+.node.inf{border-style:dashed;border-color:var(--watch)}
+.link{height:14px;margin:0 auto;width:2px;background:var(--line);position:relative}
+.link i{position:absolute;inset:0;background:var(--accent);transform-origin:top;transform:scaleY(0);transition:transform .35s ease}
+.link.on i{transform:scaleY(1)}
+.step{min-height:46vh;display:flex;flex-direction:column;justify-content:center;border-left:2px solid var(--line);padding-left:24px;opacity:.4;transition:opacity .35s}
+.step.now{opacity:1;border-color:var(--accent)}
+.step h3{font:400 34px/1.1 "Instrument Serif",Georgia,serif;margin:0 0 8px}
+.step p{margin:0;max-width:46ch}
+/* cards */
+.grid{display:grid;gap:16px;margin-top:20px}@media(min-width:760px){.grid{grid-template-columns:1fr 1fr}}
+.card{border-radius:28px;padding:20px;transition:transform .2s ease}
+@media(hover:hover){.card:hover{transform:translateY(-3px)}}
+.pill{display:inline-flex;gap:6px;align-items:center;padding:4px 12px;border-radius:99px;color:#fff;font-size:12px;font-weight:700;letter-spacing:.08em}
+.meter{display:flex;gap:4px}.meter i{width:18px;height:8px;border-radius:9px;background:var(--line);overflow:hidden;position:relative}
+.meter i:after{content:"";position:absolute;inset:0;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .5s ease;transition-delay:calc(var(--k)*120ms)}
+.on .meter i.f:after{transform:scaleX(1)}
+h2.sec{font:400 clamp(32px,5vw,48px)/1.05 "Instrument Serif",Georgia,serif;margin:64px 0 4px}
+.foot{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);font-weight:600;font-size:14px}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.node,.link i,.meter i:after,.step{transition:none}.hero img{transform:none!important}html{scroll-behavior:auto}}
+</style></head><body><div class="wash"></div>
+<header class="hero">
+  <img id="heroimg" alt="" src="https://images.unsplash.com/photo-1761623135394-ce45aaad36ca?fm=jpg&q=75&w=2000&auto=format&fit=crop" onerror="this.style.display='none'">
+  <div class="credit">Photo by <a href="https://unsplash.com/@velros" target="_blank" rel="noopener noreferrer">Eve</a> on <a href="https://unsplash.com/photos/abstract-warm-colors-with-soft-focus-VsLXpMWAOUI" target="_blank" rel="noopener noreferrer">Unsplash</a></div>
+  <div class="in wrap"><div class="eyebrow">Mockup · motion direction · last run Oct 12, 2026</div><h1>SkinRxsearch</h1><div class="tag">A living look</div></div>
+</header>
+<main class="wrap">
+  <section class="metrics" aria-label="At a glance">
+    <div class="m glass rv" style="--i:0"><span class="eyebrow">Entries</span><b data-n="1">0</b></div>
+    <div class="m glass rv" style="--i:1"><span class="eyebrow">New this run</span><b data-n="1">0</b></div>
+    <div class="m glass rv" style="--i:2"><span class="eyebrow">Human trial</span><b data-n="1">0</b></div>
+    <div class="m glass rv" style="--i:3"><span class="eyebrow">Skin-tone data</span><b data-n="0">0</b></div>
+    <div class="m glass rv" style="--i:4"><span class="eyebrow">Saved</span><b data-n="0">0</b></div>
+  </section>
+
+  <h2 class="sec rv">Follow the mechanism</h2>
+  <p class="rv" style="color:var(--mute);max-width:56ch;margin:0">Scroll. The diagram on the left tracks where you are in the chain, and the dashed node marks where evidence turns into inference.</p>
+  <section class="story" id="story">
+    <div class="stick glass" aria-label="Mechanism diagram" id="nodes"></div>
+    <div id="steps"></div>
+  </section>
+
+  <h2 class="sec rv">Entries arrive like this</h2>
+  <div class="grid">
+    <article class="card glass rv" style="--i:0"><span class="pill" style="background:var(--watch)">WATCH</span>
+      <div class="eyebrow" style="margin-top:12px">Ingredient · full dossier</div><h3 class="serif" style="font-size:32px;margin:4px 0">Mevalonolactone</h3>
+      <p style="margin:0 0 12px">A barrier-lipid signal backed by one small, short, double-blind human trial.</p>
+      <div class="meter" aria-label="Evidence 2 of 5"><i class="f" style="--k:0"></i><i class="f" style="--k:1"></i><i style="--k:2"></i><i style="--k:3"></i><i style="--k:4"></i></div></article>
+    <article class="card glass rv" style="--i:1"><span class="pill" style="background:var(--novel)">NOVEL</span>
+      <div class="eyebrow" style="margin-top:12px">Device · triage</div><h3 class="serif" style="font-size:32px;margin:4px 0">Placeholder entry</h3>
+      <p style="margin:0 0 12px">Shown only to preview how a second card staggers in beside the first.</p>
+      <div class="meter" aria-label="Evidence 3 of 5"><i class="f" style="--k:0"></i><i class="f" style="--k:1"></i><i class="f" style="--k:2"></i><i style="--k:3"></i><i style="--k:4"></i></div></article>
+  </div>
+  <div class="foot">Created and powered by Alysse</div>
+</main>
+<script>
+(function(){
+var flow=[["Applied at 0.1% in a lotion","Applied",0],["Reverts to mevalonic acid in water","Stated in paper",0],["PPAR beta/delta signal up 1.7 times","Cell or lab data",0],["ABCA12 lipid transporter up","Cell or lab data",0],["More lamellar granules and free fatty acids","Cell or lab data",0],["Stronger barrier lipid layer","Authors' inference",1],["Less water loss over 2 winter weeks","Human trial",0]];
+var copy=["What goes on the skin.","In water the lactone opens into mevalonic acid, per the paper.","In cultured skin cells, a nuclear signal rises.","That signal raises the transporter that loads lipids into packets.","Cells made more and larger lipid packets and more free fatty acids.","The authors infer these packets become stronger barrier lipids. Not shown directly in human skin.","In 66 women over two winter weeks, placebo skin lost more water; treated skin did not."];
+var nodes=document.getElementById("nodes"),steps=document.getElementById("steps");
+flow.forEach(function(f,i){
+ nodes.insertAdjacentHTML("beforeend",'<div class="node'+(f[2]?" inf":"")+'" data-i="'+i+'"><span>'+f[0]+'</span><small>'+f[1]+'</small></div>'+(i<flow.length-1?'<div class="link" data-l="'+i+'"><i></i></div>':""));
+ steps.insertAdjacentHTML("beforeend",'<div class="step" data-i="'+i+'"><div class="eyebrow">Step '+(i+1)+' of '+flow.length+'</div><h3>'+f[0]+'</h3><p>'+copy[i]+'</p></div>');
+});
+function setNow(n){document.querySelectorAll(".node").forEach(function(e){var i=+e.dataset.i;e.classList.toggle("now",i===n);e.classList.toggle("done",i<n)});document.querySelectorAll(".link").forEach(function(e){e.classList.toggle("on",+e.dataset.l<n)});document.querySelectorAll(".step").forEach(function(e){e.classList.toggle("now",+e.dataset.i===n)})}
+setNow(0);
+var so=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)setNow(+e.target.dataset.i)})},{rootMargin:"-45% 0px -45% 0px"});
+document.querySelectorAll(".step").forEach(function(e){so.observe(e)});
+var ro=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("on");var b=e.target.querySelector("b[data-n]");if(b&&!b.dataset.d){b.dataset.d=1;var t=+b.dataset.n,k=0;if(!t){b.textContent=0;return}var iv=setInterval(function(){k++;b.textContent=k;if(k>=t)clearInterval(iv)},180)}ro.unobserve(e.target)}})},{threshold:.2});
+document.querySelectorAll(".rv").forEach(function(e){ro.observe(e)});
+var img=document.getElementById("heroimg"),rm=matchMedia("(prefers-reduced-motion:reduce)").matches,tick=false;
+if(!rm)addEventListener("scroll",function(){if(tick)return;tick=true;requestAnimationFrame(function(){img.style.transform="translateY("+Math.min(scrollY,600)*0.18+"px)";tick=false})},{passive:true});
+})();
+</script></body></html>
