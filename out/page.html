@@ -105,7 +105,7 @@ select{background-color:var(--glass-solid);color:var(--ink)}
 
   <section id="safety" class="mt-4"></section>
 
-  <nav class="mt-6 flex items-center gap-2" aria-label="Views">
+  <nav class="mt-6 flex flex-wrap items-center gap-2" aria-label="Views">
     <button data-act="tab" data-tab="feed" class="chipbtn rounded-full px-4 min-h-[44px] text-sm font-semibold inline-flex items-center gap-2" aria-pressed="true"></button>
     <button data-act="tab" data-tab="compare" class="chipbtn rounded-full px-4 min-h-[44px] text-sm font-semibold inline-flex items-center gap-2" aria-pressed="false"></button>
     <button data-act="tab" data-tab="notes" class="chipbtn rounded-full px-4 min-h-[44px] text-sm font-semibold inline-flex items-center gap-2" aria-pressed="false"></button>
@@ -262,7 +262,7 @@ function metrics(){
     ["layers","Entries", n, "across "+((META.runs||[]).length||1)+" run"+(((META.runs||[]).length||1)>1?"s":"")],
     ["sparkles","New this run", fresh, lr ? "run of "+fmtDate(lr) : ""],
     ["flask-conical","Human trial", human, "of "+n+(n===1?" entry":" entries")],
-    ["users","Skin-tone data", tone, "of "+n+" report it"],
+    ["users","Skin-tone data", tone, "of "+n+(n===1?" entry":" entries")],
     ["bookmark-check","Saved", saved.filter(function(id){return byId(id) && !isHidden(id);}).length, "on this device"]
   ];
   $("#metrics").innerHTML = cards.map(function(c){
@@ -424,7 +424,7 @@ function runsView(){
   var runs = (META.runs||[]).slice().sort(function(a,b){ return b.date.localeCompare(a.date); });
   $("#view").innerHTML = runs.map(function(r, i){
     var es = vis().filter(function(e){ return e.run === r.date; });
-    return '<details class="glass rounded-3xl p-5 mb-3"'+(i===0?" open":"")+'><summary class="cursor-pointer min-h-[44px] flex items-center gap-3 list-none"><span class="font-display text-3xl">'+esc(fmtDate(r.date))+'</span><span class="eyebrow">'+esc(r.entries)+' entries · '+esc(r.deep)+' dossier'+(r.deep===1?"":"s")+'</span></summary>'+coverHTML(r)+'<a href="batches/batch-'+esc(r.date)+'.md" download class="inline-flex items-center gap-1.5 rounded-full chipbtn px-3 min-h-[44px] text-sm font-semibold mt-2">'+ic("download","h-3.5 w-3.5")+'Download this run as Markdown</a>'
+    return '<details class="glass rounded-3xl p-5 mb-3"'+(i===0?" open":"")+'><summary class="cursor-pointer min-h-[44px] flex items-center gap-3 list-none"><span class="font-display text-3xl">'+esc(fmtDate(r.date))+'</span><span class="eyebrow">'+esc(r.entries)+(r.entries===1?' entry':' entries')+' · '+esc(r.deep)+' dossier'+(r.deep===1?"":"s")+'</span></summary>'+coverHTML(r)+'<a href="batches/batch-'+esc(r.date)+'.md" download class="inline-flex items-center gap-1.5 rounded-full chipbtn px-3 min-h-[44px] text-sm font-semibold mt-2">'+ic("download","h-3.5 w-3.5")+'Download this run as Markdown</a>'
       + '<p class="text-mute mt-2 max-w-2xl">'+esc(r.note||"")+'</p>'
       + '<ul class="mt-3 divide-y divide-line">'+es.map(function(e){ return '<li><button data-act="open" data-id="'+esc(e.id)+'" class="w-full text-left py-3 min-h-[44px] flex items-center gap-3">'+pill(e.verdict)+'<span class="font-semibold">'+esc(e.title)+'</span><span class="ml-auto text-mute">'+ic("chevron-right","h-4 w-4")+'</span></button></li>'; }).join("")+'</ul></details>';
   }).join("") || '<div class="glass rounded-3xl p-8">No runs yet.</div>';
