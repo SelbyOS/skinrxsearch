@@ -87,6 +87,8 @@ html:not(.mo) *,html:not(.mo) *::before,html:not(.mo) *::after{transition:none!i
 .hrow2{display:grid;grid-template-rows:1fr;transition:grid-template-rows .25s ease,opacity .2s ease}
 .hrow2>div{overflow:hidden;min-height:0}
 @media (max-width:767px){.drawer.sc .hrow2{grid-template-rows:0fr;opacity:0;visibility:hidden}}
+@media (max-width:767px){.drawer.sc #dTitle{font-size:1.5rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}}
+@media (max-width:639px){.tabs svg{display:none}}
 .toast{transition:opacity .2s ease,transform .2s ease}
 select{background-color:var(--glass-solid);color:var(--ink)}
 </style>
@@ -101,15 +103,15 @@ select{background-color:var(--glass-solid);color:var(--ink)}
     <p class="text-sm text-mute mt-3 max-w-2xl">A research scan on skin, ingredients, products, tools and hair. It reads studies and registries, labels how deeply each source was read, and says where the evidence stops. Not medical advice.</p>
   </header>
 
-  <section id="metrics" aria-label="At a glance" class="grid grid-cols-2 sm:grid-cols-5 gap-3"></section>
+  <section id="metrics" aria-label="At a glance" class="flex gap-2 overflow-x-auto pb-1 -mx-4 px-4 sm:mx-0 sm:px-0 sm:pb-0 sm:grid sm:grid-cols-5 sm:gap-3"></section>
 
   <section id="safety" class="mt-4"></section>
 
-  <nav class="mt-6 flex flex-wrap items-center gap-2" aria-label="Views">
-    <button data-act="tab" data-tab="feed" class="chipbtn rounded-full px-4 min-h-[44px] text-sm font-semibold inline-flex items-center gap-2" aria-pressed="true"></button>
-    <button data-act="tab" data-tab="compare" class="chipbtn rounded-full px-4 min-h-[44px] text-sm font-semibold inline-flex items-center gap-2" aria-pressed="false"></button>
-    <button data-act="tab" data-tab="notes" class="chipbtn rounded-full px-4 min-h-[44px] text-sm font-semibold inline-flex items-center gap-2" aria-pressed="false"></button>
-    <button data-act="tab" data-tab="runs" class="chipbtn rounded-full px-4 min-h-[44px] text-sm font-semibold inline-flex items-center gap-2" aria-pressed="false"></button>
+  <nav class="tabs mt-6 grid grid-cols-4 gap-1.5 sm:flex sm:items-center sm:gap-2" aria-label="Views">
+    <button data-act="tab" data-tab="feed" class="chipbtn rounded-full px-2 sm:px-4 min-h-[44px] justify-center text-sm font-semibold inline-flex items-center gap-2" aria-pressed="true"></button>
+    <button data-act="tab" data-tab="compare" class="chipbtn rounded-full px-2 sm:px-4 min-h-[44px] justify-center text-sm font-semibold inline-flex items-center gap-2" aria-pressed="false"></button>
+    <button data-act="tab" data-tab="notes" class="chipbtn rounded-full px-2 sm:px-4 min-h-[44px] justify-center text-sm font-semibold inline-flex items-center gap-2" aria-pressed="false"></button>
+    <button data-act="tab" data-tab="runs" class="chipbtn rounded-full px-2 sm:px-4 min-h-[44px] justify-center text-sm font-semibold inline-flex items-center gap-2" aria-pressed="false"></button>
   </nav>
 
   <div id="filters" class="glass rounded-3xl p-3 sm:p-4 mt-3 sm:sticky sm:top-2 z-30">
@@ -120,6 +122,8 @@ select{background-color:var(--glass-solid);color:var(--ink)}
         <input id="q" type="search" placeholder="Search ingredients, mechanisms, tags" autocomplete="off"
           class="w-full rounded-2xl glass-solid pl-11 pr-4 min-h-[48px] text-base placeholder:text-mute">
       </label>
+      <button id="filtBtn" data-act="filt" aria-expanded="false" class="sm:hidden chipbtn rounded-full px-4 min-h-[44px] text-sm font-semibold inline-flex items-center justify-center gap-2 self-start"></button>
+      <div id="filtMore" class="hidden sm:flex flex-col gap-3">
       <div class="flex flex-wrap gap-2 items-center" id="chipRow"></div>
       <div class="flex flex-wrap gap-2 items-center">
         <label class="inline-flex items-center gap-2 text-sm text-mute">Tag
@@ -133,6 +137,7 @@ select{background-color:var(--glass-solid);color:var(--ink)}
         <button id="hiddenBtn" data-act="hiddenOnly" class="chipbtn rounded-full px-4 min-h-[44px] text-sm font-semibold items-center gap-2" style="display:none" aria-pressed="false"></button>
         <button id="clearBtn" data-act="clear" class="rounded-full px-3 min-h-[44px] text-sm font-semibold text-accent underline underline-offset-4 hidden"></button>
         <span id="count" class="ml-auto text-sm text-mute" aria-live="polite"></span>
+      </div>
       </div>
     </div>
   </div>
@@ -188,7 +193,7 @@ function newId(){ return "n"+Date.now().toString(36)+Math.random().toString(36).
 var dockOpen = !!sget("srs.dock", false), lastSel = null, lastDockTap = 0, delArm = null, delTimer = null, toastTimer = null;
 var LANE_ICON = {Ingredient:"flask-conical",Product:"package",Device:"zap",Hair:"sprout","Hair and scalp":"sprout",Clinical:"stethoscope",Rx:"stethoscope",Study:"file-text"};
 
-var state = { cur:null, hiddenOnly:false, notesOnly:false, nq:"", q:"", verdicts:[], lanes:[], tag:"", sort:"new", savedOnly:false, tab:"feed", compare:sget("srs.cmp", []), open:null };
+var state = { filtOpen:false, cur:null, hiddenOnly:false, notesOnly:false, nq:"", q:"", verdicts:[], lanes:[], tag:"", sort:"new", savedOnly:false, tab:"feed", compare:sget("srs.cmp", []), open:null };
 var lastTrigger = null;
 
 function esc(s){ return String(s == null ? "" : s).replace(/[&<>"']/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]; }); }
@@ -266,8 +271,8 @@ function metrics(){
     ["bookmark-check","Saved", saved.filter(function(id){return byId(id) && !isHidden(id);}).length, "on this device"]
   ];
   $("#metrics").innerHTML = cards.map(function(c){
-    return '<div class="glass rounded-3xl p-4 last:col-span-2 sm:last:col-span-1"><div class="flex items-center gap-2 text-mute">'+ic(c[0],"h-4 w-4")+'<span class="eyebrow">'+esc(c[1])+'</span></div>'
-      + '<div class="font-display text-5xl leading-none mt-2">'+esc(c[2])+'</div><div class="text-xs text-mute mt-1">'+esc(c[3])+'</div></div>';
+    return '<div class="glass rounded-2xl sm:rounded-3xl px-3 py-2.5 sm:p-4 shrink-0 min-w-[116px] sm:min-w-0"><div class="flex items-center gap-2 text-mute">'+ic(c[0],"h-4 w-4")+'<span class="eyebrow">'+esc(c[1])+'</span></div>'
+      + '<div class="font-display text-3xl sm:text-5xl leading-none mt-1 sm:mt-2">'+esc(c[2])+'</div><div class="hidden sm:block text-xs text-mute mt-1">'+esc(c[3])+'</div></div>';
   }).join("");
 }
 
@@ -322,6 +327,9 @@ function chipRow(){
   hb.style.display = (hn || state.hiddenOnly) ? "inline-flex" : "none"; hb.setAttribute("aria-pressed", state.hiddenOnly);
   hb.innerHTML = ic("eye-off","h-4 w-4")+" Hidden"+(hn?' <span class="font-mono text-xs">'+hn+'</span>':"");
   var active = state.verdicts.length + state.lanes.length + (state.tag?1:0) + (state.q?1:0) + (state.savedOnly?1:0) + (state.notesOnly?1:0) + (state.hiddenOnly?1:0);
+  var fb = $("#filtBtn"), fm = $("#filtMore");
+  fb.setAttribute("aria-expanded", state.filtOpen); fb.innerHTML = ic("sliders-horizontal","h-4 w-4")+" Filters"+(active?' <span class="font-mono text-xs">'+active+'</span>':"")+ic(state.filtOpen?"chevron-up":"chevron-down","h-4 w-4");
+  fm.classList.toggle("hidden", !state.filtOpen); fm.classList.toggle("flex", state.filtOpen);
   var cb = $("#clearBtn"); cb.classList.toggle("hidden", !active); cb.textContent = "Clear "+active+" filter"+(active>1?"s":"");
 }
 
@@ -723,6 +731,7 @@ document.addEventListener("click", function(ev){
   else if (a === "verdict"){ var v = t.getAttribute("data-v"), k = state.verdicts.indexOf(v); if (k>-1) state.verdicts.splice(k,1); else state.verdicts.push(v); chipRow(); feed(); }
   else if (a === "lane"){ var l = t.getAttribute("data-l"), m = state.lanes.indexOf(l); if (m>-1) state.lanes.splice(m,1); else state.lanes.push(l); chipRow(); feed(); }
   else if (a === "tag"){ state.tag = t.getAttribute("data-t"); chipRow(); feed(); }
+  else if (a === "filt"){ state.filtOpen = !state.filtOpen; chipRow(); }
   else if (a === "hiddenOnly"){ state.hiddenOnly = !state.hiddenOnly; chipRow(); feed(); }
   else if (a === "motion"){ sset("srs.rm", motionOn() ? "reduce" : "full"); applyMotion(); if (state.open) spyUpdate(); }
   else if (a === "hide"){ if (hidden.indexOf(id) < 0) hidden.push(id); sset("srs.hidden", hidden); if (state.open) closeDrawer(); else refreshAll(); toast("Hidden from your feed.", id); }
