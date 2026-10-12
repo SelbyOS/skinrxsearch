@@ -1,0 +1,289 @@
+<title>SkinRxsearch</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Sans+3:wght@400;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one column of evidence cards on a cool paper ground. A sticky search/filter bar on top, a lab-notebook feel: mono labels for data, grotesque display for names. */
+:root{
+  --bg:#eef1ee; --surface:#f9fbf9; --ink:#13201d; --mute:#58655f; --line:#d3dbd5;
+  --accent:#0f5c58; --on-accent:#f4faf8; --chip:#e2e9e4; --warn:#a3271f;
+  --c-watch:#a15c00; --c-try:#1f7a4c; --c-skip:#5b6670; --c-novel:#5b3fb5; --on-badge:#ffffff;
+  --est:#fbe7b5; --est-ink:#5a3a00;
+  --f-display:"Bricolage Grotesque","Avenir Next","Segoe UI",system-ui,sans-serif;
+  --f-body:"Source Sans 3","Segoe UI",system-ui,-apple-system,sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0c1311; --surface:#131c19; --ink:#e6efea; --mute:#94a39b; --line:#25322d;
+    --accent:#62c4bb; --on-accent:#08201d; --chip:#1b2622; --warn:#ff9b92;
+    --c-watch:#e8a23a; --c-try:#5cc995; --c-skip:#98a3ad; --c-novel:#b8a2f5; --on-badge:#0c1311;
+    --est:#4a3810; --est-ink:#f6d98f; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0c1311; --surface:#131c19; --ink:#e6efea; --mute:#94a39b; --line:#25322d;
+  --accent:#62c4bb; --on-accent:#08201d; --chip:#1b2622; --warn:#ff9b92;
+  --c-watch:#e8a23a; --c-try:#5cc995; --c-skip:#98a3ad; --c-novel:#b8a2f5; --on-badge:#0c1311;
+  --est:#4a3810; --est-ink:#f6d98f; color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{margin:0;padding-inline:16px;padding-block:0 72px;background:var(--bg);color:var(--ink);font:17px/1.55 var(--f-body)}
+.wrap{max-width:960px;margin:0 auto}
+header{padding-block:26px 12px}
+h1{font:700 clamp(30px,6vw,44px)/1.02 var(--f-display);margin:0;letter-spacing:-.02em;text-wrap:balance}
+.tagline{font:500 12px var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin:8px 0 0}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding-block:10px;border-bottom:1px solid var(--line)}
+.bar input{width:100%;padding:11px 14px;border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink);font:16px var(--f-body)}
+.bar input:focus-visible,.chip:focus-visible,.tabs button:focus-visible,summary:focus-visible,.tag:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.chip{border:1px solid var(--line);background:var(--chip);color:var(--ink);border-radius:999px;padding:5px 12px;font:500 12px var(--f-mono);cursor:pointer}
+.chip[aria-pressed=true]{background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
+.tabs{display:flex;gap:4px;margin-block:14px 6px;border-bottom:1px solid var(--line)}
+.tabs button{padding:8px 14px;border:0;border-bottom:2px solid transparent;background:transparent;color:var(--mute);font:600 14px var(--f-body);cursor:pointer}
+.tabs button[aria-selected=true]{border-bottom-color:var(--accent);color:var(--ink)}
+.strip{border-block:1px solid var(--line);padding-block:10px;margin-block:12px;font-size:14px;color:var(--mute)}
+.strip b{color:var(--ink);font-family:var(--f-mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+.grid{display:grid;gap:16px;min-width:0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px 16px 14px;position:relative;min-width:0}
+.card h2{font:700 24px/1.15 var(--f-display);margin:8px 0 6px;letter-spacing:-.01em;text-wrap:balance;padding-right:0}
+.badge{display:inline-block;font:500 11px var(--f-mono);letter-spacing:.1em;padding:3px 9px;border-radius:4px;color:var(--on-badge)}
+.v-WATCH{background:var(--c-watch)} .v-TRY{background:var(--c-try)} .v-SKIP{background:var(--c-skip)} .v-NOVEL{background:var(--c-novel)}
+.lane{font:400 12px var(--f-mono);color:var(--mute);margin-left:8px}
+.cmpbox{display:block;margin-top:8px;font:400 12px var(--f-mono);color:var(--mute)}
+.meter{display:inline-flex;gap:3px;vertical-align:middle;margin-left:6px}
+.meter i{width:16px;height:6px;border-radius:2px;background:var(--line)}
+.meter i.on{background:var(--accent)}
+.meta{font:400 12.5px/1.5 var(--f-mono);color:var(--mute);display:flex;flex-wrap:wrap;gap:4px 16px;margin-top:10px}
+.block{margin-top:12px;border-top:1px solid var(--line);padding-top:8px;font-size:16px}
+.block b{font:500 11px var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--mute);display:block;margin-bottom:2px}
+.points{margin:10px 0 0;padding-left:20px}
+.points li{margin:5px 0}
+.tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:12px}
+.tag{font:400 12px var(--f-mono);border:1px solid var(--line);border-radius:4px;padding:2px 8px;color:var(--mute);cursor:pointer;background:transparent}
+.life{display:flex;flex-wrap:wrap;gap:4px;margin-top:12px;font:400 12px var(--f-mono)}
+.life span{padding:3px 8px;border-radius:4px;border:1px solid var(--line);color:var(--mute)}
+.life span.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+details{margin-top:14px;border-top:1px solid var(--line);padding-top:6px}
+summary{cursor:pointer;font:600 15px var(--f-body);color:var(--accent);padding-block:8px}
+.sec{margin:22px 0 6px;font:500 11px var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--mute)}
+.flow{margin:6px 0}
+.step{display:flex;gap:12px;align-items:flex-start;padding-block:7px;position:relative;min-width:0}
+.step i{flex:0 0 26px;height:26px;border-radius:50%;background:var(--accent);color:var(--on-accent);font:500 12px/26px var(--f-mono);text-align:center;font-style:normal}
+.step div{min-width:0}
+.step:not(:last-child)::after{content:"";position:absolute;left:12px;top:33px;bottom:-7px;width:2px;background:var(--line)}
+.infer{font-size:15px;border:1px solid var(--warn);border-radius:8px;padding:8px 12px;margin-block:8px}
+.infer b{color:var(--warn);font-weight:600}
+.study{border:1px solid var(--line);border-radius:8px;padding:12px;margin-block:10px;min-width:0}
+.cite{font-size:14.5px;color:var(--mute)}
+.study dl{margin:6px 0 0}
+.study dt{font:500 11px var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--mute);margin-top:12px}
+.study dd{margin:2px 0 0}
+.study ul{margin:2px 0;padding-left:20px}
+a{color:var(--accent)}
+.links{display:flex;gap:14px;flex-wrap:wrap;font:500 13px var(--f-mono);margin-top:8px}
+table{border-collapse:collapse;width:100%;font-size:15px}
+th,td{text-align:left;padding:8px 10px 8px 0;border-bottom:1px solid var(--line);vertical-align:top}
+th{font:500 11px var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--mute)}
+.scroll{overflow-x:auto;max-width:100%}
+.scroll table{min-width:560px}
+.prod{border-top:1px solid var(--line);padding-block:12px}
+.prod .ph{height:56px;border-radius:6px;background:repeating-linear-gradient(135deg,var(--chip),var(--chip) 8px,var(--surface) 8px,var(--surface) 16px);display:flex;align-items:center;justify-content:center;color:var(--mute);font:400 11px var(--f-mono);margin-bottom:8px}
+.est{background:var(--est);color:var(--est-ink);border-radius:3px;padding:0 5px;font:500 11px var(--f-mono)}
+.empty{color:var(--mute);padding-block:36px;text-align:center}
+footer{margin-top:40px;color:var(--mute);font-size:13.5px}
+@media (min-width:820px){.card{padding:22px 24px 16px}}
+@media (prefers-reduced-motion:no-preference){.card{transition:border-color .15s}.card:hover{border-color:var(--accent)}}
+</style>
+
+<div class="wrap">
+<header>
+  <h1>SkinRxsearch</h1>
+  <p class="tagline" id="sub">A living look</p>
+</header>
+
+<div class="bar">
+  <input id="q" type="search" placeholder="Search ingredient, mechanism, tag, region" aria-label="Search entries">
+  <div class="chips" id="vchips" role="group" aria-label="Verdict filter"></div>
+  <div class="chips" id="lchips" role="group" aria-label="Lane filter"></div>
+</div>
+
+<div class="tabs" role="tablist" aria-label="Views">
+  <button role="tab" id="t-feed" aria-selected="true">Feed</button>
+  <button role="tab" id="t-compare" aria-selected="false">Compare</button>
+  <button role="tab" id="t-runs" aria-selected="false">Runs</button>
+</div>
+
+<div id="safety" class="strip"></div>
+<main id="main"></main>
+
+<footer>
+  <p>Verdicts rate evidence quality and fit. They are not medical advice. Items marked <span class="est">EST</span> are guesses, not looked-up prices. Where a source was not read in full, the entry says so.</p>
+</footer>
+</div>
+
+<script>/*__DATA__*/</script>
+<script>
+(function(){
+  var E = window.SRS_ENTRIES || [], M = window.SRS_META || {};
+  var state = {q:"", verdict:null, lane:null, tag:null, tab:"feed", cmp:[], open:{}};
+  var main = document.getElementById("main");
+
+  function h(tag, attrs, kids){
+    var el = document.createElement(tag);
+    if (attrs) for (var k in attrs){
+      if (k === "class") el.className = attrs[k];
+      else if (k === "text") el.textContent = attrs[k];
+      else if (k.slice(0,2) === "on") el.addEventListener(k.slice(2), attrs[k]);
+      else el.setAttribute(k, attrs[k]);
+    }
+    (kids || []).forEach(function(c){ if (c == null) return; el.appendChild(typeof c === "string" ? document.createTextNode(c) : c); });
+    return el;
+  }
+  function link(href, text){ return h("a", {href:href, target:"_blank", rel:"noopener noreferrer", text:text}); }
+  function sec(t){ return h("div", {class:"sec", text:t}); }
+  function meter(n, of){ var m = h("span",{class:"meter",role:"img","aria-label":n+" of "+of}); for (var i=0;i<of;i++) m.appendChild(h("i",{class:i<n?"on":""})); return m; }
+
+  document.getElementById("sub").textContent = "A living look · updated " + ((M.runs && M.runs[0] && M.runs[0].date) || "");
+
+  function match(e){
+    if (state.verdict && e.verdict !== state.verdict) return false;
+    if (state.lane && e.lane !== state.lane) return false;
+    if (state.tag && (e.tags||[]).indexOf(state.tag) < 0) return false;
+    if (state.q && JSON.stringify(e).toLowerCase().indexOf(state.q.toLowerCase()) < 0) return false;
+    return true;
+  }
+
+  function chips(){
+    var vs = ["WATCH","TRY","SKIP","NOVEL"], ls = Array.from(new Set(E.map(function(e){return e.lane;})));
+    var vc = document.getElementById("vchips"), lc = document.getElementById("lchips");
+    vc.textContent = ""; lc.textContent = "";
+    vs.forEach(function(v){ vc.appendChild(h("button",{class:"chip","aria-pressed":String(state.verdict===v),text:v,onclick:function(){state.verdict=state.verdict===v?null:v;render();}})); });
+    ls.forEach(function(l){ lc.appendChild(h("button",{class:"chip","aria-pressed":String(state.lane===l),text:l,onclick:function(){state.lane=state.lane===l?null:l;render();}})); });
+    if (state.tag) lc.appendChild(h("button",{class:"chip","aria-pressed":"true",text:"#"+state.tag+" ×",onclick:function(){state.tag=null;render();}}));
+  }
+
+  function triage(e){
+    var open = !!state.open[e.id];
+    var card = h("article", {class:"card", id:e.id});
+    card.appendChild(h("div",null,[h("span",{class:"badge v-"+e.verdict,text:e.verdict}), h("span",{class:"lane",text:e.lane+" · "+e.run})]));
+    card.appendChild(h("h2",{text:e.title}));
+    card.appendChild(h("div",{text:e.headline}));
+    card.appendChild(h("div",{class:"meta"},[
+      h("span",null,["evidence", meter(e.evidenceScore, e.evidenceScale||5)]),
+      h("span",{text:"~"+e.readMinutes+" min read"})
+    ]));
+    card.appendChild(h("div",{class:"meta",text:e.evidenceTier}));
+    card.appendChild(h("div",{class:"block"},[h("b",{text:"Fit for you"}), e.fit]));
+    if (e.displaces) card.appendChild(h("div",{class:"block"},[h("b",{text:"What it displaces"}), e.displaces]));
+    var pts = h("ul",{class:"points"}); (e.summaryPoints||[]).forEach(function(p){ pts.appendChild(h("li",{text:p})); }); card.appendChild(pts);
+    var costs = h("div",{class:"meta"}); (e.cost||[]).forEach(function(c){
+      costs.appendChild(h("span",null,[c.label+": ", c.kind==="EST"? h("span",{class:"est",text:"EST"}):null, " "+c.value])); });
+    card.appendChild(costs);
+    if (e.buzzCheck) card.appendChild(h("div",{class:"meta",text:"Buzz check: "+e.buzzCheck}));
+    var tg = h("div",{class:"tags"}); (e.tags||[]).forEach(function(t){ tg.appendChild(h("button",{class:"tag",text:"#"+t,onclick:function(){state.tag=t;render();}})); }); card.appendChild(tg);
+    var life = h("div",{class:"life"}); ["Watch","Trialing","Adopted","Dropped"].forEach(function(s){ life.appendChild(h("span",{class:e.status===s?"on":"",text:s})); }); card.appendChild(life);
+    var lab = h("label",{class:"cmpbox"},[h("input",{type:"checkbox",id:"cmp-"+e.id,onchange:function(ev){
+      var i = state.cmp.indexOf(e.id);
+      if (ev.target.checked && i<0) state.cmp.push(e.id);
+      if (!ev.target.checked && i>=0) state.cmp.splice(i,1);
+    }}), " add to compare"]);
+    lab.firstChild.checked = state.cmp.indexOf(e.id) >= 0;
+    card.appendChild(lab);
+    if (e.dossier){
+      var d = h("details"); if (open) d.setAttribute("open","");
+      d.addEventListener("toggle", function(){ state.open[e.id] = d.open; });
+      d.appendChild(h("summary",{text:"Full dossier"}));
+      dossier(d, e);
+      card.appendChild(d);
+    } else if (e.links){
+      var l = h("div",{class:"links"}); e.links.forEach(function(x){ l.appendChild(link(x.url,x.label)); }); card.appendChild(l);
+      card.appendChild(h("div",{class:"meta",text:"Link-only entry. Ask in chat to deepen it."}));
+    }
+    return card;
+  }
+
+  function dossier(root, e){
+    var d = e.dossier;
+    root.appendChild(sec("What it is")); root.appendChild(h("p",{text:d.whatItIs}));
+    root.appendChild(sec("How it works"));
+    var flow = h("div",{class:"flow"}); d.mechanism.steps.forEach(function(s,i){ flow.appendChild(h("div",{class:"step"},[h("i",{text:String(i+1)}), h("div",{text:s})])); });
+    root.appendChild(flow);
+    root.appendChild(h("div",{class:"infer"},[h("b",{text:"Inference, not shown directly. "}), d.mechanism.inferenceFlag]));
+    root.appendChild(sec("Studies"));
+    d.studies.forEach(function(s){
+      var box = h("div",{class:"study"});
+      box.appendChild(h("div",{class:"cite",text:s.cite}));
+      var l = h("div",{class:"links"}); if (s.doi) l.appendChild(link(s.doi,"DOI")); if (s.pubmed) l.appendChild(link(s.pubmed,"PubMed")); if (s.pmc) l.appendChild(link(s.pmc,"Full text (PMC)")); box.appendChild(l);
+      var dl = h("dl");
+      function row(k,v){ if (!v) return; dl.appendChild(h("dt",{text:k})); if (Array.isArray(v)){ var ul=h("ul"); v.forEach(function(x){ul.appendChild(h("li",{text:x}));}); dl.appendChild(h("dd",null,[ul])); } else dl.appendChild(h("dd",{text:v})); }
+      row("How much I read", s.readDepth); row("Design", s.design); row("Who was included", s.who); row("Results", s.results);
+      row("Effect size", s.effectSize); row("Placebo arm", s.placebo); row("Material?", s.material); row("Adverse events", s.adverse);
+      row("Conflicts", s.conflict); row("Limits", s.limits);
+      box.appendChild(dl); root.appendChild(box);
+    });
+    root.appendChild(sec("Claims check"));
+    var tbl = h("table"); tbl.appendChild(h("tr",null,[h("th",{text:"Claim"}),h("th",{text:"Where from"}),h("th",{text:"Status"})]));
+    d.claimsCheck.forEach(function(c){ tbl.appendChild(h("tr",null,[h("td",{text:c.claim}),h("td",{text:c.source}),h("td",{text:c.status})])); });
+    root.appendChild(h("div",{class:"scroll"},[tbl]));
+    root.appendChild(sec("Products and sources"));
+    root.appendChild(h("p",{text:d.products.rankNote}));
+    d.products.items.forEach(function(p){
+      var box = h("div",{class:"prod"});
+      box.appendChild(h("div",{class:"ph",text:"image placeholder · see source link"}));
+      box.appendChild(h("div",null,[h("b",{text:p.name}), " · "+p.maker+" · "+p.kind]));
+      box.appendChild(h("div",{class:"meta",text:"Price: "+p.price+" · Check level: "+p.verified}));
+      box.appendChild(h("div",{text:p.note}));
+      box.appendChild(h("div",{class:"links"},[link(p.link,"Source")]));
+      root.appendChild(box);
+    });
+    root.appendChild(sec("How to use it"));
+    var u = h("ul"); d.howToUse.forEach(function(x){u.appendChild(h("li",{text:x}));}); root.appendChild(u);
+    root.appendChild(sec("What to expect, and when"));
+    var t2 = h("table"); d.expect.forEach(function(x){ t2.appendChild(h("tr",null,[h("td",{text:x.when}),h("td",{text:x.what})])); }); root.appendChild(h("div",{class:"scroll"},[t2]));
+    root.appendChild(sec("Safety and side benefits"));
+    root.appendChild(h("p",{text:"Contraindications and side effects: "+d.contraindications}));
+    root.appendChild(h("p",{text:"Side benefits: "+d.sideBenefits}));
+    root.appendChild(sec("Does the mechanism transfer?")); root.appendChild(h("p",{text:d.transfer}));
+    root.appendChild(sec("What would change this verdict"));
+    var w = h("ul"); d.wouldChangeVerdict.forEach(function(x){w.appendChild(h("li",{text:x}));}); root.appendChild(w);
+    root.appendChild(sec("Confidence in this entry"));
+    var c = h("ul"); d.confidence.forEach(function(x){c.appendChild(h("li",{text:x}));}); root.appendChild(c);
+    root.appendChild(h("div",{class:"meta",text:"Searched on "+d.searchedOn}));
+  }
+
+  function feed(){
+    main.textContent = "";
+    var list = E.filter(match);
+    if (!list.length){ main.appendChild(h("div",{class:"empty",text:"Nothing matches. Clear a filter."})); return; }
+    var g = h("div",{class:"grid"}); list.forEach(function(e){ g.appendChild(triage(e)); }); main.appendChild(g);
+  }
+  function compare(){
+    main.textContent = "";
+    var sel = E.filter(function(e){return state.cmp.indexOf(e.id)>=0;});
+    if (sel.length < 2){ main.appendChild(h("div",{class:"empty",text:"Tick “add to compare” on two or three entries in the feed, then come back here."})); return; }
+    var t = h("table"); var head = h("tr",null,[h("th",{text:""})]); sel.forEach(function(e){head.appendChild(h("th",{text:e.title}));}); t.appendChild(head);
+    [["Verdict",function(e){return e.verdict;}],["Lane",function(e){return e.lane;}],["Evidence",function(e){return e.evidenceTier;}],["Fit",function(e){return e.fit;}],["Displaces",function(e){return e.displaces;}],["Regions",function(e){return (e.regions||[]).join(", ");}],["Cost",function(e){return (e.cost||[]).map(function(c){return c.label+": "+c.value+(c.kind==="EST"?" (EST)":"");}).join("; ");}]].forEach(function(r){
+      var tr = h("tr",null,[h("th",{text:r[0]})]); sel.forEach(function(e){ tr.appendChild(h("td",{text:r[1](e)})); }); t.appendChild(tr);
+    });
+    main.appendChild(h("div",{class:"scroll"},[t]));
+  }
+  function runs(){
+    main.textContent = "";
+    (M.runs||[]).forEach(function(r){ main.appendChild(h("div",{class:"card"},[h("b",{text:r.date}), h("div",{text:r.note}), h("div",{class:"meta",text:r.entries+" entries · "+r.deep+" full dossiers"})])); });
+  }
+  function safety(){
+    var s = document.getElementById("safety"); s.textContent = "";
+    s.appendChild(h("b",{text:"Safety and regulatory watch "}));
+    var items = M.safetyWatch || [];
+    if (items.length) items.forEach(function(x){ s.appendChild(h("div",{text:x})); }); else s.appendChild(document.createTextNode(M.safetyNote || "Nothing flagged."));
+  }
+  function render(){
+    chips(); safety();
+    ["feed","compare","runs"].forEach(function(t){ document.getElementById("t-"+t).setAttribute("aria-selected", String(state.tab===t)); });
+    if (state.tab==="feed") feed(); else if (state.tab==="compare") compare(); else runs();
+  }
+  document.getElementById("q").addEventListener("input", function(ev){ state.q = ev.target.value; state.tab="feed"; render(); });
+  ["feed","compare","runs"].forEach(function(t){ document.getElementById("t-"+t).addEventListener("click", function(){ state.tab=t; render(); }); });
+  render();
+})();
+</script>

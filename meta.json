@@ -1,0 +1,9 @@
+{
+  "siteName": "SkinRxsearch",
+  "tagline": "A living look",
+  "runs": [
+    {"date": "2026-10-12", "note": "Prototype run. One entry, built to test the format.", "entries": 1, "deep": 1}
+  ],
+  "safetyWatch": [],
+  "safetyNote": "No safety or regulatory checks have been run yet. This strip fills from the first scheduled run."
+}
