@@ -7,9 +7,9 @@
   --bg:#efe8de; --ink:#241b1e; --mute:#675a5d; --line:rgba(60,40,45,.15);
   --glass:rgba(255,251,246,.70); --glass-solid:#fbf6ef; --accent:#5a2447; --on-accent:#fff8f3;
   --chip:rgba(90,36,71,.08); --warn:#9a2f20;
-  --c-watch:#86550f; --c-try:#2c6b48; --c-skip:#8a4a3a; --c-novel:#4b4690; --on-badge:#ffffff;
+  --c-watch:#8a5200; --c-try:#1f6b45; --c-skip:#55606b; --c-novel:#4b4690; --on-badge:#ffffff;
   --est-bg:#f6e2b0; --est-ink:#5a3a00;
-  --blob1:#ecc9bf; --blob2:#cfdac6; --blob3:#f1dca9;
+  --blob1:#e6b3a5; --blob2:#cfdac6; --blob3:#f1dca9;
   --shadow:0 1px 0 rgba(255,255,255,.6) inset, 0 10px 30px -12px rgba(70,40,50,.25);
 }
 @media (prefers-color-scheme: dark){
@@ -17,7 +17,7 @@
     --bg:#1b1517; --ink:#f3eae6; --mute:#bbaaac; --line:rgba(255,235,230,.15);
     --glass:rgba(44,33,37,.66); --glass-solid:#2a2125; --accent:#e7a8cf; --on-accent:#2a0f20;
     --chip:rgba(231,168,207,.13); --warn:#ff9d8c;
-    --c-watch:#e8b45a; --c-try:#7fcf9f; --c-skip:#d9a393; --c-novel:#b7b1f2; --on-badge:#1b1517;
+    --c-watch:#e8b45a; --c-try:#7fcf9f; --c-skip:#aab4be; --c-novel:#b7b1f2; --on-badge:#1b1517;
     --est-bg:#4a3810; --est-ink:#f6d98f;
     --blob1:#4a2a3a; --blob2:#2b3a31; --blob3:#4a3f22;
     --shadow:0 1px 0 rgba(255,255,255,.06) inset, 0 10px 30px -12px rgba(0,0,0,.6);
@@ -28,7 +28,7 @@
   --bg:#1b1517; --ink:#f3eae6; --mute:#bbaaac; --line:rgba(255,235,230,.15);
   --glass:rgba(44,33,37,.66); --glass-solid:#2a2125; --accent:#e7a8cf; --on-accent:#2a0f20;
   --chip:rgba(231,168,207,.13); --warn:#ff9d8c;
-  --c-watch:#e8b45a; --c-try:#7fcf9f; --c-skip:#d9a393; --c-novel:#b7b1f2; --on-badge:#1b1517;
+  --c-watch:#e8b45a; --c-try:#7fcf9f; --c-skip:#aab4be; --c-novel:#b7b1f2; --on-badge:#1b1517;
   --est-bg:#4a3810; --est-ink:#f6d98f;
   --blob1:#4a2a3a; --blob2:#2b3a31; --blob3:#4a3f22;
   --shadow:0 1px 0 rgba(255,255,255,.06) inset, 0 10px 30px -12px rgba(0,0,0,.6);
@@ -130,6 +130,7 @@ var META = window.SRS_META || {}, ALL = window.SRS_ENTRIES || [], ICONS = window
 var VERDICTS = ["TRY","WATCH","NOVEL","SKIP"];
 var VERDICT_VAR = {TRY:"--c-try",WATCH:"--c-watch",NOVEL:"--c-novel",SKIP:"--c-skip"};
 var VERDICT_NOTE = {TRY:"Worth testing",WATCH:"Promising, not yet",NOVEL:"New and unproven",SKIP:"Not worth it"};
+var VERDICT_ICON = {TRY:"check",WATCH:"eye",NOVEL:"sparkles",SKIP:"x"};
 var STATUSES = ["Watch","Trialing","Adopted","Dropped"];
 
 /* storage: per device, with in-memory fallback */
@@ -151,7 +152,7 @@ function statusOf(e){ return statuses[e.id] || e.status || "Watch"; }
 function latestRun(){ var r = ALL.map(function(e){return e.run||"";}).sort(); return r.length ? r[r.length-1] : ""; }
 function fmtDate(d){ try{ return new Date(d+"T12:00:00").toLocaleDateString("en-CA",{year:"numeric",month:"short",day:"numeric"}); }catch(e){ return d; } }
 
-function pill(v){ return '<span class="pill inline-flex items-center rounded-full px-3 py-1 text-xs font-bold tracking-wider" style="--pc:var('+(VERDICT_VAR[v]||"--c-skip")+')">'+esc(v)+'</span>'; }
+function pill(v){ return '<span class="pill inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-bold tracking-wider" style="--pc:var('+(VERDICT_VAR[v]||"--c-skip")+')">'+ic(VERDICT_ICON[v]||"x","h-3.5 w-3.5")+esc(v)+'</span>'; }
 function meter(n, of){ var s = ""; for (var i=0;i<of;i++) s += '<i class="block h-2 w-4 rounded-full" style="background:'+(i<n?"var(--accent)":"var(--line)")+'"></i>'; return '<span class="inline-flex gap-1 items-center" role="img" aria-label="Evidence '+n+' of '+of+'">'+s+'</span>'; }
 function linkBtn(href, label){ var u = safeUrl(href); if (!u) return ""; return '<a href="'+esc(u)+'" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 rounded-full chipbtn px-3 min-h-[44px] text-sm font-semibold">'+esc(label)+ic("external-link","h-3.5 w-3.5")+'</a>'; }
 function fitStyle(r){ return r === "Strong" ? "--c-try" : r === "Weak" ? "--c-skip" : "--c-watch"; }
@@ -209,7 +210,7 @@ function sorted(list){
 function chipRow(){
   var lanes = []; ALL.forEach(function(e){ if (e.lane && lanes.indexOf(e.lane)<0) lanes.push(e.lane); });
   var h = VERDICTS.map(function(v){
-    return '<button data-act="verdict" data-v="'+v+'" aria-pressed="'+(state.verdicts.indexOf(v)>-1)+'" class="chipbtn rounded-full px-4 min-h-[44px] text-sm font-semibold inline-flex items-center gap-2"><i class="block h-2.5 w-2.5 rounded-full" style="background:var('+VERDICT_VAR[v]+')"></i>'+v+'</button>';
+    return '<button data-act="verdict" data-v="'+v+'" aria-pressed="'+(state.verdicts.indexOf(v)>-1)+'" class="chipbtn rounded-full px-4 min-h-[44px] text-sm font-semibold inline-flex items-center gap-2"><span style="color:var('+VERDICT_VAR[v]+')">'+ic(VERDICT_ICON[v],"h-4 w-4")+'</span>'+v+'</button>';
   }).join("");
   h += '<span class="mx-1 h-6 w-px bg-line" aria-hidden="true"></span>';
   h += lanes.map(function(l){ return '<button data-act="lane" data-l="'+esc(l)+'" aria-pressed="'+(state.lanes.indexOf(l)>-1)+'" class="chipbtn rounded-full px-4 min-h-[44px] text-sm font-semibold">'+esc(l)+'</button>'; }).join("");
