@@ -18,6 +18,7 @@ entries = []
 for p in sorted(glob.glob(P("entries", "*.json"))):
     with open(p, encoding="utf-8") as f:
         entries.append(json.load(f))
+entries = [e for e in entries if not e.get("archived")]  # archived: true removes an entry from site and Markdown
 entries.sort(key=lambda e: (e.get("run", ""), e.get("id", "")), reverse=True)
 meta = json.load(open(P("meta.json"), encoding="utf-8")) if os.path.exists(P("meta.json")) else {}
 icons = json.load(open(P("src", "icons.json"), encoding="utf-8"))

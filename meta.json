@@ -2,7 +2,8 @@
   "siteName": "SkinRxsearch",
   "tagline": "A living look",
   "runs": [
-    {"date": "2026-10-12", "note": "Prototype run. One entry, built to test the format.", "entries": 1, "deep": 1}
+    {"date": "2026-10-12", "note": "Prototype run. One entry, built to test the format.", "entries": 1, "deep": 1,
+     "cover": {"url": "https://images.unsplash.com/photo-1783273234702-aeae299eded8?fm=jpg&q=75&w=1800&auto=format&fit=crop", "alt": "Ripples spreading across water", "credit": "Emanuel Haas", "creditUrl": "https://unsplash.com/@dermanuskript", "pos": "50% 50%"}}
   ],
   "safetyWatch": [],
   "safetyNote": "No safety or regulatory checks have been run yet. This strip fills from the first scheduled run."

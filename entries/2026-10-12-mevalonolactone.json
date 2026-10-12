@@ -73,31 +73,38 @@
    "flow": [
     {
      "label": "Applied at 0.1% in a lotion",
-     "basis": "applied"
+     "basis": "applied",
+     "note": "The human trial used a lotion with 0.1% MVL on the face twice daily for two weeks, against the same lotion without it."
     },
     {
      "label": "Reverts to mevalonic acid in water",
-     "basis": "stated"
+     "basis": "stated",
+     "note": "Stated in the paper as a property of the compound. It is the starting assumption for everything after it."
     },
     {
      "label": "PPAR beta/delta signal up 1.7 times",
-     "basis": "cell"
+     "basis": "cell",
+     "note": "Cultured keratinocytes, not people. PPAR beta/delta mRNA rose 1.7-fold."
     },
     {
      "label": "ABCA12 lipid transporter up",
-     "basis": "cell"
+     "basis": "cell",
+     "note": "ABCA12 mRNA and protein rose. ABCA12 is the transporter that loads lipids into lamellar granules."
     },
     {
      "label": "More lamellar granules and free fatty acids",
-     "basis": "cell"
+     "basis": "cell",
+     "note": "In cells: more and larger granules. Free fatty acids rose (myristic about 4.6x, palmitic about 3.6x, palmitoleic about 3.3x)."
     },
     {
      "label": "Stronger barrier lipid layer",
-     "basis": "inferred"
+     "basis": "inferred",
+     "note": "The authors' inference that the cell changes add up to a stronger barrier lipid layer. Not shown directly in human skin."
     },
     {
      "label": "Less water loss over 2 winter weeks",
-     "basis": "human"
+     "basis": "human",
+     "note": "Water loss: the placebo group worsened over the 2 weeks, the MVL group did not change; the between-group difference was significant (p<0.05). The corneometer between-group difference was not."
     }
    ]
   },
