@@ -1,10 +1,26 @@
 {
-  "siteName": "SkinRxsearch",
-  "tagline": "A living look",
-  "runs": [
-    {"date": "2026-10-12", "note": "Prototype run. One entry, built to test the format.", "entries": 1, "deep": 1,
-     "cover": {"url": "https://images.unsplash.com/photo-1783273234702-aeae299eded8?fm=jpg&q=75&w=1800&auto=format&fit=crop", "alt": "Ripples spreading across water", "credit": "Emanuel Haas", "creditUrl": "https://unsplash.com/@dermanuskript", "pos": "50% 50%"}}
-  ],
-  "safetyWatch": [],
-  "safetyNote": "No safety or regulatory checks have been run yet. This strip fills from the first scheduled run."
+ "siteName": "SkinRxsearch",
+ "tagline": "A living look",
+ "runs": [
+  {
+   "date": "2026-10-12",
+   "note": "Prototype run, extended. Three entries: the mevalonolactone dossier, a thiamidol dossier (ingredient lists and prices read from retailer pages, full text read for the main trial), and a scalp-condition framework (triage). Built before the scheduled scan starts on 25 October, so coverage is narrow.",
+   "entries": 3,
+   "deep": 2,
+   "cover": {
+    "url": "https://images.unsplash.com/photo-1783273234702-aeae299eded8?fm=jpg&q=75&w=1800&auto=format&fit=crop",
+    "alt": "Ripples spreading across water",
+    "credit": "Emanuel Haas",
+    "creditUrl": "https://unsplash.com/@dermanuskript",
+    "pos": "50% 50%"
+   }
+  }
+ ],
+ "safetyWatch": [
+  {
+   "region": "Australia (TGA)",
+   "text": "TGA reports counterfeit Botox vials continued to be imported despite a July 2025 warning (TGA safety alerts page, undated list)."
+  }
+ ],
+ "safetyNote": "Reached: FDA recalls (listings to 9 Oct 2026, nothing skincare-specific in the top five), Health Canada recalls portal (top five were vehicle recalls), TGA safety alerts (undated list), EU SCCS page (newest item 30 Jul 2026: cuminaldehyde, p-cymene). Not reached: Korea MFDS, and Japan PMDA beyond a January 2026 listing. This is not a clean bill of health."
 }

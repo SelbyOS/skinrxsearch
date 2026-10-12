@@ -1,0 +1,99 @@
+{
+ "id": "2026-10-12-scalp-sd-aga",
+ "run": "2026-10-12",
+ "title": "Seborrheic dermatitis and androgenetic alopecia: a scalp-homeostasis framework",
+ "lane": "Hair and scalp",
+ "verdict": "WATCH",
+ "depth": "triage",
+ "headline": "A fresh review argues the two scalp conditions overlap (SD in 40-50% of AGA patients) and should be managed by restoring scalp barrier and microbiome balance together; it is a framework, not a product or a trial.",
+ "evidenceTier": "Narrative review (abstract read) + small cross-sectional study (abstract read); no intervention evidence",
+ "evidenceScore": 1,
+ "evidenceScale": 5,
+ "fit": "Relevant only if scalp flaking or thinning is a concern. It supports a barrier-and-inflammation-first approach to scalp care, but it does not test one.",
+ "displaces": "Fits nowhere as a product. If acted on, it would change how a scalp routine is judged (barrier and inflammation before stimulating actives), not add a step.",
+ "readMinutes": 2,
+ "regions": [
+  "China (review authors)",
+  "Poland (cross-sectional study)"
+ ],
+ "tags": [
+  "scalp",
+  "seborrheic dermatitis",
+  "androgenetic alopecia",
+  "barrier",
+  "review",
+  "framework",
+  "no product"
+ ],
+ "status": "Watch",
+ "estimateNote": "Prices marked EST are my guesses, not looked up.",
+ "cost": [
+  {
+   "label": "All markets",
+   "value": "not found",
+   "kind": "unknown"
+  }
+ ],
+ "buzzCheck": "",
+ "summaryPoints": [
+  "Review abstract (read): SD is present in 40-50% of AGA patients; shared factors proposed include androgen-driven sebum, microbial imbalance, barrier dysfunction and inflammatory signalling. The authors call for combined, individualized management.",
+  "Cross-sectional study (abstract read): in 34 adults with scalp SD, severity correlated with triglycerides and liver enzymes (GGT rho 0.745). Associational, tiny, European setting; it does not show cause and I would not act on it.",
+  "Neither abstract reports skin or hair type; scalp conditions in tightly coiled, high-porosity hair were not addressed. Full text not read for either."
+ ],
+ "humanTrial": true,
+ "toneData": "not reported",
+ "fitRating": "Partial",
+ "fitLine": "Useful lens for scalp care; no tested action.",
+ "priceStrip": [
+  {
+   "m": "All",
+   "v": "no product",
+   "k": "unknown"
+  }
+ ],
+ "timeline": "not applicable",
+ "fitAxes": [
+  {
+   "axis": "Barrier",
+   "rating": "Partial",
+   "why": "The review names barrier dysfunction as a shared factor (abstract)."
+  },
+  {
+   "axis": "Retinoid",
+   "rating": "Unknown",
+   "why": "Not addressed in the abstract."
+  },
+  {
+   "axis": "Breakout risk",
+   "rating": "Unknown",
+   "why": "Not addressed."
+  },
+  {
+   "axis": "Season",
+   "rating": "Unknown",
+   "why": "Not addressed."
+  }
+ ],
+ "links": [
+  {
+   "label": "Zhu M, Hu L. SD and AGA coexistence review. Dermatol Res Pract 2026 (DOI)",
+   "url": "https://doi.org/10.1155/drp/8851971"
+  },
+  {
+   "label": "Same review (PubMed)",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/42857554/"
+  },
+  {
+   "label": "Same review (full text, open access)",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13650735"
+  },
+  {
+   "label": "Pospiech M, et al. Scalp SD severity and lipid and liver parameters. J Clin Med 2026 (DOI)",
+   "url": "https://doi.org/10.3390/jcm15186937"
+  },
+  {
+   "label": "Same cross-sectional study (PubMed)",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/42795711/"
+  }
+ ]
+}
