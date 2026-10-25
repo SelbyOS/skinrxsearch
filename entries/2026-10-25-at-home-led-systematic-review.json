@@ -1,0 +1,87 @@
+{
+ "id": "2026-10-25-at-home-led-systematic-review",
+ "run": "2026-10-25",
+ "title": "At-home LED masks for facial rejuvenation: an October 2026 systematic review",
+ "lane": "Tools, devices and clinic",
+ "verdict": "WATCH",
+ "depth": "triage",
+ "headline": "A systematic review of at-home LED devices found 8 studies (365 participants) with improvements in wrinkles, texture and elasticity, mostly with red and near-infrared light; protocols varied widely and diverse skin phenotypes were underrepresented.",
+ "evidenceTier": "Systematic review of 8 studies (abstract read; PubMed search only)",
+ "evidenceScore": 2,
+ "evidenceScale": 5,
+ "fit": "Partial. It supports red and near-infrared at-home light for ageing signs in general terms; it does not settle blue-light safety in pigment-prone skin, which the abstract does not address.",
+ "displaces": "Fits nowhere new if a home LED device is already in use; it would replace, not add to, an existing device.",
+ "readMinutes": 3,
+ "regions": [
+  "US (authors)",
+  "Global (devices)"
+ ],
+ "tags": [
+  "LED",
+  "photobiomodulation",
+  "at-home device",
+  "red light",
+  "near-infrared",
+  "systematic review",
+  "skin of colour underrepresented"
+ ],
+ "status": "Watch",
+ "estimateNote": "Prices marked EST are my guesses, not looked up.",
+ "cost": [
+  {
+   "label": "All markets",
+   "value": "not found",
+   "kind": "unknown"
+  }
+ ],
+ "buzzCheck": "",
+ "summaryPoints": [
+  "Abstract (read): MEDLINE/PubMed-only search; 8 randomized, split-face or prospective cohort studies of at-home LED devices, 365 participants; wavelengths 440 to 1072 nm, red and near-infrared most common.",
+  "Reported: statistically significant improvements in wrinkles, texture, elasticity and periorbital lines with high satisfaction; adverse events infrequent, mild and transient.",
+  "Authors' caveats: variable protocols, limited comparative data, underrepresentation of diverse skin phenotypes. A single-database search can miss studies; full text not opened."
+ ],
+ "humanTrial": true,
+ "toneData": "Underrepresentation of diverse skin phenotypes (authors' statement)",
+ "fitRating": "Partial",
+ "fitLine": "Supports red and near-infrared in general; says nothing specific about deep skin or blue light.",
+ "priceStrip": [
+  {
+   "m": "All",
+   "v": "not found",
+   "k": "unknown"
+  }
+ ],
+ "timeline": "Study durations vary; not extracted from the abstract",
+ "fitAxes": [
+  {
+   "axis": "Barrier",
+   "rating": "Unknown",
+   "why": "Not addressed."
+  },
+  {
+   "axis": "Retinoid",
+   "rating": "Unknown",
+   "why": "Not addressed."
+  },
+  {
+   "axis": "Breakout risk",
+   "rating": "Unknown",
+   "why": "Blue-light acne use not addressed in the abstract."
+  },
+  {
+   "axis": "Season",
+   "rating": "Unknown",
+   "why": "Not addressed."
+  }
+ ],
+ "links": [
+  {
+   "label": "Das RK, et al. At-home LED photobiomodulation for facial rejuvenation: systematic review. Aesthetic Plast Surg 2026 (DOI)",
+   "url": "https://doi.org/10.1007/s00266-026-06333-w"
+  },
+  {
+   "label": "Same (PubMed)",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/42875609/"
+  }
+ ]
+}

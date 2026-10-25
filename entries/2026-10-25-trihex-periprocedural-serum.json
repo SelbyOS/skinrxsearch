@@ -1,0 +1,229 @@
+{
+ "title": "Peptide serum (tripeptide/hexapeptide) after fractional CO2 laser and RF microneedling: two split-face trials",
+ "lane": "Clinic and aftercare",
+ "verdict": "WATCH",
+ "depth": "dossier",
+ "headline": "In two small Chinese split-face trials (51 people, Fitzpatrick II-IV) a peptide serum beat a basic moisturizer on a few recovery measures after laser and RF microneedling, but missed its primary endpoint, showed no pigment advantage, and has manufacturer co-authors.",
+ "evidenceTier": "Two small evaluator-blind split-face RCTs (14 days each, exploratory); manufacturer-co-authored. Full text (open access) read",
+ "evidenceScore": 2,
+ "fit": "Partial. Relevant to aftercare for device treatments, which is where thermal injury and pigment risk concentrate. But phototypes V-VI were not included, post-inflammatory marks improved on both sides with no advantage for the serum, and the serum is expensive.",
+ "displaces": "One aftercare moisturizer or serum step for the first days after a device treatment. Not a daily-routine step.",
+ "readMinutes": 8,
+ "regions": [
+  "China (trials)",
+  "US (brand)",
+  "Canada (retailer found)"
+ ],
+ "tags": [
+  "aftercare",
+  "post-procedure",
+  "fractional CO2",
+  "radiofrequency microneedling",
+  "peptides",
+  "edema",
+  "TEWL",
+  "manufacturer co-authors",
+  "Fitzpatrick II-IV",
+  "ask the clinician",
+  "Canada: cosmetic"
+ ],
+ "cost": [
+  {
+   "label": "US",
+   "value": "US$236 for 1 fl oz (29.6 mL), listed as on sale (spa retailer page, 25 Oct 2026)",
+   "kind": "found"
+  },
+  {
+   "label": "Canada",
+   "value": "C$298 for 29 mL (BeautySense.ca, listed as 'Skin Nectar with TriHex Technology', 25 Oct 2026)",
+   "kind": "found"
+  },
+  {
+   "label": "Korea / Japan / EU",
+   "value": "not found",
+   "kind": "unknown"
+  }
+ ],
+ "buzzCheck": "The price is premium (about US$8 per mL) for a serum whose peptide percentages are undisclosed and whose evidence is two exploratory trials versus a drugstore lotion. Treat the price as brand positioning, not evidence strength.",
+ "summaryPoints": [
+  "Design (full text read): two prospective, randomized, evaluator-blind split-face trials at one centre in China. Fractional CO2 laser (n=26) and RF microneedling (n=25). Serum on one half of the face, a basic moisturizer on the other, for 3 days of intensive use then until day 14; the FCL arm also pre-treated for 2 weeks.",
+  "The primary endpoint (investigator-graded erythema) improved on both sides in both trials, but the difference between sides was not significant.",
+  "After multiplicity correction the serum side did better on: water loss (TEWL) at day 3, and edema, redness and roughness at day 14 in the laser trial; edema at day 7 in the microneedling trial. Subjects (who could not be blinded) preferred the serum side: 81.8% and 100% at day 14.",
+  "Post-inflammatory hyperpigmentation (graded in the laser trial) improved on both sides by day 14 with no difference between them, so there is no evidence here of a pigment benefit."
+ ],
+ "humanTrial": true,
+ "toneData": "Fitzpatrick II-IV only (Chinese participants); V-VI not included",
+ "fitRating": "Partial",
+ "fitLine": "Plausible aftercare adjunct for early recovery; no pigment benefit shown and no deep-skin data.",
+ "priceStrip": [
+  {
+   "m": "US",
+   "v": "US$236",
+   "k": "found"
+  },
+  {
+   "m": "CA",
+   "v": "C$298",
+   "k": "found"
+  },
+  {
+   "m": "KR/JP/EU",
+   "v": "not found",
+   "k": "unknown"
+  }
+ ],
+ "timeline": "Early recovery signals at day 3 to day 14 after the procedure",
+ "fitAxes": [
+  {
+   "axis": "Barrier",
+   "rating": "Partial",
+   "why": "TEWL recovered faster at day 3 on the serum side in the laser trial only; microneedling showed no between-side difference."
+  },
+  {
+   "axis": "Retinoid",
+   "rating": "Unknown",
+   "why": "The trials required a washout of topical retinoids (at least 2 weeks) before enrolling, so use alongside retinoids is untested. Procedure timing relative to retinoids is a question for the treating clinician."
+  },
+  {
+   "axis": "Breakout risk",
+   "rating": "Unknown",
+   "why": "The serum is a water-free, silicone-based formula with soybean oil; breakout risk was not assessed."
+  },
+  {
+   "axis": "Season",
+   "rating": "Unknown",
+   "why": "Not assessed."
+  }
+ ],
+ "dossier": {
+  "whatItIs": "A water-free facial serum from Alastin (Regenerating Skin Nectar) whose headline ingredient is TriHex Technology: the signal peptides palmitoyl tripeptide-1 and palmitoyl hexapeptide-12. It is sold as a pre- and post-procedure product. Percentages are proprietary.",
+  "mechanism": {
+   "steps": [
+    "Thermal devices (fractional CO2 laser, RF microneedling) create controlled injury, followed by redness, swelling, crusting and a leaky barrier.",
+    "The brand's proposed mechanism: palmitoyl tripeptide-1 (GHK-type) promotes clearance of damaged matrix and collagen synthesis; palmitoyl hexapeptide-12 promotes tropoelastin. The authors call it 'remove, rebuild, replenish'.",
+    "The trials measured clinical recovery (grades, redness, water loss), not matrix remodelling directly."
+   ],
+   "inferenceFlag": "The matrix-remodelling mechanism is the authors' framing from earlier work; these two trials did not measure collagen or elastin. Any recovery benefit could also come from the vehicle (silicone base, botanicals, arnica) or from simply having an extra, more occlusive product than the comparison lotion.",
+   "diagramCaption": "Device injury -> serum vs basic lotion on half-face -> faster edema, redness and water-loss recovery on serum side; pigment unchanged between sides",
+   "flow": [
+    {
+     "label": "Laser or RF microneedling injury",
+     "basis": "applied",
+     "note": "Full-face device treatment; serum or lotion assigned by half-face."
+    },
+    {
+     "label": "Peptides signal matrix remodelling",
+     "basis": "stated",
+     "note": "Brand and author framing; not measured in these trials."
+    },
+    {
+     "label": "Less edema and redness, faster water-loss recovery on serum side",
+     "basis": "human",
+     "note": "After correction: TEWL day 3, edema/redness/roughness day 14 (laser); edema day 7 (microneedling)."
+    },
+    {
+     "label": "Less post-inflammatory pigment",
+     "basis": "inferred",
+     "note": "Not shown: PIH improved on both sides equally."
+    }
+   ]
+  },
+  "studies": [
+   {
+    "cite": "Liu Z, Yi Z, Wang P, Wan L, Ye L, Chen Y, et al. Efficacy and safety of a topical skincare regimen with tripeptide/hexapeptide following aesthetic procedures: analysis of two randomized, split-face trials in Asian subjects. Dermatol Ther (Heidelb). 2026;16(8):4041-4055.",
+    "doi": "https://doi.org/10.1007/s13555-026-01821-y",
+    "pubmed": "https://pubmed.ncbi.nlm.nih.gov/42322532/",
+    "pmc": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13493356",
+    "readDepth": "Full text (open access) read",
+    "design": "Two prospective, randomized, evaluator-blind, split-face trials, single centre in China, registered (ChiCTR2400089516, ChiCTR2400089424). FCL study n=26 (18 women, 8 men): serum on one hemi-face for 2 weeks before, then 3 days intensive, then until day 14. RFMN study n=25 (24 women, 1 man): serum immediately after, 3 days intensive, then until day 14. Comparator: Cetaphil Daily Hydrating Lotion. One blinded dermatologist graded; VISIA redness and AquaFlux water loss measured. Primary endpoint: investigator-assessed erythema (day 7 laser, day 3 RFMN).",
+    "who": "Adults 18-70, Fitzpatrick II-IV, planning aesthetic procedures; washouts required for topical retinoids (2 weeks), systemic retinoids (6 months) and peels or device treatments (3-6 months). Participants were not blinded because products differ in texture and packaging.",
+    "results": [
+     "Primary endpoint: erythema improved within both sides in both trials; between-side differences not significant.",
+     "Laser trial, after Bonferroni correction: TEWL day 3 (adjusted p=0.011), edema day 14 (adjusted p=0.025), VISIA redness day 14 (adjusted p=0.001), roughness day 14 (p=0.009). Crusting day 3 did not survive correction.",
+     "Microneedling trial: edema day 7 (adjusted p=0.036). Erythema and crusting day 7, pain and heat day 1 were numerical only.",
+     "PIH (laser trial): improved on both sides by day 14; no between-side difference.",
+     "Subject preference at day 14 (unblinded): 81.8% (laser) and 100% (microneedling) reported better recovery on the serum side."
+    ],
+    "effectSize": "Paired effect sizes of about 0.4 to 0.9 (as reported) for the significant secondary endpoints; the primary endpoint's effect is not significant. Raw means are in figures.",
+    "placebo": "No vehicle serum. The comparator was a basic hydrating lotion, so the trial cannot say whether the peptides, the silicone-based water-free vehicle or the botanicals drove any difference.",
+    "material": "Not established. Graded 0-4 and 0-9 scales were not psychometrically validated (authors' statement); the primary endpoint was not met.",
+    "adverse": "FCL study: 6 mild-to-moderate adverse events in 4 participants, judged mostly unrelated. RFMN study: one mild adverse event.",
+    "conflict": "Two co-authors list Galderma R&D and Galderma Medical Affairs affiliations. The tested product is a branded Alastin serum; I did not verify the corporate relationship between the two. Funding statement wording not extracted.",
+    "limits": "Exploratory, no sample-size calculation, 14 days, split-face contamination risk, subjects not blinded, unvalidated scales, two different protocols not directly comparable, Fitzpatrick II-IV only."
+   }
+  ],
+  "claimsCheck": [
+   {
+    "claim": "Supports recovery after laser and microneedling",
+    "source": "Brand-linked trial report",
+    "status": "Some secondary endpoints beat a basic lotion after correction; primary endpoint missed; no vehicle serum control"
+   },
+   {
+    "claim": "Helps pigment or marks after procedures",
+    "source": "Not claimed in the paper",
+    "status": "Post-inflammatory pigment improved equally on both sides, so no advantage shown"
+   }
+  ],
+  "products": {
+   "rankNote": "Only the exact tested product is listed. Full ingredient list and peptide percentages were not available on the pages I could read.",
+   "items": [
+    {
+     "name": "ALASTIN Regenerating Skin Nectar with TriHex Technology",
+     "maker": "Alastin Skincare (US)",
+     "kind": "Serum, water-free",
+     "price": "US$236 / 1 fl oz (spa retailer, on sale); C$298 / 29 mL (BeautySense.ca, listed as Skin Nectar)",
+     "note": "Named ingredients on the US page: arnica, phytoene, phytofluene, naringenin with panthenyl triacetate, TriHex Technology; described as water-free and preservative-free. Peptide concentrations not stated. The trial paper adds glycine soja oil and a silicone base.",
+     "link": "https://shop.canyonranch.com/products/regenerating-skin-nectar-with-trihex-technology",
+     "verified": "Partly verified: named ingredients and prices read from retailer pages, 25 Oct 2026; full ingredient list not shown",
+     "tier": "card"
+    },
+    {
+     "name": "ALASTIN Restorative Skin Complex with TriHex Technology",
+     "maker": "Alastin Skincare (US)",
+     "kind": "Different product, same peptide complex",
+     "price": "Price not captured",
+     "note": "Not the tested product. The Canadian retailer page lists about 60 ingredients including the two peptides, niacinamide and ceramides; this is a different formula from the tested serum.",
+     "link": "https://beautysense.ca/alastin-restorative-skin-complex-with-trihex-technologyr.html",
+     "verified": "Ingredient list read from retailer page, 25 Oct 2026; not the trial product",
+     "tier": "list"
+    }
+   ]
+  },
+  "howToUse": [
+   "Reserve for the days after a device treatment, as in the trials: intensive use for 3 days, then twice daily until day 14. Follow the treating clinician's aftercare instructions first.",
+   "Treat as a swap for the basic barrier moisturizer you would otherwise use in that window, not an extra layer.",
+   "The tested serum is water-free and silicone-based; if your aftercare relies on a water-based soothing step, keep that and ask the clinician where a serum fits.",
+   "Retinoids were washed out before the trials; sequencing with a retinoid is a clinician decision, not something this paper settles."
+  ],
+  "expect": [
+   {
+    "when": "Days 1-3",
+    "what": "Water loss recovered faster on the serum side in the laser trial (day 3)."
+   },
+   {
+    "when": "Day 7-14",
+    "what": "Less swelling and redness than the lotion side in the trials. Do not expect a pigment advantage."
+   }
+  ],
+  "contraindications": "Contains arnica extract, a daisy-family plant; allergy to that family is the obvious check (my note, not from the trial). Not tested in active infection or with recent retinoids. Fitzpatrick V-VI not tested.",
+  "sideBenefits": "None shown.",
+  "wouldChangeVerdict": [
+   "Independent trial with a vehicle serum control",
+   "Results in Fitzpatrick IV-VI with PIH as a primary outcome",
+   "Full ingredient list and peptide concentrations",
+   "A clinic or Seoul pharmacy price that undercuts the retail price"
+  ],
+  "transfer": "The recovery endpoints (swelling, redness, water loss) are not skin-tone specific by mechanism, so some transfer is plausible. The question that matters most in deeper skin after thermal devices, pigment, showed no advantage in these Fitzpatrick II-IV participants, and V-VI were not studied.",
+  "confidence": [
+   "Read in full: Liu 2026 (open access).",
+   "Partly verified: product price and named ingredients from two retailer pages.",
+   "Not verified: full ingredient list, peptide percentages, funding statement wording, Korean or EU price."
+  ],
+  "searchedOn": "2026-10-25"
+ },
+ "id": "2026-10-25-trihex-periprocedural-serum",
+ "run": "2026-10-25",
+ "status": "Watch",
+ "estimateNote": "Prices marked EST are my guesses, not looked up.",
+ "evidenceScale": 5
+}

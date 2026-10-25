@@ -1,0 +1,108 @@
+{
+ "id": "2026-10-25-olaplex-curl-shampoo",
+ "run": "2026-10-25",
+ "title": "Olaplex No.4CURL Bond Shaper Hydrating Curl Shampoo (and No.5CURL conditioner), launched 2026",
+ "lane": "Hair and scalp",
+ "verdict": "SKIP",
+ "depth": "triage",
+ "headline": "A 2026 bond-technology curl shampoo and conditioner pair: the claims (50% less frizz, less breakage) come from an unnamed consumer study reported in trade press, the ingredient list includes fragrance and mint and eucalyptus oils, and the shampoo is priced at about C$49.",
+ "evidenceTier": "Brand marketing + trade press (Happi); no independent or published evidence found",
+ "evidenceScore": 1,
+ "evidenceScale": 5,
+ "fit": "Weak to unknown. It is a cleansing product with fragrance and essential oils, so scalp tolerance is the first question; the 'bond' claims are not independently tested on tightly coiled, high-porosity hair.",
+ "displaces": "It would replace a shampoo, not add a step, and only if the current shampoo is failing.",
+ "readMinutes": 2,
+ "regions": [
+  "US (brand)",
+  "Canada (Sephora page)"
+ ],
+ "tags": [
+  "hair",
+  "curl care",
+  "shampoo",
+  "bond technology",
+  "brand marketing",
+  "fragrance",
+  "Canada: cosmetic",
+  "high-porosity hair"
+ ],
+ "status": "Watch",
+ "estimateNote": "Prices marked EST are my guesses, not looked up.",
+ "cost": [
+  {
+   "label": "Canada",
+   "value": "$49.00 for 8.5 oz (Sephora Canada page, 25 Oct 2026; currency symbol shown as $)",
+   "kind": "found"
+  },
+  {
+   "label": "US",
+   "value": "$34 per product on the brand's site (quoted by Happi, April 2026; not opened)",
+   "kind": "secondhand"
+  },
+  {
+   "label": "Korea / Japan / EU",
+   "value": "not found",
+   "kind": "unknown"
+  }
+ ],
+ "buzzCheck": "Price tracks brand positioning, not evidence: the only support offered is an unnamed consumer study.",
+ "summaryPoints": [
+  "Trade press (Happi, 29 Apr 2026): launch of the curl shampoo and conditioner; claims of 50% less frizz, 7 days of hydration, 96% agreeing hair was easier to detangle, from a 'clinical study of consumers' with no size, design or conductor given. Retail price quoted as $34 on the brand's own site.",
+  "Sephora Canada product page (read 25 Oct 2026): shampoo 8.5 oz for $49.00. Ingredients include sodium cocoyl isethionate, cocamidopropyl betaine, decyl glucoside, polyquaternium-7 and -11, panthenol, glycerin, lactic acid, hydroxypropyltrimonium hyaluronate, avocado and sunflower oils, parfum, peppermint and eucalyptus oils, and phenoxyethanol. No concentrations stated. The page says it is free of sulfates (SLS and SLES), parabens and mineral oil.",
+  "I found no peer-reviewed test of this product or of its bond technology in tightly coiled hair. The conditioner page was not read."
+ ],
+ "humanTrial": false,
+ "toneData": "No tone or texture data; consumer-perception study unnamed",
+ "fitRating": "Weak",
+ "fitLine": "Marketing-level evidence; fragrance and essential oils are a scalp-tolerance risk; fits nowhere unless a shampoo needs replacing.",
+ "priceStrip": [
+  {
+   "m": "CA",
+   "v": "$49 / 8.5 oz",
+   "k": "found"
+  },
+  {
+   "m": "US",
+   "v": "$34 (brand site, per Happi)",
+   "k": "secondhand"
+  },
+  {
+   "m": "KR/JP/EU",
+   "v": "not found",
+   "k": "unknown"
+  }
+ ],
+ "timeline": "Brand claims 7 days of hydration; no independent timeline",
+ "fitAxes": [
+  {
+   "axis": "Barrier",
+   "rating": "Weak",
+   "why": "Contains fragrance, peppermint and eucalyptus oils and lactic acid; cleansers with these can irritate a sensitive scalp (my inference)."
+  },
+  {
+   "axis": "Retinoid",
+   "rating": "Unknown",
+   "why": "Not applicable to a rinse-off hair product except via scalp irritation."
+  },
+  {
+   "axis": "Breakout risk",
+   "rating": "Unknown",
+   "why": "Scalp breakouts not assessed."
+  },
+  {
+   "axis": "Season",
+   "rating": "Unknown",
+   "why": "Not assessed."
+  }
+ ],
+ "links": [
+  {
+   "label": "Happi, 29 Apr 2026: Olaplex curl shampoo and conditioner launch (trade press)",
+   "url": "https://www.happi.com/?p=263324"
+  },
+  {
+   "label": "Sephora Canada: No.4CURL Bond Shaper Hydrating Curl Shampoo (retailer page)",
+   "url": "https://www.sephora.com/ca/en/product/no-4curl-bond-shaper-hydrating-curl-shampoo-P525778"
+  }
+ ]
+}

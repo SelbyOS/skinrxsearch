@@ -1,0 +1,213 @@
+{
+ "title": "Topical PDRN (salmon-DNA polymer) versus retinol: a periocular trial with cell and ex vivo data",
+ "lane": "Ingredient",
+ "verdict": "WATCH",
+ "depth": "dossier",
+ "headline": "A topical PDRN eye cream beat an identical 0.1% retinol cream on wrinkle and dermal-thickness measures over 4 weeks in 31 sensitive-skinned Chinese women, but the authors are company-linked, there was no vehicle-only arm, and nothing here speaks to deep skin or pigment.",
+ "evidenceTier": "Small split-face RCT (active comparator, 4 weeks) + cell, ex vivo and single-volunteer penetration work. Full text (open access) read",
+ "evidenceScore": 2,
+ "fit": "Partial. The cell and ex vivo work is mechanism-level and not skin-tone specific as far as I know, but the one clinical trial was 31 Chinese women (phototype not reported), measured wrinkles and dermal thickness rather than pigment, and compared against retinol, not a prescription retinoid.",
+ "displaces": "A PDRN step if the routine already has one (a swap, not an addition). It does not replace a prescription retinoid: the comparator was over-the-counter retinol.",
+ "readMinutes": 7,
+ "regions": [
+  "China (trial)",
+  "Korea (PDRN products widely sold)",
+  "EU/US (ingredient supplied from China)"
+ ],
+ "tags": [
+  "PDRN",
+  "polynucleotide",
+  "photoaging",
+  "periocular",
+  "retinol comparator",
+  "sensitive skin",
+  "company-linked authors",
+  "cosmetic",
+  "no vehicle arm",
+  "buy in Seoul",
+  "ship from EU"
+ ],
+ "cost": [
+  {
+   "label": "All markets",
+   "value": "No retail product matched to the tested material was identified; retail PDRN prices not checked this run",
+   "kind": "unknown"
+  }
+ ],
+ "buzzCheck": "PDRN is heavily marketed. I did not check retail products this run, so I cannot say whether price tracks evidence. The practical question for any product is the PDRN percentage and fragment length, which are rarely disclosed.",
+ "summaryPoints": [
+  "Design (full text read): randomized, double-blind, split-face, 31 healthy Chinese women aged 35-55 with self-reported sensitive skin. One eye area got a water-in-silicone cream with 0.1% PDRN-850K (salmon-derived DNA, average molecular weight up to 850 kDa); the other got an identical cream with 0.1% retinol. Twice daily for 28 days, daily sunscreen required.",
+  "Reported result: at day 28 crow's-feet wrinkle area and number fell by about 20-23% on the PDRN side versus about 6-7% on the retinol side. Ultrasound dermal thickness and density, tear-trough and eye-bag measures, and elasticity and firmness were reported as roughly 1.8 to 2 times greater. Exact values are in figures I could not read numerically.",
+  "What weakens it: there was no vehicle-only arm, so the study cannot show PDRN beats a plain cream; 4 weeks is early for retinol; the authors themselves say early ultrasound changes may partly reflect plumping or hydration. Authors are affiliated with companies (a skin-aging research institute and a biotech firm) and the PDRN was supplied by a manufacturer; I did not see a conflict-of-interest statement in the text I read.",
+  "The penetration evidence is indirect: Raman signal in a lab-grown epidermis, a porcine skin experiment at 0.1% in solution, and one human volunteer whose forearm showed a relative signal of about 3% at 24 hours. The authors state Raman cannot separate added PDRN from the skin's own nucleic acids."
+ ],
+ "humanTrial": true,
+ "toneData": "Not reported. Trial population was Chinese women; phototype was not stated in the text I read.",
+ "fitRating": "Partial",
+ "fitLine": "Interesting mechanism and a head-to-head against retinol, but no vehicle arm, supplier-linked, and no deep-skin data.",
+ "priceStrip": [
+  {
+   "m": "All",
+   "v": "not found",
+   "k": "unknown"
+  }
+ ],
+ "timeline": "Instrument differences reported from day 14 to day 28; nothing beyond 4 weeks",
+ "fitAxes": [
+  {
+   "axis": "Barrier",
+   "rating": "Partial",
+   "why": "Tolerated by a sensitive-skin cohort with no adverse reactions reported, but the trial did not measure barrier function (no water-loss readings)."
+  },
+  {
+   "axis": "Retinoid",
+   "rating": "Unknown",
+   "why": "Tested against retinol, never alongside it, so I cannot say whether it adds to a retinoid or lets you cut one back."
+  },
+  {
+   "axis": "Breakout risk",
+   "rating": "Unknown",
+   "why": "Not assessed; the tested cream was an eye cream in a water-in-silicone base."
+  },
+  {
+   "axis": "Season",
+   "rating": "Unknown",
+   "why": "Trial dates were late September to October 2025; no seasonal analysis."
+  }
+ ],
+ "dossier": {
+  "whatItIs": "PDRN (polydeoxyribonucleotide) is a mix of DNA fragments, here a salmon-derived preparation of 96% purity or more with an average molecular weight up to 850 kDa (about 1,200 base pairs), called PDRN-850K by the authors. It is best known as an injectable skin booster. This paper tests it as a cream.",
+  "mechanism": {
+   "steps": [
+    "In cultured human dermal fibroblasts, PDRN-850K raised phosphorylation of PI3K and AKT, TGF-beta and SMAD2/3, and autophagy markers (LC3-II up, p62 down). Blocking each pathway with an inhibitor reduced the rise in collagen and elastin gene expression (n=3 experiments).",
+    "Delivery: Raman signal rose over 2, 6 and 24 hours in a lab-grown epidermis and fell with an endocytosis inhibitor; fluorescent-labelled PDRN at 0.1% in solution reached the dermis of pig skin by 8-12 hours; in one volunteer, the eye cream showed signal beyond 20 micrometres at 8-24 hours.",
+    "In UV-damaged human ex vivo skin (n=3), the 0.1% cream increased viable epidermal thickness and staining for collagens I, III, IV, V, VI, VII, XV, XVII, XVIII, elastin, fibrillin-1 and YAP.",
+    "In the split-face trial, wrinkle, dermal-thickness and elasticity measures changed more on the PDRN side than the retinol side."
+   ],
+   "inferenceFlag": "The pathway chain (PI3K-Akt, TGF-beta/Smad, autophagy to matrix genes) comes from cells, and pathway activation was tested in unstressed fibroblasts, not UV-damaged ones. That the cream delivers enough intact PDRN into dermis in living human skin is not shown. The authors call their own penetration data supportive, not conclusive.",
+   "diagramCaption": "Cream applied -> signal in viable skin (indirect) -> fibroblast pathways up in cells -> more matrix proteins in ex vivo skin -> better wrinkle and dermal measures at 4 weeks",
+   "flow": [
+    {
+     "label": "0.1% PDRN-850K eye cream, twice daily",
+     "basis": "applied",
+     "note": "The only form tested in people; the earlier lab work used solutions."
+    },
+    {
+     "label": "PDRN-associated signal in viable epidermis",
+     "basis": "stated",
+     "note": "Raman and fluorescence readouts; one volunteer in vivo. Authors say this does not establish where it sits inside cells."
+    },
+    {
+     "label": "PI3K-Akt, TGF-beta/Smad and autophagy signalling up",
+     "basis": "cell",
+     "note": "Cultured fibroblasts, n=3 experiments, unstressed cells."
+    },
+    {
+     "label": "More collagen and elastic-fibre proteins in UV-damaged skin",
+     "basis": "cell",
+     "note": "Ex vivo human skin explants, n=3. Staining intensity, not new tissue in a living person."
+    },
+    {
+     "label": "Wrinkle area, dermal thickness and elasticity better than retinol at day 28",
+     "basis": "human",
+     "note": "31 women, periocular, instruments plus image analysis. No vehicle-only arm."
+    },
+    {
+     "label": "Lasting dermal remodelling",
+     "basis": "inferred",
+     "note": "Not tested. The authors note 4 weeks cannot separate remodelling from plumping."
+    }
+   ]
+  },
+  "studies": [
+   {
+    "cite": "Ye R, Wang Q, Du L, Li L, Hu F. Topical medium-length PDRN enhances dermal extracellular matrix repair in photodamaged skin via PI3K-Akt/TGF-beta-regulated pathways. PLoS One. 2026;21(7):e0350905.",
+    "doi": "https://doi.org/10.1371/journal.pone.0350905",
+    "pubmed": "https://pubmed.ncbi.nlm.nih.gov/42430369/",
+    "pmc": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13353946",
+    "readDepth": "Full text (open access) read",
+    "design": "Randomized, double-blind, split-face, self-controlled. 31 healthy women aged 35-55 (mean 47.5), self-reported sensitive skin (Huaxi questionnaire 18-33), periocular lines and eye bags. 0.1% PDRN-850K eye cream versus identical-base 0.1% retinol eye cream, twice daily for 28 days with daily sunscreen. Visits at baseline, day 14 and day 28. Instruments: VISIA 7, Antera 3D, Cutometer, ultrasound. Single site in China; ethics approval September 2025.",
+    "who": "Healthy Chinese women. Excluded: pregnancy or lactation, systemic or severe skin disease, known allergy to retinol or PDRN, and recent periocular retinoids or nucleic-acid products. Skin tone or Fitzpatrick type is not reported in the text I read.",
+    "results": [
+     "Wrinkles (VISIA image analysis): crow's-feet area and number down about 20-23% at day 28 on the PDRN side versus about 6-7% on the retinol side; similar pattern for infraorbital wrinkles. Benefit appeared by day 14 on the PDRN side.",
+     "Dermal structure (ultrasound): dermal thickness and density increased about two-fold more on the PDRN side (authors' description; values in figure 6).",
+     "Eye bags and tear trough (Antera 3D): reductions about two-fold greater on the PDRN side.",
+     "Elasticity (R2) and firmness (F4): improvements about 1.8-fold higher on the PDRN side.",
+     "Tolerability: both creams tolerated; no adverse reactions reported."
+    ],
+    "effectSize": "Statistical results are shown in figure 6 as means with standard errors; the text gives only relative differences (about 1.8 to 2 times) and the wrinkle percentages above. I could not extract p-values or confidence intervals from the text.",
+    "placebo": "No vehicle-only arm. The comparator is 0.1% retinol, so the study shows PDRN did better than retinol under these conditions, not that PDRN beats a plain moisturiser. Retinol at 0.1% for 4 weeks is also an early readout for retinol.",
+    "material": "Not established. The instrument differences are measured changes (wrinkle area, ultrasound thickness); no patient-rated outcome or blinded clinician grade is reported in the text I read. The authors warn early ultrasound changes may reflect hydration or plumping.",
+    "adverse": "None reported in the text I read.",
+    "conflict": "Authors list affiliations with a skin-aging research institute and a biotechnology company; the PDRN-850K was provided by Ruijiming (Shandong) Biotechnology Co., Ltd., and retinol by DSM-Firmenich. I did not find a funding or competing-interests statement in the text I read; check the paper's front matter.",
+    "limits": "One trial, 31 people, 4 weeks, one site, eye area only, women only, sensitive-skin cohort. Cell work in 3 experiments. Raman cannot distinguish added from endogenous nucleic acids. In vivo penetration is a single person. Pathway activation was not tested under UV stress. No deep-skin or pigment data."
+   }
+  ],
+  "claimsCheck": [
+   {
+    "claim": "About two-fold better than retinol",
+    "source": "Authors' abstract",
+    "status": "Direction visible in the paper's figures; but no vehicle arm, 4 weeks, company-linked authors, and a plumping effect not excluded"
+   },
+   {
+    "claim": "Topical PDRN reaches viable skin and dermis",
+    "source": "Authors' penetration experiments",
+    "status": "Supportive but indirect: porcine solution at 1000 ppm and a single human volunteer; not shown for a cream in human dermis"
+   }
+  ],
+  "products": {
+   "rankNote": "I did not search retail products for this entry. The tested material is not tied to any retail product I found. PDRN products differ in source, fragment length and percentage, so a trial of one preparation does not transfer to another by name alone.",
+   "items": [
+    {
+     "name": "PDRN-850K (tested material)",
+     "maker": "Ruijiming (Shandong) Biotechnology Co., Ltd., China",
+     "kind": "Ingredient supplier",
+     "price": "Not found",
+     "note": "Named in the paper as the supplier of the tested preparation. Supplier page not opened.",
+     "link": "https://doi.org/10.1371/journal.pone.0350905",
+     "verified": "Named in the paper only; unverified beyond that",
+     "tier": "list"
+    }
+   ]
+  },
+  "howToUse": [
+   "Treat as a swap into an existing PDRN or peptide-style repair step, not an extra layer. If the routine has no such step, the evidence is not strong enough to justify adding one on this paper alone.",
+   "The tested dose was 0.1% PDRN twice daily around the eyes for 28 days. Face-wide use and other concentrations are untested.",
+   "Retinoid interaction is untested. Do not use this paper to drop a prescription retinoid; the comparator was over-the-counter retinol.",
+   "Ask the brand for the PDRN percentage, source (salmon or other) and fragment length before paying for a premium version."
+  ],
+  "expect": [
+   {
+    "when": "Days 1-3",
+    "what": "Probably nothing visible. Check for stinging or redness."
+   },
+   {
+    "when": "Weeks 2-4",
+    "what": "The trial's instruments showed differences from day 14 (authors' reading). Whether you would see or feel it is unknown."
+   },
+   {
+    "when": "Beyond 4 weeks",
+    "what": "No data. Durability and true remodelling are untested."
+   }
+  ],
+  "contraindications": "Salmon-derived: a fish or salmon allergy is the obvious check (my inference; the trial excluded known PDRN allergy). Pregnancy and breastfeeding were excluded, so no data. No adverse reactions were reported in a sensitive-skin cohort.",
+  "sideBenefits": "None shown. The tolerability in sensitive skin is a positive note from a small sample.",
+  "wouldChangeVerdict": [
+   "A vehicle-controlled trial from authors without a commercial link",
+   "A longer trial (12 weeks or more) with a prescription-retinoid arm",
+   "Data in Fitzpatrick IV-VI and on pigment outcomes",
+   "A retail product that discloses a matching PDRN percentage and source"
+  ],
+  "transfer": "The fibroblast pathways studied are not skin-tone specific as far as I know, so the cell-level findings plausibly apply by mechanism. The clinical trial does not: Chinese women, phototype not reported, outcomes were wrinkles and dermal thickness, not pigment or post-inflammatory marks. Do not read this as pigment evidence. I did not search for PDRN trials in pigmentary conditions this run.",
+  "confidence": [
+   "Read in full: Ye 2026 (open-access full text).",
+   "Not verified: conflict-of-interest statement; exact numeric effect sizes (figures only); supplier page; any retail product."
+  ],
+  "searchedOn": "2026-10-25"
+ },
+ "id": "2026-10-25-topical-pdrn-vs-retinol",
+ "run": "2026-10-25",
+ "status": "Watch",
+ "estimateNote": "Prices marked EST are my guesses, not looked up.",
+ "evidenceScale": 5
+}

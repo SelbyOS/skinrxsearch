@@ -1,0 +1,88 @@
+{
+ "id": "2026-10-25-arbutin-niacinamide-toner-with-hq-safety",
+ "run": "2026-10-25",
+ "title": "A niacinamide and beta-arbutin toner used with 4% hydroquinone: an 18-week safety study",
+ "lane": "Black and melanin-rich skin",
+ "verdict": "WATCH",
+ "depth": "triage",
+ "headline": "A brand-run, double-blind study (47 completers, 18 weeks) found a toner with 3% niacinamide and 2% beta-arbutin did not add redness or irritation when used alongside 4% hydroquinone; it tested tolerability only, not whether it lightens pigment.",
+ "evidenceTier": "Small randomized double-blind placebo-controlled safety study (abstract read); brand-authored; tolerability only",
+ "evidenceScore": 2,
+ "evidenceScale": 5,
+ "fit": "Answers one narrow question: does beta-arbutin plus hydroquinone irritate? In this small study, no. It is not evidence that the toner improves pigmentation.",
+ "displaces": "Would replace a brightening toner or serum step, not add one; a pigment slot that is already filled gains nothing from this paper.",
+ "readMinutes": 3,
+ "regions": [
+  "US (authors)",
+  "Skin type not reported in the abstract"
+ ],
+ "tags": [
+  "hydroquinone",
+  "beta-arbutin",
+  "niacinamide",
+  "hyperpigmentation",
+  "melasma",
+  "tolerability",
+  "brand-authored",
+  "cosmetic"
+ ],
+ "status": "Watch",
+ "estimateNote": "Prices marked EST are my guesses, not looked up.",
+ "cost": [
+  {
+   "label": "All markets",
+   "value": "not found",
+   "kind": "unknown"
+  }
+ ],
+ "buzzCheck": "",
+ "summaryPoints": [
+  "Abstract (read): 18-week randomized, double-blind, placebo-controlled study in adult women with facial hyperpigmentation or melasma; toner or placebo toner for 18 weeks, with 4% hydroquinone through week 10. 47 completed (23 toner, 24 placebo).",
+  "Redness by instrument (a* values) and VISIA red analysis showed no significant change within or between groups at any time; no irritation-related adverse events were reported.",
+  "Both authors are affiliated with Good Molecules, LLC. The concern the paper addresses (whether beta-arbutin releases hydroquinone and compounds irritation) is framed as a recommendation against combining them; the study offers preliminary reassurance only. Efficacy and skin tone were not reported in the abstract."
+ ],
+ "humanTrial": true,
+ "toneData": "Not reported in the abstract",
+ "fitRating": "Partial",
+ "fitLine": "Reassuring on irritation in a small sample; no efficacy data; brand-authored.",
+ "priceStrip": [
+  {
+   "m": "All",
+   "v": "not found",
+   "k": "unknown"
+  }
+ ],
+ "timeline": "18 weeks, safety endpoints",
+ "fitAxes": [
+  {
+   "axis": "Barrier",
+   "rating": "Partial",
+   "why": "No increase in redness measured by instrument over 18 weeks."
+  },
+  {
+   "axis": "Retinoid",
+   "rating": "Unknown",
+   "why": "Retinoid use alongside HQ and the toner was not described in the abstract."
+  },
+  {
+   "axis": "Breakout risk",
+   "rating": "Unknown",
+   "why": "Not assessed."
+  },
+  {
+   "axis": "Season",
+   "rating": "Unknown",
+   "why": "Not assessed."
+  }
+ ],
+ "links": [
+  {
+   "label": "Maldonado Lopez AM, da Silva Souza ID. Brightening toner with 4% hydroquinone: safety. Cutan Ocul Toxicol 2026 (DOI)",
+   "url": "https://doi.org/10.1080/15569527.2026.2748325"
+  },
+  {
+   "label": "Same (PubMed)",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/42899748/"
+  }
+ ]
+}

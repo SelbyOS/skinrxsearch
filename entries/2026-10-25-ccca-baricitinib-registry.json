@@ -1,0 +1,98 @@
+{
+ "id": "2026-10-25-ccca-baricitinib-registry",
+ "run": "2026-10-25",
+ "title": "Baricitinib in adults of African descent with central centrifugal cicatricial alopecia (CCCA): completed phase 2, results not yet posted",
+ "lane": "Black and melanin-rich skin",
+ "verdict": "WATCH",
+ "depth": "triage",
+ "headline": "A single-arm, open-label phase 2 study of oral baricitinib (a JAK inhibitor) in adults of African descent with biopsy-proven CCCA finished in April 2026 with 27 treated and 17 completing 52 weeks; no results or publication yet.",
+ "evidenceTier": "Registry record read in full (ClinicalTrials.gov); no results posted, no publication found",
+ "evidenceScore": 1,
+ "evidenceScale": 5,
+ "fit": "Relevant only to biopsy-confirmed scarring hair loss of this type. It is a prescription decision for a specialist; nothing here supports self-directed use.",
+ "displaces": "Fits nowhere as a routine product. If a clinician ever considered it, it would be a specialist-led addition to, or replacement of, existing CCCA treatment.",
+ "readMinutes": 2,
+ "regions": [
+  "US (4 sites)",
+  "Global (prescription drug)"
+ ],
+ "tags": [
+  "CCCA",
+  "scarring alopecia",
+  "African descent",
+  "JAK inhibitor",
+  "Rx",
+  "registry only",
+  "ask the clinician",
+  "Canada: Rx",
+  "hair and scalp"
+ ],
+ "status": "Watch",
+ "estimateNote": "Prices marked EST are my guesses, not looked up.",
+ "cost": [
+  {
+   "label": "All markets",
+   "value": "not found",
+   "kind": "unknown"
+  }
+ ],
+ "buzzCheck": "",
+ "summaryPoints": [
+  "Registry record (read in full): 52 weeks of baricitinib 4 mg daily, open-label, single arm; sponsor Raven Clinical Research with Eli Lilly as collaborator; started October 2024, completed April 2026. Primary outcome: change in an investigator global assessment of scalp hair loss at month 12.",
+  "All participants had to be of African descent with biopsy-proven CCCA; women only per the record. Exclusions follow the usual JAK-inhibitor screen: history of venous thromboembolism or high thrombosis risk, recent heart attack or stroke, active or latent infection, malignancy, kidney impairment.",
+  "No control arm, so any improvement cannot be separated from the natural course of a slow, scarring condition (my inference). Treat as a signal to watch for results, not as evidence of benefit.",
+  "Related items surfaced in PubMed this run, abstracts not available to me: a retrospective review of low-dose oral metformin in CCCA (response not predicted by insulin resistance) and a retrospective analysis of CCCA in children. Neither was read."
+ ],
+ "humanTrial": true,
+ "toneData": "Enrolment required African descent; other tone data not applicable",
+ "fitRating": "Unknown",
+ "fitLine": "Race-specific condition and population; the evidence level is a registry entry only.",
+ "priceStrip": [
+  {
+   "m": "All",
+   "v": "not found",
+   "k": "unknown"
+  }
+ ],
+ "timeline": "Study ran 52 weeks; results timeline unknown",
+ "fitAxes": [
+  {
+   "axis": "Barrier",
+   "rating": "Unknown",
+   "why": "Not applicable to a systemic drug."
+  },
+  {
+   "axis": "Retinoid",
+   "rating": "Unknown",
+   "why": "Not addressed."
+  },
+  {
+   "axis": "Breakout risk",
+   "rating": "Unknown",
+   "why": "Not addressed."
+  },
+  {
+   "axis": "Season",
+   "rating": "Unknown",
+   "why": "Not addressed."
+  }
+ ],
+ "links": [
+  {
+   "label": "ClinicalTrials.gov record NCT07843732",
+   "url": "https://clinicaltrials.gov/study/NCT07843732"
+  },
+  {
+   "label": "Adedeji O, Aguh C. Insulin resistance and oral metformin in CCCA. JAAD 2026 (DOI; abstract not available)",
+   "url": "https://doi.org/10.1016/j.jaad.2026.07.058"
+  },
+  {
+   "label": "Same (PubMed)",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/42497921/"
+  },
+  {
+   "label": "CCCA in pediatric patients: retrospective analysis. JAAD 2026 (DOI; PubMed listing only)",
+   "url": "https://doi.org/10.1016/j.jaad.2026.07.012"
+  }
+ ]
+}

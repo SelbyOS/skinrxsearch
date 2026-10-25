@@ -1,0 +1,172 @@
+{
+ "title": "Cool versus warm water for facial cleansing: a 10-day barrier trial",
+ "lane": "Barrier and routine",
+ "verdict": "TRY",
+ "depth": "dossier",
+ "headline": "Ten days of warm-water face washing raised water loss through the skin (about 3.4 g/m2/h) while cool water did not, with the same make-up removal, in a 52-person industry-linked trial. It is free to try, but it is one small study read at abstract level only.",
+ "evidenceTier": "Single randomized controlled study, 10 days, 52 adults. Abstract read; full text not opened (no free full text found)",
+ "evidenceScore": 2,
+ "fit": "Strong on barrier as a zero-cost, reversible change. The abstract says nothing about skin tone, oily or breakout-prone skin, or retinoid-treated skin, and does not define warm and cool in degrees.",
+ "displaces": "Nothing. It changes the water temperature of an existing cleansing step.",
+ "readMinutes": 4,
+ "regions": [
+  "UK (trial)",
+  "Any (no product needed)"
+ ],
+ "tags": [
+  "barrier",
+  "TEWL",
+  "cleansing",
+  "behaviour change",
+  "free",
+  "brand-linked",
+  "skin pH",
+  "needs replication"
+ ],
+ "cost": [
+  {
+   "label": "All markets",
+   "value": "Free (a tap setting)",
+   "kind": "found"
+  }
+ ],
+ "buzzCheck": "Nothing to buy, so no buzz premium. The sustainability framing is the sponsor's; the barrier result is the part that matters for skin.",
+ "summaryPoints": [
+  "Design (abstract): 10-day randomized study, 52 healthy adults (46 women, 6 men, aged 19-72) cleansed daily with the same cleansing balm under four conditions: cool or warm water, tap off during cleansing or left running.",
+  "Reported: warm water produced a significant rise in water loss through the skin (TEWL, about +3.4 g/m2/h at day 10, p<0.01); cool water produced no significant change (about +1, p=0.15). Surface pH fell by about 0.4 with cool water (p<0.02). Make-up removal did not differ by temperature. Warm cleansing used about 27% more water.",
+  "Skin hydration fell modestly in all groups, so cool water did not improve hydration.",
+  "Caveats: authors are from the cleansing-balm brand and a contract research firm; the abstract gives no temperatures, no skin-tone data and no adverse-event information; I could not open the full text."
+ ],
+ "humanTrial": true,
+ "toneData": "Not reported in the abstract",
+ "fitRating": "Strong",
+ "fitLine": "Low-risk barrier change with a measured instrument effect; evidence is small and sponsor-linked.",
+ "priceStrip": [
+  {
+   "m": "All",
+   "v": "free",
+   "k": "found"
+  }
+ ],
+ "timeline": "Water-loss divergence measured by day 10; felt change unknown",
+ "fitAxes": [
+  {
+   "axis": "Barrier",
+   "rating": "Strong",
+   "why": "The one measured effect was protection of barrier function (water loss) over 10 days versus warm water."
+  },
+  {
+   "axis": "Retinoid",
+   "rating": "Partial",
+   "why": "Not tested on retinoid-treated skin. Retinoids tend to raise water loss, so a gentler wash is plausibly helpful (my inference)."
+  },
+  {
+   "axis": "Breakout risk",
+   "rating": "Unknown",
+   "why": "Not assessed. With oil-based or sunscreen-heavy routines, cool water may emulsify less well (my inference); the trial's make-up test used a balm."
+  },
+  {
+   "axis": "Season",
+   "rating": "Partial",
+   "why": "Likely easiest in warm months; in cold, dry months the barrier argument is stronger but cool water is less comfortable."
+  }
+ ],
+ "dossier": {
+  "whatItIs": "A behavioural change, not a product: wash the face with cool rather than warm water. The study asks whether water temperature matters for the skin barrier and for removing make-up, and what it does to water and energy use.",
+  "mechanism": {
+   "steps": [
+    "The abstract reports outcomes only: water loss through the skin (TEWL), skin hydration, surface pH, radiance and make-up removal.",
+    "Warm-water cleansing increased TEWL over 10 days; cool water did not.",
+    "No mechanism is given in the abstract. The usual explanation is that heat strips surface lipids and loosens the outer layer, but this study did not test that."
+   ],
+   "inferenceFlag": "The lipid-stripping explanation is my inference from general skin physiology, not something the abstract shows.",
+   "diagramCaption": "Warm water daily -> higher water loss by day 10; cool water daily -> no significant change",
+   "flow": [
+    {
+     "label": "Warm or cool water with a cleansing balm, daily",
+     "basis": "applied",
+     "note": "Four groups; temperatures not given in the abstract."
+    },
+    {
+     "label": "Barrier function measured by TEWL over 10 days",
+     "basis": "human",
+     "note": "Warm: about +3.4 g/m2/h at day 10 (p<0.01). Cool: not significant."
+    },
+    {
+     "label": "Heat loosens surface lipids",
+     "basis": "inferred",
+     "note": "Not tested here."
+    }
+   ]
+  },
+  "studies": [
+   {
+    "cite": "Long S, Fenn K, Harvey K, Ward P, O'Brien C. Cool versus warm water for facial cleansing: A randomized controlled clinical study of skin barrier, skin physiology, cleansing efficacy and water consumption. Int J Cosmet Sci. 2026 Sep 10.",
+    "doi": "https://doi.org/10.1111/ics.70120",
+    "pubmed": "https://pubmed.ncbi.nlm.nih.gov/42722630/",
+    "readDepth": "Abstract only (no open full text found; full text not opened)",
+    "design": "10-day randomized controlled study; 52 healthy adults (46 women, 6 men, 19-72 years); four arms (cool or warm water, tap off or running) using one cleansing balm daily. TEWL (Tewameter), hydration (Corneometer), pH, radiance and make-up removal (colourimetric) at baseline and days 1, 2, 4, 7, 10. Water use covertly metered.",
+    "who": "Healthy adults. Skin type, tone and baseline barrier status are not reported in the abstract.",
+    "results": [
+     "Warm water: TEWL up about 3.4 g/m2/h at day 10 (p<0.01).",
+     "Cool water: TEWL change about 1 g/m2/h (p=0.15, not significant).",
+     "Cool water: surface pH fell about 0.4 (p<0.02); no change with warm.",
+     "Hydration declined modestly in all groups.",
+     "Make-up removal did not differ between temperatures (p>0.05); warm used about 27% more water (p<0.04)."
+    ],
+    "effectSize": "Differences in TEWL and pH given above; group sizes per arm are not in the abstract (about 13 per arm if evenly split, my arithmetic).",
+    "placebo": "No inactive arm. The comparison is cool versus warm water.",
+    "material": "Not established. A 3.4 g/m2/h change in water loss is a modest instrument change, and whether it is felt is unknown.",
+    "adverse": "Not reported in the abstract.",
+    "conflict": "Authors are from Elemis Ltd (the maker of the cleansing balm used) and Cutest Systems Ltd (a contract research organisation).",
+    "limits": "Short (10 days), about a dozen people per arm if evenly split, sponsor-linked, one cleanser, no skin-tone or skin-type breakdown in the abstract, temperatures unspecified. Single study; no replication found."
+   }
+  ],
+  "claimsCheck": [
+   {
+    "claim": "Cool-water cleansing preserves the skin barrier and matches warm water for make-up removal",
+    "source": "Authors' abstract",
+    "status": "Supported by the abstract's numbers for a balm and make-up; not tested for sunscreen, oil cleansers or other skin types"
+   }
+  ],
+  "products": {
+   "rankNote": "No product involved. The study used a branded cleansing balm; no product recommendation follows from it.",
+   "items": []
+  },
+  "howToUse": [
+   "Swap lukewarm or warm rinse water for cool: noticeably below skin temperature, not icy. The abstract gives no temperatures, so this is my reading of 'cool'.",
+   "Try it for 10 days, matching the trial. Watch for tightness, flaking or leftover residue.",
+   "If you use oil cleansers or heavy sunscreens, check that cool water still rinses them off well; the trial's make-up test used a balm and may not transfer.",
+   "Do not add new steps. The point is to change one variable."
+  ],
+  "expect": [
+   {
+    "when": "Days 1-4",
+    "what": "Little to feel. Water-loss differences in the trial emerged slowly."
+   },
+   {
+    "when": "Day 10",
+    "what": "The point at which warm-water TEWL was clearly higher in the trial."
+   }
+  ],
+  "contraindications": "No harms reported in the abstract. Cold-triggered conditions are the obvious exception (my inference). Not tested in skin disease.",
+  "sideBenefits": "About 27% less water used per cleanse (trial figure).",
+  "wouldChangeVerdict": [
+   "Independent replication, ideally 4 weeks or more",
+   "Results in deeper skin tones, oily and acne-prone skin, and retinoid users",
+   "Full text showing the actual temperatures and per-arm numbers",
+   "Data with oil cleansers and sunscreen removal"
+  ],
+  "transfer": "Skin tone is not reported. Heat and surface lipids are not skin-tone specific as far as I know, so the barrier effect plausibly applies by mechanism, but that is my inference; the study cannot confirm it.",
+  "confidence": [
+   "Abstract only. Not opened: full text (no free version found).",
+   "Not verified: per-arm numbers, actual temperatures, adverse events, funding statement."
+  ],
+  "searchedOn": "2026-10-25"
+ },
+ "id": "2026-10-25-cool-water-cleansing",
+ "run": "2026-10-25",
+ "status": "Watch",
+ "estimateNote": "Prices marked EST are my guesses, not looked up.",
+ "evidenceScale": 5
+}

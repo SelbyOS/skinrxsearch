@@ -1,0 +1,87 @@
+{
+ "id": "2026-10-25-energy-devices-skin-of-colour-review",
+ "run": "2026-10-25",
+ "title": "Lasers and energy-based devices in skin of colour: a 2026 clinical review of safety and settings",
+ "lane": "Tools, devices and clinic",
+ "verdict": "WATCH",
+ "depth": "triage",
+ "headline": "A new JAAD review for Fitzpatrick IV-VI says low-fluence Q-switched and picosecond Nd:YAG lasers and conservative non-ablative fractional settings are the safer end, ablative modalities carry more complications, and large prospective trials in darker skin are lacking.",
+ "evidenceTier": "Expert narrative review (abstract read); no pooled data",
+ "evidenceScore": 2,
+ "evidenceScale": 5,
+ "fit": "Useful as a question list before a device treatment. It brings no new product or protocol, and it states the evidence in darker skin is thin.",
+ "displaces": "Fits nowhere as a product; it informs which device settings to ask about.",
+ "readMinutes": 3,
+ "regions": [
+  "US (authors)",
+  "Global (devices)"
+ ],
+ "tags": [
+  "lasers",
+  "energy-based devices",
+  "skin of colour",
+  "PIH risk",
+  "review",
+  "safety",
+  "ask the clinician"
+ ],
+ "status": "Watch",
+ "estimateNote": "Prices marked EST are my guesses, not looked up.",
+ "cost": [
+  {
+   "label": "All markets",
+   "value": "not found",
+   "kind": "unknown"
+  }
+ ],
+ "buzzCheck": "",
+ "summaryPoints": [
+  "Abstract (read): in Fitzpatrick IV-VI, higher epidermal melanin competes for light energy and raises the risk of post-inflammatory hyperpigmentation, hypopigmentation, blistering and scarring.",
+  "Authors' summary: low-fluence Q-switched and picosecond Nd:YAG suit pigmentary disorders and tattoo removal; non-ablative fractional lasers are safe at conservative settings; ablative modalities have higher complication rates; strict photoprotection and sequential lower-energy sessions matter before and after.",
+  "Stated gap: large prospective trials in darker skin types and standardized parameters are lacking. Full text not opened (paywalled; not attempted)."
+ ],
+ "humanTrial": false,
+ "toneData": "Review of Fitzpatrick IV-VI literature; no new data",
+ "fitRating": "Partial",
+ "fitLine": "A checklist for conversations with a clinician; adds no product to the routine.",
+ "priceStrip": [
+  {
+   "m": "All",
+   "v": "not found",
+   "k": "unknown"
+  }
+ ],
+ "timeline": "Not applicable",
+ "fitAxes": [
+  {
+   "axis": "Barrier",
+   "rating": "Unknown",
+   "why": "Post-procedure barrier care is addressed in general terms in the abstract."
+  },
+  {
+   "axis": "Retinoid",
+   "rating": "Unknown",
+   "why": "Not addressed in the abstract."
+  },
+  {
+   "axis": "Breakout risk",
+   "rating": "Unknown",
+   "why": "Not addressed."
+  },
+  {
+   "axis": "Season",
+   "rating": "Unknown",
+   "why": "Photoprotection emphasised; season not addressed."
+  }
+ ],
+ "links": [
+  {
+   "label": "Dreifus EM, et al. Laser and energy-based device use in skin of color. JAAD 2026 (DOI)",
+   "url": "https://doi.org/10.1016/j.jaad.2026.08.077"
+  },
+  {
+   "label": "Same (PubMed)",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/42660430/"
+  }
+ ]
+}

@@ -1,0 +1,89 @@
+{
+ "id": "2026-10-25-retinal-azelaic-concentrate",
+ "run": "2026-10-25",
+ "title": "Anhydrous 0.1% retinal + 10% azelaic acid concentrate for blemish-prone skin: an 8-week split-face study",
+ "lane": "Rx / OTC and cosmetic actives",
+ "verdict": "SKIP",
+ "depth": "triage",
+ "headline": "A vehicle-controlled split-face study (23 completers, Fitzpatrick I-IV, company-authored) found small improvements in texture, redness and pores with a retinal plus azelaic acid combination; for anyone who already uses a retinoid and an azelaic acid, it adds nothing new.",
+ "evidenceTier": "Small split-face RCT (8 weeks, vehicle-controlled); abstract read; full text not opened (no open full text)",
+ "evidenceScore": 2,
+ "evidenceScale": 5,
+ "fit": "Weak. It combines two actives that a retinoid-using, pigment-conscious routine usually already covers separately, tested in lighter skin types and in a mostly young group.",
+ "displaces": "Nothing is worth displacing: it would duplicate a retinoid step and an azelaic step.",
+ "readMinutes": 3,
+ "regions": [
+  "Sweden (authors)",
+  "EU / US (product availability not checked)"
+ ],
+ "tags": [
+  "retinal",
+  "azelaic acid",
+  "blemish-prone",
+  "split-face",
+  "vehicle-controlled",
+  "company-authored",
+  "Fitzpatrick I-IV",
+  "not checked: product"
+ ],
+ "status": "Watch",
+ "estimateNote": "Prices marked EST are my guesses, not looked up.",
+ "cost": [
+  {
+   "label": "All markets",
+   "value": "not found",
+   "kind": "unknown"
+  }
+ ],
+ "buzzCheck": "",
+ "summaryPoints": [
+  "Abstract (read): 23 participants aged 16-49 (mean 28), Fitzpatrick I-IV; active concentrate on one side, vehicle on the other, mixed with a moisturizer, 8 weeks. Texture improved 5.6% versus vehicle (p=0.0016); redness reduced 18.1% versus vehicle (p=0.011); pore parameter 22.3% better versus vehicle (p=0.015). Adverse events few and mild.",
+  "Measured with Antera 3D imaging and questionnaires; the improvements are modest percentages on an imaging scale and are not translated into clinician-graded acne counts.",
+  "All authors are affiliated with Skinome Research AB, a company; the product's commercial name was not given in the abstract and I did not identify a retail product.",
+  "Fitzpatrick V-VI and pigment outcomes (post-inflammatory marks) were not reported."
+ ],
+ "humanTrial": true,
+ "toneData": "Fitzpatrick I-IV only; V-VI not included",
+ "fitRating": "Weak",
+ "fitLine": "Duplicates existing retinoid and azelaic acid steps; light-skin trial; company-authored.",
+ "priceStrip": [
+  {
+   "m": "All",
+   "v": "not found",
+   "k": "unknown"
+  }
+ ],
+ "timeline": "8-week study; participants reported visible change within 4 weeks (65%)",
+ "fitAxes": [
+  {
+   "axis": "Barrier",
+   "rating": "Unknown",
+   "why": "Not measured; retinal plus azelaic acid is an irritation risk in principle (my inference)."
+  },
+  {
+   "axis": "Retinoid",
+   "rating": "Weak",
+   "why": "It is itself a retinoid; stacking it on another retinoid is the wrong direction."
+  },
+  {
+   "axis": "Breakout risk",
+   "rating": "Partial",
+   "why": "The study population was blemish-prone; acne counts were not the main outcome."
+  },
+  {
+   "axis": "Season",
+   "rating": "Unknown",
+   "why": "Not assessed."
+  }
+ ],
+ "links": [
+  {
+   "label": "Gaudicheau C, et al. Retinal and azelaic acid concentrate, split-face study. Int J Cosmet Sci 2026 (DOI)",
+   "url": "https://doi.org/10.1111/ics.70131"
+  },
+  {
+   "label": "Same (PubMed)",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/42572367/"
+  }
+ ]
+}

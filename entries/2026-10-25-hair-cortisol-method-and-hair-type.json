@@ -1,0 +1,92 @@
+{
+ "id": "2026-10-25-hair-cortisol-method-and-hair-type",
+ "run": "2026-10-25",
+ "title": "Cortisol in hair as a stress marker: a cheaper lab method, and a hair-type caveat",
+ "lane": "HPA axis and nervous system",
+ "verdict": "NOVEL",
+ "depth": "triage",
+ "headline": "A cheaper HPLC method for measuring cortisol in hair was published in August 2026, but earlier work shows hair type and race change cumulative hair cortisol, so a hair-cortisol readout from coily hair is not yet a validated stress marker.",
+ "evidenceTier": "Analytical method validation (abstract read) + 2022 observational study (abstract read via a university repository page); no outcome trial",
+ "evidenceScore": 1,
+ "evidenceScale": 5,
+ "fit": "Interesting as a way to track long-run stress exposure from a hair sample, but I found no consumer test validated for tightly coiled, chemically treated or protective-styled hair. Do not buy a kit as an HPA-axis readout on this evidence.",
+ "displaces": "Fits nowhere as a product. It would add a lab test, not a routine step.",
+ "readMinutes": 3,
+ "regions": [
+  "South Korea (method authors)",
+  "US (hair-type study)"
+ ],
+ "tags": [
+  "hair cortisol",
+  "HPA axis",
+  "stress biomarker",
+  "method validation",
+  "hair type",
+  "textured hair",
+  "entropy wildcard",
+  "no product"
+ ],
+ "status": "Watch",
+ "estimateNote": "Prices marked EST are my guesses, not looked up.",
+ "cost": [
+  {
+   "label": "All markets",
+   "value": "not found",
+   "kind": "unknown"
+  }
+ ],
+ "buzzCheck": "",
+ "summaryPoints": [
+  "Method paper (abstract read): methanol extraction, derivatization and fluorescence detection over 5-200 pg/mg of cortisol in hair; limits of detection 1.1 pg/mg and quantification 3.5 pg/mg; recoveries 89-108%. Positioned as a cheaper alternative to LC-MS/MS. It validates the measurement method, not what a result means in a person.",
+  "Moody and colleagues (2022, abstract read via Penn State's repository page): cortisol concentrations differed by racial group and by hair type, with the direction of change from straighter to curlier hair depending on racial group. The authors conclude hair type and race should be considered separately. The abstract does not say which direction applies to Black or coily hair.",
+  "Background I did not verify this run: cosmetic chemical treatments such as colour and straightening have been reported to alter measured hair cortisol in some studies. Treat that as a lead to check before relying on any hair cortisol result."
+ ],
+ "humanTrial": false,
+ "toneData": "Method paper; hair-type paper abstract does not break out tone or texture direction",
+ "fitRating": "Unknown",
+ "fitLine": "Concept is interesting but not validated for the hair types and treatments most relevant here.",
+ "priceStrip": [
+  {
+   "m": "All",
+   "v": "not found",
+   "k": "unknown"
+  }
+ ],
+ "timeline": "A hair sample reflects roughly the prior weeks to months; no consumer product timeline",
+ "fitAxes": [
+  {
+   "axis": "Barrier",
+   "rating": "Unknown",
+   "why": "Not applicable."
+  },
+  {
+   "axis": "Retinoid",
+   "rating": "Unknown",
+   "why": "Not applicable."
+  },
+  {
+   "axis": "Breakout risk",
+   "rating": "Unknown",
+   "why": "Not applicable."
+  },
+  {
+   "axis": "Season",
+   "rating": "Unknown",
+   "why": "Hair cortisol has seasonal variation in some studies; not checked this run."
+  }
+ ],
+ "links": [
+  {
+   "label": "Gab-Allah MA, et al. HPLC-FLD method for cortisol in human hair. Talanta 2026 (DOI)",
+   "url": "https://doi.org/10.1016/j.talanta.2026.130464"
+  },
+  {
+   "label": "Same (PubMed)",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/42623825/"
+  },
+  {
+   "label": "Moody SN, et al. Impact of hair type, hair sample weight, external hair exposures, and race on cumulative hair cortisol. Psychoneuroendocrinology 2022 (repository page)",
+   "url": "https://pure.psu.edu/en/publications/impact-of-hair-type-hair-sample-weight-external-hair-exposures-an/"
+  }
+ ]
+}

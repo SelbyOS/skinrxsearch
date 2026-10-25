@@ -127,6 +127,8 @@ for r in runs:
     note = next((x.get("note", "") for x in meta.get("runs", []) if x.get("date") == r), "")
     body = "# SkinRxsearch batch %s\n\n%s\n\nPrices marked EST are guesses. Read depth is stated per study.\n\n---\n\n" % (r, note)
     body += "\n---\n\n".join(e["md"] for e in entries if e.get("run") == r)
+    app = next((x.get("appendix", "") for x in meta.get("runs", []) if x.get("date") == r), "")
+    if app: body += "\n---\n\n" + app.strip() + "\n"
     open(os.path.join(bdir, "batch-%s.md" % r), "w", encoding="utf-8").write(body)
 open(os.path.join(bdir, "all-entries.md"), "w", encoding="utf-8").write(
     "# SkinRxsearch: all entries\n\n---\n\n" + "\n---\n\n".join(e["md"] for e in entries))
