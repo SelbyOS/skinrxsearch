@@ -2,6 +2,501 @@
 
 ---
 
+# [ENTRY] Visible light and pigmentation: a 2026 review on why iron-oxide (tinted) sun protection matters for melasma and PIH
+- **Verdict:** TRY | **Lane:** Black and melanin-rich skin | **Run:** 2026-11-03
+- **Evidence:** 2 of 5. Narrative review, abstract read; full text paywalled and not opened
+- **Human trial:** none found | **Skin-tone data:** Review of mixed literature; authors call for more skin-of-colour data
+- **Tags:** visible light, HEV, iron oxide, tinted sunscreen, melasma, PIH, opsin-3, review, abstract only, skin of colour, cosmetic
+
+## EXECUTIVE SUMMARY
+A narrative review argues that blue-violet visible light (400 to 450 nm) activates a pigment-cell receptor and drives lasting darkening, and that iron-oxide sunscreens add benefit in melasma; the numbers come from earlier trials I have not opened.
+- Abstract (read): high-energy visible light (400 to 450 nm) activates opsin-3 on melanocytes, triggers calcium signalling and raises melanin production in a wavelength-specific way; blue-violet light induced dose-dependent pigment that can persist, red light none.
+- Reported from earlier work (not opened): melasma patients using iron-oxide sunscreen improved 15% more on MASI, 28% more on colorimetry and 4% more on histology than with a UV-only sunscreen; a suction-blister PIH model healed without darkening at sites shielded from light.
+- Adherence gap: fewer than two thirds of people with hyperpigmentation use sunscreen and fewer than 10% reapply properly, worse in skin of colour; tint shade mismatch is named as a barrier to using visible-light protection.
+- Limits: narrative review; the primary trials and their skin-tone mix were not opened by me; the abstract does not say how many studies were pooled.
+
+## FIT AND REPLACEMENT LOGIC (my judgment, not a measurement)
+- **Fit for you:** Strong Pigment-prone skin: Strong on sun-season fit. The review's main practical point is that UV-only sunscreen leaves visible light unblocked; shade matching is a stated barrier for deeper skin tones.
+- **Barrier:** Unknown. Not addressed in the abstract.
+- **Retinoid:** Partial. Daily sun protection is a standard companion to a retinoid; not addressed specifically.
+- **Breakout risk:** Unknown. Tinted formulations vary in finish and ingredients; not addressed.
+- **Season:** Strong. Directly about light exposure and pigment.
+- **What it displaces:** It would replace a non-tinted daily sunscreen step or top up pigment-prone zones; it should not add a step.
+
+## COST AND MARKETS
+- **All markets** (unknown): not found
+- **Buzz check:** Sunscreens range widely in price; I did not check prices this run, so I cannot say whether price tracks evidence.
+
+## SOURCES
+- [Beyond UV: Visible Light and Pigmentation. Photodermatol Photoimmunol Photomed 2026 (DOI)](https://doi.org/10.1111/phpp.70125)
+- [Same (PubMed)](https://pubmed.ncbi.nlm.nih.gov/42802407/)
+
+---
+
+# [ENTRY] Tirzepatide (a diabetes and weight-loss injection) for active central centrifugal cicatricial alopecia: a 20-person pilot now recruiting
+- **Verdict:** NOVEL | **Lane:** Hair and scalp (entropy wildcard) | **Run:** 2026-11-03
+- **Evidence:** 1 of 5. Registry record read in full (ClinicalTrials.gov); a 2026 meta-analysis abstract is the only supporting data (abstract read)
+- **Human trial:** yes | **Skin-tone data:** Condition-specific: CCCA mainly affects women of African descent (background; the record does not restrict by ancestry)
+- **Tags:** CCCA, scarring alopecia, tirzepatide, GLP-1, repurposed drug, Rx, registry only, pilot, ask the clinician, hair and scalp, entropy wildcard
+
+## EXECUTIVE SUMMARY
+A repurposing idea: a 12-month, single-arm pilot of weekly tirzepatide in adults with active CCCA, started September 2026, with paired scalp biopsies; it enrols people with higher HbA1c and insulin resistance, and results are years away.
+- Registry record (read in full): NCT07734870; Johns Hopkins with Eli Lilly collaborating; 20 adults with active CCCA (activity score above 1), weekly tirzepatide for 12 months, no control arm; scalp biopsies at baseline and 6 months with RNA sequencing of scarring pathways; started 15 September 2026, completion expected May 2028.
+- Eligibility excludes HbA1c below 5.4% and HOMA-IR below 2, so it enrols people who already have some metabolic burden; it also excludes people already on glucose-lowering or weight-loss drugs.
+- Context (abstract read): a 2026 meta-analysis of GLP-1 drugs and hair loss found about a 40% higher risk of non-scarring hair loss (telogen effluvium and androgenetic alopecia), and reports that 58% of people with CCCA improved on these drugs; I did not open the primary data for that figure.
+- Watch re-check: the baricitinib CCCA phase 2 from the earlier run is still completed with no results posted and no publication found.
+
+## FIT AND REPLACEMENT LOGIC (my judgment, not a measurement)
+- **Fit for you:** Unknown Relevant only to confirmed, active CCCA and only as a specialist prescription decision. It does link to this run's insulin-resistance theme, but nothing here supports self-directed use.
+- **Barrier:** Unknown. Not applicable to a systemic drug.
+- **Retinoid:** Unknown. Not addressed.
+- **Breakout risk:** Unknown. Not addressed.
+- **Season:** Unknown. Not addressed.
+- **What it displaces:** Fits nowhere in a routine; it would be a specialist-led addition or replacement in CCCA treatment.
+
+## COST AND MARKETS
+- **All markets** (unknown): not found
+
+## SOURCES
+- [ClinicalTrials.gov record NCT07734870](https://clinicaltrials.gov/study/NCT07734870)
+- [GLP-1 receptor agonists and alopecia: systematic review and meta-analysis. Skin Appendage Disord 2026 (DOI; abstract read)](https://doi.org/10.1159/000553070)
+- [Same (PubMed)](https://pubmed.ncbi.nlm.nih.gov/42621629/)
+- [ClinicalTrials.gov record NCT07843732 (baricitinib CCCA, re-checked)](https://clinicaltrials.gov/study/NCT07843732)
+
+---
+
+# [ENTRY] Sleep, stress, pollution and sensitive skin: a 151-woman cross-sectional study across two cities
+- **Verdict:** WATCH | **Lane:** HPA axis and nervous system | **Run:** 2026-11-03
+- **Evidence:** 1 of 5. Cross-sectional, 151 women, industry-affiliated authors, unadjusted; full text read
+- **Human trial:** none found | **Skin-tone data:** Fitzpatrick II-IV only (Chinese women)
+- **Tags:** sleep, stress, exposome, sensitive skin, prostaglandin E2, oxidative stress, cross-sectional, industry-affiliated authors, Fitzpatrick II-IV, HPA axis lane
+
+## EXECUTIVE SUMMARY
+Sensitive skin carried more oxidative damage in both cities, and an inflammation marker was nearly three times higher in the busier city; but sleep, stress, pollution and city moved together, so none of them can be blamed on its own.
+- Cross-sectional (full text read): 151 Chinese women aged 35 to 50 in a high-pollution big city and a lower-pollution coastal city; sensitive skin in the big city had 17.9% more protein carbonylation than non-sensitive skin in the same city.
+- Within sensitive skin, prostaglandin E2 was 185% higher in the big city (4.36 vs 1.53 pg/ug protein), with more sebum and visible pores; the coastal city had more pigment spots and oxidative damage (UV not measured).
+- Everyone in the big-city group slept under 7 hours with higher stress scores and everyone in the other group the reverse, so sleep, stress, pollution and UV are inseparable here.
+- Several authors work for a skincare company; analyses were exploratory and unadjusted.
+
+## FIT AND REPLACEMENT LOGIC (my judgment, not a measurement)
+- **Fit for you:** Unknown A reminder of what an exposome study can and cannot tell you. It supports the idea that lifestyle context shapes skin, but gives no intervention to try and no deep-skin data.
+- **Barrier:** Partial. Water loss was not higher in sensitive skin in this cohort.
+- **Retinoid:** Unknown. Not addressed.
+- **Breakout risk:** Unknown. Sebum and pores were higher in the heavily urban group; breakouts were not assessed.
+- **Season:** Partial. UV-exposed coastal setting went with more pigment and oxidative damage, but sun use was not measured.
+- **What it displaces:** Fits nowhere as a product; it informs how much weight to give single-factor stress and sleep claims.
+
+## WHAT IT IS
+A cross-sectional comparison of 151 Chinese women aged 35 to 50 (Fitzpatrick II to IV) in two cities, grouped by self-reported skin sensitivity and by lifestyle (pollution, sleep and perceived stress). Skin surface samples were assayed for an inflammation marker (prostaglandin E2) and an oxidative-damage marker (protein carbonylation), alongside imaging and instruments.
+
+## MECHANISM
+Sensitive skin, high-urban lifestyle (n=50) vs non-sensitive (n=50) [human] -> Same sensitive group vs sensitive skin in the moderately urban coastal city (n=51) [human] -> Coastal group: more pigment and oxidative damage [human] -> Sleep and stress drive the inflammation marker [inferred]
+1. Sensitive skin (a self-reported score) was associated with higher protein carbonylation and more dark spots than non-sensitive skin in the same city.
+2. Within sensitive skin, the city with higher pollution, shorter sleep and higher perceived stress had much higher prostaglandin E2, more sebum and more visible pores.
+3. The city with lower pollution and better sleep but higher UV (a coastal city) had more pigment spots and more oxidative damage.
+4. Because sleep, stress, pollution, UV and climate all differ by city, the study cannot say which exposure drives which marker.
+- **Inference, not observation:** Sleep and stress group membership was perfectly aligned with city (100% of the high-urban group slept under 7 hours with stress scores of 18 or more; 100% of the other group slept over 7 hours with scores of 14 or less). They cannot be separated from pollution, UV or climate. Any link from stress or sleep to prostaglandin E2 here is an association, not a mechanism.
+
+## STUDIES
+### Conway J, Berlin I, Blanche C, Grivet-Seyve M, Wai HD, Tonetti NJ, et al. Lifestyle-driven phenotypes in sensitive skin: a cross-sectional, multicenter study across urbanization tiers. Dermatol Ther (Heidelb). 2026;16(11):5701-5712.
+- **Read depth:** Full text (open access) read
+- **Design:** Cross-sectional, two sites (Guangzhou and Xiamen, China), March to April 2024, run by a contract research organisation. 151 women, 35 to 50 years, Fitzpatrick II to IV. Groups: non-sensitive skin, high-urban lifestyle (n=50); sensitive skin, high-urban (n=50); sensitive skin, moderate-urban (n=51). Sensitivity by the Sensitive Scale-10 (no objective provocation test). Perceived Stress Scale-10 and a sleep scale defined lifestyle. VISIA-CR imaging, Tewameter, Sebumeter, tape-strip assays for protein carbonylation and prostaglandin E2.
+- **Who was included:** Healthy women resident at least 5 years in the same city with stable lifestyle; no sleep, stress or antidepressant medication. Phototype distribution differed between groups (more phototype II in the coastal group). Deeper skin tones (V to VI) were not included.
+- **Effect size:** Percentages as stated in results (above). Unadjusted group comparisons.
+- **Placebo comparison:** Not applicable (no intervention).
+- **Material outcome:** Not established. These are biomarker and imaging associations, not symptoms or treatment effects.
+- **Adverse events:** Not applicable.
+- **Funding and conflicts:** Several authors are Galderma R&D employees (a skincare company); the study was run by a contract research organisation.
+- **Limits:** Cross-sectional; two cities differ in pollution, UV, climate and probably income and diet; sleep and stress perfectly aligned with city; not adjusted for age, phototype or multiple comparisons (authors call it exploratory); sun protection and individual UV exposure not measured; self-reported sensitivity; Chinese women only.
+  - Prostaglandin E2 (pg/ug protein): 3.53 non-sensitive high-urban, 4.36 sensitive high-urban, 1.53 sensitive moderate-urban.
+  - Protein carbonylation: 0.28, 0.33, 0.42 respectively. Dark spot clinical score: 2.45, 3.38, 4.32.
+  - Sebum 112.4, 121.8, 99.5 ug/cm2; pore score 4.42, 4.57, 4.25.
+  - Water loss through the skin (TEWL) was comparable across groups, so sensitivity was not associated with a measured barrier deficit.
+
+## CLAIMS CHECK
+- Poor sleep and high stress raise skin inflammation (prostaglandin E2) | source: Implied by the paper's framing | Not shown: sleep, stress, pollution and city all differ together, so the study cannot isolate any one
+- Sensitive skin is a distinct biological state | source: Authors' conclusion | Partly: protein carbonylation was higher in sensitive skin in both cities; sensitivity was not defined by an objective test
+
+## PRODUCTS AND FORMULATIONS
+No product involved.
+
+## HOW TO ADAPT IT
+- Nothing to adopt. If anything, this is a reminder that exposome questions (sleep, stress, air quality, UV) come as a bundle, so a single intervention is hard to credit or blame.
+- The authors suggest tailoring care to the dominant exposure (anti-inflammatory in heavily urban settings, antioxidant and photoprotective in high-UV settings) but that is a hypothesis they did not test.
+
+## WHAT TO EXPECT, AND WHEN
+- **Not applicable:** No intervention was tested.
+
+## SAFETY
+- **Contraindications and unknowns:** Not applicable.
+- **Side benefits:** None.
+
+## DOES IT TRANSFER?
+Does it transfer to deeper skin? Participants were Fitzpatrick II to IV, so tone V to VI is untested. The question of whether stress and sleep affect skin inflammation and pigment is physiological, not tone-specific, but this study cannot confirm it (inference).
+
+## WHAT WOULD CHANGE THE VERDICT
+- A trial that improves sleep or lowers stress (for example breathing training or a sleep programme) and measures prostaglandin E2 and pigment in the same people
+- A cohort that measures sleep, stress, pollution and UV separately in the same city
+- Replication in deeper skin tones and outside China
+
+## COST AND MARKETS
+- **All markets** (unknown): not found
+
+## SOURCES
+- [Conway J et al. 2026 (DOI)](https://doi.org/10.1007/s13555-026-01946-0)
+- [Conway J et al. 2026 (PubMed)](https://pubmed.ncbi.nlm.nih.gov/42828676/)
+- [Conway J et al. 2026 (full text)](https://pmc.ncbi.nlm.nih.gov/articles/PMC13696625)
+
+## CONFIDENCE AND GAPS
+- Read in full: open-access paper.
+- Not verified: biomarker assay validation, funding statement wording, sleep and stress scores per participant.
+- Industry-affiliated authors; exploratory analyses without multiplicity correction.
+- Searched on 2026-11-03
+
+---
+
+# [ENTRY] Eye-contour skincare: a 2026 narrative review of retinoids, peptides, antioxidants and depigmenting agents alongside procedures
+- **Verdict:** SKIP | **Lane:** Ingredients and aesthetic care | **Run:** 2026-11-03
+- **Evidence:** 1 of 5. Narrative review, abstract read; free full text not opened
+- **Human trial:** none found | **Skin-tone data:** Not reported in the abstract; authors note limited diversity
+- **Tags:** eye cream, periocular, dermocosmetics, narrative review, company-authored, peptides, retinoids, abstract only
+
+## EXECUTIVE SUMMARY
+A company-authored narrative review concludes eye-contour products help hydration, firmness, pigment evenness and puffiness, but says the underlying studies are short, industry-sponsored, mostly of finished products rather than single ingredients, and low in diversity.
+- Abstract (read): PubMed search 2010 to 2025; retinoids, peptides, antioxidants, vasomodulators and depigmenting agents improve hydration, firmness, pigment uniformity and puffiness, 'particularly alongside aesthetic procedures'.
+- Authors' own limits: most evidence comes from finished multicomponent formulations rather than isolated ingredients; studies are short, industry-sponsored, and limited in participant diversity and endpoints.
+- Two of the authors are affiliated with ISDIN's innovation and development team (a skincare company). No searchable numbers in the abstract.
+- Follows the 25 Oct run's PDRN-versus-retinol eye cream entry: nothing here changes it.
+
+## FIT AND REPLACEMENT LOGIC (my judgment, not a measurement)
+- **Fit for you:** Unknown No new product or protocol; the authors' own limits statement is the useful part. Not specific to deeper skin tones.
+- **Barrier:** Unknown. Not addressed.
+- **Retinoid:** Unknown. Not addressed.
+- **Breakout risk:** Unknown. Not addressed.
+- **Season:** Unknown. Not addressed.
+- **What it displaces:** Fits nowhere new; if an eye product is already used, nothing here argues for changing it.
+
+## COST AND MARKETS
+- **All markets** (unknown): not found
+
+## SOURCES
+- [Prudkin L et al. Dermocosmetics for periocular aging: narrative review. Dermatol Ther (Heidelb) 2026 (DOI)](https://doi.org/10.1007/s13555-026-01934-4)
+- [Same (PubMed)](https://pubmed.ncbi.nlm.nih.gov/42814367/)
+- [Same (free full text, not opened)](https://pmc.ncbi.nlm.nih.gov/articles/PMC13696647)
+
+---
+
+# [ENTRY] Can PDRN be pushed through the skin with a weak current? A computer model of PDRN iontophoresis (follow-up to the topical PDRN entry)
+- **Verdict:** WATCH | **Lane:** Clinic and devices | **Run:** 2026-11-03
+- **Evidence:** 1 of 5. Computational model plus a diffusion-cell measurement; abstract read; free full text not opened
+- **Human trial:** none found | **Skin-tone data:** Not applicable (simulation)
+- **Tags:** PDRN, iontophoresis, transdermal delivery, simulation, device design, Korea, company-linked author, follow-up to earlier entry
+
+## EXECUTIVE SUMMARY
+A September 2026 modelling paper says PDRN's large size limits how far it passes the skin barrier, and models a weak-current device to help; it is a simulation with one measured input and no human outcome.
+- Abstract (read): authors state PDRN's large molecular size limits noninvasive delivery; they build a three-layer skin model (stratum corneum, epidermis, dermis) using the Nernst-Planck equation, with a diffusion coefficient from diffusion-cell experiments and the electric charge estimated from earlier double-stranded-DNA reports.
+- The model compares passive diffusion with iontophoresis (cathode) across current, concentration and time, and reports a depth-dependent shift in the dominant transport mechanism; it reports agreement metrics with experimental permeation data (RMSD, MAPE, R2) without numbers in the abstract.
+- One author lists Trans Bio Lab Co. Ltd. as an affiliation. No human outcomes, no skin-tone data, no product.
+- Why it matters: last run's topical PDRN entry flagged that delivery into living human dermis was not shown; this paper agrees that delivery is the limiting question and does not answer it.
+
+## FIT AND REPLACEMENT LOGIC (my judgment, not a measurement)
+- **Fit for you:** Unknown Context for a delivery question that the earlier PDRN entry left open. Nothing to try; no device or product was tested.
+- **Barrier:** Unknown. Not addressed.
+- **Retinoid:** Unknown. Not addressed.
+- **Breakout risk:** Unknown. Not addressed.
+- **Season:** Unknown. Not addressed.
+- **What it displaces:** Fits nowhere: no product or device was tested in people.
+
+## COST AND MARKETS
+- **All markets** (unknown): not found
+
+## SOURCES
+- [Numerical simulation of PDRN iontophoresis. Drug Deliv 2026 (DOI)](https://doi.org/10.1080/10717544.2026.2726625)
+- [Same (PubMed)](https://pubmed.ncbi.nlm.nih.gov/42789403/)
+- [Same (free full text, not opened)](https://pmc.ncbi.nlm.nih.gov/articles/PMC13618095)
+
+---
+
+# [ENTRY] Adding a glutathione-hyaluronic acid booster to low-fluence Nd:YAG laser plus oral tranexamic acid for melasma: a 6-month randomized trial
+- **Verdict:** WATCH | **Lane:** Clinic and Rx pigment | **Run:** 2026-11-03
+- **Evidence:** 2 of 5. Single-centre randomized trial, 36 completers of 50, 6 months + 2 months follow-up; full text read
+- **Human trial:** yes | **Skin-tone data:** Fitzpatrick III-IV only (Chinese women)
+- **Tags:** melasma, laser toning, Nd:YAG, glutathione, hyaluronic acid, oral tranexamic acid, Rx, procedure, ask the clinician, Fitzpatrick III-IV, single centre, no sham arm
+
+## EXECUTIVE SUMMARY
+A small add-on gap, not a breakthrough: 36 completers, no injection in the control arm, and only Fitzpatrick III to IV. The booster arm scored 0.72 mMASI points lower (95% CI 0.46 to 0.98) after adjustment, with both arms improving by more than half.
+- Design (full text read): 50 Chinese women with epidermal melasma (Fitzpatrick III to IV) were randomized to six monthly low-fluence laser sessions plus oral tranexamic acid 250 mg daily, with or without an intradermal glutathione + hyaluronic acid booster. 36 completed.
+- Result: booster arm mMASI 2.50 vs 3.39 at the end of treatment and 2.06 vs 2.67 two months later; baseline-adjusted difference 0.72 points (95% CI 0.46 to 0.98). Both arms improved by more than half, and the raw absolute change was not significantly different.
+- What weakens it: no sham or HA-only injection, 28% dropout (analysis on completers), no objective pigment measurement, one centre. No pigment complications in either arm, but 36 people cannot show laser safety in deeper skin.
+- Fitzpatrick V and VI were not studied and dermal or mixed melasma were excluded.
+
+## FIT AND REPLACEMENT LOGIC (my judgment, not a measurement)
+- **Fit for you:** Partial Relevant to procedural pigment care in deeper skin tones, but Fitzpatrick V to VI were not studied, there was no sham-injection control and the gap is small. It is a clinician conversation, not a product.
+- **Barrier:** Unknown. Barrier function was not measured; transient redness and swelling only.
+- **Retinoid:** Weak. Retinoids were washed out for 12 months before enrolment, so use alongside a retinoid is untested.
+- **Breakout risk:** Unknown. Breakout risk not assessed.
+- **Season:** Partial. Strict daily SPF 50 or higher was part of the protocol, which is also needed for any pigment plan.
+- **What it displaces:** Nothing in a daily routine. It would be an add-on to a clinic laser plan, not a swap for a product.
+
+## WHAT IT IS
+A combination procedure protocol for epidermal-type melasma: low-fluence 1064-nm Q-switched Nd:YAG laser toning once a month, plus oral tranexamic acid 250 mg once daily, with or without an intradermal skin booster made by mixing a hyaluronic acid product with injectable glutathione. The question is whether the booster adds anything to laser plus tranexamic acid. The booster was compounded in clinic, not a retail product.
+
+## MECHANISM
+Low-fluence 1064-nm laser, monthly x 6 [applied] -> Oral tranexamic acid 250 mg daily x 6 months [applied] -> Intradermal glutathione + HA booster, monthly x 6 (arm A only) [applied] -> Glutathione lowers tyrosinase, shifts to pheomelanin, scavenges ROS [stated] -> Lower graded melasma score vs control [human] -> Longer-lasting control [inferred]
+1. Low-fluence 1064-nm laser toning (6 mm spot, 2.2 to 2.6 J/cm2, 10 Hz, six monthly sessions) targets melanin with limited epidermal injury. The paper describes this as the established backbone of the regimen.
+2. Oral tranexamic acid blocks plasminogen activation. The authors describe a downstream drop in prostaglandin and growth-factor signals that stimulate melanocytes, and a possible competitive effect on tyrosinase.
+3. Intradermal glutathione with hyaluronic acid: the authors cite lower tyrosinase activity, a shift from dark eumelanin toward lighter pheomelanin, and scavenging of reactive oxygen species; hyaluronic acid is described as a carrier that also hydrates the dermis.
+4. The trial measured only a clinician-graded pigment score and satisfaction, not melanin, tyrosinase or oxidative stress, so none of the biological steps was tested here.
+- **Inference, not observation:** The mechanism chain is the author's framing from earlier literature. The control arm had no injection at all, so the study cannot separate glutathione from hyaluronic acid, from the needle injury itself, or from simply getting an extra visit-day procedure (my inference).
+
+## STUDIES
+### Bai JL. Hyaluronic acid-based skin booster with glutathione combined with 1064-nm Nd:YAG laser and oral tranexamic acid for melasma: a prospective comparative study. Medicine (Baltimore). 2026 (author name taken from the contribution statement).
+- **Read depth:** Full text (open access) read
+- **Design:** Randomized 1:1 (computer sequence, sealed envelopes), single hospital in China, 50 Chinese women aged 24 to 51 with epidermal-type melasma (Wood lamp), Fitzpatrick III or IV. Both arms: six monthly 1064-nm laser sessions plus oral tranexamic acid 250 mg daily for 6 months. Arm A also got intradermal glutathione + HA. mMASI at each monthly visit and 2 months after the last session; SPF 50 or higher required. The treating dermatologist scored visits; a second dermatologist, blinded, re-scored baseline and final photographs and agreed with the treating scores.
+- **Who was included:** Dermal and mixed-type melasma were excluded, along with keloid history, photosensitivity, bleeding disorders, liver, thyroid or autoimmune disease, recent hormonal therapy or anticoagulants, laser within 6 months, oral or topical retinoids within 12 months, depigmenting agents within 4 weeks to 3 months, and chemical peels or tranexamic acid within 3 months. Fitzpatrick V and VI were not studied.
+- **Effect size:** Adjusted difference 0.72 mMASI points (95% CI 0.46 to 0.98) on a 0 to 24 scale; baseline about 5.6. Cohen d about 1.35 reported at the end of treatment. Both arms improved by more than half.
+- **Placebo comparison:** No sham or HA-only injection arm. The control arm got laser plus oral tranexamic acid only, so the add-on effect cannot be attributed to glutathione specifically. Both arms improved substantially on the standard regimen.
+- **Material outcome:** Plausible but not established. A 0.72 point gap on a 24-point scale from a baseline near 5.6 is small in absolute terms; the authors call it clinically meaningful, I would call it suggestive. mMASI was recorded to the nearest whole point and is a visual score. No colorimetry.
+- **Adverse events:** Mild and transient. No serious events. The small sample cannot rule out rarer events.
+- **Funding and conflicts:** Single author, single hospital. No funding or conflict statement found in the text I read; check the paper's front matter.
+- **Limits:** Single centre, 36 completers, 28% attrition (balanced; sensitivity and tipping-point analyses given), no sham injection, mixed-model result depends on adjusted comparisons while the unadjusted group-by-time interaction was not significant, Fitzpatrick III to IV only, epidermal type only, short follow-up (2 months), no objective pigment measurement.
+  - Completers: 36 of 50 (18 per arm). 14 withdrew (7 per arm) for logistics; none had a post-baseline score, so the analysis is completers only (complete-case).
+  - Baseline mMASI 5.61 vs 5.56. Before session 6: 2.50 vs 3.39. Two months after the last session: 2.06 vs 2.67 (adjusted p=0.005).
+  - Baseline-adjusted mean difference across the six visits: 0.72 mMASI points (95% CI 0.46 to 0.98) favouring the booster arm, already present at the first post-treatment visit and about constant over time (group x visit interaction p=0.59).
+  - Proportional reduction: 53.1% vs 37.8% at end of treatment (p=0.002); 61.2% vs 50.7% at follow-up (p=0.016). The raw absolute change did not differ significantly (0.67 points, 95% CI -0.19 to 1.52, p=0.12).
+  - Patient satisfaction 'very satisfied' 28% vs 11%, not significant (p=0.31); the trial was not powered for it.
+  - Adverse events: transient redness, mild swelling and bruising only. No post-inflammatory hyperpigmentation, hypopigmentation or systemic tranexamic acid events were reported.
+
+## CLAIMS CHECK
+- Glutathione skin boosters brighten melasma | source: Trial discussion and clinic marketing | One small trial shows a modest add-on gap; the control had no injection, so glutathione is not isolated
+- More durable than laser plus tranexamic acid alone | source: Authors' conclusion | Gap held 2 months after the last session; relapse over a year is untested
+
+## PRODUCTS AND FORMULATIONS
+No retail product was tested. The booster was compounded in clinic from an injectable glutathione and a hyaluronic acid booster product. I did not identify a retail product with this exact combination; marketplace listings for glutathione skin boosters appeared in search results but were not opened or verified.
+- **Clinic-compounded HA + injectable glutathione booster** (Clinic-prepared (not a retail product)): Not found. Tested form only. Product, brand and concentration of the HA component are not named in the paper. [Described in the paper only]
+
+## HOW TO ADAPT IT
+- This is a procedure and prescription-drug protocol, not a routine product. If it interests you, the question to bring to a clinician is whether adding a glutathione-HA booster to a laser plus tranexamic acid plan is worth it for epidermal-type melasma, given the evidence is one small trial.
+- The trial paired it with daily SPF 50 or higher and a 12-month retinoid washout before enrolment; use with a current retinoid is untested.
+- Oral tranexamic acid is prescription-only and has clotting-related exclusions; any decision about it, its dose, or its duration belongs with a prescribing clinician.
+
+## WHAT TO EXPECT, AND WHEN
+- **Months 1 to 2:** In the trial the booster arm was already ahead at the first post-treatment visit; the gap grew by session 3.
+- **Month 6:** mMASI about 2.5 vs 3.4 from a baseline near 5.6.
+- **2 months after last session:** Both arms held most of their gains; the gap persisted. Nothing is known beyond that.
+
+## SAFETY
+- **Contraindications and unknowns:** Trial exclusions are a practical contraindication list: bleeding or clotting problems, anticoagulants, hormonal therapy, liver disease, pregnancy or breastfeeding, photosensitivity and keloid history. Oral tranexamic acid carries a clotting-risk warning that needs individual assessment. Injectable glutathione for skin lightening has uneven regulatory status between countries (I did not verify Canada or Korea); confirm the product and its source with the clinician.
+- **Side benefits:** None shown. Satisfaction was descriptive only.
+
+## DOES IT TRANSFER?
+Does it transfer to deeper skin? The pigment pathways are not tone-specific, so some effect is plausible by mechanism. But the trial enrolled only Fitzpatrick III to IV, excluded dermal and mixed-type melasma, used low fluence, and saw no pigmentary side effects in 36 people, which is too few to say anything about laser safety in V to VI. The mechanism-level argument is inference, not evidence.
+
+## WHAT WOULD CHANGE THE VERDICT
+- A trial with an HA-only (or saline) injection arm, to isolate glutathione
+- Independent replication with objective colorimetry and a blinded assessor at every visit
+- Results in Fitzpatrick V to VI with post-inflammatory pigment as a primary outcome
+- Relapse data at 6 to 12 months after the last session
+
+## COST AND MARKETS
+- **All markets** (unknown): not found (compounded in clinic; no retail product matched)
+- **Buzz check:** Price tracks clinic positioning, not evidence: no cost found, and the control arm shows the standard laser plus tranexamic acid regimen already did most of the work.
+
+## SOURCES
+- [Bai JL et al. 2026 (DOI)](https://doi.org/10.1097/MD.0000000000051212)
+- [Bai JL et al. 2026 (PubMed)](https://pubmed.ncbi.nlm.nih.gov/42888572/)
+- [Bai JL et al. 2026 (full text)](https://pmc.ncbi.nlm.nih.gov/articles/PMC13681162)
+
+## CONFIDENCE AND GAPS
+- Read in full: Bai 2026 (open-access full text).
+- Not verified: funding statement, the HA product used, any retail product or price, regulatory status of injectable glutathione for cosmetic use by country.
+- The headline difference depends on the baseline-adjusted model; the raw absolute change was not significant.
+- Searched on 2026-11-03
+
+---
+
+# [ENTRY] Insulin resistance (HOMA-IR) and post-inflammatory hyperpigmentation after fractional CO2 laser: a 45-person real-world cohort
+- **Verdict:** NOVEL | **Lane:** Black and melanin-rich skin | **Run:** 2026-11-03
+- **Evidence:** 1 of 5. Small prospective non-randomized cohort, single operator; full text read
+- **Human trial:** yes | **Skin-tone data:** Fitzpatrick I-VI (45 people; groups I-III and IV-VI only)
+- **Tags:** PIH, CO2 laser, insulin resistance, HOMA-IR, metabolic, skin of colour, hypothesis-generating, observational, ask the clinician, no product
+
+## EXECUTIVE SUMMARY
+A strong correlation (rho 0.86) between insulin resistance and PIH severity after laser, in 45 people, unadjusted and with an unclear analysis set; the authors call it hypothesis-generating. Lighter phototypes had more PIH, which runs against the usual picture.
+- Cohort (full text read): 45 patients (42 women) had a two-step fractional CO2 protocol. PIH occurred in 15 of 20 (75%) in Fitzpatrick I to III and 9 of 25 (36%) in IV to VI, the opposite of the usual expectation.
+- PIH severity correlated with fasting HOMA-IR (rho 0.86, n=37) but elevated HOMA-IR was also far more common in the lighter group (60% vs 20%), so the two are confounded in this sample. No adjusted model.
+- I could not reconcile n=37 for the correlation with 24 reported PIH cases. All PIH resolved within the 3-month follow-up with treatment and sun protection.
+- The authors do not recommend routine metabolic testing before laser on this evidence.
+
+## FIT AND REPLACEMENT LOGIC (my judgment, not a measurement)
+- **Fit for you:** Unknown A risk-stratification idea for laser-related pigment, not usable advice. HOMA-IR and phototype group were tangled together in this cohort and no ethnicity-adjusted cut-off was used.
+- **Barrier:** Unknown. Not assessed.
+- **Retinoid:** Unknown. Not described.
+- **Breakout risk:** Unknown. Not assessed.
+- **Season:** Partial. Strict daily sunscreen was part of post-procedure care; the study was in a high-UV region.
+- **What it displaces:** Fits nowhere as a product; it is a question to raise before a fractional or ablative laser.
+
+## WHAT IT IS
+A prospective, non-randomized, real-world cohort of 45 people treated with a two-step fractional CO2 laser protocol in a private clinic in Algeria. Alongside scar and rejuvenation results, the authors looked at whether insulin resistance (HOMA-IR, calculated from fasting glucose and insulin) tracks with post-inflammatory hyperpigmentation (PIH) after treatment.
+
+## MECHANISM
+Two-step fractional CO2 laser, 1 to 6 sessions [applied] -> Skin injury and inflammation [stated] -> Insulin / IGF-1 signalling to MITF to melanin [stated] -> PIH in 24 of 45 treated people [human] -> Higher HOMA-IR with higher PIH severity score [human] -> Insulin resistance predicts laser PIH [inferred]
+1. Fractional CO2 laser causes controlled thermal injury and inflammation (stated).
+2. The authors propose that high insulin or IGF-1 signalling activates PI3K/Akt and MAPK, raising the melanocyte master regulator MITF and so melanin production (stated, cited from earlier literature).
+3. Insulin resistance is also linked to low-grade inflammation and slower wound healing, which could prolong the pigment trigger (stated, inference).
+4. The paper measured none of these steps; it reports an association between HOMA-IR and a pigment severity score.
+- **Inference, not observation:** The metabolic pathway is the authors' hypothesis. The study is observational, unadjusted, and mixes indications, so it cannot show that insulin resistance causes PIH.
+
+## STUDIES
+### Insulin resistance as a potential predictor of post-inflammatory hyperpigmentation after CO2 laser resurfacing: a real-world study of a dual technique protocol (Maghreb experience). Clin Cosmet Investig Dermatol. 2026;19:643348.
+- **Read depth:** Full text (open access) read
+- **Design:** Prospective, non-randomized, single-operator cohort, Oran, Algeria, January 2024 to January 2026. 45 patients (42 women, 3 men; mean age 37) treated for scars, rejuvenation, benign lesions and stretch marks with a SmartXide CO2 laser dual protocol (superpulse then deep-pulse fractional). Phototype groups: I to III (n=20) and IV to VI (n=25). HOMA-IR from a 12-hour fasting sample, with a cut-off of above 2.5 for insulin resistance. PIH graded with the Dermal Pigmentation Area and Severity Index (DPASI), applied in people who developed PIH.
+- **Who was included:** Smokers and people on isotretinoin, antibiotics, statins or anti-inflammatory drugs were excluded. Recruited among eligible patients presenting for treatment, not consecutively. Mostly women; indications were heterogeneous (scars predominated).
+- **Effect size:** Correlation only (rho 0.86). No adjusted model, so no independent effect size.
+- **Placebo comparison:** No comparator. No untreated or alternative-protocol arm; the 'lower PIH than standard CO2' claim in the graphical abstract (under 15% vs 20 to 30%) is a comparison to published figures, not to a control.
+- **Material outcome:** Not established. The authors state they cannot recommend routine metabolic testing before laser treatment on this evidence.
+- **Adverse events:** Redness, swelling and PIH were the main effects. PIH resolved with treatment in the follow-up window (up to 3 months).
+- **Funding and conflicts:** No funding or conflict statement found in the text I read. One affiliation is a private clinic.
+- **Limits:** Small, single operator, non-randomized, heterogeneous indications (mostly scars), no multivariable adjustment (phototype, age, sun exposure and sex not controlled), HOMA-IR cut-off 2.5 applied to everyone without ethnicity-specific ranges, an unclear analysis set for the correlation, 3-month follow-up, and a Maghreb population with high UV exposure.
+  - PIH occurred in 15 of 20 (75%) in Fitzpatrick I to III versus 9 of 25 (36%) in IV to VI (p=0.009). That is the opposite of the usual expectation that darker phototypes have more PIH.
+  - Elevated HOMA-IR was far more common in the lighter group: 12 of 20 (60%) versus 5 of 25 (20%) (p=0.006). So HOMA-IR and phototype group are tangled together.
+  - PIH severity (DPASI) correlated strongly with HOMA-IR: Spearman 0.86, p<0.0001, n=37.
+  - I could not reconcile n=37 for the correlation with 24 people reported to have PIH; the paper says DPASI was scored in people who developed PIH. Treat the exact analysis set as unclear.
+  - People with PIH were treated (hydroquinone, strict sun protection, sometimes topical anti-inflammatory therapy) and all resolved within the 3-month follow-up window, including those with higher HOMA-IR.
+  - Those with HOMA-IR above 2.5 were referred to endocrinology; above 3.0 they were managed with metformin under specialist supervision, which could itself affect later pigment (my inference).
+
+## CLAIMS CHECK
+- Insulin resistance predicts PIH after laser | source: Title and abstract | A correlation in a small unadjusted cohort; the authors themselves call it hypothesis-generating
+- Dual-technique CO2 protocol gives fewer sessions and less PIH | source: Abstract and graphical abstract | No comparison arm; PIH was 36% in phototypes IV to VI and 75% in I to III, so 'low PIH' depends on which group you look at
+
+## PRODUCTS AND FORMULATIONS
+No product is involved. The entry concerns a procedure and a blood test.
+
+## HOW TO ADAPT IT
+- Nothing to adopt from this paper. A reasonable use is as a prompt for a conversation before any ablative or fractional laser: ask about PIH risk beyond skin tone, and about a post-procedure pigment plan with strict sun protection.
+- If a fasting glucose and insulin result already exists from other care, HOMA-IR can be calculated from it, but the paper's single cut-off (above 2.5) is not an ethnicity-adjusted range and should not be applied to a person without that context.
+- Do not start metformin or change a metabolic regimen on the basis of this paper.
+
+## WHAT TO EXPECT, AND WHEN
+- **Day 15 to month 3:** In the cohort PIH, when it occurred, resolved with early treatment and sun protection within the 3-month window.
+
+## SAFETY
+- **Contraindications and unknowns:** None specific. This is an observational finding. Metformin, referred to in the paper, is a prescription decision and has its own contraindications.
+- **Side benefits:** None shown.
+
+## DOES IT TRANSFER?
+Does it transfer to deeper skin? The cohort included 25 people in Fitzpatrick IV to VI, but there is no breakdown by individual type (V and VI separately), and the finding that lighter phototypes had more PIH runs against the standard picture, so I would not generalize it either way. The insulin pathway is not tone-specific by mechanism (inference).
+
+## WHAT WOULD CHANGE THE VERDICT
+- A prospective cohort or trial in Fitzpatrick IV to VI with HOMA-IR measured before treatment and a multivariable model
+- Ethnicity-appropriate cut-offs for insulin resistance
+- A trial testing whether treating insulin resistance lowers PIH after laser
+- A randomized comparison of this dual protocol against standard fractional CO2
+
+## COST AND MARKETS
+- **All markets** (unknown): not found
+
+## SOURCES
+- [Insulin resistance as a potential predictor of post-inflammatory hyperpigmentation after CO2 laser resurfacing: a real-world study of a dual technique protocol (Maghreb experience) et al. 2026 (DOI)](https://doi.org/10.2147/CCID.S643348)
+- [Insulin resistance as a potential predictor of post-inflammatory hyperpigmentation after CO2 laser resurfacing: a real-world study of a dual technique protocol (Maghreb experience) et al. 2026 (PubMed)](https://pubmed.ncbi.nlm.nih.gov/42835771/)
+- [Insulin resistance as a potential predictor of post-inflammatory hyperpigmentation after CO2 laser resurfacing: a real-world study of a dual technique protocol (Maghreb experience) et al. 2026 (full text)](https://pmc.ncbi.nlm.nih.gov/articles/PMC13637656)
+
+## CONFIDENCE AND GAPS
+- Read in full: open-access paper.
+- Unclear: the analysis set for the correlation (n=37 vs 24 PIH cases reported); individual phototype breakdown; funding.
+- Hypothesis-generating by the authors' own statement.
+- Searched on 2026-11-03
+
+---
+
+# [ENTRY] Eflornithine replacing tretinoin in a hydroquinone + steroid triple cream for melasma: a completed split-face study, results not posted
+- **Verdict:** WATCH | **Lane:** Rx and compounded pigment | **Run:** 2026-11-03
+- **Evidence:** 1 of 5. Registry record read in full (ClinicalTrials.gov); no results posted; no publication found in PubMed
+- **Human trial:** yes | **Skin-tone data:** Fitzpatrick III-IV only
+- **Tags:** melasma, triple combination, eflornithine, hydroquinone, tretinoin, fluocinolone, split-face, registry only, Rx, ask the clinician, Fitzpatrick III-IV
+
+## EXECUTIVE SUMMARY
+A 30-person split-face study in Singapore (Fitzpatrick III to IV) compared an eflornithine 9.58% + hydroquinone 4% + fluocinolone 0.01% cream against the tretinoin-based triple cream for 12 weeks; the study finished in July 2024 and I found no results or paper.
+- Registry record (read in full): NCT07876323, National Skin Centre Singapore with A*STAR; 30 adults aged 25 to 75, Fitzpatrick III or IV; randomized split-face; 12 weeks; started June 2023, completed July 2024.
+- Primary outcomes: mMASI, melanin index by colorimeter, and physician and patient global assessments. Secondary: adverse events including contact dermatitis, ochronosis and skin atrophy. The stated aim is greater improvement and less irritation than the tretinoin-based comparator.
+- No results are posted and a PubMed search for eflornithine and melasma returned nothing, so there is no outcome data to judge. Eflornithine is an ornithine decarboxylase inhibitor best known as a prescription cream for unwanted facial hair (background, not from the record).
+- Fitzpatrick V and VI were not included.
+
+## FIT AND REPLACEMENT LOGIC (my judgment, not a measurement)
+- **Fit for you:** Unknown Relevant to the question 'can the retinoid in a triple combination be swapped for something less irritating'. Nothing usable yet: no results, and eflornithine here is an Rx compounding question.
+- **Barrier:** Unknown. Irritation was a stated comparison, but no results are posted.
+- **Retinoid:** Unknown. This is the proposed replacement for the retinoid in the combination.
+- **Breakout risk:** Unknown. Not addressed.
+- **Season:** Unknown. Not addressed.
+- **What it displaces:** If it worked it could replace the retinoid component of a triple combination; it adds nothing for a routine without one.
+
+## COST AND MARKETS
+- **All markets** (unknown): not found
+
+## SOURCES
+- [ClinicalTrials.gov record NCT07876323](https://clinicaltrials.gov/study/NCT07876323)
+
+---
+
+# [ENTRY] Do bond builders repair disulfide bonds? A science blogger's critique of a 2024 bleached-hair study
+- **Verdict:** SKIP | **Lane:** Hair and scalp | **Run:** 2026-11-03
+- **Evidence:** 1 of 5. Commentary page read (via fetch summary); primary 2024 study not opened by me
+- **Human trial:** none found | **Skin-tone data:** Not applicable (bleached hair samples; hair type not specified)
+- **Tags:** bond builder, Olaplex, K18, disulfide, bleached hair, commentary, hair and scalp, high porosity, frame: not coily hair
+
+## EXECUTIVE SUMMARY
+A commentary post (16 Oct 2026) argues the 2024 study used to support Olaplex's mechanism used the wrong test for the bonds it claims; the underlying work used bleached hair, not tightly coiled hair.
+- Commentary (Lab Muffin, 16 Oct 2026; read through a fetch summary, not the full post): analyses Martins et al., Cosmetics 2024, which treated bleached hair with Olaplex No.0 and K18 (10% w/w, leave-in) and measured thiols with Ellman's test and disulfides with Raman spectroscopy.
+- The post's criticism: the study read Ellman's test (with borohydride) as evidence of new sulfur-sulfur-carbon bonds, but the test mostly detects disulfides; conditions differed between runs; so the study does not support the patent's proposed mechanism. The post's verdict is the author's opinion, labelled as such.
+- Frame: bleached hair of unstated origin was the template; tightly coiled (3C to 4B), high-porosity hair was not studied. Funding for the 2024 study was not stated in the post.
+- Follows the 25 Oct run's entry on a curl shampoo from the same brand: no change to the verdict there.
+
+## FIT AND REPLACEMENT LOGIC (my judgment, not a measurement)
+- **Fit for you:** Unknown Hair-care claims context: it weakens the mechanism story behind bond-builder marketing, and says nothing about tightly coiled, high-porosity hair, which was not studied.
+- **Barrier:** Unknown. Not addressed.
+- **Retinoid:** Unknown. Not addressed.
+- **Breakout risk:** Unknown. Not addressed.
+- **Season:** Unknown. Not addressed.
+- **What it displaces:** Nothing to add; if a bond-builder step exists, this is a reason to judge it by results on your own hair, not by the mechanism claim.
+
+## COST AND MARKETS
+- **All markets** (unknown): not found
+
+## SOURCES
+- [Lab Muffin: Does Olaplex repair disulfide bonds? Analysing the Cosmetics study (commentary)](https://labmuffin.com/does-olaplex-repair-disulfide-bonds-analysing-the-cosmetics-study/)
+- [Martins E et al. Bleached hair as standard template to insight the performance of commercial hair repair products. Cosmetics 2024 (DOI; not opened)](https://doi.org/10.3390/cosmetics11050150)
+
+---
+
+# [ENTRY] A new 532-nm picosecond Nd:YAG laser matched an established system for freckles: an 84-person split-face noninferiority trial
+- **Verdict:** SKIP | **Lane:** Tools, devices and clinic | **Run:** 2026-11-03
+- **Evidence:** 2 of 5. Randomized split-face noninferiority trial, 84 people; abstract read; full text not opened
+- **Human trial:** yes | **Skin-tone data:** East Asian participants (Fitzpatrick type not in abstract)
+- **Tags:** picosecond laser, 532 nm, freckles, noninferiority, split-face, device, East Asian, abstract only, ask the clinician
+
+## EXECUTIVE SUMMARY
+Both lasers cleared freckles equally (response 97.6% each) after one session in Chinese patients; it tests equivalence of two devices, not whether either is safe or useful for melasma or post-inflammatory pigment in deeper skin.
+- Abstract (read): randomized, evaluator-blinded split-face, one session, 84 participants; response rate at 8 weeks 97.6% vs 97.6% (difference 0.0%, 95% CI -3.3% to 3.3%); cure rates 13.1% vs 9.5% (p=.53); participant satisfaction 72.6% vs 58.3% (p=.001). No serious adverse events.
+- Skin type is not given in the abstract (MeSH term East Asian People); the 8-week follow-up cannot speak to rebound or pigment loss; 'cure' rates were low for both.
+- Verdict is SKIP for this reader because the question answered (is a new device as good as an old one for freckles) does not touch melasma, PIH or Fitzpatrick V to VI.
+
+## FIT AND REPLACEMENT LOGIC (my judgment, not a measurement)
+- **Fit for you:** Weak A cost and access story about device makers, not a skin-of-colour pigment result. Freckles are a different problem from melasma and PIH.
+- **Barrier:** Unknown. Not addressed.
+- **Retinoid:** Unknown. Not addressed.
+- **Breakout risk:** Unknown. Not addressed.
+- **Season:** Unknown. Not addressed.
+- **What it displaces:** Fits nowhere; relevant only when choosing between clinics' devices for freckles.
+
+## COST AND MARKETS
+- **All markets** (unknown): not found
+
+## SOURCES
+- [Zhou Y et al. Novel 532-nm picosecond Nd:YAG laser for freckles. J Dermatolog Treat 2026 (DOI)](https://doi.org/10.1080/09546634.2026.2702775)
+- [Same (PubMed)](https://pubmed.ncbi.nlm.nih.gov/42473883/)
+
+---
+
 # [ENTRY] Peptide serum (tripeptide/hexapeptide) after fractional CO2 laser and RF microneedling: two split-face trials
 - **Verdict:** WATCH | **Lane:** Clinic and aftercare | **Run:** 2026-10-25
 - **Evidence:** 2 of 5. Two small evaluator-blind split-face RCTs (14 days each, exploratory); manufacturer-co-authored. Full text (open access) read

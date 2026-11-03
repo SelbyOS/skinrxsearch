@@ -1,0 +1,89 @@
+{
+ "id": "2026-11-03-bond-builders-olaplex-mechanism-commentary",
+ "run": "2026-11-03",
+ "title": "Do bond builders repair disulfide bonds? A science blogger's critique of a 2024 bleached-hair study",
+ "lane": "Hair and scalp",
+ "verdict": "SKIP",
+ "depth": "triage",
+ "headline": "A commentary post (16 Oct 2026) argues the 2024 study used to support Olaplex's mechanism used the wrong test for the bonds it claims; the underlying work used bleached hair, not tightly coiled hair.",
+ "evidenceTier": "Commentary page read (via fetch summary); primary 2024 study not opened by me",
+ "evidenceScore": 1,
+ "evidenceScale": 5,
+ "fit": "Hair-care claims context: it weakens the mechanism story behind bond-builder marketing, and says nothing about tightly coiled, high-porosity hair, which was not studied.",
+ "displaces": "Nothing to add; if a bond-builder step exists, this is a reason to judge it by results on your own hair, not by the mechanism claim.",
+ "readMinutes": 3,
+ "regions": [
+  "Global (hair care)"
+ ],
+ "tags": [
+  "bond builder",
+  "Olaplex",
+  "K18",
+  "disulfide",
+  "bleached hair",
+  "commentary",
+  "hair and scalp",
+  "high porosity",
+  "frame: not coily hair"
+ ],
+ "status": "Dropped",
+ "estimateNote": "Prices marked EST are my guesses, not looked up.",
+ "cost": [
+  {
+   "label": "All markets",
+   "value": "not found",
+   "kind": "unknown"
+  }
+ ],
+ "buzzCheck": "",
+ "summaryPoints": [
+  "Commentary (Lab Muffin, 16 Oct 2026; read through a fetch summary, not the full post): analyses Martins et al., Cosmetics 2024, which treated bleached hair with Olaplex No.0 and K18 (10% w/w, leave-in) and measured thiols with Ellman's test and disulfides with Raman spectroscopy.",
+  "The post's criticism: the study read Ellman's test (with borohydride) as evidence of new sulfur-sulfur-carbon bonds, but the test mostly detects disulfides; conditions differed between runs; so the study does not support the patent's proposed mechanism. The post's verdict is the author's opinion, labelled as such.",
+  "Frame: bleached hair of unstated origin was the template; tightly coiled (3C to 4B), high-porosity hair was not studied. Funding for the 2024 study was not stated in the post.",
+  "Follows the 25 Oct run's entry on a curl shampoo from the same brand: no change to the verdict there."
+ ],
+ "humanTrial": false,
+ "toneData": "Not applicable (bleached hair samples; hair type not specified)",
+ "fitRating": "Unknown",
+ "fitLine": "Hair texture was not studied; useful only as a lens on marketing claims.",
+ "priceStrip": [
+  {
+   "m": "All",
+   "v": "not found",
+   "k": "unknown"
+  }
+ ],
+ "timeline": "Not applicable",
+ "fitAxes": [
+  {
+   "axis": "Barrier",
+   "rating": "Unknown",
+   "why": "Not addressed."
+  },
+  {
+   "axis": "Retinoid",
+   "rating": "Unknown",
+   "why": "Not addressed."
+  },
+  {
+   "axis": "Breakout risk",
+   "rating": "Unknown",
+   "why": "Not addressed."
+  },
+  {
+   "axis": "Season",
+   "rating": "Unknown",
+   "why": "Not addressed."
+  }
+ ],
+ "links": [
+  {
+   "label": "Lab Muffin: Does Olaplex repair disulfide bonds? Analysing the Cosmetics study (commentary)",
+   "url": "https://labmuffin.com/does-olaplex-repair-disulfide-bonds-analysing-the-cosmetics-study/"
+  },
+  {
+   "label": "Martins E et al. Bleached hair as standard template to insight the performance of commercial hair repair products. Cosmetics 2024 (DOI; not opened)",
+   "url": "https://doi.org/10.3390/cosmetics11050150"
+  }
+ ]
+}

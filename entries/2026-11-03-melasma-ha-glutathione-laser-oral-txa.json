@@ -1,0 +1,215 @@
+{
+ "id": "2026-11-03-melasma-ha-glutathione-laser-oral-txa",
+ "run": "2026-11-03",
+ "title": "Adding a glutathione-hyaluronic acid booster to low-fluence Nd:YAG laser plus oral tranexamic acid for melasma: a 6-month randomized trial",
+ "lane": "Clinic and Rx pigment",
+ "verdict": "WATCH",
+ "depth": "dossier",
+ "headline": "A small add-on gap, not a breakthrough: 36 completers, no injection in the control arm, and only Fitzpatrick III to IV. The booster arm scored 0.72 mMASI points lower (95% CI 0.46 to 0.98) after adjustment, with both arms improving by more than half.",
+ "evidenceTier": "Single-centre randomized trial, 36 completers of 50, 6 months + 2 months follow-up; full text read",
+ "evidenceScore": 2,
+ "evidenceScale": 5,
+ "fit": "Relevant to procedural pigment care in deeper skin tones, but Fitzpatrick V to VI were not studied, there was no sham-injection control and the gap is small. It is a clinician conversation, not a product.",
+ "displaces": "Nothing in a daily routine. It would be an add-on to a clinic laser plan, not a swap for a product.",
+ "readMinutes": 8,
+ "regions": [
+  "China (trial site)",
+  "Korea clinics (ask the clinician)",
+  "Canada: Rx and procedure (ask the clinician)"
+ ],
+ "tags": [
+  "melasma",
+  "laser toning",
+  "Nd:YAG",
+  "glutathione",
+  "hyaluronic acid",
+  "oral tranexamic acid",
+  "Rx",
+  "procedure",
+  "ask the clinician",
+  "Fitzpatrick III-IV",
+  "single centre",
+  "no sham arm"
+ ],
+ "status": "Watch",
+ "estimateNote": "Prices marked EST are my guesses, not looked up.",
+ "cost": [
+  {
+   "label": "All markets",
+   "value": "not found (compounded in clinic; no retail product matched)",
+   "kind": "unknown"
+  }
+ ],
+ "buzzCheck": "Price tracks clinic positioning, not evidence: no cost found, and the control arm shows the standard laser plus tranexamic acid regimen already did most of the work.",
+ "summaryPoints": [
+  "Design (full text read): 50 Chinese women with epidermal melasma (Fitzpatrick III to IV) were randomized to six monthly low-fluence laser sessions plus oral tranexamic acid 250 mg daily, with or without an intradermal glutathione + hyaluronic acid booster. 36 completed.",
+  "Result: booster arm mMASI 2.50 vs 3.39 at the end of treatment and 2.06 vs 2.67 two months later; baseline-adjusted difference 0.72 points (95% CI 0.46 to 0.98). Both arms improved by more than half, and the raw absolute change was not significantly different.",
+  "What weakens it: no sham or HA-only injection, 28% dropout (analysis on completers), no objective pigment measurement, one centre. No pigment complications in either arm, but 36 people cannot show laser safety in deeper skin.",
+  "Fitzpatrick V and VI were not studied and dermal or mixed melasma were excluded."
+ ],
+ "humanTrial": true,
+ "toneData": "Fitzpatrick III-IV only (Chinese women)",
+ "fitRating": "Partial",
+ "fitLine": "Plausible add-on for a clinic melasma plan; untested in Fitzpatrick V-VI and without a sham arm.",
+ "priceStrip": [
+  {
+   "m": "All",
+   "v": "not found",
+   "k": "unknown"
+  }
+ ],
+ "timeline": "Gap visible by month 2 and held at month 7 in the trial",
+ "fitAxes": [
+  {
+   "axis": "Barrier",
+   "rating": "Unknown",
+   "why": "Barrier function was not measured; transient redness and swelling only."
+  },
+  {
+   "axis": "Retinoid",
+   "rating": "Weak",
+   "why": "Retinoids were washed out for 12 months before enrolment, so use alongside a retinoid is untested."
+  },
+  {
+   "axis": "Breakout risk",
+   "rating": "Unknown",
+   "why": "Breakout risk not assessed."
+  },
+  {
+   "axis": "Season",
+   "rating": "Partial",
+   "why": "Strict daily SPF 50 or higher was part of the protocol, which is also needed for any pigment plan."
+  }
+ ],
+ "dossier": {
+  "whatItIs": "A combination procedure protocol for epidermal-type melasma: low-fluence 1064-nm Q-switched Nd:YAG laser toning once a month, plus oral tranexamic acid 250 mg once daily, with or without an intradermal skin booster made by mixing a hyaluronic acid product with injectable glutathione. The question is whether the booster adds anything to laser plus tranexamic acid. The booster was compounded in clinic, not a retail product.",
+  "mechanism": {
+   "steps": [
+    "Low-fluence 1064-nm laser toning (6 mm spot, 2.2 to 2.6 J/cm2, 10 Hz, six monthly sessions) targets melanin with limited epidermal injury. The paper describes this as the established backbone of the regimen.",
+    "Oral tranexamic acid blocks plasminogen activation. The authors describe a downstream drop in prostaglandin and growth-factor signals that stimulate melanocytes, and a possible competitive effect on tyrosinase.",
+    "Intradermal glutathione with hyaluronic acid: the authors cite lower tyrosinase activity, a shift from dark eumelanin toward lighter pheomelanin, and scavenging of reactive oxygen species; hyaluronic acid is described as a carrier that also hydrates the dermis.",
+    "The trial measured only a clinician-graded pigment score and satisfaction, not melanin, tyrosinase or oxidative stress, so none of the biological steps was tested here."
+   ],
+   "inferenceFlag": "The mechanism chain is the author's framing from earlier literature. The control arm had no injection at all, so the study cannot separate glutathione from hyaluronic acid, from the needle injury itself, or from simply getting an extra visit-day procedure (my inference).",
+   "diagramCaption": "Laser + oral tranexamic acid + intradermal glutathione/HA -> lower tyrosinase and melanin signalling (stated, not measured) -> lower graded melasma score (human, small trial)",
+   "flow": [
+    {
+     "label": "Low-fluence 1064-nm laser, monthly x 6",
+     "basis": "applied",
+     "note": "Both arms. Fluence 2.2 to 2.6 J/cm2, endpoint immediate lightening or mild erythema without petechiae."
+    },
+    {
+     "label": "Oral tranexamic acid 250 mg daily x 6 months",
+     "basis": "applied",
+     "note": "Both arms."
+    },
+    {
+     "label": "Intradermal glutathione + HA booster, monthly x 6 (arm A only)",
+     "basis": "applied",
+     "note": "2.5 mL per session: 0.5 mL of glutathione solution (0.6 g in 2 mL saline) mixed with 2 mL of an HA booster, 25-G cannula, deep dermis or superficial subcutis, whole face."
+    },
+    {
+     "label": "Glutathione lowers tyrosinase, shifts to pheomelanin, scavenges ROS",
+     "basis": "stated",
+     "note": "Authors' summary of earlier work. Not measured in this trial."
+    },
+    {
+     "label": "Lower graded melasma score vs control",
+     "basis": "human",
+     "note": "mMASI lower by 0.72 points (95% CI 0.46 to 0.98) averaged over visits, baseline-adjusted, in 36 completers."
+    },
+    {
+     "label": "Longer-lasting control",
+     "basis": "inferred",
+     "note": "Gap persisted at 2 months after the last session. Whether it persists beyond that is untested."
+    }
+   ]
+  },
+  "studies": [
+   {
+    "cite": "Bai JL. Hyaluronic acid-based skin booster with glutathione combined with 1064-nm Nd:YAG laser and oral tranexamic acid for melasma: a prospective comparative study. Medicine (Baltimore). 2026 (author name taken from the contribution statement).",
+    "doi": "https://doi.org/10.1097/MD.0000000000051212",
+    "pubmed": "https://pubmed.ncbi.nlm.nih.gov/42888572/",
+    "pmc": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13681162",
+    "readDepth": "Full text (open access) read",
+    "design": "Randomized 1:1 (computer sequence, sealed envelopes), single hospital in China, 50 Chinese women aged 24 to 51 with epidermal-type melasma (Wood lamp), Fitzpatrick III or IV. Both arms: six monthly 1064-nm laser sessions plus oral tranexamic acid 250 mg daily for 6 months. Arm A also got intradermal glutathione + HA. mMASI at each monthly visit and 2 months after the last session; SPF 50 or higher required. The treating dermatologist scored visits; a second dermatologist, blinded, re-scored baseline and final photographs and agreed with the treating scores.",
+    "who": "Dermal and mixed-type melasma were excluded, along with keloid history, photosensitivity, bleeding disorders, liver, thyroid or autoimmune disease, recent hormonal therapy or anticoagulants, laser within 6 months, oral or topical retinoids within 12 months, depigmenting agents within 4 weeks to 3 months, and chemical peels or tranexamic acid within 3 months. Fitzpatrick V and VI were not studied.",
+    "results": [
+     "Completers: 36 of 50 (18 per arm). 14 withdrew (7 per arm) for logistics; none had a post-baseline score, so the analysis is completers only (complete-case).",
+     "Baseline mMASI 5.61 vs 5.56. Before session 6: 2.50 vs 3.39. Two months after the last session: 2.06 vs 2.67 (adjusted p=0.005).",
+     "Baseline-adjusted mean difference across the six visits: 0.72 mMASI points (95% CI 0.46 to 0.98) favouring the booster arm, already present at the first post-treatment visit and about constant over time (group x visit interaction p=0.59).",
+     "Proportional reduction: 53.1% vs 37.8% at end of treatment (p=0.002); 61.2% vs 50.7% at follow-up (p=0.016). The raw absolute change did not differ significantly (0.67 points, 95% CI -0.19 to 1.52, p=0.12).",
+     "Patient satisfaction 'very satisfied' 28% vs 11%, not significant (p=0.31); the trial was not powered for it.",
+     "Adverse events: transient redness, mild swelling and bruising only. No post-inflammatory hyperpigmentation, hypopigmentation or systemic tranexamic acid events were reported."
+    ],
+    "effectSize": "Adjusted difference 0.72 mMASI points (95% CI 0.46 to 0.98) on a 0 to 24 scale; baseline about 5.6. Cohen d about 1.35 reported at the end of treatment. Both arms improved by more than half.",
+    "placebo": "No sham or HA-only injection arm. The control arm got laser plus oral tranexamic acid only, so the add-on effect cannot be attributed to glutathione specifically. Both arms improved substantially on the standard regimen.",
+    "material": "Plausible but not established. A 0.72 point gap on a 24-point scale from a baseline near 5.6 is small in absolute terms; the authors call it clinically meaningful, I would call it suggestive. mMASI was recorded to the nearest whole point and is a visual score. No colorimetry.",
+    "adverse": "Mild and transient. No serious events. The small sample cannot rule out rarer events.",
+    "conflict": "Single author, single hospital. No funding or conflict statement found in the text I read; check the paper's front matter.",
+    "limits": "Single centre, 36 completers, 28% attrition (balanced; sensitivity and tipping-point analyses given), no sham injection, mixed-model result depends on adjusted comparisons while the unadjusted group-by-time interaction was not significant, Fitzpatrick III to IV only, epidermal type only, short follow-up (2 months), no objective pigment measurement."
+   }
+  ],
+  "claimsCheck": [
+   {
+    "claim": "Glutathione skin boosters brighten melasma",
+    "source": "Trial discussion and clinic marketing",
+    "status": "One small trial shows a modest add-on gap; the control had no injection, so glutathione is not isolated"
+   },
+   {
+    "claim": "More durable than laser plus tranexamic acid alone",
+    "source": "Authors' conclusion",
+    "status": "Gap held 2 months after the last session; relapse over a year is untested"
+   }
+  ],
+  "products": {
+   "rankNote": "No retail product was tested. The booster was compounded in clinic from an injectable glutathione and a hyaluronic acid booster product. I did not identify a retail product with this exact combination; marketplace listings for glutathione skin boosters appeared in search results but were not opened or verified.",
+   "items": [
+    {
+     "name": "Clinic-compounded HA + injectable glutathione booster",
+     "maker": "Clinic-prepared (not a retail product)",
+     "kind": "Procedure",
+     "price": "Not found",
+     "note": "Tested form only. Product, brand and concentration of the HA component are not named in the paper.",
+     "link": "https://doi.org/10.1097/MD.0000000000051212",
+     "verified": "Described in the paper only",
+     "tier": "list"
+    }
+   ]
+  },
+  "howToUse": [
+   "This is a procedure and prescription-drug protocol, not a routine product. If it interests you, the question to bring to a clinician is whether adding a glutathione-HA booster to a laser plus tranexamic acid plan is worth it for epidermal-type melasma, given the evidence is one small trial.",
+   "The trial paired it with daily SPF 50 or higher and a 12-month retinoid washout before enrolment; use with a current retinoid is untested.",
+   "Oral tranexamic acid is prescription-only and has clotting-related exclusions; any decision about it, its dose, or its duration belongs with a prescribing clinician."
+  ],
+  "expect": [
+   {
+    "when": "Months 1 to 2",
+    "what": "In the trial the booster arm was already ahead at the first post-treatment visit; the gap grew by session 3."
+   },
+   {
+    "when": "Month 6",
+    "what": "mMASI about 2.5 vs 3.4 from a baseline near 5.6."
+   },
+   {
+    "when": "2 months after last session",
+    "what": "Both arms held most of their gains; the gap persisted. Nothing is known beyond that."
+   }
+  ],
+  "contraindications": "Trial exclusions are a practical contraindication list: bleeding or clotting problems, anticoagulants, hormonal therapy, liver disease, pregnancy or breastfeeding, photosensitivity and keloid history. Oral tranexamic acid carries a clotting-risk warning that needs individual assessment. Injectable glutathione for skin lightening has uneven regulatory status between countries (I did not verify Canada or Korea); confirm the product and its source with the clinician.",
+  "sideBenefits": "None shown. Satisfaction was descriptive only.",
+  "wouldChangeVerdict": [
+   "A trial with an HA-only (or saline) injection arm, to isolate glutathione",
+   "Independent replication with objective colorimetry and a blinded assessor at every visit",
+   "Results in Fitzpatrick V to VI with post-inflammatory pigment as a primary outcome",
+   "Relapse data at 6 to 12 months after the last session"
+  ],
+  "transfer": "Does it transfer to deeper skin? The pigment pathways are not tone-specific, so some effect is plausible by mechanism. But the trial enrolled only Fitzpatrick III to IV, excluded dermal and mixed-type melasma, used low fluence, and saw no pigmentary side effects in 36 people, which is too few to say anything about laser safety in V to VI. The mechanism-level argument is inference, not evidence.",
+  "confidence": [
+   "Read in full: Bai 2026 (open-access full text).",
+   "Not verified: funding statement, the HA product used, any retail product or price, regulatory status of injectable glutathione for cosmetic use by country.",
+   "The headline difference depends on the baseline-adjusted model; the raw absolute change was not significant."
+  ],
+  "searchedOn": "2026-11-03"
+ }
+}

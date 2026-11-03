@@ -1,0 +1,193 @@
+{
+ "id": "2026-11-03-insulin-resistance-pih-after-co2-laser",
+ "run": "2026-11-03",
+ "title": "Insulin resistance (HOMA-IR) and post-inflammatory hyperpigmentation after fractional CO2 laser: a 45-person real-world cohort",
+ "lane": "Black and melanin-rich skin",
+ "verdict": "NOVEL",
+ "depth": "dossier",
+ "headline": "A strong correlation (rho 0.86) between insulin resistance and PIH severity after laser, in 45 people, unadjusted and with an unclear analysis set; the authors call it hypothesis-generating. Lighter phototypes had more PIH, which runs against the usual picture.",
+ "evidenceTier": "Small prospective non-randomized cohort, single operator; full text read",
+ "evidenceScore": 1,
+ "evidenceScale": 5,
+ "fit": "A risk-stratification idea for laser-related pigment, not usable advice. HOMA-IR and phototype group were tangled together in this cohort and no ethnicity-adjusted cut-off was used.",
+ "displaces": "Fits nowhere as a product; it is a question to raise before a fractional or ablative laser.",
+ "readMinutes": 7,
+ "regions": [
+  "Algeria (study site)",
+  "Global (laser clinics)"
+ ],
+ "tags": [
+  "PIH",
+  "CO2 laser",
+  "insulin resistance",
+  "HOMA-IR",
+  "metabolic",
+  "skin of colour",
+  "hypothesis-generating",
+  "observational",
+  "ask the clinician",
+  "no product"
+ ],
+ "status": "Watch",
+ "estimateNote": "Prices marked EST are my guesses, not looked up.",
+ "cost": [
+  {
+   "label": "All markets",
+   "value": "not found",
+   "kind": "unknown"
+  }
+ ],
+ "buzzCheck": "",
+ "summaryPoints": [
+  "Cohort (full text read): 45 patients (42 women) had a two-step fractional CO2 protocol. PIH occurred in 15 of 20 (75%) in Fitzpatrick I to III and 9 of 25 (36%) in IV to VI, the opposite of the usual expectation.",
+  "PIH severity correlated with fasting HOMA-IR (rho 0.86, n=37) but elevated HOMA-IR was also far more common in the lighter group (60% vs 20%), so the two are confounded in this sample. No adjusted model.",
+  "I could not reconcile n=37 for the correlation with 24 reported PIH cases. All PIH resolved within the 3-month follow-up with treatment and sun protection.",
+  "The authors do not recommend routine metabolic testing before laser on this evidence."
+ ],
+ "humanTrial": true,
+ "toneData": "Fitzpatrick I-VI (45 people; groups I-III and IV-VI only)",
+ "fitRating": "Unknown",
+ "fitLine": "Interesting hypothesis; too confounded and too small to act on, and the cut-off used is not ethnicity-adjusted.",
+ "priceStrip": [
+  {
+   "m": "All",
+   "v": "not found",
+   "k": "unknown"
+  }
+ ],
+ "timeline": "PIH resolved within 3 months with treatment in this cohort",
+ "fitAxes": [
+  {
+   "axis": "Barrier",
+   "rating": "Unknown",
+   "why": "Not assessed."
+  },
+  {
+   "axis": "Retinoid",
+   "rating": "Unknown",
+   "why": "Not described."
+  },
+  {
+   "axis": "Breakout risk",
+   "rating": "Unknown",
+   "why": "Not assessed."
+  },
+  {
+   "axis": "Season",
+   "rating": "Partial",
+   "why": "Strict daily sunscreen was part of post-procedure care; the study was in a high-UV region."
+  }
+ ],
+ "dossier": {
+  "whatItIs": "A prospective, non-randomized, real-world cohort of 45 people treated with a two-step fractional CO2 laser protocol in a private clinic in Algeria. Alongside scar and rejuvenation results, the authors looked at whether insulin resistance (HOMA-IR, calculated from fasting glucose and insulin) tracks with post-inflammatory hyperpigmentation (PIH) after treatment.",
+  "mechanism": {
+   "steps": [
+    "Fractional CO2 laser causes controlled thermal injury and inflammation (stated).",
+    "The authors propose that high insulin or IGF-1 signalling activates PI3K/Akt and MAPK, raising the melanocyte master regulator MITF and so melanin production (stated, cited from earlier literature).",
+    "Insulin resistance is also linked to low-grade inflammation and slower wound healing, which could prolong the pigment trigger (stated, inference).",
+    "The paper measured none of these steps; it reports an association between HOMA-IR and a pigment severity score."
+   ],
+   "inferenceFlag": "The metabolic pathway is the authors' hypothesis. The study is observational, unadjusted, and mixes indications, so it cannot show that insulin resistance causes PIH.",
+   "diagramCaption": "CO2 laser injury (applied) -> inflammation (stated) -> possible insulin/IGF-1 boost to melanogenesis (hypothesis) -> PIH severity correlated with HOMA-IR (observed, n=37, unadjusted)",
+   "flow": [
+    {
+     "label": "Two-step fractional CO2 laser, 1 to 6 sessions",
+     "basis": "applied",
+     "note": "Sessions decided by response, one operator, no cooling."
+    },
+    {
+     "label": "Skin injury and inflammation",
+     "basis": "stated",
+     "note": "Standard wound-healing cascade; not measured."
+    },
+    {
+     "label": "Insulin / IGF-1 signalling to MITF to melanin",
+     "basis": "stated",
+     "note": "Authors' proposed link from earlier literature."
+    },
+    {
+     "label": "PIH in 24 of 45 treated people",
+     "basis": "human",
+     "note": "15 of 20 in Fitzpatrick I to III, 9 of 25 in IV to VI."
+    },
+    {
+     "label": "Higher HOMA-IR with higher PIH severity score",
+     "basis": "human",
+     "note": "Spearman rho 0.86, n=37. Unadjusted."
+    },
+    {
+     "label": "Insulin resistance predicts laser PIH",
+     "basis": "inferred",
+     "note": "The authors call it hypothesis-generating; so do I."
+    }
+   ]
+  },
+  "studies": [
+   {
+    "cite": "Insulin resistance as a potential predictor of post-inflammatory hyperpigmentation after CO2 laser resurfacing: a real-world study of a dual technique protocol (Maghreb experience). Clin Cosmet Investig Dermatol. 2026;19:643348.",
+    "doi": "https://doi.org/10.2147/CCID.S643348",
+    "pubmed": "https://pubmed.ncbi.nlm.nih.gov/42835771/",
+    "pmc": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13637656",
+    "readDepth": "Full text (open access) read",
+    "design": "Prospective, non-randomized, single-operator cohort, Oran, Algeria, January 2024 to January 2026. 45 patients (42 women, 3 men; mean age 37) treated for scars, rejuvenation, benign lesions and stretch marks with a SmartXide CO2 laser dual protocol (superpulse then deep-pulse fractional). Phototype groups: I to III (n=20) and IV to VI (n=25). HOMA-IR from a 12-hour fasting sample, with a cut-off of above 2.5 for insulin resistance. PIH graded with the Dermal Pigmentation Area and Severity Index (DPASI), applied in people who developed PIH.",
+    "who": "Smokers and people on isotretinoin, antibiotics, statins or anti-inflammatory drugs were excluded. Recruited among eligible patients presenting for treatment, not consecutively. Mostly women; indications were heterogeneous (scars predominated).",
+    "results": [
+     "PIH occurred in 15 of 20 (75%) in Fitzpatrick I to III versus 9 of 25 (36%) in IV to VI (p=0.009). That is the opposite of the usual expectation that darker phototypes have more PIH.",
+     "Elevated HOMA-IR was far more common in the lighter group: 12 of 20 (60%) versus 5 of 25 (20%) (p=0.006). So HOMA-IR and phototype group are tangled together.",
+     "PIH severity (DPASI) correlated strongly with HOMA-IR: Spearman 0.86, p<0.0001, n=37.",
+     "I could not reconcile n=37 for the correlation with 24 people reported to have PIH; the paper says DPASI was scored in people who developed PIH. Treat the exact analysis set as unclear.",
+     "People with PIH were treated (hydroquinone, strict sun protection, sometimes topical anti-inflammatory therapy) and all resolved within the 3-month follow-up window, including those with higher HOMA-IR.",
+     "Those with HOMA-IR above 2.5 were referred to endocrinology; above 3.0 they were managed with metformin under specialist supervision, which could itself affect later pigment (my inference)."
+    ],
+    "effectSize": "Correlation only (rho 0.86). No adjusted model, so no independent effect size.",
+    "placebo": "No comparator. No untreated or alternative-protocol arm; the 'lower PIH than standard CO2' claim in the graphical abstract (under 15% vs 20 to 30%) is a comparison to published figures, not to a control.",
+    "material": "Not established. The authors state they cannot recommend routine metabolic testing before laser treatment on this evidence.",
+    "adverse": "Redness, swelling and PIH were the main effects. PIH resolved with treatment in the follow-up window (up to 3 months).",
+    "conflict": "No funding or conflict statement found in the text I read. One affiliation is a private clinic.",
+    "limits": "Small, single operator, non-randomized, heterogeneous indications (mostly scars), no multivariable adjustment (phototype, age, sun exposure and sex not controlled), HOMA-IR cut-off 2.5 applied to everyone without ethnicity-specific ranges, an unclear analysis set for the correlation, 3-month follow-up, and a Maghreb population with high UV exposure."
+   }
+  ],
+  "claimsCheck": [
+   {
+    "claim": "Insulin resistance predicts PIH after laser",
+    "source": "Title and abstract",
+    "status": "A correlation in a small unadjusted cohort; the authors themselves call it hypothesis-generating"
+   },
+   {
+    "claim": "Dual-technique CO2 protocol gives fewer sessions and less PIH",
+    "source": "Abstract and graphical abstract",
+    "status": "No comparison arm; PIH was 36% in phototypes IV to VI and 75% in I to III, so 'low PIH' depends on which group you look at"
+   }
+  ],
+  "products": {
+   "rankNote": "No product is involved. The entry concerns a procedure and a blood test.",
+   "items": []
+  },
+  "howToUse": [
+   "Nothing to adopt from this paper. A reasonable use is as a prompt for a conversation before any ablative or fractional laser: ask about PIH risk beyond skin tone, and about a post-procedure pigment plan with strict sun protection.",
+   "If a fasting glucose and insulin result already exists from other care, HOMA-IR can be calculated from it, but the paper's single cut-off (above 2.5) is not an ethnicity-adjusted range and should not be applied to a person without that context.",
+   "Do not start metformin or change a metabolic regimen on the basis of this paper."
+  ],
+  "expect": [
+   {
+    "when": "Day 15 to month 3",
+    "what": "In the cohort PIH, when it occurred, resolved with early treatment and sun protection within the 3-month window."
+   }
+  ],
+  "contraindications": "None specific. This is an observational finding. Metformin, referred to in the paper, is a prescription decision and has its own contraindications.",
+  "sideBenefits": "None shown.",
+  "wouldChangeVerdict": [
+   "A prospective cohort or trial in Fitzpatrick IV to VI with HOMA-IR measured before treatment and a multivariable model",
+   "Ethnicity-appropriate cut-offs for insulin resistance",
+   "A trial testing whether treating insulin resistance lowers PIH after laser",
+   "A randomized comparison of this dual protocol against standard fractional CO2"
+  ],
+  "transfer": "Does it transfer to deeper skin? The cohort included 25 people in Fitzpatrick IV to VI, but there is no breakdown by individual type (V and VI separately), and the finding that lighter phototypes had more PIH runs against the standard picture, so I would not generalize it either way. The insulin pathway is not tone-specific by mechanism (inference).",
+  "confidence": [
+   "Read in full: open-access paper.",
+   "Unclear: the analysis set for the correlation (n=37 vs 24 PIH cases reported); individual phototype breakdown; funding.",
+   "Hypothesis-generating by the authors' own statement."
+  ],
+  "searchedOn": "2026-11-03"
+ }
+}

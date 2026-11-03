@@ -1,0 +1,179 @@
+{
+ "id": "2026-11-03-sensitive-skin-lifestyle-phenotypes",
+ "run": "2026-11-03",
+ "title": "Sleep, stress, pollution and sensitive skin: a 151-woman cross-sectional study across two cities",
+ "lane": "HPA axis and nervous system",
+ "verdict": "WATCH",
+ "depth": "dossier",
+ "headline": "Sensitive skin carried more oxidative damage in both cities, and an inflammation marker was nearly three times higher in the busier city; but sleep, stress, pollution and city moved together, so none of them can be blamed on its own.",
+ "evidenceTier": "Cross-sectional, 151 women, industry-affiliated authors, unadjusted; full text read",
+ "evidenceScore": 1,
+ "evidenceScale": 5,
+ "fit": "A reminder of what an exposome study can and cannot tell you. It supports the idea that lifestyle context shapes skin, but gives no intervention to try and no deep-skin data.",
+ "displaces": "Fits nowhere as a product; it informs how much weight to give single-factor stress and sleep claims.",
+ "readMinutes": 6,
+ "regions": [
+  "China (two cities)",
+  "Global (concept)"
+ ],
+ "tags": [
+  "sleep",
+  "stress",
+  "exposome",
+  "sensitive skin",
+  "prostaglandin E2",
+  "oxidative stress",
+  "cross-sectional",
+  "industry-affiliated authors",
+  "Fitzpatrick II-IV",
+  "HPA axis lane"
+ ],
+ "status": "Watch",
+ "estimateNote": "Prices marked EST are my guesses, not looked up.",
+ "cost": [
+  {
+   "label": "All markets",
+   "value": "not found",
+   "kind": "unknown"
+  }
+ ],
+ "buzzCheck": "",
+ "summaryPoints": [
+  "Cross-sectional (full text read): 151 Chinese women aged 35 to 50 in a high-pollution big city and a lower-pollution coastal city; sensitive skin in the big city had 17.9% more protein carbonylation than non-sensitive skin in the same city.",
+  "Within sensitive skin, prostaglandin E2 was 185% higher in the big city (4.36 vs 1.53 pg/ug protein), with more sebum and visible pores; the coastal city had more pigment spots and oxidative damage (UV not measured).",
+  "Everyone in the big-city group slept under 7 hours with higher stress scores and everyone in the other group the reverse, so sleep, stress, pollution and UV are inseparable here.",
+  "Several authors work for a skincare company; analyses were exploratory and unadjusted."
+ ],
+ "humanTrial": false,
+ "toneData": "Fitzpatrick II-IV only (Chinese women)",
+ "fitRating": "Unknown",
+ "fitLine": "Context for lifestyle claims, not an intervention; no deep-skin data.",
+ "priceStrip": [
+  {
+   "m": "All",
+   "v": "not found",
+   "k": "unknown"
+  }
+ ],
+ "timeline": "Not applicable (no intervention)",
+ "fitAxes": [
+  {
+   "axis": "Barrier",
+   "rating": "Partial",
+   "why": "Water loss was not higher in sensitive skin in this cohort."
+  },
+  {
+   "axis": "Retinoid",
+   "rating": "Unknown",
+   "why": "Not addressed."
+  },
+  {
+   "axis": "Breakout risk",
+   "rating": "Unknown",
+   "why": "Sebum and pores were higher in the heavily urban group; breakouts were not assessed."
+  },
+  {
+   "axis": "Season",
+   "rating": "Partial",
+   "why": "UV-exposed coastal setting went with more pigment and oxidative damage, but sun use was not measured."
+  }
+ ],
+ "dossier": {
+  "whatItIs": "A cross-sectional comparison of 151 Chinese women aged 35 to 50 (Fitzpatrick II to IV) in two cities, grouped by self-reported skin sensitivity and by lifestyle (pollution, sleep and perceived stress). Skin surface samples were assayed for an inflammation marker (prostaglandin E2) and an oxidative-damage marker (protein carbonylation), alongside imaging and instruments.",
+  "mechanism": {
+   "steps": [
+    "Sensitive skin (a self-reported score) was associated with higher protein carbonylation and more dark spots than non-sensitive skin in the same city.",
+    "Within sensitive skin, the city with higher pollution, shorter sleep and higher perceived stress had much higher prostaglandin E2, more sebum and more visible pores.",
+    "The city with lower pollution and better sleep but higher UV (a coastal city) had more pigment spots and more oxidative damage.",
+    "Because sleep, stress, pollution, UV and climate all differ by city, the study cannot say which exposure drives which marker."
+   ],
+   "inferenceFlag": "Sleep and stress group membership was perfectly aligned with city (100% of the high-urban group slept under 7 hours with stress scores of 18 or more; 100% of the other group slept over 7 hours with scores of 14 or less). They cannot be separated from pollution, UV or climate. Any link from stress or sleep to prostaglandin E2 here is an association, not a mechanism.",
+   "diagramCaption": "Urban exposome (pollution + short sleep + high stress; not separable) -> higher prostaglandin E2, sebum, pores (observed) | High-UV coastal setting -> more pigment spots, oxidative damage (observed)",
+   "flow": [
+    {
+     "label": "Sensitive skin, high-urban lifestyle (n=50) vs non-sensitive (n=50)",
+     "basis": "human",
+     "note": "Protein carbonylation 17.9% higher, dark spots 38.0% higher, tone unevenness 7.9% higher."
+    },
+    {
+     "label": "Same sensitive group vs sensitive skin in the moderately urban coastal city (n=51)",
+     "basis": "human",
+     "note": "Prostaglandin E2 185% higher, sebum 22.5% higher, pores 7.5% higher in the high-urban group."
+    },
+    {
+     "label": "Coastal group: more pigment and oxidative damage",
+     "basis": "human",
+     "note": "Dark spot score 27.8% higher, carbonylation 27.3% higher. UV was not measured."
+    },
+    {
+     "label": "Sleep and stress drive the inflammation marker",
+     "basis": "inferred",
+     "note": "Not testable here: sleep, stress, pollution and city are one bundle."
+    }
+   ]
+  },
+  "studies": [
+   {
+    "cite": "Conway J, Berlin I, Blanche C, Grivet-Seyve M, Wai HD, Tonetti NJ, et al. Lifestyle-driven phenotypes in sensitive skin: a cross-sectional, multicenter study across urbanization tiers. Dermatol Ther (Heidelb). 2026;16(11):5701-5712.",
+    "doi": "https://doi.org/10.1007/s13555-026-01946-0",
+    "pubmed": "https://pubmed.ncbi.nlm.nih.gov/42828676/",
+    "pmc": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13696625",
+    "readDepth": "Full text (open access) read",
+    "design": "Cross-sectional, two sites (Guangzhou and Xiamen, China), March to April 2024, run by a contract research organisation. 151 women, 35 to 50 years, Fitzpatrick II to IV. Groups: non-sensitive skin, high-urban lifestyle (n=50); sensitive skin, high-urban (n=50); sensitive skin, moderate-urban (n=51). Sensitivity by the Sensitive Scale-10 (no objective provocation test). Perceived Stress Scale-10 and a sleep scale defined lifestyle. VISIA-CR imaging, Tewameter, Sebumeter, tape-strip assays for protein carbonylation and prostaglandin E2.",
+    "who": "Healthy women resident at least 5 years in the same city with stable lifestyle; no sleep, stress or antidepressant medication. Phototype distribution differed between groups (more phototype II in the coastal group). Deeper skin tones (V to VI) were not included.",
+    "results": [
+     "Prostaglandin E2 (pg/ug protein): 3.53 non-sensitive high-urban, 4.36 sensitive high-urban, 1.53 sensitive moderate-urban.",
+     "Protein carbonylation: 0.28, 0.33, 0.42 respectively. Dark spot clinical score: 2.45, 3.38, 4.32.",
+     "Sebum 112.4, 121.8, 99.5 ug/cm2; pore score 4.42, 4.57, 4.25.",
+     "Water loss through the skin (TEWL) was comparable across groups, so sensitivity was not associated with a measured barrier deficit."
+    ],
+    "effectSize": "Percentages as stated in results (above). Unadjusted group comparisons.",
+    "placebo": "Not applicable (no intervention).",
+    "material": "Not established. These are biomarker and imaging associations, not symptoms or treatment effects.",
+    "adverse": "Not applicable.",
+    "conflict": "Several authors are Galderma R&D employees (a skincare company); the study was run by a contract research organisation.",
+    "limits": "Cross-sectional; two cities differ in pollution, UV, climate and probably income and diet; sleep and stress perfectly aligned with city; not adjusted for age, phototype or multiple comparisons (authors call it exploratory); sun protection and individual UV exposure not measured; self-reported sensitivity; Chinese women only."
+   }
+  ],
+  "claimsCheck": [
+   {
+    "claim": "Poor sleep and high stress raise skin inflammation (prostaglandin E2)",
+    "source": "Implied by the paper's framing",
+    "status": "Not shown: sleep, stress, pollution and city all differ together, so the study cannot isolate any one"
+   },
+   {
+    "claim": "Sensitive skin is a distinct biological state",
+    "source": "Authors' conclusion",
+    "status": "Partly: protein carbonylation was higher in sensitive skin in both cities; sensitivity was not defined by an objective test"
+   }
+  ],
+  "products": {
+   "rankNote": "No product involved.",
+   "items": []
+  },
+  "howToUse": [
+   "Nothing to adopt. If anything, this is a reminder that exposome questions (sleep, stress, air quality, UV) come as a bundle, so a single intervention is hard to credit or blame.",
+   "The authors suggest tailoring care to the dominant exposure (anti-inflammatory in heavily urban settings, antioxidant and photoprotective in high-UV settings) but that is a hypothesis they did not test."
+  ],
+  "expect": [
+   {
+    "when": "Not applicable",
+    "what": "No intervention was tested."
+   }
+  ],
+  "contraindications": "Not applicable.",
+  "sideBenefits": "None.",
+  "wouldChangeVerdict": [
+   "A trial that improves sleep or lowers stress (for example breathing training or a sleep programme) and measures prostaglandin E2 and pigment in the same people",
+   "A cohort that measures sleep, stress, pollution and UV separately in the same city",
+   "Replication in deeper skin tones and outside China"
+  ],
+  "transfer": "Does it transfer to deeper skin? Participants were Fitzpatrick II to IV, so tone V to VI is untested. The question of whether stress and sleep affect skin inflammation and pigment is physiological, not tone-specific, but this study cannot confirm it (inference).",
+  "confidence": [
+   "Read in full: open-access paper.",
+   "Not verified: biomarker assay validation, funding statement wording, sleep and stress scores per participant.",
+   "Industry-affiliated authors; exploratory analyses without multiplicity correction."
+  ],
+  "searchedOn": "2026-11-03"
+ }
+}

@@ -1,0 +1,92 @@
+{
+ "id": "2026-11-03-visible-light-pigmentation-review",
+ "run": "2026-11-03",
+ "title": "Visible light and pigmentation: a 2026 review on why iron-oxide (tinted) sun protection matters for melasma and PIH",
+ "lane": "Black and melanin-rich skin",
+ "verdict": "TRY",
+ "depth": "triage",
+ "headline": "A narrative review argues that blue-violet visible light (400 to 450 nm) activates a pigment-cell receptor and drives lasting darkening, and that iron-oxide sunscreens add benefit in melasma; the numbers come from earlier trials I have not opened.",
+ "evidenceTier": "Narrative review, abstract read; full text paywalled and not opened",
+ "evidenceScore": 2,
+ "evidenceScale": 5,
+ "fit": "Pigment-prone skin: Strong on sun-season fit. The review's main practical point is that UV-only sunscreen leaves visible light unblocked; shade matching is a stated barrier for deeper skin tones.",
+ "displaces": "It would replace a non-tinted daily sunscreen step or top up pigment-prone zones; it should not add a step.",
+ "readMinutes": 3,
+ "regions": [
+  "Global (cosmetic or OTC sunscreen; regulatory status differs by country)",
+  "Buy anywhere tinted sunscreens are sold"
+ ],
+ "tags": [
+  "visible light",
+  "HEV",
+  "iron oxide",
+  "tinted sunscreen",
+  "melasma",
+  "PIH",
+  "opsin-3",
+  "review",
+  "abstract only",
+  "skin of colour",
+  "cosmetic"
+ ],
+ "status": "Watch",
+ "estimateNote": "Prices marked EST are my guesses, not looked up.",
+ "cost": [
+  {
+   "label": "All markets",
+   "value": "not found",
+   "kind": "unknown"
+  }
+ ],
+ "buzzCheck": "Sunscreens range widely in price; I did not check prices this run, so I cannot say whether price tracks evidence.",
+ "summaryPoints": [
+  "Abstract (read): high-energy visible light (400 to 450 nm) activates opsin-3 on melanocytes, triggers calcium signalling and raises melanin production in a wavelength-specific way; blue-violet light induced dose-dependent pigment that can persist, red light none.",
+  "Reported from earlier work (not opened): melasma patients using iron-oxide sunscreen improved 15% more on MASI, 28% more on colorimetry and 4% more on histology than with a UV-only sunscreen; a suction-blister PIH model healed without darkening at sites shielded from light.",
+  "Adherence gap: fewer than two thirds of people with hyperpigmentation use sunscreen and fewer than 10% reapply properly, worse in skin of colour; tint shade mismatch is named as a barrier to using visible-light protection.",
+  "Limits: narrative review; the primary trials and their skin-tone mix were not opened by me; the abstract does not say how many studies were pooled."
+ ],
+ "humanTrial": false,
+ "toneData": "Review of mixed literature; authors call for more skin-of-colour data",
+ "fitRating": "Strong",
+ "fitLine": "The practical lever with the best fit to melasma and PIH; the open question is a tint that matches deep skin.",
+ "priceStrip": [
+  {
+   "m": "All",
+   "v": "not found",
+   "k": "unknown"
+  }
+ ],
+ "timeline": "Sunscreen effects build over months in the cited melasma work (not opened)",
+ "fitAxes": [
+  {
+   "axis": "Barrier",
+   "rating": "Unknown",
+   "why": "Not addressed in the abstract."
+  },
+  {
+   "axis": "Retinoid",
+   "rating": "Partial",
+   "why": "Daily sun protection is a standard companion to a retinoid; not addressed specifically."
+  },
+  {
+   "axis": "Breakout risk",
+   "rating": "Unknown",
+   "why": "Tinted formulations vary in finish and ingredients; not addressed."
+  },
+  {
+   "axis": "Season",
+   "rating": "Strong",
+   "why": "Directly about light exposure and pigment."
+  }
+ ],
+ "links": [
+  {
+   "label": "Beyond UV: Visible Light and Pigmentation. Photodermatol Photoimmunol Photomed 2026 (DOI)",
+   "url": "https://doi.org/10.1111/phpp.70125"
+  },
+  {
+   "label": "Same (PubMed)",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/42802407/"
+  }
+ ]
+}

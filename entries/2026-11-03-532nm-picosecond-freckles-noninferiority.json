@@ -1,0 +1,89 @@
+{
+ "id": "2026-11-03-532nm-picosecond-freckles-noninferiority",
+ "run": "2026-11-03",
+ "title": "A new 532-nm picosecond Nd:YAG laser matched an established system for freckles: an 84-person split-face noninferiority trial",
+ "lane": "Tools, devices and clinic",
+ "verdict": "SKIP",
+ "depth": "triage",
+ "headline": "Both lasers cleared freckles equally (response 97.6% each) after one session in Chinese patients; it tests equivalence of two devices, not whether either is safe or useful for melasma or post-inflammatory pigment in deeper skin.",
+ "evidenceTier": "Randomized split-face noninferiority trial, 84 people; abstract read; full text not opened",
+ "evidenceScore": 2,
+ "evidenceScale": 5,
+ "fit": "A cost and access story about device makers, not a skin-of-colour pigment result. Freckles are a different problem from melasma and PIH.",
+ "displaces": "Fits nowhere; relevant only when choosing between clinics' devices for freckles.",
+ "readMinutes": 2,
+ "regions": [
+  "China (trial site)",
+  "Global (clinic devices)"
+ ],
+ "tags": [
+  "picosecond laser",
+  "532 nm",
+  "freckles",
+  "noninferiority",
+  "split-face",
+  "device",
+  "East Asian",
+  "abstract only",
+  "ask the clinician"
+ ],
+ "status": "Dropped",
+ "estimateNote": "Prices marked EST are my guesses, not looked up.",
+ "cost": [
+  {
+   "label": "All markets",
+   "value": "not found",
+   "kind": "unknown"
+  }
+ ],
+ "buzzCheck": "",
+ "summaryPoints": [
+  "Abstract (read): randomized, evaluator-blinded split-face, one session, 84 participants; response rate at 8 weeks 97.6% vs 97.6% (difference 0.0%, 95% CI -3.3% to 3.3%); cure rates 13.1% vs 9.5% (p=.53); participant satisfaction 72.6% vs 58.3% (p=.001). No serious adverse events.",
+  "Skin type is not given in the abstract (MeSH term East Asian People); the 8-week follow-up cannot speak to rebound or pigment loss; 'cure' rates were low for both.",
+  "Verdict is SKIP for this reader because the question answered (is a new device as good as an old one for freckles) does not touch melasma, PIH or Fitzpatrick V to VI."
+ ],
+ "humanTrial": true,
+ "toneData": "East Asian participants (Fitzpatrick type not in abstract)",
+ "fitRating": "Weak",
+ "fitLine": "Device-equivalence result for a different pigment condition, not tested in deeper skin.",
+ "priceStrip": [
+  {
+   "m": "All",
+   "v": "not found",
+   "k": "unknown"
+  }
+ ],
+ "timeline": "8-week readout",
+ "fitAxes": [
+  {
+   "axis": "Barrier",
+   "rating": "Unknown",
+   "why": "Not addressed."
+  },
+  {
+   "axis": "Retinoid",
+   "rating": "Unknown",
+   "why": "Not addressed."
+  },
+  {
+   "axis": "Breakout risk",
+   "rating": "Unknown",
+   "why": "Not addressed."
+  },
+  {
+   "axis": "Season",
+   "rating": "Unknown",
+   "why": "Not addressed."
+  }
+ ],
+ "links": [
+  {
+   "label": "Zhou Y et al. Novel 532-nm picosecond Nd:YAG laser for freckles. J Dermatolog Treat 2026 (DOI)",
+   "url": "https://doi.org/10.1080/09546634.2026.2702775"
+  },
+  {
+   "label": "Same (PubMed)",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/42473883/"
+  }
+ ]
+}

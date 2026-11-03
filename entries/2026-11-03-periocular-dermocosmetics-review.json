@@ -1,0 +1,92 @@
+{
+ "id": "2026-11-03-periocular-dermocosmetics-review",
+ "run": "2026-11-03",
+ "title": "Eye-contour skincare: a 2026 narrative review of retinoids, peptides, antioxidants and depigmenting agents alongside procedures",
+ "lane": "Ingredients and aesthetic care",
+ "verdict": "SKIP",
+ "depth": "triage",
+ "headline": "A company-authored narrative review concludes eye-contour products help hydration, firmness, pigment evenness and puffiness, but says the underlying studies are short, industry-sponsored, mostly of finished products rather than single ingredients, and low in diversity.",
+ "evidenceTier": "Narrative review, abstract read; free full text not opened",
+ "evidenceScore": 1,
+ "evidenceScale": 5,
+ "fit": "No new product or protocol; the authors' own limits statement is the useful part. Not specific to deeper skin tones.",
+ "displaces": "Fits nowhere new; if an eye product is already used, nothing here argues for changing it.",
+ "readMinutes": 2,
+ "regions": [
+  "Global (review)"
+ ],
+ "tags": [
+  "eye cream",
+  "periocular",
+  "dermocosmetics",
+  "narrative review",
+  "company-authored",
+  "peptides",
+  "retinoids",
+  "abstract only"
+ ],
+ "status": "Dropped",
+ "estimateNote": "Prices marked EST are my guesses, not looked up.",
+ "cost": [
+  {
+   "label": "All markets",
+   "value": "not found",
+   "kind": "unknown"
+  }
+ ],
+ "buzzCheck": "",
+ "summaryPoints": [
+  "Abstract (read): PubMed search 2010 to 2025; retinoids, peptides, antioxidants, vasomodulators and depigmenting agents improve hydration, firmness, pigment uniformity and puffiness, 'particularly alongside aesthetic procedures'.",
+  "Authors' own limits: most evidence comes from finished multicomponent formulations rather than isolated ingredients; studies are short, industry-sponsored, and limited in participant diversity and endpoints.",
+  "Two of the authors are affiliated with ISDIN's innovation and development team (a skincare company). No searchable numbers in the abstract.",
+  "Follows the 25 Oct run's PDRN-versus-retinol eye cream entry: nothing here changes it."
+ ],
+ "humanTrial": false,
+ "toneData": "Not reported in the abstract; authors note limited diversity",
+ "fitRating": "Unknown",
+ "fitLine": "Generic review; no deep-skin data or new product.",
+ "priceStrip": [
+  {
+   "m": "All",
+   "v": "not found",
+   "k": "unknown"
+  }
+ ],
+ "timeline": "Not applicable",
+ "fitAxes": [
+  {
+   "axis": "Barrier",
+   "rating": "Unknown",
+   "why": "Not addressed."
+  },
+  {
+   "axis": "Retinoid",
+   "rating": "Unknown",
+   "why": "Not addressed."
+  },
+  {
+   "axis": "Breakout risk",
+   "rating": "Unknown",
+   "why": "Not addressed."
+  },
+  {
+   "axis": "Season",
+   "rating": "Unknown",
+   "why": "Not addressed."
+  }
+ ],
+ "links": [
+  {
+   "label": "Prudkin L et al. Dermocosmetics for periocular aging: narrative review. Dermatol Ther (Heidelb) 2026 (DOI)",
+   "url": "https://doi.org/10.1007/s13555-026-01934-4"
+  },
+  {
+   "label": "Same (PubMed)",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/42814367/"
+  },
+  {
+   "label": "Same (free full text, not opened)",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13696647"
+  }
+ ]
+}

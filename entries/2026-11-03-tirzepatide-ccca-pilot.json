@@ -1,0 +1,100 @@
+{
+ "id": "2026-11-03-tirzepatide-ccca-pilot",
+ "run": "2026-11-03",
+ "title": "Tirzepatide (a diabetes and weight-loss injection) for active central centrifugal cicatricial alopecia: a 20-person pilot now recruiting",
+ "lane": "Hair and scalp (entropy wildcard)",
+ "verdict": "NOVEL",
+ "depth": "triage",
+ "headline": "A repurposing idea: a 12-month, single-arm pilot of weekly tirzepatide in adults with active CCCA, started September 2026, with paired scalp biopsies; it enrols people with higher HbA1c and insulin resistance, and results are years away.",
+ "evidenceTier": "Registry record read in full (ClinicalTrials.gov); a 2026 meta-analysis abstract is the only supporting data (abstract read)",
+ "evidenceScore": 1,
+ "evidenceScale": 5,
+ "fit": "Relevant only to confirmed, active CCCA and only as a specialist prescription decision. It does link to this run's insulin-resistance theme, but nothing here supports self-directed use.",
+ "displaces": "Fits nowhere in a routine; it would be a specialist-led addition or replacement in CCCA treatment.",
+ "readMinutes": 3,
+ "regions": [
+  "US (Johns Hopkins, Maryland)",
+  "Canada: Rx (ask the clinician)"
+ ],
+ "tags": [
+  "CCCA",
+  "scarring alopecia",
+  "tirzepatide",
+  "GLP-1",
+  "repurposed drug",
+  "Rx",
+  "registry only",
+  "pilot",
+  "ask the clinician",
+  "hair and scalp",
+  "entropy wildcard"
+ ],
+ "status": "Watch",
+ "estimateNote": "Prices marked EST are my guesses, not looked up.",
+ "cost": [
+  {
+   "label": "All markets",
+   "value": "not found",
+   "kind": "unknown"
+  }
+ ],
+ "buzzCheck": "",
+ "summaryPoints": [
+  "Registry record (read in full): NCT07734870; Johns Hopkins with Eli Lilly collaborating; 20 adults with active CCCA (activity score above 1), weekly tirzepatide for 12 months, no control arm; scalp biopsies at baseline and 6 months with RNA sequencing of scarring pathways; started 15 September 2026, completion expected May 2028.",
+  "Eligibility excludes HbA1c below 5.4% and HOMA-IR below 2, so it enrols people who already have some metabolic burden; it also excludes people already on glucose-lowering or weight-loss drugs.",
+  "Context (abstract read): a 2026 meta-analysis of GLP-1 drugs and hair loss found about a 40% higher risk of non-scarring hair loss (telogen effluvium and androgenetic alopecia), and reports that 58% of people with CCCA improved on these drugs; I did not open the primary data for that figure.",
+  "Watch re-check: the baricitinib CCCA phase 2 from the earlier run is still completed with no results posted and no publication found."
+ ],
+ "humanTrial": true,
+ "toneData": "Condition-specific: CCCA mainly affects women of African descent (background; the record does not restrict by ancestry)",
+ "fitRating": "Unknown",
+ "fitLine": "Condition- and prescription-specific; a pilot with no control arm.",
+ "priceStrip": [
+  {
+   "m": "All",
+   "v": "not found",
+   "k": "unknown"
+  }
+ ],
+ "timeline": "12-month treatment; results not before 2028",
+ "fitAxes": [
+  {
+   "axis": "Barrier",
+   "rating": "Unknown",
+   "why": "Not applicable to a systemic drug."
+  },
+  {
+   "axis": "Retinoid",
+   "rating": "Unknown",
+   "why": "Not addressed."
+  },
+  {
+   "axis": "Breakout risk",
+   "rating": "Unknown",
+   "why": "Not addressed."
+  },
+  {
+   "axis": "Season",
+   "rating": "Unknown",
+   "why": "Not addressed."
+  }
+ ],
+ "links": [
+  {
+   "label": "ClinicalTrials.gov record NCT07734870",
+   "url": "https://clinicaltrials.gov/study/NCT07734870"
+  },
+  {
+   "label": "GLP-1 receptor agonists and alopecia: systematic review and meta-analysis. Skin Appendage Disord 2026 (DOI; abstract read)",
+   "url": "https://doi.org/10.1159/000553070"
+  },
+  {
+   "label": "Same (PubMed)",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/42621629/"
+  },
+  {
+   "label": "ClinicalTrials.gov record NCT07843732 (baricitinib CCCA, re-checked)",
+   "url": "https://clinicaltrials.gov/study/NCT07843732"
+  }
+ ]
+}

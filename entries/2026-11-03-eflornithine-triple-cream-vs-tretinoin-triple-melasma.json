@@ -1,0 +1,88 @@
+{
+ "id": "2026-11-03-eflornithine-triple-cream-vs-tretinoin-triple-melasma",
+ "run": "2026-11-03",
+ "title": "Eflornithine replacing tretinoin in a hydroquinone + steroid triple cream for melasma: a completed split-face study, results not posted",
+ "lane": "Rx and compounded pigment",
+ "verdict": "WATCH",
+ "depth": "triage",
+ "headline": "A 30-person split-face study in Singapore (Fitzpatrick III to IV) compared an eflornithine 9.58% + hydroquinone 4% + fluocinolone 0.01% cream against the tretinoin-based triple cream for 12 weeks; the study finished in July 2024 and I found no results or paper.",
+ "evidenceTier": "Registry record read in full (ClinicalTrials.gov); no results posted; no publication found in PubMed",
+ "evidenceScore": 1,
+ "evidenceScale": 5,
+ "fit": "Relevant to the question 'can the retinoid in a triple combination be swapped for something less irritating'. Nothing usable yet: no results, and eflornithine here is an Rx compounding question.",
+ "displaces": "If it worked it could replace the retinoid component of a triple combination; it adds nothing for a routine without one.",
+ "readMinutes": 3,
+ "regions": [
+  "Singapore (trial site)",
+  "Canada: Rx / compounding (ask the clinician)"
+ ],
+ "tags": [
+  "melasma",
+  "triple combination",
+  "eflornithine",
+  "hydroquinone",
+  "tretinoin",
+  "fluocinolone",
+  "split-face",
+  "registry only",
+  "Rx",
+  "ask the clinician",
+  "Fitzpatrick III-IV"
+ ],
+ "status": "Watch",
+ "estimateNote": "Prices marked EST are my guesses, not looked up.",
+ "cost": [
+  {
+   "label": "All markets",
+   "value": "not found",
+   "kind": "unknown"
+  }
+ ],
+ "buzzCheck": "",
+ "summaryPoints": [
+  "Registry record (read in full): NCT07876323, National Skin Centre Singapore with A*STAR; 30 adults aged 25 to 75, Fitzpatrick III or IV; randomized split-face; 12 weeks; started June 2023, completed July 2024.",
+  "Primary outcomes: mMASI, melanin index by colorimeter, and physician and patient global assessments. Secondary: adverse events including contact dermatitis, ochronosis and skin atrophy. The stated aim is greater improvement and less irritation than the tretinoin-based comparator.",
+  "No results are posted and a PubMed search for eflornithine and melasma returned nothing, so there is no outcome data to judge. Eflornithine is an ornithine decarboxylase inhibitor best known as a prescription cream for unwanted facial hair (background, not from the record).",
+  "Fitzpatrick V and VI were not included."
+ ],
+ "humanTrial": true,
+ "toneData": "Fitzpatrick III-IV only",
+ "fitRating": "Unknown",
+ "fitLine": "Concept worth watching for irritation-sparing triples; no data yet, and untested in deeper skin.",
+ "priceStrip": [
+  {
+   "m": "All",
+   "v": "not found",
+   "k": "unknown"
+  }
+ ],
+ "timeline": "12-week study; results timeline unknown",
+ "fitAxes": [
+  {
+   "axis": "Barrier",
+   "rating": "Unknown",
+   "why": "Irritation was a stated comparison, but no results are posted."
+  },
+  {
+   "axis": "Retinoid",
+   "rating": "Unknown",
+   "why": "This is the proposed replacement for the retinoid in the combination."
+  },
+  {
+   "axis": "Breakout risk",
+   "rating": "Unknown",
+   "why": "Not addressed."
+  },
+  {
+   "axis": "Season",
+   "rating": "Unknown",
+   "why": "Not addressed."
+  }
+ ],
+ "links": [
+  {
+   "label": "ClinicalTrials.gov record NCT07876323",
+   "url": "https://clinicaltrials.gov/study/NCT07876323"
+  }
+ ]
+}

@@ -1,0 +1,93 @@
+{
+ "id": "2026-11-03-pdrn-iontophoresis-model",
+ "run": "2026-11-03",
+ "title": "Can PDRN be pushed through the skin with a weak current? A computer model of PDRN iontophoresis (follow-up to the topical PDRN entry)",
+ "lane": "Clinic and devices",
+ "verdict": "WATCH",
+ "depth": "triage",
+ "headline": "A September 2026 modelling paper says PDRN's large size limits how far it passes the skin barrier, and models a weak-current device to help; it is a simulation with one measured input and no human outcome.",
+ "evidenceTier": "Computational model plus a diffusion-cell measurement; abstract read; free full text not opened",
+ "evidenceScore": 1,
+ "evidenceScale": 5,
+ "fit": "Context for a delivery question that the earlier PDRN entry left open. Nothing to try; no device or product was tested.",
+ "displaces": "Fits nowhere: no product or device was tested in people.",
+ "readMinutes": 2,
+ "regions": [
+  "South Korea (authors)",
+  "Global (device concept)"
+ ],
+ "tags": [
+  "PDRN",
+  "iontophoresis",
+  "transdermal delivery",
+  "simulation",
+  "device design",
+  "Korea",
+  "company-linked author",
+  "follow-up to earlier entry"
+ ],
+ "status": "Watch",
+ "estimateNote": "Prices marked EST are my guesses, not looked up.",
+ "cost": [
+  {
+   "label": "All markets",
+   "value": "not found",
+   "kind": "unknown"
+  }
+ ],
+ "buzzCheck": "",
+ "summaryPoints": [
+  "Abstract (read): authors state PDRN's large molecular size limits noninvasive delivery; they build a three-layer skin model (stratum corneum, epidermis, dermis) using the Nernst-Planck equation, with a diffusion coefficient from diffusion-cell experiments and the electric charge estimated from earlier double-stranded-DNA reports.",
+  "The model compares passive diffusion with iontophoresis (cathode) across current, concentration and time, and reports a depth-dependent shift in the dominant transport mechanism; it reports agreement metrics with experimental permeation data (RMSD, MAPE, R2) without numbers in the abstract.",
+  "One author lists Trans Bio Lab Co. Ltd. as an affiliation. No human outcomes, no skin-tone data, no product.",
+  "Why it matters: last run's topical PDRN entry flagged that delivery into living human dermis was not shown; this paper agrees that delivery is the limiting question and does not answer it."
+ ],
+ "humanTrial": false,
+ "toneData": "Not applicable (simulation)",
+ "fitRating": "Unknown",
+ "fitLine": "Delivery science, not an outcome study.",
+ "priceStrip": [
+  {
+   "m": "All",
+   "v": "not found",
+   "k": "unknown"
+  }
+ ],
+ "timeline": "Not applicable",
+ "fitAxes": [
+  {
+   "axis": "Barrier",
+   "rating": "Unknown",
+   "why": "Not addressed."
+  },
+  {
+   "axis": "Retinoid",
+   "rating": "Unknown",
+   "why": "Not addressed."
+  },
+  {
+   "axis": "Breakout risk",
+   "rating": "Unknown",
+   "why": "Not addressed."
+  },
+  {
+   "axis": "Season",
+   "rating": "Unknown",
+   "why": "Not addressed."
+  }
+ ],
+ "links": [
+  {
+   "label": "Numerical simulation of PDRN iontophoresis. Drug Deliv 2026 (DOI)",
+   "url": "https://doi.org/10.1080/10717544.2026.2726625"
+  },
+  {
+   "label": "Same (PubMed)",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/42789403/"
+  },
+  {
+   "label": "Same (free full text, not opened)",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13618095"
+  }
+ ]
+}
