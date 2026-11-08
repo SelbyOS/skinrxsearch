@@ -1,0 +1,83 @@
+{
+ "id": "2026-11-08-oral-metformin-melasma-registry",
+ "run": "2026-11-08",
+ "title": "Oral metformin for melasma: a small registered dose-comparison trial in Latin American women",
+ "lane": "Rx / OTC / clinical",
+ "verdict": "NOVEL",
+ "depth": "triage",
+ "headline": "A 30-woman Puerto Rico trial comparing metformin 500 mg and 1000 mg daily for three months in epidermal or mixed melasma is registered as recruiting, with no results and no placebo arm.",
+ "evidenceTier": "Trial registry record, read in full; no results",
+ "evidenceScore": 1,
+ "evidenceScale": 5,
+ "fit": "Pigment lane, prescription route: Unknown. Interesting because last run flagged a link between insulin resistance and post-laser pigmentation, but this is a different question.",
+ "displaces": "Fits nowhere without a clinician; would be an add-on, not a swap.",
+ "readMinutes": 3,
+ "regions": [
+  "Puerto Rico (single site). Rx only; availability and indication differ by country. Ask clinician or local pharmacy, do not carry across borders"
+ ],
+ "tags": [
+  "melasma",
+  "metformin",
+  "oral",
+  "Rx",
+  "registry",
+  "no placebo",
+  "phase 1/2"
+ ],
+ "status": "Watch",
+ "estimateNote": "Prices marked EST are my guesses, not looked up.",
+ "cost": [
+  {
+   "label": "All markets",
+   "value": "not found",
+   "kind": "unknown"
+  }
+ ],
+ "buzzCheck": "Not a retail product; no price question.",
+ "summaryPoints": [
+  "Observation (registry record read): University of Puerto Rico; n=30 planned; Latin American women aged 21 or older with epidermal or mixed melasma; daily metformin 500 mg or 1000 mg for 12 weeks; primary outcome is change in modified MASI from week 0 to week 12; clinic visits only at the start and end.",
+  "Observation: exclusions include diabetes, hypoglycemia, liver or renal disease, hydroquinone or tretinoin in the prior 2 months, and procedures in the prior 2 months.",
+  "Observation: listed as recruiting, but the registered completion date was May 2025, so the record looks out of date; I could not confirm the current status.",
+  "Inference: no placebo and no comparison group are listed, so change in mMASI cannot be attributed to metformin. Sun exposure and seasons would also move mMASI over 12 weeks."
+ ],
+ "humanTrial": true,
+ "toneData": "Latin American women; skin type not stated in the record",
+ "fitRating": "Unknown",
+ "fitLine": "A prescription route for a pigment problem is a conversation for a clinician, not a purchase; the design cannot show whether metformin works at all.",
+ "priceStrip": [
+  {
+   "m": "All",
+   "v": "not found",
+   "k": "unknown"
+  }
+ ],
+ "timeline": "12-week trial; registry dates are out of date",
+ "fitAxes": [
+  {
+   "axis": "Barrier",
+   "rating": "Unknown",
+   "why": "Not assessed."
+  },
+  {
+   "axis": "Retinoid",
+   "rating": "Unknown",
+   "why": "Washout of 2 months before entry; combination not tested."
+  },
+  {
+   "axis": "Breakout risk",
+   "rating": "Unknown",
+   "why": "Not assessed."
+  },
+  {
+   "axis": "Season",
+   "rating": "Unknown",
+   "why": "Not addressed."
+  }
+ ],
+ "links": [
+  {
+   "label": "ClinicalTrials.gov NCT06845540",
+   "url": "https://clinicaltrials.gov/study/NCT06845540"
+  }
+ ]
+}

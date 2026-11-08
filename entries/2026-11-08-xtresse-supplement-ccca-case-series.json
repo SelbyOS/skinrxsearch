@@ -1,0 +1,84 @@
+{
+ "id": "2026-11-08-xtresse-supplement-ccca-case-series",
+ "run": "2026-11-08",
+ "title": "A nutrient supplement in central centrifugal cicatricial alopecia: a two-case report",
+ "lane": "Hair and scalp",
+ "verdict": "SKIP",
+ "depth": "triage",
+ "headline": "Two cases of CCCA described as improved on a branded nutrient supplement; two people, no control, published in a journal short report format, so it tells me nothing about whether the supplement works.",
+ "evidenceTier": "Case series (n=2), abstract read",
+ "evidenceScore": 0,
+ "evidenceScale": 5,
+ "fit": "Hair lane: Unknown. Population is right (CCCA) but n=2 cannot support a decision.",
+ "displaces": "Nothing.",
+ "readMinutes": 3,
+ "regions": [
+  "Unknown (product availability not checked)"
+ ],
+ "tags": [
+  "CCCA",
+  "supplement",
+  "case series",
+  "n=2",
+  "abstract only"
+ ],
+ "status": "Dropped",
+ "estimateNote": "Prices marked EST are my guesses, not looked up.",
+ "cost": [
+  {
+   "label": "All markets",
+   "value": "not found",
+   "kind": "unknown"
+  }
+ ],
+ "buzzCheck": "Prices not looked up; cannot judge whether price tracks evidence.",
+ "summaryPoints": [
+  "Observation (abstract read): Two CCCA cases treated with a branded nutrient supplement with 'notable improvement' reported. No dose, duration, controls or objective measures in the abstract.",
+  "Inference: any improvement is within the range of natural variation and concurrent treatment, which the abstract does not describe.",
+  "Limits: abstract only; funding and conflicts not stated."
+ ],
+ "humanTrial": false,
+ "toneData": "Not stated",
+ "fitRating": "Unknown",
+ "fitLine": "Skip unless a controlled study appears.",
+ "priceStrip": [
+  {
+   "m": "All",
+   "v": "not found",
+   "k": "unknown"
+  }
+ ],
+ "timeline": "Not stated",
+ "fitAxes": [
+  {
+   "axis": "Barrier",
+   "rating": "Unknown",
+   "why": "Not assessed."
+  },
+  {
+   "axis": "Retinoid",
+   "rating": "Unknown",
+   "why": "Not addressed."
+  },
+  {
+   "axis": "Breakout risk",
+   "rating": "Unknown",
+   "why": "Not assessed."
+  },
+  {
+   "axis": "Season",
+   "rating": "Unknown",
+   "why": "Not addressed."
+  }
+ ],
+ "links": [
+  {
+   "label": "Desta 2026, J Drugs Dermatol (DOI)",
+   "url": "https://doi.org/10.36849/JDD.9319"
+  },
+  {
+   "label": "PubMed",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/42976830/"
+  }
+ ]
+}

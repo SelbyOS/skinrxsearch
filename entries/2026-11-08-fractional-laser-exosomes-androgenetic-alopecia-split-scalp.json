@@ -1,0 +1,81 @@
+{
+ "id": "2026-11-08-fractional-laser-exosomes-androgenetic-alopecia-split-scalp",
+ "run": "2026-11-08",
+ "title": "Fractional laser with and without exosomes for hair thinning: a split-scalp trial registered at a Taiwan hospital",
+ "lane": "Hair and scalp",
+ "verdict": "NOVEL",
+ "depth": "triage",
+ "headline": "A 30-person split-scalp study at Chang Gung Memorial Hospital is testing fractional laser alone against fractional laser plus exosomes on each side of the scalp in androgenetic alopecia; recruiting, no results, exosome product not identified.",
+ "evidenceTier": "Trial registry record (search listing only; full record not opened)",
+ "evidenceScore": 1,
+ "evidenceScale": 5,
+ "fit": "Hair lane (wildcard): Unknown. The exosome product, source and regulatory status are not stated in the listing I saw.",
+ "displaces": "Not applicable; clinic procedure.",
+ "readMinutes": 3,
+ "regions": [
+  "Taiwan (single site); exosome products have unclear approval status in most markets"
+ ],
+ "tags": [
+  "exosomes",
+  "fractional laser",
+  "androgenetic alopecia",
+  "split-scalp",
+  "registry",
+  "wildcard"
+ ],
+ "status": "Watch",
+ "estimateNote": "Prices marked EST are my guesses, not looked up.",
+ "cost": [
+  {
+   "label": "All markets",
+   "value": "not found",
+   "kind": "unknown"
+  }
+ ],
+ "buzzCheck": "Prices not looked up; cannot judge whether price tracks evidence.",
+ "summaryPoints": [
+  "Observation (registry search listing only; full record not opened): recruiting; n=30; start Dec 2025; primary completion Sept 2027; intervention listed as fractional laser.",
+  "Inference: split-scalp design controls for person-level differences but not for laser-side bleed or participant awareness.",
+  "Limits: I only saw the search listing; product, dose, outcomes and endpoints are not confirmed."
+ ],
+ "humanTrial": true,
+ "toneData": "Not stated",
+ "fitRating": "Unknown",
+ "fitLine": "A within-person design is a good start; exosome products are poorly standardised and mostly unregulated as injectables or topicals, which matters more than the laser.",
+ "priceStrip": [
+  {
+   "m": "All",
+   "v": "not found",
+   "k": "unknown"
+  }
+ ],
+ "timeline": "Primary completion Sept 2027",
+ "fitAxes": [
+  {
+   "axis": "Barrier",
+   "rating": "Unknown",
+   "why": "Not assessed."
+  },
+  {
+   "axis": "Retinoid",
+   "rating": "Unknown",
+   "why": "Not addressed."
+  },
+  {
+   "axis": "Breakout risk",
+   "rating": "Unknown",
+   "why": "Not assessed."
+  },
+  {
+   "axis": "Season",
+   "rating": "Unknown",
+   "why": "Not addressed."
+  }
+ ],
+ "links": [
+  {
+   "label": "ClinicalTrials.gov NCT07248410",
+   "url": "https://clinicaltrials.gov/study/NCT07248410"
+  }
+ ]
+}

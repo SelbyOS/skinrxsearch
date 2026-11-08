@@ -1,0 +1,209 @@
+{
+ "id": "2026-11-08-topical-tranexamic-acid-periorbital-lines-gpr30",
+ "run": "2026-11-08",
+ "title": "Topical 3% tranexamic acid and fine lines: an exploratory wrinkle result from a melasma trial, plus a cell-culture mechanism",
+ "lane": "Goals-aligned science",
+ "verdict": "WATCH",
+ "depth": "dossier",
+ "headline": "In 50 women with melasma, a 3% tranexamic acid serum was followed by a small drop in periorbital wrinkle score versus moisturizer alone; the wrinkle result was not the trial's planned outcome, and the mechanism comes from fibroblasts in a dish.",
+ "evidenceTier": "Exploratory secondary analysis of an RCT (open label as far as stated) plus in-vitro work; full text read",
+ "evidenceScore": 2,
+ "evidenceScale": 5,
+ "fit": "Pigment-prone skin: Partial. Tranexamic acid is already a pigment-lane ingredient; the new part is a possible fine-line side benefit that has not been confirmed.",
+ "displaces": "Nothing new. If a tranexamic acid serum is already in the pigment step, this adds a reason to keep it, not a reason to add a step.",
+ "readMinutes": 6,
+ "regions": [
+  "Global (cosmetic serums; concentration and claims vary by country)",
+  "Rx tranexamic acid tablets differ by country and are a separate question"
+ ],
+ "tags": [
+  "tranexamic acid",
+  "melasma",
+  "periorbital lines",
+  "GPR30",
+  "fibroblast senescence",
+  "exploratory analysis",
+  "China",
+  "Fitzpatrick III-V",
+  "RCT secondary",
+  "cosmetic"
+ ],
+ "status": "Watch",
+ "estimateNote": "Prices marked EST are my guesses, not looked up.",
+ "cost": [
+  {
+   "label": "All markets",
+   "value": "not found",
+   "kind": "unknown"
+  }
+ ],
+ "buzzCheck": "Tranexamic acid serums are widely marketed; I did not price any, so I cannot say whether price tracks this evidence. The evidence here is thin for a wrinkle claim.",
+ "summaryPoints": [
+  "Observation (full text read): 50 women with melasma, phototypes III to V (about 78% IV), were randomised 1:1 to 3% tranexamic acid serum plus moisturizer or moisturizer alone, twice daily for 8 weeks, followed to week 12. All 50 completed.",
+  "Observation: periorbital wrinkle score (modified Fitzpatrick scale, graded blind by two dermatologists) changed by -0.43 vs +0.03 at week 12 (p<0.001). Baseline scores were low (about 1.4 to 1.6), so this is early fine lines, not deep wrinkles.",
+  "Observation: the wrinkle analysis was post hoc. The authors say they noticed it during a melasma trial. The melasma trial itself is a separate paper that I did not open.",
+  "Inference: the cell work (D-galactose-aged fibroblasts at 200 ug/mL, GPR30 blocking and knockdown, docking) is mechanistic support at best; D-galactose senescence is a lab model and 200 ug/mL is not a skin concentration.",
+  "Limits: single hospital, no vehicle-matched serum (control was moisturizer only), no blinding statement for participants, no collagen measurement."
+ ],
+ "humanTrial": true,
+ "toneData": "Fitzpatrick III to V (III 18%, IV 78%, V 4%); Chinese women, 18 to 60",
+ "fitRating": "Partial",
+ "fitLine": "Low-risk cosmetic ingredient with a plausible but unconfirmed fine-line side benefit; worth noticing, not worth buying for.",
+ "priceStrip": [
+  {
+   "m": "All",
+   "v": "not found",
+   "k": "unknown"
+  }
+ ],
+ "timeline": "Wrinkle change appeared from week 4 and was largest at weeks 8 to 12 in the trial; no data past week 12",
+ "fitAxes": [
+  {
+   "axis": "Barrier",
+   "rating": "Unknown",
+   "why": "Barrier function and irritation were not reported in the text I read."
+  },
+  {
+   "axis": "Retinoid",
+   "rating": "Unknown",
+   "why": "Other anti-wrinkle products and procedures were prohibited during the trial, so use with a retinoid is untested."
+  },
+  {
+   "axis": "Breakout risk",
+   "rating": "Unknown",
+   "why": "Not assessed."
+  },
+  {
+   "axis": "Season",
+   "rating": "Partial",
+   "why": "Pigment-lane ingredient; daily SPF is standard alongside it, though not stated as a protocol element here."
+  }
+ ],
+ "dossier": {
+  "whatItIs": "Tranexamic acid is a lysine-analogue originally used to reduce bleeding. Topical and oral forms are used for melasma. This paper reports an unplanned look at periorbital fine lines in the trial arm that used a 3% serum, and adds fibroblast experiments.",
+  "mechanism": {
+   "steps": [
+    "Applied: 3% tranexamic acid serum twice daily on the face for 8 weeks (human trial).",
+    "Stated by the authors: tranexamic acid raised GPR30 levels and lowered MAPK phosphorylation in D-galactose-stressed fibroblasts, with fewer senescence markers (SA-beta-gal, p16, p21) and lower IL-6, IL-8, MMP1 and MMP3 expression.",
+    "Cell evidence: blocking GPR30 with G15 or knocking it down weakened these effects, which supports GPR30 involvement in that model.",
+    "Inferred, not shown: that the same pathway operates in living human dermis at topical doses and explains the wrinkle score change. No collagen, elastin or skin biopsy data were collected."
+   ],
+   "inferenceFlag": "The step from fibroblast culture to the wrinkle score is the authors' hypothesis. The human result and the cell result were not linked by any measurement in the same people.",
+   "diagramCaption": "Applied serum -> (hypothesis) GPR30-dependent lowering of MAPK and inflammatory signals in dermal fibroblasts -> (measured) lower early periorbital wrinkle score by week 8 to 12.",
+   "flow": [
+    {
+     "label": "3% tranexamic acid serum, twice daily",
+     "basis": "applied",
+     "note": "Human trial arm, 8 weeks."
+    },
+    {
+     "label": "GPR30 up, MAPK phosphorylation down",
+     "basis": "cell",
+     "note": "D-galactose-stressed human fibroblasts at 200 ug/mL."
+    },
+    {
+     "label": "Lower senescence and matrix-degrading signals",
+     "basis": "cell",
+     "note": "p16, p21, IL-6, IL-8, MMP1, MMP3 measured in culture only."
+    },
+    {
+     "label": "Lower periorbital wrinkle score",
+     "basis": "human",
+     "note": "-0.43 vs +0.03 on a low-baseline scale at week 12; post hoc."
+    }
+   ]
+  },
+  "studies": [
+   {
+    "cite": "Lin Y, Wang Y, Wang W, et al. Tranexamic acid protects human dermal fibroblasts from D-galactose-induced senescence via the GPR30/MAPK pathway. Ann Med 2026;58(1):2663263.",
+    "doi": "https://doi.org/10.1080/07853890.2026.2663263",
+    "pubmed": "https://pubmed.ncbi.nlm.nih.gov/42059427/",
+    "pmc": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13134749",
+    "readDepth": "Full text (open access, PMC) read",
+    "design": "Exploratory analysis of a randomised, moisturizer-controlled trial (Xiangya Hospital, China, June to December 2021), 1:1, 25 per arm; plus fibroblast experiments (primary cells from circumcised foreskin of donors aged 5 to 20).",
+    "who": "Women 18 to 60 with facial melasma, phototypes II to IV by protocol (III to V enrolled); excluded thromboembolic disease, anticoagulants, pregnancy, and use of other depigmenting or anti-wrinkle products. Mean age 36.7.",
+    "results": [
+     "Week 4: change -0.17 vs -0.05 (p=0.007). Week 8: -0.44 vs -0.02 (p<0.001). Week 12: -0.43 vs +0.03 (p<0.001).",
+     "Baseline-adjusted means at week 12: 1.08 vs 1.60 (p<0.001).",
+     "Inter-rater agreement between the two graders was high (ICC 0.89 to 0.92).",
+     "Cell results: lower ROS and MDA, higher SOD and catalase activity with tranexamic acid; effects reduced by GPR30 blocking or knockdown."
+    ],
+    "effectSize": "About 0.4 scale points on a scale whose baseline here was about 1.5; the paper does not give a minimal clinically important difference.",
+    "placebo": "Control was moisturizer alone, so the serum vehicle was not matched. The control group returned to baseline by week 12, which is what a stable no-effect arm looks like.",
+    "material": "Unclear. A 0.4-point change on a low-baseline grading scale is visible to blinded graders but I cannot say it is noticeable to the wearer; no patient-rated outcome is reported.",
+    "adverse": "Not reported in the text I read.",
+    "conflict": "No funding or conflict statement located in the text I read; check the front matter.",
+    "limits": "Post hoc analysis of a trial built for melasma; unblinded participants likely (serum vs none); one centre; no biopsy or collagen data; fibroblasts from young male donors and an artificial ageing model."
+   }
+  ],
+  "claimsCheck": [
+   {
+    "claim": "Tranexamic acid is an anti-ageing ingredient",
+    "source": "Authors' conclusion and likely brand marketing",
+    "status": "One exploratory trial analysis (n=50) plus a lab model; not an established anti-ageing effect."
+   },
+   {
+    "claim": "It works through GPR30",
+    "source": "Cell experiments with an antagonist and knockdown",
+    "status": "Supported in the dish only; docking energy of -5.4 kcal/mol is a computational suggestion, not binding data."
+   }
+  ],
+  "products": {
+   "rankNote": "No product is named in the paper and I did not open any retailer or brand page this run, so no product is recommended or priced. Check any tranexamic acid serum's label for the actual percentage; the trial used 3%.",
+   "items": [
+    {
+     "name": "Tranexamic acid serums (category)",
+     "maker": "Various",
+     "kind": "Cosmetic serum",
+     "price": "Not found",
+     "note": "Concentrations vary on the market; the tested concentration was 3%.",
+     "link": "https://doi.org/10.1080/07853890.2026.2663263",
+     "verified": "unverified (no product page opened)",
+     "tier": "list"
+    }
+   ]
+  },
+  "howToUse": [
+   "This is not a reason to add a product. If a tranexamic acid serum is already in the pigment step, the trial used it twice daily on the whole face for 8 weeks.",
+   "The trial prohibited other anti-wrinkle products during the study, so any layering with retinoids or acids is outside the evidence."
+  ],
+  "expect": [
+   {
+    "when": "Weeks 4 to 8",
+    "what": "In the trial the gap versus moisturizer opened by week 4 and was largest by week 8."
+   },
+   {
+    "when": "Week 12",
+    "what": "Benefit persisted 4 weeks after stopping in this trial; longer follow-up is not available."
+   }
+  ],
+  "contraindications": "Trial exclusions for the topical arm: history of thromboembolic disease or clotting disorders, anticoagulant use, pregnancy or lactation, known hypersensitivity. Topical absorption is low but the trial did not measure it; ask a clinician if any of those apply.",
+  "sideBenefits": "The melasma effect is the established reason people use it; this paper adds only the exploratory fine-line signal.",
+  "wouldChangeVerdict": [
+   "A planned, blinded trial with fine lines as the primary outcome and a vehicle-matched serum",
+   "A study that includes phototypes V and VI and reports patient-rated change",
+   "Skin biopsy or ultrasound data showing dermal change in people"
+  ],
+  "transfer": "Does it transfer to deeper skin? Phototypes III to V were enrolled (78% type IV, 4% type V) and none of type VI, so deep skin is thinly represented. The pigment pathways are not tone-specific, so a similar effect is plausible by mechanism, but that is inference. Fine-line grading scales are also less validated on deeper skin.",
+  "confidence": [
+   "Read in full: Lin 2026 (open-access full text).",
+   "Not opened: the original melasma trial this analysis came from; no product pages; no price data.",
+   "Unknown: funding, adverse events, blinding of participants."
+  ],
+  "searchedOn": "2026-11-08"
+ },
+ "links": [
+  {
+   "label": "Lin 2026, Ann Med (DOI)",
+   "url": "https://doi.org/10.1080/07853890.2026.2663263"
+  },
+  {
+   "label": "PubMed",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/42059427/"
+  },
+  {
+   "label": "Full text (PMC)",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13134749"
+  }
+ ]
+}

@@ -1,0 +1,92 @@
+{
+ "id": "2026-11-08-polynucleotide-periorbital-systematic-review",
+ "run": "2026-11-08",
+ "title": "Injectable polynucleotides for the eye area: a 2026 systematic review of six trials, all in Korean and Thai cohorts",
+ "lane": "Clinic and medspa incl. Korean clinics",
+ "verdict": "WATCH",
+ "depth": "triage",
+ "headline": "Six small studies (five split-face trials, 350 people) found short-term improvement in crow's feet with injectable polynucleotides, comparable to a polycaprolactone filler in two of them; none followed people past six months and none included deep skin.",
+ "evidenceTier": "Systematic review (PROSPERO-registered), abstract read; full text not opened",
+ "evidenceScore": 2,
+ "evidenceScale": 5,
+ "fit": "Clinic route (Seoul): Partial. A procedure, so fit depends on a clinician; evidence is short and from lighter skin types.",
+ "displaces": "Would be a clinic add-on or replace another booster; not a home routine item.",
+ "readMinutes": 3,
+ "regions": [
+  "Korea, Thailand (where the trials ran); ask the clinician at the clinic"
+ ],
+ "tags": [
+  "polynucleotide",
+  "PDRN",
+  "periorbital",
+  "skin booster",
+  "systematic review",
+  "Fitzpatrick III-V",
+  "clinic",
+  "abstract only"
+ ],
+ "status": "Watch",
+ "estimateNote": "Prices marked EST are my guesses, not looked up.",
+ "cost": [
+  {
+   "label": "All markets",
+   "value": "not found",
+   "kind": "unknown"
+  }
+ ],
+ "buzzCheck": "Prices not looked up; cannot judge whether price tracks evidence.",
+ "summaryPoints": [
+  "Observation (abstract read): six studies, 350 participants, 80% to 100% women, Korean and Thai cohorts, Fitzpatrick III to V. 40% to 70% of treated sides improved by at least one grade on the crow's feet scale at 12 weeks.",
+  "Observation: in two trials (n=30 and n=215) polynucleotide was non-inferior to polycaprolactone fillers; in one (n=30) it beat hyaluronic acid on biophysical measures. Safety favourable; no study followed people beyond 6 months.",
+  "Inference: effect estimates are not pooled and vary by trial. Industry funding and product brands are not given in the abstract and I did not open the paper.",
+  "Limits: abstract only (full text not opened); no deep-skin data; the authors call the findings preliminary."
+ ],
+ "humanTrial": true,
+ "toneData": "Fitzpatrick III to V only; East Asian cohorts",
+ "fitRating": "Partial",
+ "fitLine": "Relevant to the Korea trip since polynucleotide boosters are common there, but the trial skin types were III to V and follow-up under six months.",
+ "priceStrip": [
+  {
+   "m": "All",
+   "v": "not found",
+   "k": "unknown"
+  }
+ ],
+ "timeline": "Benefit seen by 12 weeks in the included trials; nothing beyond 6 months",
+ "fitAxes": [
+  {
+   "axis": "Barrier",
+   "rating": "Unknown",
+   "why": "Not assessed."
+  },
+  {
+   "axis": "Retinoid",
+   "rating": "Unknown",
+   "why": "Not addressed."
+  },
+  {
+   "axis": "Breakout risk",
+   "rating": "Unknown",
+   "why": "Not assessed."
+  },
+  {
+   "axis": "Season",
+   "rating": "Unknown",
+   "why": "Not addressed."
+  }
+ ],
+ "links": [
+  {
+   "label": "Ahuja 2026, Aesthet Surg J Open Forum (DOI)",
+   "url": "https://doi.org/10.1093/asjof/ojag200"
+  },
+  {
+   "label": "PubMed",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/42979324/"
+  },
+  {
+   "label": "Full text (PMC)",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13729110"
+  }
+ ]
+}

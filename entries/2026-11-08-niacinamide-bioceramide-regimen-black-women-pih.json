@@ -1,0 +1,171 @@
+{
+ "id": "2026-11-08-niacinamide-bioceramide-regimen-black-women-pih",
+ "run": "2026-11-08",
+ "title": "A niacinamide and bioceramide skincare regimen tested in Black women with post-inflammatory hyperpigmentation (registered trial, results not out)",
+ "lane": "Black and melanin-rich skin",
+ "verdict": "NOVEL",
+ "depth": "dossier",
+ "headline": "A 60-person Brazilian trial of a full cleanser, moisturizer, 5% niacinamide serum and SPF 30 routine in Black women with facial PIH is registered with a planned end date of 31 Oct 2026; there are no results yet, no control group in the registry record, and the sponsor collaborator is a cosmetics company.",
+ "evidenceTier": "Trial registry record only (ClinicalTrials.gov); no results, no publication",
+ "evidenceScore": 1,
+ "evidenceScale": 5,
+ "fit": "Pigment-prone skin: Strong on population fit (Fitzpatrick IV to VI, self-identified Black women). Strong on the question, weak on evidence until results appear.",
+ "displaces": "It would overlap the existing niacinamide and ceramide steps rather than add one; the useful comparison is against a simpler routine, which this design does not include.",
+ "readMinutes": 5,
+ "regions": [
+  "Brazil (Sao Paulo single site)",
+  "Products in the study are cosmetic; brand and availability not stated in the record"
+ ],
+ "tags": [
+  "niacinamide",
+  "bioceramides",
+  "PIH",
+  "Fitzpatrick IV-VI",
+  "Black women",
+  "registry",
+  "no results",
+  "cosmetic",
+  "MelasQoL",
+  "DLQI",
+  "sponsor-linked"
+ ],
+ "status": "Watch",
+ "estimateNote": "Prices marked EST are my guesses, not looked up.",
+ "cost": [
+  {
+   "label": "All markets",
+   "value": "not found",
+   "kind": "unknown"
+  }
+ ],
+ "buzzCheck": "Not applicable until a product is named; the record does not identify the brand.",
+ "summaryPoints": [
+  "Observation (registry record read in full): interventional, not applicable phase, 60 women aged 18 to 55, Fitzpatrick IV to VI, self-identified Black, with facial post-inflammatory hyperpigmentation. Single site, Hospital Israelita Albert Einstein, Sao Paulo. Started 19 Mar 2026; primary completion 31 Oct 2026.",
+  "Observation: the regimen is a 0.2% bioceramide cleanser, a 2% niacinamide + 1% bioceramide moisturizer, a 5% niacinamide + 3% bioceramide serum, and SPF 30 sunscreen, for 12 weeks, with visits at baseline, week 6 and week 12.",
+  "Observation: primary outcomes are HASI (an adapted MASI), investigator global assessment and standardised photography analysed in ImageJ; secondary outcomes are MelasQoL and DLQI. The record names no comparison group.",
+  "Observation: collaborator is a cosmetics company (COTY Brasil). Participants are hospital staff and students, which can bias reporting.",
+  "Inference: with no control arm, any improvement would mix the ingredients, daily sunscreen use, and a stricter routine. The record cannot separate them."
+ ],
+ "humanTrial": true,
+ "toneData": "Fitzpatrick IV to VI, self-identified Black women (one of the few registered trials built around this group)",
+ "fitRating": "Strong",
+ "fitLine": "Right population and a realistic whole-routine design, but nothing to act on until results appear; the sunscreen and routine consistency may account for much of any change.",
+ "priceStrip": [
+  {
+   "m": "All",
+   "v": "not found",
+   "k": "unknown"
+  }
+ ],
+ "timeline": "12-week treatment; results expected after 31 Oct 2026 completion, publication date unknown",
+ "fitAxes": [
+  {
+   "axis": "Barrier",
+   "rating": "Partial",
+   "why": "Ceramide-containing cleanser and moisturizer are part of the tested routine, but barrier function is not a listed outcome."
+  },
+  {
+   "axis": "Retinoid",
+   "rating": "Unknown",
+   "why": "Topical treatments were excluded for 1 month and depigmenting agents for 3 months before entry; use alongside a retinoid is untested."
+  },
+  {
+   "axis": "Breakout risk",
+   "rating": "Unknown",
+   "why": "Not assessed in the record."
+  },
+  {
+   "axis": "Season",
+   "rating": "Partial",
+   "why": "Includes SPF 30 daily, which matters for pigment regardless of the other products."
+  }
+ ],
+ "dossier": {
+  "whatItIs": "A registered, single-arm-looking evaluation of a branded dermocosmetic routine rather than a single ingredient. It matters more for who was enrolled than for what was tested.",
+  "mechanism": {
+   "steps": [
+    "Applied: 2% to 5% niacinamide with 1% to 3% bioceramides in a leave-on routine plus daily SPF 30 for 12 weeks.",
+    "Stated in the broader literature (not in this record): niacinamide can reduce melanosome transfer from melanocytes to keratinocytes; ceramides support the barrier.",
+    "Inferred: a stronger barrier and daily sun protection could reduce further darkening, but the record states no mechanism and no measurement of it."
+   ],
+   "inferenceFlag": "The mechanism lines come from general knowledge of niacinamide, not from this record, and none are being measured in this trial.",
+   "diagramCaption": "Routine (niacinamide + bioceramides + SPF 30) -> (hypothesis) less melanosome transfer and fewer new insults -> (measured) HASI, global assessment, photo analysis, quality-of-life scores.",
+   "flow": [
+    {
+     "label": "Cleanser, moisturizer, serum, SPF 30 for 12 weeks",
+     "basis": "applied",
+     "note": "Whole routine, not a single ingredient."
+    },
+    {
+     "label": "Possible effect on melanosome transfer and barrier",
+     "basis": "inferred",
+     "note": "Not measured here."
+    },
+    {
+     "label": "HASI, IGA, photography, MelasQoL, DLQI",
+     "basis": "stated",
+     "note": "Planned outcomes at weeks 0, 6 and 12."
+    }
+   ]
+  },
+  "studies": [
+   {
+    "cite": "ClinicalTrials.gov NCT07618572. Study on the Functional Impact of Cosmetics on Improving Self-Esteem and Quality of Life in Black Women. Sponsor: Hospital Israelita Albert Einstein; collaborator: COTY Brasil.",
+    "doi": "https://clinicaltrials.gov/study/NCT07618572",
+    "pubmed": "https://clinicaltrials.gov/study/NCT07618572",
+    "readDepth": "Registry record read in full; no results or paper exist yet",
+    "design": "Interventional, N/A phase, single site, planned n=60, 12 weeks; no comparator listed.",
+    "who": "Women 18 to 55, Fitzpatrick IV to VI, self-identified Black or brown (preta/parda), facial PIH; excluded pregnancy, type 1 diabetes, atopy, skin cancer history, recent topical or systemic treatment, corticosteroids, and PHQ-9 or GAD-7 scores of 5 or more.",
+    "results": [
+     "No results posted. Status: recruiting; primary completion 31 Oct 2026."
+    ],
+    "effectSize": "Not available.",
+    "placebo": "No placebo or comparator listed.",
+    "material": "Cannot be judged yet.",
+    "adverse": "Not available.",
+    "conflict": "Collaborator: COTY Brasil (a cosmetics company). Funding terms not stated in the record.",
+    "limits": "Registry record only; protocol could change; no control arm; participants recruited from hospital staff; the exclusion of anyone with a PHQ-9 or GAD-7 score of 5 or more narrows who the quality-of-life results describe."
+   }
+  ],
+  "claimsCheck": [
+   {
+    "claim": "Niacinamide plus ceramides improves PIH in Black women",
+    "source": "Implied by the trial title and design",
+    "status": "Untested so far; the record has no results and no control arm."
+   }
+  ],
+  "products": {
+   "rankNote": "The brand is not named in the record, so no product can be identified or priced. Nothing to buy from this entry.",
+   "items": []
+  },
+  "howToUse": [
+   "Nothing to adopt. If results appear, the questions to ask are: was there a control, did sunscreen use change, and what happened at week 12 versus week 6."
+  ],
+  "expect": [
+   {
+    "when": "After Oct 2026",
+    "what": "Results could be posted on the registry or published; timing is unknown."
+   }
+  ],
+  "contraindications": "Not applicable; no product or protocol to follow.",
+  "sideBenefits": "Not reported.",
+  "wouldChangeVerdict": [
+   "Posted results with a comparator or at least a sunscreen-only run-in",
+   "A named product with a verifiable ingredient list",
+   "Independent replication outside a cosmetics-company collaboration"
+  ],
+  "transfer": "Does it transfer to you? The population is the closest match I have found this year: Fitzpatrick IV to VI, self-identified Black women with PIH. That is a point in its favour. But the trial is a whole-routine test without a comparison arm in the record, so even a positive result will not isolate niacinamide, and Brazilian climate, sun exposure and sun-protection habits differ from Toronto's seasons.",
+  "confidence": [
+   "Read in full: the registry record.",
+   "Not found: any publication, results, brand, or price.",
+   "Registry text can change; the date this was read is stated below."
+  ],
+  "searchedOn": "2026-11-08"
+ },
+ "links": [
+  {
+   "label": "ClinicalTrials.gov NCT07618572",
+   "url": "https://clinicaltrials.gov/study/NCT07618572"
+  }
+ ]
+}

@@ -1,0 +1,87 @@
+{
+ "id": "2026-11-08-mfu-1550nm-laser-split-face-asian-skin",
+ "run": "2026-11-08",
+ "title": "Microfocused ultrasound plus a 1550 nm fractional laser versus ultrasound alone: split-face trial in 22 Asian patients",
+ "lane": "Tools and devices",
+ "verdict": "WATCH",
+ "depth": "triage",
+ "headline": "Adding a 1550 nm non-ablative fractional laser to microfocused ultrasound improved wrinkles, dermal thickness and melanin index more than ultrasound alone over 24 weeks in 22 people with phototypes III to IV; deeper skin was not tested.",
+ "evidenceTier": "RCT (split-face, evaluator-blinded), abstract read; full text not opened",
+ "evidenceScore": 2,
+ "evidenceScale": 5,
+ "fit": "Device route: Weak for deep skin. Fractional lasers carry a higher pigment-change risk in deeper skin, and phototypes III to IV were the ceiling here.",
+ "displaces": "Not applicable; a clinic procedure.",
+ "readMinutes": 3,
+ "regions": [
+  "China (trial site); clinic procedure, availability varies by clinic"
+ ],
+ "tags": [
+  "microfocused ultrasound",
+  "1550 nm laser",
+  "split-face",
+  "Fitzpatrick III-IV",
+  "device",
+  "RCT",
+  "abstract only"
+ ],
+ "status": "Watch",
+ "estimateNote": "Prices marked EST are my guesses, not looked up.",
+ "cost": [
+  {
+   "label": "All markets",
+   "value": "not found",
+   "kind": "unknown"
+  }
+ ],
+ "buzzCheck": "Prices not looked up; cannot judge whether price tracks evidence.",
+ "summaryPoints": [
+  "Observation (abstract read): 22 participants, 44 facial sides, two sessions six weeks apart, follow-up to 24 weeks. Both sides improved from baseline; the combination side improved more on wrinkle score, pigmentation index, dermal thickness, skin relaxation time and melanin index.",
+  "Observation: no difference between sides on a laxity scale or erythema index. Safety assessed by adverse events; details not in the abstract.",
+  "Inference: one laser added to a device is a procedure question; no conclusion for phototypes V and VI can be drawn.",
+  "Limits: n=22; Chinese cohort; abstract only; follow-up under 6 months."
+ ],
+ "humanTrial": true,
+ "toneData": "Fitzpatrick III to IV only",
+ "fitRating": "Weak",
+ "fitLine": "The result is probably real for the people studied, but it says nothing about the pigment-change risk I would want quantified for deeper skin.",
+ "priceStrip": [
+  {
+   "m": "All",
+   "v": "not found",
+   "k": "unknown"
+  }
+ ],
+ "timeline": "Results at 24 weeks in the trial",
+ "fitAxes": [
+  {
+   "axis": "Barrier",
+   "rating": "Unknown",
+   "why": "Not assessed."
+  },
+  {
+   "axis": "Retinoid",
+   "rating": "Unknown",
+   "why": "Not addressed."
+  },
+  {
+   "axis": "Breakout risk",
+   "rating": "Unknown",
+   "why": "Not assessed."
+  },
+  {
+   "axis": "Season",
+   "rating": "Weak",
+   "why": "Fractional laser aftercare needs strict sun protection; winter versus summer timing not addressed."
+  }
+ ],
+ "links": [
+  {
+   "label": "Zhang 2026, Aesthetic Plast Surg (DOI)",
+   "url": "https://doi.org/10.1007/s00266-026-06145-y"
+  },
+  {
+   "label": "PubMed",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/42587095/"
+  }
+ ]
+}

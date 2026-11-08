@@ -1,0 +1,91 @@
+{
+ "id": "2026-11-08-traction-alopecia-ghana-heat-styling-risk",
+ "run": "2026-11-08",
+ "title": "Traction alopecia in Ghanaian women: frequent heat styling carried the clearest signal in a 197-woman survey",
+ "lane": "Hair and scalp",
+ "verdict": "WATCH",
+ "depth": "triage",
+ "headline": "In a cross-sectional survey of 197 Ghanaian women (mean age 23), 41% had hairline recession consistent with traction alopecia; more than two heat-styling sessions a month had an adjusted odds ratio of 5.65 (wide interval 1.35 to 23.6), while keeping one style over six weeks was not significant.",
+ "evidenceTier": "Cross-sectional survey, abstract read; full text not opened",
+ "evidenceScore": 1,
+ "evidenceScale": 5,
+ "fit": "Hair lane: Partial. Population is African women; hair type is not stated in the abstract, and survey data show association, not cause.",
+ "displaces": "Nothing to add; could prompt dropping frequent heat sessions.",
+ "readMinutes": 3,
+ "regions": [
+  "Ghana (survey); not a product"
+ ],
+ "tags": [
+  "traction alopecia",
+  "heat styling",
+  "hairline",
+  "cross-sectional",
+  "self-report",
+  "African women",
+  "abstract only"
+ ],
+ "status": "Watch",
+ "estimateNote": "Prices marked EST are my guesses, not looked up.",
+ "cost": [
+  {
+   "label": "All markets",
+   "value": "not found",
+   "kind": "unknown"
+  }
+ ],
+ "buzzCheck": "Prices not looked up; cannot judge whether price tracks evidence.",
+ "summaryPoints": [
+  "Observation (abstract read): survey in May 2026; 197 women; hairline status rated with the Marginal Traction Alopecia Score; 80 of 197 (40.6%) had recession consistent with traction alopecia.",
+  "Observation: more than two heat-styling sessions per month, aOR 5.65 (95% CI 1.35 to 23.62, p=0.02); age aOR 1.08 per year; style kept more than 6 weeks aOR 1.81 (95% CI 0.59 to 5.60, not significant). Model discrimination was modest (AUROC 0.68).",
+  "Inference: the survey cannot show cause; the wide intervals mean the 5.65 is imprecise. Recall and selection bias are likely in a convenience survey.",
+  "Limits: abstract only; young sample; hair texture not reported in the abstract."
+ ],
+ "humanTrial": false,
+ "toneData": "African women (Ghana); hair texture not stated in abstract",
+ "fitRating": "Partial",
+ "fitLine": "A cheap behavioural signal worth checking against own habits (installation length, heat frequency), not a new product or a verdict on any style.",
+ "priceStrip": [
+  {
+   "m": "All",
+   "v": "not found",
+   "k": "unknown"
+  }
+ ],
+ "timeline": "Not applicable",
+ "fitAxes": [
+  {
+   "axis": "Barrier",
+   "rating": "Unknown",
+   "why": "Not assessed."
+  },
+  {
+   "axis": "Retinoid",
+   "rating": "Unknown",
+   "why": "Not addressed."
+  },
+  {
+   "axis": "Breakout risk",
+   "rating": "Unknown",
+   "why": "Not assessed."
+  },
+  {
+   "axis": "Season",
+   "rating": "Unknown",
+   "why": "Not addressed."
+  }
+ ],
+ "links": [
+  {
+   "label": "Ayugane 2026, Health Sci Rep (DOI)",
+   "url": "https://doi.org/10.1002/hsr2.73442"
+  },
+  {
+   "label": "PubMed",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/42953661/"
+  },
+  {
+   "label": "Full text (PMC)",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13715065"
+  }
+ ]
+}

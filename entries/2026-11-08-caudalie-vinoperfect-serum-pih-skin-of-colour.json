@@ -1,0 +1,83 @@
+{
+ "id": "2026-11-08-caudalie-vinoperfect-serum-pih-skin-of-colour",
+ "run": "2026-11-08",
+ "title": "Brightening serum for post-acne hyperpigmentation in Fitzpatrick IV to VI: a planned open-label study at an academic centre, brand collaborator",
+ "lane": "Black and melanin-rich skin",
+ "verdict": "NOVEL",
+ "depth": "triage",
+ "headline": "A 20-person, open-label, single-centre study of a French cosmetic brightening serum for post-acne dark marks in medium to deep skin is registered to start in Sept 2026; no results, no control arm, and the brand is a collaborator.",
+ "evidenceTier": "Trial registry record, read in full; no results",
+ "evidenceScore": 1,
+ "evidenceScale": 5,
+ "fit": "Pigment-prone skin: Partial. Right population (Fitzpatrick IV to VI), weak design.",
+ "displaces": "Would replace an existing brightening serum step, not add one.",
+ "readMinutes": 3,
+ "regions": [
+  "Global (cosmetic; the registry record names the brand Caudalie as collaborator)"
+ ],
+ "tags": [
+  "PIH",
+  "post-acne hyperpigmentation",
+  "Fitzpatrick IV-VI",
+  "registry",
+  "open label",
+  "brand collaborator",
+  "cosmetic"
+ ],
+ "status": "Watch",
+ "estimateNote": "Prices marked EST are my guesses, not looked up.",
+ "cost": [
+  {
+   "label": "All markets",
+   "value": "not found",
+   "kind": "unknown"
+  }
+ ],
+ "buzzCheck": "Prices not looked up; cannot judge whether price tracks evidence.",
+ "summaryPoints": [
+  "Observation (registry record read): Weill Cornell Medicine, New York; n=20 planned; adults with Fitzpatrick IV to VI, moderate to severe post-acne PIH (PAHPI score 8 or more), mild acne only; 12 weeks; primary outcome is change in PAHPI at week 12; secondary outcomes are tolerability and a patient-reported stigma questionnaire.",
+  "Observation: status not yet recruiting; start Sept 2026; primary completion 15 Jan 2027. Participants must use no other facial products during the study.",
+  "Observation: the product is described only as a brightening serum ('Vinoperfect brightening serum'). I did not open a brand or retailer page this run, so ingredients, concentrations and price are not verified.",
+  "Limits: no comparator; the brand is a collaborator; 20 people."
+ ],
+ "humanTrial": true,
+ "toneData": "Fitzpatrick IV to VI by protocol, any ethnicity",
+ "fitRating": "Partial",
+ "fitLine": "Population is relevant; a small open-label brand-linked study will tell me little about whether the serum beats a plain moisturizer plus sunscreen.",
+ "priceStrip": [
+  {
+   "m": "All",
+   "v": "not found",
+   "k": "unknown"
+  }
+ ],
+ "timeline": "12 weeks; results not before 2027",
+ "fitAxes": [
+  {
+   "axis": "Barrier",
+   "rating": "Unknown",
+   "why": "Not assessed."
+  },
+  {
+   "axis": "Retinoid",
+   "rating": "Unknown",
+   "why": "Not addressed."
+  },
+  {
+   "axis": "Breakout risk",
+   "rating": "Unknown",
+   "why": "Not assessed; mild-acne participants only."
+  },
+  {
+   "axis": "Season",
+   "rating": "Partial",
+   "why": "The protocol asks participants to avoid sun and use sun protection as part of the routine."
+  }
+ ],
+ "links": [
+  {
+   "label": "ClinicalTrials.gov NCT07896486",
+   "url": "https://clinicaltrials.gov/study/NCT07896486"
+  }
+ ]
+}
