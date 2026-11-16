@@ -9,7 +9,7 @@
  "evidenceTier": "Trial registry record, read in full; no results",
  "evidenceScore": 1,
  "evidenceScale": 5,
- "fit": "Pigment-prone skin: Partial. Right population (Fitzpatrick IV to VI), weak design.",
+ "fit": "Pigment-prone skin: Partial. Right population (Fitzpatrick IV to VI); weak design. The formula has no acid, retinoid or niacinamide, so it would layer easily with those.",
  "displaces": "Would replace an existing brightening serum step, not add one.",
  "readMinutes": 3,
  "regions": [
@@ -28,17 +28,20 @@
  "estimateNote": "Prices marked EST are my guesses, not looked up.",
  "cost": [
   {
-   "label": "All markets",
-   "value": "not found",
-   "kind": "unknown"
+   "label": "Canada (30 ml)",
+   "value": "110 (currency not labelled; Canadian storefronts), checked 2026-11-16",
+   "kind": "found"
   }
  ],
- "buzzCheck": "Prices not looked up; cannot judge whether price tracks evidence.",
+ "buzzCheck": "Priced like a premium serum. Evidence is brand claims plus a registered 20-person open-label study with no results, so the price does not track evidence yet.",
  "summaryPoints": [
   "Observation (registry record read): Weill Cornell Medicine, New York; n=20 planned; adults with Fitzpatrick IV to VI, moderate to severe post-acne PIH (PAHPI score 8 or more), mild acne only; 12 weeks; primary outcome is change in PAHPI at week 12; secondary outcomes are tolerability and a patient-reported stigma questionnaire.",
   "Observation: status not yet recruiting; start Sept 2026; primary completion 15 Jan 2027. Participants must use no other facial products during the study.",
-  "Observation: the product is described only as a brightening serum ('Vinoperfect brightening serum'). I did not open a brand or retailer page this run, so ingredients, concentrations and price are not verified.",
-  "Limits: no comparator; the brand is a collaborator; 20 people."
+  "Observation (registry): the product is described only as 'Vinoperfect brightening serum' with Caudalie as collaborator. Update 2026-11-16: I opened the brand and retailer pages for the Caudalie Vinoperfect Brightening Dark Spot Serum (sold in Canada as the Radiance Serum, Vitamin C alternative). Inference: this is probably the trial product, but the registry does not say so.",
+  "Limits: no comparator; the brand is a collaborator; 20 people.",
+  "Observation (brand page, Canada, read 2026-11-16): full ingredient list begins water, butylene glycol, glycerin, coco-caprylate/caprate, squalane, palmitoyl grapevine shoot extract (the marketed 'viniferine'), then emulsifiers, bisabolol, preservatives and fragrance. No concentration is stated for any ingredient. It contains no niacinamide, acid or retinoid.",
+  "Observation (brand claims, not independent evidence): the page cites 62 times the effect of vitamin C in a lab tyrosinase test, 43% better than 10% niacinamide in an ex vivo test, a 63% reduction after one bottle (65 volunteers, 56 days) and 81% on deeper skin tones (33 volunteers). No papers are linked for these.",
+  "Price: 30 ml about 110 on the Caudalie Canada page and 110 on the Sephora Canada page, checked 2026-11-16 (the pages do not label the currency; both are Canadian storefronts). 50 ml size also sold; price not captured."
  ],
  "humanTrial": true,
  "toneData": "Fitzpatrick IV to VI by protocol, any ethnicity",
@@ -46,9 +49,9 @@
  "fitLine": "Population is relevant; a small open-label brand-linked study will tell me little about whether the serum beats a plain moisturizer plus sunscreen.",
  "priceStrip": [
   {
-   "m": "All",
-   "v": "not found",
-   "k": "unknown"
+   "m": "CA",
+   "v": "110 for 30 ml, checked 2026-11-16, currency unlabelled",
+   "k": "found"
   }
  ],
  "timeline": "12 weeks; results not before 2027",
@@ -78,6 +81,14 @@
   {
    "label": "ClinicalTrials.gov NCT07896486",
    "url": "https://clinicaltrials.gov/study/NCT07896486"
+  },
+  {
+   "label": "Caudalie Canada product page",
+   "url": "https://ca-en.caudalie.com/p/432NA/432na-radiance-serum-vitamin-c-alternative.html"
+  },
+  {
+   "label": "Sephora Canada product page",
+   "url": "https://www.sephora.com/ca/en/product/caudalie-vinoperfect-radiance-serum-vitamin-c-alternative-P510584"
   }
  ]
 }

@@ -374,11 +374,14 @@ A 30-person split-scalp study at Chang Gung Memorial Hospital is testing fractio
 A 20-person, open-label, single-centre study of a French cosmetic brightening serum for post-acne dark marks in medium to deep skin is registered to start in Sept 2026; no results, no control arm, and the brand is a collaborator.
 - Observation (registry record read): Weill Cornell Medicine, New York; n=20 planned; adults with Fitzpatrick IV to VI, moderate to severe post-acne PIH (PAHPI score 8 or more), mild acne only; 12 weeks; primary outcome is change in PAHPI at week 12; secondary outcomes are tolerability and a patient-reported stigma questionnaire.
 - Observation: status not yet recruiting; start Sept 2026; primary completion 15 Jan 2027. Participants must use no other facial products during the study.
-- Observation: the product is described only as a brightening serum ('Vinoperfect brightening serum'). I did not open a brand or retailer page this run, so ingredients, concentrations and price are not verified.
+- Observation (registry): the product is described only as 'Vinoperfect brightening serum' with Caudalie as collaborator. Update 2026-11-16: I opened the brand and retailer pages for the Caudalie Vinoperfect Brightening Dark Spot Serum (sold in Canada as the Radiance Serum, Vitamin C alternative). Inference: this is probably the trial product, but the registry does not say so.
 - Limits: no comparator; the brand is a collaborator; 20 people.
+- Observation (brand page, Canada, read 2026-11-16): full ingredient list begins water, butylene glycol, glycerin, coco-caprylate/caprate, squalane, palmitoyl grapevine shoot extract (the marketed 'viniferine'), then emulsifiers, bisabolol, preservatives and fragrance. No concentration is stated for any ingredient. It contains no niacinamide, acid or retinoid.
+- Observation (brand claims, not independent evidence): the page cites 62 times the effect of vitamin C in a lab tyrosinase test, 43% better than 10% niacinamide in an ex vivo test, a 63% reduction after one bottle (65 volunteers, 56 days) and 81% on deeper skin tones (33 volunteers). No papers are linked for these.
+- Price: 30 ml about 110 on the Caudalie Canada page and 110 on the Sephora Canada page, checked 2026-11-16 (the pages do not label the currency; both are Canadian storefronts). 50 ml size also sold; price not captured.
 
 ## FIT AND REPLACEMENT LOGIC (my judgment, not a measurement)
-- **Fit for you:** Partial Pigment-prone skin: Partial. Right population (Fitzpatrick IV to VI), weak design.
+- **Fit for you:** Partial Pigment-prone skin: Partial. Right population (Fitzpatrick IV to VI); weak design. The formula has no acid, retinoid or niacinamide, so it would layer easily with those.
 - **Barrier:** Unknown. Not assessed.
 - **Retinoid:** Unknown. Not addressed.
 - **Breakout risk:** Unknown. Not assessed; mild-acne participants only.
@@ -386,11 +389,13 @@ A 20-person, open-label, single-centre study of a French cosmetic brightening se
 - **What it displaces:** Would replace an existing brightening serum step, not add one.
 
 ## COST AND MARKETS
-- **All markets** (unknown): not found
-- **Buzz check:** Prices not looked up; cannot judge whether price tracks evidence.
+- **Canada (30 ml)** (found): 110 (currency not labelled; Canadian storefronts), checked 2026-11-16
+- **Buzz check:** Priced like a premium serum. Evidence is brand claims plus a registered 20-person open-label study with no results, so the price does not track evidence yet.
 
 ## SOURCES
 - [ClinicalTrials.gov NCT07896486](https://clinicaltrials.gov/study/NCT07896486)
+- [Caudalie Canada product page](https://ca-en.caudalie.com/p/432NA/432na-radiance-serum-vitamin-c-alternative.html)
+- [Sephora Canada product page](https://www.sephora.com/ca/en/product/caudalie-vinoperfect-radiance-serum-vitamin-c-alternative-P510584)
 
 ---
 
