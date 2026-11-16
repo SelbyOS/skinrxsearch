@@ -134,9 +134,11 @@ select{background-color:var(--glass-solid);color:var(--ink)}
       <div class="flex flex-wrap gap-2 items-center" id="verdictRow"></div>
       <div class="flex flex-wrap gap-2 items-center">
         <button id="filtBtn" data-act="filt" aria-expanded="false" class="chipbtn rounded-full px-4 min-h-[44px] text-sm font-semibold inline-flex items-center justify-center gap-2"></button>
+        <button id="keyBtn" data-act="key" aria-expanded="false" class="chipbtn rounded-full px-4 min-h-[44px] text-sm font-semibold inline-flex items-center gap-2"></button>
         <button id="clearBtn" data-act="clear" class="rounded-full px-3 min-h-[44px] text-sm font-semibold text-accent underline underline-offset-4 hidden"></button>
         <span id="count" class="ml-auto text-sm text-mute" aria-live="polite"></span>
       </div>
+      <div id="keyPanel" class="hidden rounded-2xl glass-solid p-3 text-sm"></div>
       <div id="filtMore" class="hidden flex-col gap-3 max-h-[40vh] overflow-y-auto">
       <div class="flex flex-wrap gap-2 items-center" id="chipRow"></div>
       <div class="flex flex-wrap gap-2 items-center">
@@ -211,7 +213,7 @@ function newId(){ return "n"+Date.now().toString(36)+Math.random().toString(36).
 var dockOpen = !!sget("srs.dock", false), lastSel = null, lastDockTap = 0, delArm = null, delTimer = null, toastTimer = null;
 var LANE_ICON = {"Ingredients and routine":"flask-conical","Clinic and devices":"zap","Rx and clinical":"stethoscope","Black and melanin-rich skin":"sparkles","HPA axis and nervous system":"activity","Goals-aligned science":"target",Ingredient:"flask-conical",Product:"package",Device:"zap",Hair:"sprout","Hair and scalp":"sprout",Clinical:"stethoscope",Rx:"stethoscope",Study:"file-text"};
 
-var state = { filtOpen:false, cur:null, hiddenOnly:false, notesOnly:false, nq:"", q:"", verdicts:[], lanes:[], tag:"", sort:"new", savedOnly:false, tab:"feed", compare:sget("srs.cmp", []), open:null };
+var state = { keyOpen:false, filtOpen:false, cur:null, hiddenOnly:false, notesOnly:false, nq:"", q:"", verdicts:[], lanes:[], tag:"", sort:"new", savedOnly:false, tab:"feed", compare:sget("srs.cmp", []), open:null };
 var lastTrigger = null;
 
 function esc(s){ return String(s == null ? "" : s).replace(/[&<>"']/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]; }); }
@@ -327,6 +329,21 @@ function sorted(list){
   });
   return l;
 }
+var RB = {full:{l:"Read in full",d:"Every study cited was read in full text or full registry record",f:""},
+  mixed:{l:"Partly read",d:"Some studies read in full, others abstract only",f:"M12 4 A8 8 0 0 1 12 20 Z"},
+  abstract:{l:"Abstracts only",d:"Studies were read at abstract level; full text not opened",f:"M12 12 L12 4 A8 8 0 0 1 20 12 Z"},
+  triage:{l:"Triage",d:"Screened, not read in depth; no per-study read depth recorded",f:null}};
+function readBasis(e){
+  if (e.depth !== "dossier" || !e.dossier || !(e.dossier.studies||[]).length) return "triage";
+  var n = 0, t = e.dossier.studies.length;
+  e.dossier.studies.forEach(function(x){ if (/^(full text|registry record read in full)/i.test(x.readDepth||"")) n++; });
+  return n === t ? "full" : n === 0 ? "abstract" : "mixed";
+}
+function rbIcon(k, cls){
+  var r = RB[k], fill = k === "full" ? '<circle cx="12" cy="12" r="8" fill="currentColor"/>' : (r.f ? '<path d="'+r.f+'" fill="currentColor"/>' : "");
+  return '<svg class="'+(cls||"h-4 w-4")+'" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="2"'+(k==="triage"?' stroke-dasharray="3 3"':'')+'/>'+fill+'</svg>';
+}
+function rbBadge(e){ var k = readBasis(e), r = RB[k]; return '<span class="inline-flex items-center gap-1.5" title="'+esc(r.l+": "+r.d)+'" role="img" aria-label="'+esc(r.l)+'">'+rbIcon(k,"h-4 w-4")+'<span class="sr-only">'+esc(r.l)+'</span></span>'; }
 function chipRow(){
   var lanes = []; ALL.forEach(function(e){ if (e.lane && lanes.indexOf(e.lane)<0) lanes.push(e.lane); });
   var h = VERDICTS.map(function(v){
@@ -348,6 +365,10 @@ function chipRow(){
   var fb = $("#filtBtn"), fm = $("#filtMore");
   fb.setAttribute("aria-expanded", state.filtOpen); fb.innerHTML = ic("sliders-horizontal","h-4 w-4")+" Lanes & more"+(active?' <span class="font-mono text-xs">'+active+'</span>':"")+ic(state.filtOpen?"chevron-up":"chevron-down","h-4 w-4");
   fm.classList.toggle("hidden", !state.filtOpen); fm.classList.toggle("flex", state.filtOpen);
+  var kb = $("#keyBtn"), kp = $("#keyPanel");
+  kb.setAttribute("aria-expanded", state.keyOpen); kb.innerHTML = ic("circle-help","h-4 w-4")+" Key";
+  kp.classList.toggle("hidden", !state.keyOpen);
+  kp.innerHTML = '<div class="eyebrow mb-2">How much was read</div><div class="grid gap-2 sm:grid-cols-2">'+["full","mixed","abstract","triage"].map(function(k){ return '<div class="flex items-start gap-2"><span class="mt-0.5 shrink-0">'+rbIcon(k,"h-5 w-5")+'</span><span><span class="font-semibold">'+RB[k].l+'</span> <span class="text-mute">'+RB[k].d+'</span></span></div>'; }).join("")+'</div>';
   var cb = $("#clearBtn"); cb.classList.toggle("hidden", !active); cb.textContent = "Clear "+active+" filter"+(active>1?"s":"");
 }
 
@@ -367,7 +388,7 @@ function card(e, ix){
   return '<article class="glass card relative rounded-3xl p-5 flex flex-col gap-3" style="--i:'+Math.min(ix||0,8)+'">'
     + '<div class="flex items-center gap-3 flex-wrap">'+pill(e.verdict)+'<span class="text-xs text-mute">'+esc(VERDICT_NOTE[e.verdict]||"")+'</span>'
     + '<span class="ml-auto inline-flex items-center gap-3 text-xs text-mute">'+meter(e.evidenceScore||0, e.evidenceScale||5)+'<span class="inline-flex items-center gap-1">'+ic("clock","h-3.5 w-3.5")+(e.readMinutes||"?")+' min</span></span></div>'
-    + '<div><div class="eyebrow inline-flex items-center gap-1.5">'+ic(LANE_ICON[e.lane]||"file-text","h-3.5 w-3.5")+esc(e.lane||"")+(e.depth==="dossier"?" · full dossier":" · triage")+'</div>'
+    + '<div><div class="eyebrow inline-flex items-center gap-1.5">'+ic(LANE_ICON[e.lane]||"file-text","h-3.5 w-3.5")+esc(e.lane||"")+'<span class="ml-1 text-mute">'+rbBadge(e)+'</span></div>'
     + '<h2 class="font-display text-3xl leading-tight mt-1"><button data-act="open" data-id="'+esc(e.id)+'" class="text-left after:absolute after:inset-0 after:rounded-3xl">'+esc(e.title)+'</button>'+(hasNote(e.id)?'<span class="ml-2 inline-flex align-middle text-accent" title="You have notes on this">'+ic("pencil","h-4 w-4")+'<span class="sr-only">You have notes on this entry</span></span>':"")+'</h2></div>'
     + '<p class="text-[15px] clamp3">'+esc(e.headline||"")+'</p>'
     + fit + fitStrip(e,false) + dis + priceStrip(e)
@@ -749,6 +770,7 @@ document.addEventListener("click", function(ev){
   else if (a === "verdict"){ var v = t.getAttribute("data-v"), k = state.verdicts.indexOf(v); if (k>-1) state.verdicts.splice(k,1); else state.verdicts.push(v); chipRow(); feed(); }
   else if (a === "lane"){ var l = t.getAttribute("data-l"), m = state.lanes.indexOf(l); if (m>-1) state.lanes.splice(m,1); else state.lanes.push(l); chipRow(); feed(); }
   else if (a === "tag"){ state.tag = t.getAttribute("data-t"); chipRow(); feed(); }
+  else if (a === "key"){ state.keyOpen = !state.keyOpen; chipRow(); }
   else if (a === "filt"){ state.filtOpen = !state.filtOpen; chipRow(); }
   else if (a === "hiddenOnly"){ state.hiddenOnly = !state.hiddenOnly; chipRow(); feed(); }
   else if (a === "motion"){ sset("srs.rm", motionOn() ? "reduce" : "full"); applyMotion(); if (state.open) spyUpdate(); }
