@@ -35,6 +35,29 @@
   color-scheme:dark;
 }
 /*__CSS__*/
+/* ---- ideas board ---- */
+:root{--st-yellow:#fff0a0;--st-pink:#ffd1e1;--st-mint:#c8ecd6;--st-sky:#cbe4fb;--st-lilac:#e0d6fb;--st-peach:#ffd9bd;--st-teal:#c4ebea;--st-ink:#2b2326}
+.board{position:relative;width:100%;min-height:420px;border-radius:24px;border:1px dashed var(--line);background:
+  radial-gradient(circle at 1px 1px, var(--line) 1px, transparent 0) 0 0/22px 22px}
+.st{position:absolute;width:var(--stw,220px);background:var(--bg-st,var(--st-yellow));color:var(--st-ink);border-radius:6px 6px 14px 6px;
+  padding:0 14px 12px;box-shadow:0 1px 0 rgba(255,255,255,.5) inset,0 10px 18px -10px rgba(40,20,30,.5),0 2px 4px rgba(40,20,30,.12);
+  transform:rotate(var(--rot,0deg));transition:box-shadow .15s ease,transform .15s ease;touch-action:auto;font-size:14.5px;line-height:1.45}
+.st.drag{box-shadow:0 22px 30px -12px rgba(40,20,30,.55);transform:rotate(0deg) scale(1.03);cursor:grabbing;z-index:9999 !important}
+.st-grip{height:26px;margin:0 -14px 6px;display:flex;align-items:center;justify-content:space-between;padding:0 10px;cursor:grab;touch-action:none;
+  border-radius:6px 6px 0 0;background:rgba(0,0,0,.06)}
+.st-grip i{display:block;width:34px;height:6px;border-radius:3px;background:repeating-linear-gradient(90deg,rgba(0,0,0,.28) 0 4px,transparent 4px 8px)}
+.st button,.st a{color:inherit}
+.st-btn{min-height:32px;min-width:32px;display:inline-flex;align-items:center;justify-content:center;border-radius:999px;background:rgba(0,0,0,.07);border:0;font-size:12px;font-weight:700;padding:0 10px;gap:5px}
+.st-btn:hover{background:rgba(0,0,0,.14)}
+.st textarea{width:100%;min-height:96px;resize:vertical;background:transparent;border:0;color:inherit;font:inherit;padding:0;outline:none}
+.st-foot{margin-top:8px;padding-top:8px;border-top:1px dashed rgba(0,0,0,.2);display:flex;align-items:center;gap:6px;flex-wrap:wrap;font-size:12px}
+.st-note{--bg-st:#fbf7ee;border-left:5px solid var(--accent)}
+.st-dot{width:12px;height:12px;border-radius:50%;border:2px solid rgba(0,0,0,.25);padding:0;min-height:0}
+.st-dots{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
+.lg{display:inline-flex;align-items:center;gap:8px}
+.lg i{width:14px;height:14px;border-radius:4px;display:block;border:1px solid rgba(0,0,0,.2);background:var(--bg-st)}
+@media (max-width:520px){.st{--stw:168px;font-size:13.5px}}
+
 html{-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:Figtree,system-ui,sans-serif;font-size:16px;line-height:1.6;
   padding-left:max(16px,env(safe-area-inset-left));padding-right:max(16px,env(safe-area-inset-right));padding-bottom:calc(64px + env(safe-area-inset-bottom))}
@@ -107,10 +130,11 @@ select{background-color:var(--glass-solid);color:var(--ink)}
 
   <section id="safety" class="mt-4"></section>
 
-  <nav class="tabs mt-6 grid grid-cols-4 gap-1.5 sm:flex sm:items-center sm:gap-2" aria-label="Views">
+  <nav class="tabs mt-6 grid grid-cols-5 gap-1.5 sm:flex sm:items-center sm:gap-2" aria-label="Views">
     <button data-act="tab" data-tab="feed" class="chipbtn rounded-full px-2 sm:px-4 min-h-[44px] justify-center text-sm font-semibold inline-flex items-center gap-2" aria-pressed="true"></button>
     <button data-act="tab" data-tab="compare" class="chipbtn rounded-full px-2 sm:px-4 min-h-[44px] justify-center text-sm font-semibold inline-flex items-center gap-2" aria-pressed="false"></button>
     <button data-act="tab" data-tab="notes" class="chipbtn rounded-full px-2 sm:px-4 min-h-[44px] justify-center text-sm font-semibold inline-flex items-center gap-2" aria-pressed="false"></button>
+    <button data-act="tab" data-tab="ideas" class="chipbtn rounded-full px-1 sm:px-4 min-h-[44px] justify-center text-sm font-semibold inline-flex items-center gap-1.5 sm:gap-2" aria-pressed="false"></button>
     <button data-act="tab" data-tab="runs" class="chipbtn rounded-full px-2 sm:px-4 min-h-[44px] justify-center text-sm font-semibold inline-flex items-center gap-2" aria-pressed="false"></button>
   </nav>
 
@@ -452,6 +476,112 @@ function notesView(){
   $("#noteQ").addEventListener("input", function(ev){ state.nq = ev.target.value.trim(); $("#noteList").innerHTML = notesList(); });
 }
 
+
+/* ---------- ideas board ---------- */
+var STK = ["yellow","pink","mint","sky","lilac","peach","teal"];
+var LANE_STK = {"Hair and scalp":"mint","Black and melanin-rich skin":"pink","Clinic and devices":"sky","Rx and clinical":"lilac","Ingredients and routine":"yellow","Goals-aligned science":"peach","HPA axis and nervous system":"teal"};
+var ideas = sget("srs.ideas", null) || {};
+ideas.mine = Array.isArray(ideas.mine) ? ideas.mine : []; ideas.pos = ideas.pos && typeof ideas.pos === "object" ? ideas.pos : {};
+ideas.dismissed = Array.isArray(ideas.dismissed) ? ideas.dismissed : []; ideas.z = ideas.z || 1; if (ideas.showNotes === undefined) ideas.showNotes = true;
+var ideaLanes = [], ideaArm = null, ideaTimer = null;
+function saveIdeas(){ sset("srs.ideas", ideas); }
+function stkVar(c){ return "var(--st-"+(STK.indexOf(c)>-1?c:"yellow")+")"; }
+function hashRot(k){ var h = 0; for (var i=0;i<k.length;i++) h = (h*31 + k.charCodeAt(i)) | 0; return ((Math.abs(h)%50)-25)/10; }
+function ideaItems(){
+  var out = [];
+  ideas.mine.forEach(function(m){ out.push({key:"m:"+m.i, kind:"mine", m:m, color:m.c||"yellow"}); });
+  ALL.forEach(function(e){
+    if (isHidden(e.id)) return;
+    if (ideaLanes.length && ideaLanes.indexOf(e.lane) < 0) return;
+    if (e.suggests && ideas.dismissed.indexOf(e.id) < 0) out.push({key:"a:"+e.id, kind:"auto", e:e, color:LANE_STK[e.lane]||"yellow"});
+  });
+  if (ideas.showNotes) noteRows().forEach(function(r){ if (isHidden(r.e.id) || (ideaLanes.length && ideaLanes.indexOf(r.e.lane) < 0)) return; out.push({key:"n:"+r.n.i, kind:"note", e:r.e, n:r.n, color:"paper"}); });
+  return out;
+}
+function stickyHTML(it){
+  var rot = hashRot(it.key), base = '<div class="st'+(it.kind==="note"?" st-note":"")+'" data-k="'+esc(it.key)+'" style="--bg-st:'+(it.kind==="note"?"#fbf7ee":stkVar(it.color))+';--rot:'+rot+'deg">'
+    + '<div class="st-grip" title="Drag to move"><i></i><span style="font-size:11px;font-weight:700;opacity:.55">'+(it.kind==="mine"?"MINE":it.kind==="note"?"YOUR NOTE":"IDEA")+'</span></div>';
+  if (it.kind === "mine"){
+    var dots = STK.map(function(c){ return '<button class="st-dot" data-act="ideaColor" data-id="'+esc(it.m.i)+'" data-c="'+c+'" aria-label="'+c+' sticky" style="background:var(--st-'+c+');'+(it.color===c?"box-shadow:0 0 0 2px var(--st-ink)":"")+'"></button>'; }).join("");
+    return base + '<textarea data-idea="'+esc(it.m.i)+'" aria-label="My idea" placeholder="An idea, a combo, a question...">'+esc(it.m.t||"")+'</textarea>'
+      + '<div class="st-dots">'+dots+'</div>'
+      + '<div class="st-foot"><button class="st-btn" data-act="ideaDel" data-id="'+esc(it.m.i)+'">'+ic("trash-2","h-3.5 w-3.5")+(ideaArm===it.m.i?"Sure?":"Delete")+'</button></div></div>';
+  }
+  var e = it.e;
+  if (it.kind === "note"){
+    var t = (it.n.t||"").trim(); if (t.length > 260) t = t.slice(0,257)+"...";
+    return base + '<div style="white-space:pre-wrap">'+esc(t)+'</div><div class="st-foot"><button class="st-btn" data-act="ideaOpen" data-id="'+esc(e.id)+'" data-n="'+esc(it.n.i)+'">'+ic("pencil","h-3.5 w-3.5")+esc(e.title.length>46?e.title.slice(0,44)+"...":e.title)+'</button></div></div>';
+  }
+  return base + '<div>'+esc(e.suggests)+'</div><div class="st-foot"><button class="st-btn" data-act="ideaOpen" data-id="'+esc(e.id)+'" title="'+esc(e.title)+'">'+ic(LANE_ICON[e.lane]||"file-text","h-3.5 w-3.5")+esc(e.verdict)+" · open"+'</button>'
+    + '<button class="st-btn" data-act="ideaMine" data-id="'+esc(e.id)+'" title="Copy to my own sticky so I can edit it">'+ic("pencil","h-3.5 w-3.5")+'Make mine</button>'
+    + '<button class="st-btn" data-act="ideaDismiss" data-id="'+esc(e.id)+'" aria-label="Dismiss this idea">'+ic("x","h-3.5 w-3.5")+'</button></div></div>';
+}
+function ideasView(){
+  $("#count").textContent = "";
+  var lanesPresent = []; ALL.forEach(function(e){ if (e.lane && lanesPresent.indexOf(e.lane) < 0) lanesPresent.push(e.lane); });
+  var legend = lanesPresent.map(function(l){ return '<button data-act="ideaLane" data-l="'+esc(l)+'" aria-pressed="'+(ideaLanes.indexOf(l)>-1)+'" class="chipbtn rounded-full px-3 min-h-[40px] text-xs font-semibold lg" style="--bg-st:'+stkVar(LANE_STK[l]||"yellow")+'"><i></i>'+esc(l)+'</button>'; }).join("");
+  var nd = ideas.dismissed.length;
+  $("#view").innerHTML = '<div class="glass rounded-3xl p-3 sm:p-4 mb-3"><div class="flex flex-wrap gap-2 items-center">'
+    + '<button data-act="ideaNew" class="chipbtn rounded-full px-4 min-h-[44px] text-sm font-semibold inline-flex items-center gap-2" style="background:var(--accent);color:var(--on-accent)">'+ic("plus","h-4 w-4")+'New sticky</button>'
+    + '<button data-act="ideaNotes" aria-pressed="'+ideas.showNotes+'" class="chipbtn rounded-full px-4 min-h-[44px] text-sm font-semibold inline-flex items-center gap-2">'+ic("pencil","h-4 w-4")+'My entry notes</button>'
+    + '<button data-act="ideaTidy" class="chipbtn rounded-full px-4 min-h-[44px] text-sm font-semibold inline-flex items-center gap-2">'+ic("rotate-ccw","h-4 w-4")+'Tidy up</button>'
+    + '<button data-act="ideaExport" class="chipbtn rounded-full px-4 min-h-[44px] text-sm font-semibold inline-flex items-center gap-2">'+ic("download","h-4 w-4")+'Export</button>'
+    + (nd ? '<button data-act="ideaRestore" class="rounded-full px-3 min-h-[44px] text-sm font-semibold text-accent underline underline-offset-4">Bring back '+nd+' dismissed</button>' : "")
+    + '</div><div class="flex flex-wrap gap-2 mt-3" role="group" aria-label="Filter by lane">'+legend+'</div>'
+    + '<p class="text-xs text-mute mt-2">Colours follow the lane. Drag a sticky by its top strip. Ideas are my speculation from each entry, not findings; open the entry for the evidence.</p></div>'
+    + '<div id="board" class="board"></div>';
+  drawBoard();
+}
+function drawBoard(){
+  var board = $("#board"); if (!board) return;
+  var items = ideaItems(); board.innerHTML = items.map(stickyHTML).join("");
+  if (!items.length){ board.style.minHeight = "220px"; board.innerHTML = '<div class="p-8 text-center text-mute">No stickies here yet. Add one, or turn on entry notes.</div>'; return; }
+  layoutBoard(); 
+}
+function layoutBoard(){
+  var board = $("#board"); if (!board) return;
+  var W = board.clientWidth, els = [].slice.call(board.querySelectorAll(".st"));
+  if (!els.length) return;
+  var gap = 14, w = els[0].offsetWidth, cols = Math.max(1, Math.floor((W - gap) / (w + gap))), colH = []; for (var c=0;c<cols;c++) colH.push(12);
+  var maxY = 0, placed = [], fresh = [];
+  els.forEach(function(el){ var p = ideas.pos[el.getAttribute("data-k")]; if (p){ placed.push([el,p]); } else fresh.push(el); });
+  placed.forEach(function(x){ var el = x[0], p = x[1]; var px = Math.max(0, Math.min(p.x, W - w)); el.style.left = px+"px"; el.style.top = p.y+"px"; el.style.zIndex = p.z||1; maxY = Math.max(maxY, p.y + el.offsetHeight); });
+  if (placed.length) for (var c2=0;c2<cols;c2++) colH[c2] = maxY + gap;
+  var left = Math.max(0, (W - (cols*(w+gap) - gap)) / 2);
+  fresh.forEach(function(el){ var ci = 0; for (var q=1;q<cols;q++) if (colH[q] < colH[ci]) ci = q; var x = left + ci*(w+gap), y = colH[ci]; el.style.left = x+"px"; el.style.top = y+"px"; el.style.zIndex = 1; colH[ci] = y + el.offsetHeight + gap; maxY = Math.max(maxY, y + el.offsetHeight); });
+  board.style.height = Math.max(420, maxY + 40)+"px";
+}
+function fitBoard(){ var board = $("#board"); if (!board) return; var m = 0; [].forEach.call(board.querySelectorAll(".st"), function(el){ m = Math.max(m, el.offsetTop + el.offsetHeight); }); board.style.height = Math.max(420, m + 40)+"px"; }
+var dragSt = null;
+function ideaDown(ev){
+  var el = ev.target.closest && ev.target.closest(".st"); if (!el || state.tab !== "ideas") return;
+  if (ev.target.closest("button,textarea,a,input,select")) return;
+  if (ev.pointerType === "touch" && !ev.target.closest(".st-grip")) return;
+  if (ev.pointerType === "mouse" && ev.button !== 0) return;
+  var bd = $("#board"), r = bd.getBoundingClientRect();
+  dragSt = {el:el, dx:ev.clientX - (r.left + el.offsetLeft), dy:ev.clientY - (r.top + el.offsetTop), id:ev.pointerId};
+  try{ el.setPointerCapture(ev.pointerId); }catch(x){}
+  el.classList.add("drag"); ideas.z++; el.style.zIndex = ideas.z; ev.preventDefault();
+}
+function ideaMove(ev){
+  if (!dragSt) return; var bd = $("#board"), r = bd.getBoundingClientRect(), el = dragSt.el;
+  var x = Math.max(0, Math.min(ev.clientX - r.left - dragSt.dx, bd.clientWidth - el.offsetWidth)), y = Math.max(0, ev.clientY - r.top - dragSt.dy);
+  el.style.left = x+"px"; el.style.top = y+"px";
+}
+function ideaUp(){
+  if (!dragSt) return; var el = dragSt.el; el.classList.remove("drag");
+  ideas.pos[el.getAttribute("data-k")] = {x:el.offsetLeft, y:el.offsetTop, z:ideas.z}; saveIdeas(); fitBoard(); dragSt = null;
+}
+function ideasMd(){
+  var L = ["# SkinRxsearch: my ideas","Exported "+new Date().toISOString().slice(0,10),"","Stickies from my board. Machine-written ideas are speculation from each entry, not findings.",""];
+  var mine = ideas.mine.filter(function(m){ return m.t && m.t.trim(); });
+  if (mine.length){ L.push("## My own ideas",""); mine.forEach(function(m){ L.push("- "+m.t.trim().replace(/\n+/g," ")); }); L.push(""); }
+  var byLane = {}; ALL.forEach(function(e){ if (e.suggests && ideas.dismissed.indexOf(e.id) < 0 && !isHidden(e.id)){ (byLane[e.lane] = byLane[e.lane] || []).push(e); } });
+  Object.keys(byLane).forEach(function(l){ L.push("## "+l,""); byLane[l].forEach(function(e){ L.push("- "+e.suggests+" ("+e.title+"; "+e.verdict+"; id "+e.id+")"); }); L.push(""); });
+  var nr = noteRows(); if (nr.length){ L.push("## My notes on entries",""); nr.forEach(function(r){ L.push("- "+r.e.title+": "+r.n.t.trim().replace(/\n+/g," ")); }); L.push(""); }
+  return L.join("\n");
+}
+
 /* ---------- runs ---------- */
 function coverHTML(r){
   var c = r.cover; if (!c || !safeUrl(c.url)) return "";
@@ -686,7 +816,7 @@ function closeDrawer(){
 
 /* ---------- export / import ---------- */
 var modalOpen = false, modalTrigger = null;
-function userState(){ return {app:"skinrxsearch", version:2, exportedAt:new Date().toISOString(), saved:saved, status:statuses, notes:notes, hidden:hidden, compare:state.compare}; }
+function userState(){ return {app:"skinrxsearch", version:2, exportedAt:new Date().toISOString(), saved:saved, status:statuses, notes:notes, hidden:hidden, compare:state.compare, ideas:{mine:ideas.mine, pos:ideas.pos, dismissed:ideas.dismissed, showNotes:ideas.showNotes}}; }
 function stateMd(){
   var L = ["# SkinRxsearch: my state","Exported "+new Date().toISOString().slice(0,10),"","Paste this into Claude and ask it to compare my notes and statuses against the next scan.",""];
   var n = 0;
@@ -708,7 +838,8 @@ function copyText(text, okMsg){
 }
 function modalActions(){
   function b(act, icon, label){ return '<button data-act="'+act+'" class="chipbtn rounded-2xl min-h-[48px] px-4 text-left text-sm font-semibold inline-flex items-center gap-3">'+ic(icon,"h-5 w-5")+label+'</button>'; }
-  $("#mActions").innerHTML = b("copyClaude","copy","Copy my state for Claude (bookmarks, statuses, notes)")
+  $("#mActions").innerHTML = b("copyIdeas","lightbulb","Copy my ideas board as Markdown")
+    + b("copyClaude","copy","Copy my state for Claude (bookmarks, statuses, notes)")
     + b("copyRun","file-text","Copy latest run as Markdown (for NotebookLM)")
     + b("copyAll","layers","Copy every entry as Markdown")
     + b("dlJson","download","Download backup (JSON)")
@@ -741,21 +872,27 @@ function importState(text){
       if (!cur){ l.push({i:nid, t:n.t, u:u}); cnt.notes++; } else if ((cur.u||"") < u){ cur.t = n.t; cur.u = u; cnt.notes++; }
     });
   });
+  if (o.ideas && typeof o.ideas === "object"){
+    if (Array.isArray(o.ideas.mine)) o.ideas.mine.slice(0,500).forEach(function(x){ if (x && typeof x.i === "string" && x.i.length < 60 && typeof x.t === "string" && x.t.length < 5000 && !ideas.mine.some(function(y){ return y.i === x.i; })){ ideas.mine.push({i:x.i, t:x.t, c:STK.indexOf(x.c) > -1 ? x.c : "yellow"}); cnt.ideas = (cnt.ideas||0)+1; } });
+    if (o.ideas.pos && typeof o.ideas.pos === "object") Object.keys(o.ideas.pos).slice(0,2000).forEach(function(k){ var q = o.ideas.pos[k]; if (!ideas.pos[k] && q && isFinite(q.x) && isFinite(q.y)) ideas.pos[k] = {x:+q.x, y:+q.y, z:1}; });
+    if (Array.isArray(o.ideas.dismissed)) o.ideas.dismissed.slice(0,1000).forEach(function(id){ if (typeof id === "string" && ideas.dismissed.indexOf(id) < 0) ideas.dismissed.push(id); });
+    saveIdeas();
+  }
   sset("srs.saved", saved); sset("srs.status", statuses); sset("srs.notes", notes); sset("srs.hidden", hidden);
   metrics(); chipRow(); renderView();
-  m.textContent = "Imported. Added "+cnt.saved+" bookmarks, "+cnt.hidden+" hidden, updated "+cnt.status+" statuses and "+cnt.notes+" notes. Where both had the same note, the newer one was kept.";
+  m.textContent = "Imported. Added "+cnt.saved+" bookmarks, "+cnt.hidden+" hidden, updated "+cnt.status+" statuses and "+cnt.notes+" notes"+(cnt.ideas?" and "+cnt.ideas+" ideas":"")+". Where both had the same note, the newer one was kept.";
 }
 
 /* ---------- view orchestration ---------- */
 function setTabs(){
-  var labels = {feed:["layers","Feed"],compare:["scale","Compare"],notes:["pencil","Notes"],runs:["book-open","Runs"]};
+  var labels = {feed:["layers","Feed"],compare:["scale","Compare"],notes:["pencil","Notes"],runs:["book-open","Runs"],ideas:["lightbulb","Ideas"]};
   document.querySelectorAll('[data-act="tab"]').forEach(function(b){
     var t = b.getAttribute("data-tab"); b.setAttribute("aria-pressed", state.tab === t);
     b.innerHTML = ic(labels[t][0],"h-4 w-4")+labels[t][1]+(t==="notes"&&noteRows().length?' <span class="font-mono text-xs">'+noteRows().length+'</span>':"")+(t==="compare"&&state.compare.length?' <span class="font-mono text-xs">'+state.compare.length+'</span>':"");
   });
   $("#filters").style.display = state.tab === "feed" ? "" : "none";
 }
-function renderView(){ setTabs(); if (state.tab==="feed") feed(); else if (state.tab==="compare") compareView(); else if (state.tab==="notes") notesView(); else runsView(); }
+function renderView(){ setTabs(); if (state.tab==="feed") feed(); else if (state.tab==="compare") compareView(); else if (state.tab==="notes") notesView(); else if (state.tab==="ideas") ideasView(); else runsView(); }
 function refreshAll(){ metrics(); chipRow(); renderView(); }
 
 /* ---------- events ---------- */
@@ -791,6 +928,18 @@ document.addEventListener("click", function(ev){
   else if (a === "clear"){ state.hiddenOnly=false; state.q=""; state.verdicts=[]; state.lanes=[]; state.tag=""; state.savedOnly=false; state.notesOnly=false; $("#q").value=""; chipRow(); feed(); }
   else if (a === "export") openModal(t);
   else if (a === "closeModal") closeModal();
+  else if (a === "ideaNew"){ var nm = {i:newId(), t:"", c:"yellow"}; ideas.mine.unshift(nm); ideas.pos["m:"+nm.i] = {x:12, y:12, z:++ideas.z}; saveIdeas(); drawBoard(); var ta = document.querySelector('[data-idea="'+nm.i+'"]'); if (ta) ta.focus(); }
+  else if (a === "ideaDel"){ if (ideaArm === id){ ideas.mine = ideas.mine.filter(function(m){ return m.i !== id; }); delete ideas.pos["m:"+id]; ideaArm = null; saveIdeas(); drawBoard(); } else { ideaArm = id; clearTimeout(ideaTimer); ideaTimer = setTimeout(function(){ ideaArm = null; if (state.tab==="ideas") drawBoard(); }, 3000); drawBoard(); } }
+  else if (a === "ideaColor"){ ideas.mine.forEach(function(m){ if (m.i === id) m.c = t.getAttribute("data-c"); }); saveIdeas(); var pe = ideas.pos; drawBoard(); }
+  else if (a === "ideaDismiss"){ if (ideas.dismissed.indexOf(id) < 0) ideas.dismissed.push(id); saveIdeas(); ideasView(); }
+  else if (a === "ideaRestore"){ ideas.dismissed = []; saveIdeas(); ideasView(); }
+  else if (a === "ideaMine"){ var ee = byId(id); if (ee){ var m2 = {i:newId(), t:ee.suggests, c:LANE_STK[ee.lane]||"yellow"}; ideas.mine.unshift(m2); var op = ideas.pos["a:"+id]; if (op) ideas.pos["m:"+m2.i] = op; if (ideas.dismissed.indexOf(id) < 0) ideas.dismissed.push(id); saveIdeas(); ideasView(); } }
+  else if (a === "ideaNotes"){ ideas.showNotes = !ideas.showNotes; saveIdeas(); ideasView(); }
+  else if (a === "ideaTidy"){ ideas.pos = {}; saveIdeas(); drawBoard(); }
+  else if (a === "ideaLane"){ var lx = t.getAttribute("data-l"), li = ideaLanes.indexOf(lx); if (li > -1) ideaLanes.splice(li,1); else ideaLanes.push(lx); ideasView(); }
+  else if (a === "ideaExport"){ openModal(t); }
+  else if (a === "ideaOpen"){ openEntry(id, t, t.getAttribute("data-n")); }
+  else if (a === "copyIdeas") copyText(ideasMd(), "Copied my ideas as Markdown.");
   else if (a === "copyClaude") copyText(stateMd(), "Copied. Paste it into a Claude chat.");
   else if (a === "copyRun"){ var lr = latestRun(); copyText(ALL.filter(function(e){ return e.run === lr; }).map(function(e){ return e.md; }).join("\n---\n\n"), "Copied the latest run."); }
   else if (a === "copyAll") copyText(ALL.map(function(e){ return e.md; }).join("\n---\n\n"), "Copied every entry.");
@@ -805,7 +954,14 @@ document.addEventListener("change", function(ev){
   else if (t.id === "sortSel"){ state.sort = t.value; feed(); }
 });
 $("#impFile").addEventListener("change", function(ev){ var f = ev.target.files && ev.target.files[0]; if (!f) return; if (f.size > 2000000){ $("#mMsg").textContent = "That file is too large to be a backup."; return; } var r = new FileReader(); r.onload = function(){ importState(String(r.result)); }; r.readAsText(f); ev.target.value = ""; });
+document.addEventListener("pointerdown", ideaDown);
+document.addEventListener("pointermove", ideaMove);
+document.addEventListener("pointerup", ideaUp);
+document.addEventListener("pointercancel", ideaUp);
+window.addEventListener("resize", function(){ if (state.tab === "ideas") layoutBoard(); });
 document.addEventListener("input", function(ev){
+  var ik = ev.target.getAttribute && ev.target.getAttribute("data-idea");
+  if (ik){ ideas.mine.forEach(function(m){ if (m.i === ik) m.t = ev.target.value; }); saveIdeas(); ev.target.style.height = "auto"; ev.target.style.height = Math.max(96, ev.target.scrollHeight)+"px"; fitBoard(); return; }
   if (ev.target.id !== "noteArea" || !state.open) return;
   var id = state.open, v = ev.target.value, now = new Date().toISOString(), n = curNote(id), fresh = false;
   if (!n){ if (!v.trim()) return; n = {i:newId(), t:v, u:now}; (notes[id] = notes[id] || []).push(n); state.cur = n.i; fresh = true; }
